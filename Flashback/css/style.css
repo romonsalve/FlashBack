@@ -1,0 +1,45 @@
+body{
+    background: url(../img/fondo.jpg) no-repeat center center fixed;
+   -webkit-background-size:cover; /* navegadores basados en webkit */
+   -moz-background-size:cover;  /* Mozilla Firefox */
+   -o-background-size:cover;  /*  Opera */
+   background-size:cover;
+}
+.center{
+    margin: 0 auto;
+}
+#contenedor{
+    margin-top: 15px;
+    background: #FFF;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+#head{
+    height: 150px;
+    padding: 0;
+    background: url(../img/head.png) no-repeat;
+}
+
+#registro{
+    width: 400px;
+    border: #0088cc 1px solid;
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 10px;
+    background: linear-gradient(#cdcdcd,#f3f3f3);
+}
+#cuerpo{
+    padding-bottom: 30px;
+}
+
+#footer{
+    padding-top: 6px;
+    border-top: #c0c0c0 2px solid;
+    text-align: center;
+}
+
+#centro{
+    border: 1px solid;
+    background: #ff0000;
+}
