@@ -4,7 +4,7 @@ App::uses('AppModel', 'Model');
  * ParticipanteTipo Model
  *
  * @property Participante $Participante
- * @property Participan $Participan
+ * @property ParTipSolCot $ParTipSolCot
  * @property EventoTipo $EventoTipo
  */
 class ParticipanteTipo extends AppModel {
@@ -31,8 +31,8 @@ class ParticipanteTipo extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Participan' => array(
-			'className' => 'Participan',
+		'ParTipSolCot' => array(
+			'className' => 'ParTipSolCot',
 			'foreignKey' => 'participante_tipo_id',
 			'dependent' => false,
 			'conditions' => '',

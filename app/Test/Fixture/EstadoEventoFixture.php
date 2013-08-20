@@ -6,6 +6,13 @@
 class EstadoEventoFixture extends CakeTestFixture {
 
 /**
+ * Table name
+ *
+ * @var string
+ */
+	public $table = 'estado_evento';
+
+/**
  * Fields
  *
  * @var array

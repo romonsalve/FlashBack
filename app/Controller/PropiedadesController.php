@@ -47,10 +47,9 @@ class PropiedadesController extends AppController {
 				$this->Session->setFlash(__('The propiedade could not be saved. Please, try again.'));
 			}
 		}
-		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
-		$medidas = $this->Propiedade->Medida->find('list');
 		$recursos = $this->Propiedade->Recurso->find('list');
-		$this->set(compact('recursoTipos', 'medidas', 'recursos'));
+		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
+		$this->set(compact('recursos', 'recursoTipos'));
 	}
 
 /**
@@ -75,10 +74,9 @@ class PropiedadesController extends AppController {
 			$options = array('conditions' => array('Propiedade.' . $this->Propiedade->primaryKey => $id));
 			$this->request->data = $this->Propiedade->find('first', $options);
 		}
-		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
-		$medidas = $this->Propiedade->Medida->find('list');
 		$recursos = $this->Propiedade->Recurso->find('list');
-		$this->set(compact('recursoTipos', 'medidas', 'recursos'));
+		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
+		$this->set(compact('recursos', 'recursoTipos'));
 	}
 
 /**

@@ -17,7 +17,7 @@ class ActividadesEventoTipoFixture extends CakeTestFixture {
 			'PRIMARY' => array('unique' => true, 'column' => array('evento_tipo_id', 'actividade_id')),
 			'actividades_evento_tipos_pk' => array('unique' => true, 'column' => array('evento_tipo_id', 'actividade_id')),
 			'actividades_id2' => array('unique' => false, 'column' => 'actividade_id'),
-			'evento_tipos_id4' => array('unique' => false, 'column' => 'evento_tipo_id')
+			'evento_tipos_id3' => array('unique' => false, 'column' => 'evento_tipo_id')
 		),
 		'tableParameters' => array()
 	);

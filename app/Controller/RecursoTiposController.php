@@ -47,10 +47,10 @@ class RecursoTiposController extends AppController {
 				$this->Session->setFlash(__('The recurso tipo could not be saved. Please, try again.'));
 			}
 		}
+		$proveedores = $this->RecursoTipo->Proveedore->find('list');
 		$eventoTipos = $this->RecursoTipo->EventoTipo->find('list');
 		$propiedades = $this->RecursoTipo->Propiedade->find('list');
-		$proveedores = $this->RecursoTipo->Proveedore->find('list');
-		$this->set(compact('eventoTipos', 'propiedades', 'proveedores'));
+		$this->set(compact('proveedores', 'eventoTipos', 'propiedades'));
 	}
 
 /**
@@ -75,10 +75,10 @@ class RecursoTiposController extends AppController {
 			$options = array('conditions' => array('RecursoTipo.' . $this->RecursoTipo->primaryKey => $id));
 			$this->request->data = $this->RecursoTipo->find('first', $options);
 		}
+		$proveedores = $this->RecursoTipo->Proveedore->find('list');
 		$eventoTipos = $this->RecursoTipo->EventoTipo->find('list');
 		$propiedades = $this->RecursoTipo->Propiedade->find('list');
-		$proveedores = $this->RecursoTipo->Proveedore->find('list');
-		$this->set(compact('eventoTipos', 'propiedades', 'proveedores'));
+		$this->set(compact('proveedores', 'eventoTipos', 'propiedades'));
 	}
 
 /**

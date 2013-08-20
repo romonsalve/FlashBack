@@ -36,8 +36,8 @@ class EmpleadosEventoFixture extends CakeTestFixture {
 			'empleado_id' => 1,
 			'evento_id' => 1,
 			'id' => 1,
-			'hora_ini_ete' => '15:44:53',
-			'hora_ter_ete' => '15:44:53',
+			'hora_ini_ete' => '01:32:49',
+			'hora_ter_ete' => '01:32:49',
 			'cargo_ete' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
 		),
 	);

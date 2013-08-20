@@ -15,6 +15,8 @@ class RecursosControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.recurso',
 		'app.recurso_tipo',
+		'app.proveedore',
+		'app.proveedores_recurso_tipo',
 		'app.evento_tipo',
 		'app.evento',
 		'app.recinto',
@@ -23,7 +25,7 @@ class RecursosControllerTest extends ControllerTestCase {
 		'app.estado',
 		'app.cliente',
 		'app.cliente_tipo',
-		'app.participan',
+		'app.par_tip_sol_cot',
 		'app.participante_tipo',
 		'app.participante',
 		'app.evento_tipos_participante_tipo',
@@ -40,13 +42,10 @@ class RecursosControllerTest extends ControllerTestCase {
 		'app.actividade',
 		'app.actividades_evento_tipo',
 		'app.actividades_evento',
+		'app.evento_tipos_recurso_tipo',
 		'app.propiedade',
-		'app.propiedades_recurso_tipo',
-		'app.medida',
-		'app.medidas_propiedade',
 		'app.propiedades_recurso',
-		'app.proveedore',
-		'app.proveedores_recurso_tipo'
+		'app.propiedades_recurso_tipo'
 	);
 
 /**

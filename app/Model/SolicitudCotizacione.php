@@ -7,7 +7,7 @@ App::uses('AppModel', 'Model');
  * @property EventoTipo $EventoTipo
  * @property Cliente $Cliente
  * @property RecintoTipo $RecintoTipo
- * @property Participan $Participan
+ * @property ParTipSolCot $ParTipSolCot
  */
 class SolicitudCotizacione extends AppModel {
 
@@ -83,8 +83,8 @@ class SolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Participan' => array(
-			'className' => 'Participan',
+		'ParTipSolCot' => array(
+			'className' => 'ParTipSolCot',
 			'foreignKey' => 'solicitud_cotizacione_id',
 			'dependent' => false,
 			'conditions' => '',

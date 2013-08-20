@@ -6,6 +6,13 @@
 class MedidaFixture extends CakeTestFixture {
 
 /**
+ * Table name
+ *
+ * @var string
+ */
+	public $table = 'medida';
+
+/**
  * Fields
  *
  * @var array

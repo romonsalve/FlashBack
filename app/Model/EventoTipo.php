@@ -5,10 +5,10 @@ App::uses('AppModel', 'Model');
  *
  * @property Evento $Evento
  * @property SolicitudCotizacione $SolicitudCotizacione
- * @property RecursoTipo $RecursoTipo
  * @property Actividade $Actividade
  * @property ParticipanteTipo $ParticipanteTipo
  * @property RecintoTipo $RecintoTipo
+ * @property RecursoTipo $RecursoTipo
  */
 class EventoTipo extends AppModel {
 
@@ -36,19 +36,6 @@ class EventoTipo extends AppModel {
 		),
 		'SolicitudCotizacione' => array(
 			'className' => 'SolicitudCotizacione',
-			'foreignKey' => 'evento_tipo_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'RecursoTipo' => array(
-			'className' => 'RecursoTipo',
 			'foreignKey' => 'evento_tipo_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -104,6 +91,21 @@ class EventoTipo extends AppModel {
 			'joinTable' => 'evento_tipos_recinto_tipos',
 			'foreignKey' => 'evento_tipo_id',
 			'associationForeignKey' => 'recinto_tipo_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'RecursoTipo' => array(
+			'className' => 'RecursoTipo',
+			'joinTable' => 'evento_tipos_recurso_tipos',
+			'foreignKey' => 'evento_tipo_id',
+			'associationForeignKey' => 'recurso_tipo_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

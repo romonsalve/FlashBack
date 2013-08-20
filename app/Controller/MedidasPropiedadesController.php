@@ -47,6 +47,9 @@ class MedidasPropiedadesController extends AppController {
 				$this->Session->setFlash(__('The medidas propiedade could not be saved. Please, try again.'));
 			}
 		}
+		$medidas = $this->MedidasPropiedade->Medida->find('list');
+		$propiedades = $this->MedidasPropiedade->Propiedade->find('list');
+		$this->set(compact('medidas', 'propiedades'));
 	}
 
 /**
@@ -71,6 +74,9 @@ class MedidasPropiedadesController extends AppController {
 			$options = array('conditions' => array('MedidasPropiedade.' . $this->MedidasPropiedade->primaryKey => $id));
 			$this->request->data = $this->MedidasPropiedade->find('first', $options);
 		}
+		$medidas = $this->MedidasPropiedade->Medida->find('list');
+		$propiedades = $this->MedidasPropiedade->Propiedade->find('list');
+		$this->set(compact('medidas', 'propiedades'));
 	}
 
 /**

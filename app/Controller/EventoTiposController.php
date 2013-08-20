@@ -50,7 +50,8 @@ class EventoTiposController extends AppController {
 		$actividades = $this->EventoTipo->Actividade->find('list');
 		$participanteTipos = $this->EventoTipo->ParticipanteTipo->find('list');
 		$recintoTipos = $this->EventoTipo->RecintoTipo->find('list');
-		$this->set(compact('actividades', 'participanteTipos', 'recintoTipos'));
+		$recursoTipos = $this->EventoTipo->RecursoTipo->find('list');
+		$this->set(compact('actividades', 'participanteTipos', 'recintoTipos', 'recursoTipos'));
 	}
 
 /**
@@ -78,7 +79,8 @@ class EventoTiposController extends AppController {
 		$actividades = $this->EventoTipo->Actividade->find('list');
 		$participanteTipos = $this->EventoTipo->ParticipanteTipo->find('list');
 		$recintoTipos = $this->EventoTipo->RecintoTipo->find('list');
-		$this->set(compact('actividades', 'participanteTipos', 'recintoTipos'));
+		$recursoTipos = $this->EventoTipo->RecursoTipo->find('list');
+		$this->set(compact('actividades', 'participanteTipos', 'recintoTipos', 'recursoTipos'));
 	}
 
 /**

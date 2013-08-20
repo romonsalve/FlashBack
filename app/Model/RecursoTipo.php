@@ -3,30 +3,15 @@ App::uses('AppModel', 'Model');
 /**
  * RecursoTipo Model
  *
- * @property EventoTipo $EventoTipo
  * @property Recurso $Recurso
- * @property Propiedade $Propiedade
  * @property Proveedore $Proveedore
+ * @property EventoTipo $EventoTipo
+ * @property Propiedade $Propiedade
  */
 class RecursoTipo extends AppModel {
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * belongsTo associations
- *
- * @var array
- */
-	public $belongsTo = array(
-		'EventoTipo' => array(
-			'className' => 'EventoTipo',
-			'foreignKey' => 'evento_tipo_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
 
 /**
  * hasMany associations
@@ -56,11 +41,11 @@ class RecursoTipo extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'Propiedade' => array(
-			'className' => 'Propiedade',
-			'joinTable' => 'propiedades_recurso_tipos',
+		'Proveedore' => array(
+			'className' => 'Proveedore',
+			'joinTable' => 'proveedores_recurso_tipos',
 			'foreignKey' => 'recurso_tipo_id',
-			'associationForeignKey' => 'propiedade_id',
+			'associationForeignKey' => 'proveedore_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
@@ -71,11 +56,26 @@ class RecursoTipo extends AppModel {
 			'deleteQuery' => '',
 			'insertQuery' => ''
 		),
-		'Proveedore' => array(
-			'className' => 'Proveedore',
-			'joinTable' => 'proveedores_recurso_tipos',
+		'EventoTipo' => array(
+			'className' => 'EventoTipo',
+			'joinTable' => 'evento_tipos_recurso_tipos',
 			'foreignKey' => 'recurso_tipo_id',
-			'associationForeignKey' => 'proveedore_id',
+			'associationForeignKey' => 'evento_tipo_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'Propiedade' => array(
+			'className' => 'Propiedade',
+			'joinTable' => 'propiedades_recurso_tipos',
+			'foreignKey' => 'recurso_tipo_id',
+			'associationForeignKey' => 'propiedade_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

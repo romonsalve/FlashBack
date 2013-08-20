@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * RecintoTipo Model
  *
- * @property SolicitudCotizacione $SolicitudCotizacione
  * @property Recinto $Recinto
+ * @property SolicitudCotizacione $SolicitudCotizacione
  * @property EventoTipo $EventoTipo
  */
 class RecintoTipo extends AppModel {
@@ -18,8 +18,8 @@ class RecintoTipo extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'SolicitudCotizacione' => array(
-			'className' => 'SolicitudCotizacione',
+		'Recinto' => array(
+			'className' => 'Recinto',
 			'foreignKey' => 'recinto_tipo_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -31,8 +31,8 @@ class RecintoTipo extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Recinto' => array(
-			'className' => 'Recinto',
+		'SolicitudCotizacione' => array(
+			'className' => 'SolicitudCotizacione',
 			'foreignKey' => 'recinto_tipo_id',
 			'dependent' => false,
 			'conditions' => '',

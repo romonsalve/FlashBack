@@ -47,8 +47,6 @@ class MedidasController extends AppController {
 				$this->Session->setFlash(__('The medida could not be saved. Please, try again.'));
 			}
 		}
-		$propiedades = $this->Medida->Propiedade->find('list');
-		$this->set(compact('propiedades'));
 	}
 
 /**
@@ -73,8 +71,6 @@ class MedidasController extends AppController {
 			$options = array('conditions' => array('Medida.' . $this->Medida->primaryKey => $id));
 			$this->request->data = $this->Medida->find('first', $options);
 		}
-		$propiedades = $this->Medida->Propiedade->find('list');
-		$this->set(compact('propiedades'));
 	}
 
 /**

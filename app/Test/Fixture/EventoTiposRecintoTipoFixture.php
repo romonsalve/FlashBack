@@ -16,7 +16,7 @@ class EventoTiposRecintoTipoFixture extends CakeTestFixture {
 		'indexes' => array(
 			'PRIMARY' => array('unique' => true, 'column' => array('recinto_tipo_id', 'evento_tipo_id')),
 			'evento_tipos_recinto_tipos_pk' => array('unique' => true, 'column' => array('recinto_tipo_id', 'evento_tipo_id')),
-			'evento_tipos_id6' => array('unique' => false, 'column' => 'evento_tipo_id'),
+			'evento_tipos_id5' => array('unique' => false, 'column' => 'evento_tipo_id'),
 			'recinto_tipos_id3' => array('unique' => false, 'column' => 'recinto_tipo_id')
 		),
 		'tableParameters' => array()
