@@ -4,9 +4,9 @@ App::uses('AppModel', 'Model');
  * RecursoTipo Model
  *
  * @property Recurso $Recurso
- * @property Proveedore $Proveedore
  * @property EventoTipo $EventoTipo
  * @property Propiedade $Propiedade
+ * @property Proveedore $Proveedore
  */
 class RecursoTipo extends AppModel {
 
@@ -41,21 +41,6 @@ class RecursoTipo extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'Proveedore' => array(
-			'className' => 'Proveedore',
-			'joinTable' => 'proveedores_recurso_tipos',
-			'foreignKey' => 'recurso_tipo_id',
-			'associationForeignKey' => 'proveedore_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		),
 		'EventoTipo' => array(
 			'className' => 'EventoTipo',
 			'joinTable' => 'evento_tipos_recurso_tipos',
@@ -76,6 +61,21 @@ class RecursoTipo extends AppModel {
 			'joinTable' => 'propiedades_recurso_tipos',
 			'foreignKey' => 'recurso_tipo_id',
 			'associationForeignKey' => 'propiedade_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'Proveedore' => array(
+			'className' => 'Proveedore',
+			'joinTable' => 'proveedores_recurso_tipos',
+			'foreignKey' => 'recurso_tipo_id',
+			'associationForeignKey' => 'proveedore_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

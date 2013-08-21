@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Medidas Controller
  *
  * @property Medida $Medida
+ * @property PaginatorComponent $Paginator
  */
 class MedidasController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class MedidasController extends AppController {
  */
 	public function index() {
 		$this->Medida->recursive = 0;
-		$this->set('medidas', $this->paginate());
+		$this->set('medidas', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,11 +50,13 @@ class MedidasController extends AppController {
 			$this->Medida->create();
 			if ($this->Medida->save($this->request->data)) {
 				$this->Session->setFlash(__('The medida has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The medida could not be saved. Please, try again.'));
 			}
 		}
+		$propiedades = $this->Medida->Propiedade->find('list');
+		$this->set(compact('propiedades'));
 	}
 
 /**
@@ -63,7 +73,7 @@ class MedidasController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Medida->save($this->request->data)) {
 				$this->Session->setFlash(__('The medida has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The medida could not be saved. Please, try again.'));
 			}
@@ -71,6 +81,8 @@ class MedidasController extends AppController {
 			$options = array('conditions' => array('Medida.' . $this->Medida->primaryKey => $id));
 			$this->request->data = $this->Medida->find('first', $options);
 		}
+		$propiedades = $this->Medida->Propiedade->find('list');
+		$this->set(compact('propiedades'));
 	}
 
 /**
@@ -88,9 +100,9 @@ class MedidasController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Medida->delete()) {
 			$this->Session->setFlash(__('Medida deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Medida was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

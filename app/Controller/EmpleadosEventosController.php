@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * EmpleadosEventos Controller
  *
  * @property EmpleadosEvento $EmpleadosEvento
+ * @property PaginatorComponent $Paginator
  */
 class EmpleadosEventosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class EmpleadosEventosController extends AppController {
  */
 	public function index() {
 		$this->EmpleadosEvento->recursive = 0;
-		$this->set('empleadosEventos', $this->paginate());
+		$this->set('empleadosEventos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class EmpleadosEventosController extends AppController {
 			$this->EmpleadosEvento->create();
 			if ($this->EmpleadosEvento->save($this->request->data)) {
 				$this->Session->setFlash(__('The empleados evento has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The empleados evento could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class EmpleadosEventosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EmpleadosEvento->save($this->request->data)) {
 				$this->Session->setFlash(__('The empleados evento has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The empleados evento could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class EmpleadosEventosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EmpleadosEvento->delete()) {
 			$this->Session->setFlash(__('Empleados evento deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Empleados evento was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

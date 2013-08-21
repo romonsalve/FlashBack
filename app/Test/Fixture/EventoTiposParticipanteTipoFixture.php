@@ -15,7 +15,6 @@ class EventoTiposParticipanteTipoFixture extends CakeTestFixture {
 		'participante_tipo_id' => array('type' => 'integer', 'null' => false),
 		'indexes' => array(
 			'PRIMARY' => array('unique' => true, 'column' => array('evento_tipo_id', 'participante_tipo_id')),
-			'eve_tip_par_tip_pk' => array('unique' => true, 'column' => array('evento_tipo_id', 'participante_tipo_id')),
 			'evento_tipos_id4' => array('unique' => false, 'column' => 'evento_tipo_id'),
 			'participante_tipos_id2' => array('unique' => false, 'column' => 'participante_tipo_id')
 		),

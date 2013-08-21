@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Recursos Controller
  *
  * @property Recurso $Recurso
+ * @property PaginatorComponent $Paginator
  */
 class RecursosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class RecursosController extends AppController {
  */
 	public function index() {
 		$this->Recurso->recursive = 0;
-		$this->set('recursos', $this->paginate());
+		$this->set('recursos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,15 +50,16 @@ class RecursosController extends AppController {
 			$this->Recurso->create();
 			if ($this->Recurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The recurso has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recurso could not be saved. Please, try again.'));
 			}
 		}
 		$recursoTipos = $this->Recurso->RecursoTipo->find('list');
 		$proveedores = $this->Recurso->Proveedore->find('list');
+		$eventos = $this->Recurso->Evento->find('list');
 		$propiedades = $this->Recurso->Propiedade->find('list');
-		$this->set(compact('recursoTipos', 'proveedores', 'propiedades'));
+		$this->set(compact('recursoTipos', 'proveedores', 'eventos', 'propiedades'));
 	}
 
 /**
@@ -67,7 +76,7 @@ class RecursosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Recurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The recurso has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recurso could not be saved. Please, try again.'));
 			}
@@ -77,8 +86,9 @@ class RecursosController extends AppController {
 		}
 		$recursoTipos = $this->Recurso->RecursoTipo->find('list');
 		$proveedores = $this->Recurso->Proveedore->find('list');
+		$eventos = $this->Recurso->Evento->find('list');
 		$propiedades = $this->Recurso->Propiedade->find('list');
-		$this->set(compact('recursoTipos', 'proveedores', 'propiedades'));
+		$this->set(compact('recursoTipos', 'proveedores', 'eventos', 'propiedades'));
 	}
 
 /**
@@ -96,9 +106,9 @@ class RecursosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Recurso->delete()) {
 			$this->Session->setFlash(__('Recurso deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Recurso was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

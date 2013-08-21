@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Propiedades Controller
  *
  * @property Propiedade $Propiedade
+ * @property PaginatorComponent $Paginator
  */
 class PropiedadesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class PropiedadesController extends AppController {
  */
 	public function index() {
 		$this->Propiedade->recursive = 0;
-		$this->set('propiedades', $this->paginate());
+		$this->set('propiedades', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,14 +50,15 @@ class PropiedadesController extends AppController {
 			$this->Propiedade->create();
 			if ($this->Propiedade->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedade has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The propiedade could not be saved. Please, try again.'));
 			}
 		}
-		$recursos = $this->Propiedade->Recurso->find('list');
+		$medidas = $this->Propiedade->Medida->find('list');
 		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
-		$this->set(compact('recursos', 'recursoTipos'));
+		$recursos = $this->Propiedade->Recurso->find('list');
+		$this->set(compact('medidas', 'recursoTipos', 'recursos'));
 	}
 
 /**
@@ -66,7 +75,7 @@ class PropiedadesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Propiedade->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedade has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The propiedade could not be saved. Please, try again.'));
 			}
@@ -74,9 +83,10 @@ class PropiedadesController extends AppController {
 			$options = array('conditions' => array('Propiedade.' . $this->Propiedade->primaryKey => $id));
 			$this->request->data = $this->Propiedade->find('first', $options);
 		}
-		$recursos = $this->Propiedade->Recurso->find('list');
+		$medidas = $this->Propiedade->Medida->find('list');
 		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
-		$this->set(compact('recursos', 'recursoTipos'));
+		$recursos = $this->Propiedade->Recurso->find('list');
+		$this->set(compact('medidas', 'recursoTipos', 'recursos'));
 	}
 
 /**
@@ -94,9 +104,9 @@ class PropiedadesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Propiedade->delete()) {
 			$this->Session->setFlash(__('Propiedade deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Propiedade was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

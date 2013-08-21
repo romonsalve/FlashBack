@@ -42,6 +42,7 @@ class PaginatorHelperTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
+		Configure::write('Config.language', 'eng');
 		$controller = null;
 		$this->View = new View($controller);
 		$this->Paginator = new PaginatorHelper($this->View);
@@ -78,6 +79,7 @@ class PaginatorHelperTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
+		parent::tearDown();
 		unset($this->View, $this->Paginator);
 	}
 
@@ -288,7 +290,7 @@ class PaginatorHelperTest extends CakeTestCase {
 		Router::setRequestInfo(array(
 			array('plugin' => null, 'controller' => 'accounts', 'action' => 'index', 'pass' => array(),
 				'url' => array('url' => 'accounts/', 'mod_rewrite' => 'true')),
-			array('base' => '/', 'here' => '/accounts/', 'webroot' => '/',)
+			array('base' => '/', 'here' => '/accounts/', 'webroot' => '/')
 		));
 		$this->Paginator->options(array('url' => array('param')));
 

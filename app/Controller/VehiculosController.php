@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Vehiculos Controller
  *
  * @property Vehiculo $Vehiculo
+ * @property PaginatorComponent $Paginator
  */
 class VehiculosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class VehiculosController extends AppController {
  */
 	public function index() {
 		$this->Vehiculo->recursive = 0;
-		$this->set('vehiculos', $this->paginate());
+		$this->set('vehiculos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class VehiculosController extends AppController {
 			$this->Vehiculo->create();
 			if ($this->Vehiculo->save($this->request->data)) {
 				$this->Session->setFlash(__('The vehiculo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The vehiculo could not be saved. Please, try again.'));
 			}
@@ -65,7 +73,7 @@ class VehiculosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Vehiculo->save($this->request->data)) {
 				$this->Session->setFlash(__('The vehiculo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The vehiculo could not be saved. Please, try again.'));
 			}
@@ -92,9 +100,9 @@ class VehiculosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Vehiculo->delete()) {
 			$this->Session->setFlash(__('Vehiculo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Vehiculo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

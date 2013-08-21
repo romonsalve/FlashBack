@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Recintos Controller
  *
  * @property Recinto $Recinto
+ * @property PaginatorComponent $Paginator
  */
 class RecintosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class RecintosController extends AppController {
  */
 	public function index() {
 		$this->Recinto->recursive = 0;
-		$this->set('recintos', $this->paginate());
+		$this->set('recintos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class RecintosController extends AppController {
 			$this->Recinto->create();
 			if ($this->Recinto->save($this->request->data)) {
 				$this->Session->setFlash(__('The recinto has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recinto could not be saved. Please, try again.'));
 			}
@@ -65,7 +73,7 @@ class RecintosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Recinto->save($this->request->data)) {
 				$this->Session->setFlash(__('The recinto has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recinto could not be saved. Please, try again.'));
 			}
@@ -92,9 +100,9 @@ class RecintosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Recinto->delete()) {
 			$this->Session->setFlash(__('Recinto deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Recinto was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

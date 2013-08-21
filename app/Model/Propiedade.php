@@ -3,8 +3,9 @@ App::uses('AppModel', 'Model');
 /**
  * Propiedade Model
  *
- * @property Recurso $Recurso
+ * @property Medida $Medida
  * @property RecursoTipo $RecursoTipo
+ * @property Recurso $Recurso
  */
 class Propiedade extends AppModel {
 
@@ -17,11 +18,11 @@ class Propiedade extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'Recurso' => array(
-			'className' => 'Recurso',
-			'joinTable' => 'propiedades_recursos',
+		'Medida' => array(
+			'className' => 'Medida',
+			'joinTable' => 'medidas_propiedades',
 			'foreignKey' => 'propiedade_id',
-			'associationForeignKey' => 'recurso_id',
+			'associationForeignKey' => 'medida_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
@@ -37,6 +38,21 @@ class Propiedade extends AppModel {
 			'joinTable' => 'propiedades_recurso_tipos',
 			'foreignKey' => 'propiedade_id',
 			'associationForeignKey' => 'recurso_tipo_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'Recurso' => array(
+			'className' => 'Recurso',
+			'joinTable' => 'propiedades_recursos',
+			'foreignKey' => 'propiedade_id',
+			'associationForeignKey' => 'recurso_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

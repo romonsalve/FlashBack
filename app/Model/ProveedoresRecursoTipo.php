@@ -25,8 +25,8 @@ class ProveedoresRecursoTipo extends AppModel {
 			),
 		),
 		'recurso_tipo_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

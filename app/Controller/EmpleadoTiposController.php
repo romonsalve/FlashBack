@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * EmpleadoTipos Controller
  *
  * @property EmpleadoTipo $EmpleadoTipo
+ * @property PaginatorComponent $Paginator
  */
 class EmpleadoTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class EmpleadoTiposController extends AppController {
  */
 	public function index() {
 		$this->EmpleadoTipo->recursive = 0;
-		$this->set('empleadoTipos', $this->paginate());
+		$this->set('empleadoTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class EmpleadoTiposController extends AppController {
 			$this->EmpleadoTipo->create();
 			if ($this->EmpleadoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The empleado tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The empleado tipo could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class EmpleadoTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EmpleadoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The empleado tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The empleado tipo could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class EmpleadoTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EmpleadoTipo->delete()) {
 			$this->Session->setFlash(__('Empleado tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Empleado tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

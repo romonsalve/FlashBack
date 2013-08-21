@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Clientes Controller
  *
  * @property Cliente $Cliente
+ * @property PaginatorComponent $Paginator
  */
 class ClientesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ClientesController extends AppController {
  */
 	public function index() {
 		$this->Cliente->recursive = 0;
-		$this->set('clientes', $this->paginate());
+		$this->set('clientes', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ClientesController extends AppController {
 			$this->Cliente->create();
 			if ($this->Cliente->save($this->request->data)) {
 				$this->Session->setFlash(__('The cliente has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The cliente could not be saved. Please, try again.'));
 			}
@@ -65,7 +73,7 @@ class ClientesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Cliente->save($this->request->data)) {
 				$this->Session->setFlash(__('The cliente has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The cliente could not be saved. Please, try again.'));
 			}
@@ -92,9 +100,9 @@ class ClientesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Cliente->delete()) {
 			$this->Session->setFlash(__('Cliente deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Cliente was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

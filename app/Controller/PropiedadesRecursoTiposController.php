@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * PropiedadesRecursoTipos Controller
  *
  * @property PropiedadesRecursoTipo $PropiedadesRecursoTipo
+ * @property PaginatorComponent $Paginator
  */
 class PropiedadesRecursoTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class PropiedadesRecursoTiposController extends AppController {
  */
 	public function index() {
 		$this->PropiedadesRecursoTipo->recursive = 0;
-		$this->set('propiedadesRecursoTipos', $this->paginate());
+		$this->set('propiedadesRecursoTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class PropiedadesRecursoTiposController extends AppController {
 			$this->PropiedadesRecursoTipo->create();
 			if ($this->PropiedadesRecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedades recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The propiedades recurso tipo could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class PropiedadesRecursoTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->PropiedadesRecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedades recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The propiedades recurso tipo could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class PropiedadesRecursoTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->PropiedadesRecursoTipo->delete()) {
 			$this->Session->setFlash(__('Propiedades recurso tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Propiedades recurso tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

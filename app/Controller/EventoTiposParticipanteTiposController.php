@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * EventoTiposParticipanteTipos Controller
  *
  * @property EventoTiposParticipanteTipo $EventoTiposParticipanteTipo
+ * @property PaginatorComponent $Paginator
  */
 class EventoTiposParticipanteTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class EventoTiposParticipanteTiposController extends AppController {
  */
 	public function index() {
 		$this->EventoTiposParticipanteTipo->recursive = 0;
-		$this->set('eventoTiposParticipanteTipos', $this->paginate());
+		$this->set('eventoTiposParticipanteTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class EventoTiposParticipanteTiposController extends AppController {
 			$this->EventoTiposParticipanteTipo->create();
 			if ($this->EventoTiposParticipanteTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The evento tipos participante tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The evento tipos participante tipo could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class EventoTiposParticipanteTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EventoTiposParticipanteTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The evento tipos participante tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The evento tipos participante tipo could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class EventoTiposParticipanteTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EventoTiposParticipanteTipo->delete()) {
 			$this->Session->setFlash(__('Evento tipos participante tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Evento tipos participante tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * EventoTiposRecursoTipos Controller
  *
  * @property EventoTiposRecursoTipo $EventoTiposRecursoTipo
+ * @property PaginatorComponent $Paginator
  */
 class EventoTiposRecursoTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class EventoTiposRecursoTiposController extends AppController {
  */
 	public function index() {
 		$this->EventoTiposRecursoTipo->recursive = 0;
-		$this->set('eventoTiposRecursoTipos', $this->paginate());
+		$this->set('eventoTiposRecursoTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class EventoTiposRecursoTiposController extends AppController {
 			$this->EventoTiposRecursoTipo->create();
 			if ($this->EventoTiposRecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The evento tipos recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The evento tipos recurso tipo could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class EventoTiposRecursoTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EventoTiposRecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The evento tipos recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The evento tipos recurso tipo could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class EventoTiposRecursoTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EventoTiposRecursoTipo->delete()) {
 			$this->Session->setFlash(__('Evento tipos recurso tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Evento tipos recurso tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

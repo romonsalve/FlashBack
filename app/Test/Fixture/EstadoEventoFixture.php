@@ -6,13 +6,6 @@
 class EstadoEventoFixture extends CakeTestFixture {
 
 /**
- * Table name
- *
- * @var string
- */
-	public $table = 'estado_evento';
-
-/**
  * Fields
  *
  * @var array
@@ -23,7 +16,7 @@ class EstadoEventoFixture extends CakeTestFixture {
 		'desc_estado_evt' => array('type' => 'text', 'null' => true, 'length' => 1073741824),
 		'indexes' => array(
 			'PRIMARY' => array('unique' => true, 'column' => 'id'),
-			'estado_evento_pk' => array('unique' => true, 'column' => 'id')
+			'estado_eventos_pk' => array('unique' => true, 'column' => 'id')
 		),
 		'tableParameters' => array()
 	);

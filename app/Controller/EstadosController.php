@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Estados Controller
  *
  * @property Estado $Estado
+ * @property PaginatorComponent $Paginator
  */
 class EstadosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class EstadosController extends AppController {
  */
 	public function index() {
 		$this->Estado->recursive = 0;
-		$this->set('estados', $this->paginate());
+		$this->set('estados', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class EstadosController extends AppController {
 			$this->Estado->create();
 			if ($this->Estado->save($this->request->data)) {
 				$this->Session->setFlash(__('The estado has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The estado could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class EstadosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Estado->save($this->request->data)) {
 				$this->Session->setFlash(__('The estado has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The estado could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class EstadosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Estado->delete()) {
 			$this->Session->setFlash(__('Estado deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Estado was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

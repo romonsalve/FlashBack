@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * ActividadesEventos Controller
  *
  * @property ActividadesEvento $ActividadesEvento
+ * @property PaginatorComponent $Paginator
  */
 class ActividadesEventosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ActividadesEventosController extends AppController {
  */
 	public function index() {
 		$this->ActividadesEvento->recursive = 0;
-		$this->set('actividadesEventos', $this->paginate());
+		$this->set('actividadesEventos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ActividadesEventosController extends AppController {
 			$this->ActividadesEvento->create();
 			if ($this->ActividadesEvento->save($this->request->data)) {
 				$this->Session->setFlash(__('The actividades evento has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The actividades evento could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class ActividadesEventosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ActividadesEvento->save($this->request->data)) {
 				$this->Session->setFlash(__('The actividades evento has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The actividades evento could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class ActividadesEventosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ActividadesEvento->delete()) {
 			$this->Session->setFlash(__('Actividades evento deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Actividades evento was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

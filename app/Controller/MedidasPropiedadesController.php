@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * MedidasPropiedades Controller
  *
  * @property MedidasPropiedade $MedidasPropiedade
+ * @property PaginatorComponent $Paginator
  */
 class MedidasPropiedadesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class MedidasPropiedadesController extends AppController {
  */
 	public function index() {
 		$this->MedidasPropiedade->recursive = 0;
-		$this->set('medidasPropiedades', $this->paginate());
+		$this->set('medidasPropiedades', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,14 +50,11 @@ class MedidasPropiedadesController extends AppController {
 			$this->MedidasPropiedade->create();
 			if ($this->MedidasPropiedade->save($this->request->data)) {
 				$this->Session->setFlash(__('The medidas propiedade has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The medidas propiedade could not be saved. Please, try again.'));
 			}
 		}
-		$medidas = $this->MedidasPropiedade->Medida->find('list');
-		$propiedades = $this->MedidasPropiedade->Propiedade->find('list');
-		$this->set(compact('medidas', 'propiedades'));
 	}
 
 /**
@@ -66,7 +71,7 @@ class MedidasPropiedadesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->MedidasPropiedade->save($this->request->data)) {
 				$this->Session->setFlash(__('The medidas propiedade has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The medidas propiedade could not be saved. Please, try again.'));
 			}
@@ -74,9 +79,6 @@ class MedidasPropiedadesController extends AppController {
 			$options = array('conditions' => array('MedidasPropiedade.' . $this->MedidasPropiedade->primaryKey => $id));
 			$this->request->data = $this->MedidasPropiedade->find('first', $options);
 		}
-		$medidas = $this->MedidasPropiedade->Medida->find('list');
-		$propiedades = $this->MedidasPropiedade->Propiedade->find('list');
-		$this->set(compact('medidas', 'propiedades'));
 	}
 
 /**
@@ -94,9 +96,9 @@ class MedidasPropiedadesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->MedidasPropiedade->delete()) {
 			$this->Session->setFlash(__('Medidas propiedade deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Medidas propiedade was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

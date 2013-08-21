@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * ItinerarioParticipantes Controller
  *
  * @property ItinerarioParticipante $ItinerarioParticipante
+ * @property PaginatorComponent $Paginator
  */
 class ItinerarioParticipantesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ItinerarioParticipantesController extends AppController {
  */
 	public function index() {
 		$this->ItinerarioParticipante->recursive = 0;
-		$this->set('itinerarioParticipantes', $this->paginate());
+		$this->set('itinerarioParticipantes', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,14 +50,14 @@ class ItinerarioParticipantesController extends AppController {
 			$this->ItinerarioParticipante->create();
 			if ($this->ItinerarioParticipante->save($this->request->data)) {
 				$this->Session->setFlash(__('The itinerario participante has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The itinerario participante could not be saved. Please, try again.'));
 			}
 		}
-		$participantes = $this->ItinerarioParticipante->Participante->find('list');
 		$eventos = $this->ItinerarioParticipante->Evento->find('list');
-		$this->set(compact('participantes', 'eventos'));
+		$participantes = $this->ItinerarioParticipante->Participante->find('list');
+		$this->set(compact('eventos', 'participantes'));
 	}
 
 /**
@@ -66,7 +74,7 @@ class ItinerarioParticipantesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ItinerarioParticipante->save($this->request->data)) {
 				$this->Session->setFlash(__('The itinerario participante has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The itinerario participante could not be saved. Please, try again.'));
 			}
@@ -74,9 +82,9 @@ class ItinerarioParticipantesController extends AppController {
 			$options = array('conditions' => array('ItinerarioParticipante.' . $this->ItinerarioParticipante->primaryKey => $id));
 			$this->request->data = $this->ItinerarioParticipante->find('first', $options);
 		}
-		$participantes = $this->ItinerarioParticipante->Participante->find('list');
 		$eventos = $this->ItinerarioParticipante->Evento->find('list');
-		$this->set(compact('participantes', 'eventos'));
+		$participantes = $this->ItinerarioParticipante->Participante->find('list');
+		$this->set(compact('eventos', 'participantes'));
 	}
 
 /**
@@ -94,9 +102,9 @@ class ItinerarioParticipantesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ItinerarioParticipante->delete()) {
 			$this->Session->setFlash(__('Itinerario participante deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Itinerario participante was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

@@ -11,9 +11,9 @@ class ActividadesEventoFixture extends CakeTestFixture {
  * @var array
  */
 	public $fields = array(
+		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 11, 'key' => 'primary'),
 		'evento_id' => array('type' => 'integer', 'null' => false),
 		'actividade_id' => array('type' => 'integer', 'null' => false),
-		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 11, 'key' => 'primary'),
 		'fecha_ini_act' => array('type' => 'time', 'null' => true),
 		'fecha_ter_act' => array('type' => 'time', 'null' => true),
 		'estado_act' => array('type' => 'text', 'null' => true, 'length' => 1073741824),
@@ -33,11 +33,11 @@ class ActividadesEventoFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
+			'id' => 1,
 			'evento_id' => 1,
 			'actividade_id' => 1,
-			'id' => 1,
-			'fecha_ini_act' => '01:33:07',
-			'fecha_ter_act' => '01:33:07',
+			'fecha_ini_act' => '06:07:33',
+			'fecha_ter_act' => '06:07:33',
 			'estado_act' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
 		),
 	);

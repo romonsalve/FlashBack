@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * ProveedoresRecursoTipos Controller
  *
  * @property ProveedoresRecursoTipo $ProveedoresRecursoTipo
+ * @property PaginatorComponent $Paginator
  */
 class ProveedoresRecursoTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ProveedoresRecursoTiposController extends AppController {
  */
 	public function index() {
 		$this->ProveedoresRecursoTipo->recursive = 0;
-		$this->set('proveedoresRecursoTipos', $this->paginate());
+		$this->set('proveedoresRecursoTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ProveedoresRecursoTiposController extends AppController {
 			$this->ProveedoresRecursoTipo->create();
 			if ($this->ProveedoresRecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The proveedores recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The proveedores recurso tipo could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class ProveedoresRecursoTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ProveedoresRecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The proveedores recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The proveedores recurso tipo could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class ProveedoresRecursoTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ProveedoresRecursoTipo->delete()) {
 			$this->Session->setFlash(__('Proveedores recurso tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Proveedores recurso tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

@@ -15,7 +15,7 @@ class VehiculoTipoFixture extends CakeTestFixture {
 		'nombre_veht' => array('type' => 'text', 'null' => true, 'length' => 1073741824),
 		'indexes' => array(
 			'PRIMARY' => array('unique' => true, 'column' => 'id'),
-			'vehiculo_tipos_pk' => array('unique' => true, 'column' => 'id')
+			'vehiculo_tipo_pk' => array('unique' => true, 'column' => 'id')
 		),
 		'tableParameters' => array()
 	);

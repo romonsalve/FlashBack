@@ -66,6 +66,9 @@ class BakeShell extends AppShell {
 				$this->{$task}->connection = $this->params['connection'];
 			}
 		}
+		if (isset($this->params['connection'])) {
+			$this->connection = $this->params['connection'];
+		}
 	}
 
 /**
@@ -123,8 +126,7 @@ class BakeShell extends AppShell {
 				$this->Test->execute();
 				break;
 			case 'Q':
-				exit(0);
-				break;
+				return $this->_stop();
 			default:
 				$this->out(__d('cake_console', 'You have made an invalid selection. Please choose a type of class to Bake by entering D, M, V, F, T, or C.'));
 		}

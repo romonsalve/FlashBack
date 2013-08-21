@@ -3,13 +3,13 @@ App::uses('AppModel', 'Model');
 /**
  * Evento Model
  *
- * @property Recinto $Recinto
  * @property EventoTipo $EventoTipo
- * @property EstadoEvento $EstadoEvento
  * @property Cliente $Cliente
- * @property Bitacora $Bitacora
- * @property RecursosPorEvento $RecursosPorEvento
+ * @property Recinto $Recinto
+ * @property EstadoEvento $EstadoEvento
  * @property ItinerarioParticipante $ItinerarioParticipante
+ * @property Bitacora $Bitacora
+ * @property Recurso $Recurso
  * @property Empleado $Empleado
  * @property Actividade $Actividade
  */
@@ -21,7 +21,7 @@ class Evento extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recinto_id' => array(
+		'evento_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -31,7 +31,7 @@ class Evento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'evento_tipo_id' => array(
+		'recinto_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -61,13 +61,6 @@ class Evento extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Recinto' => array(
-			'className' => 'Recinto',
-			'foreignKey' => 'recinto_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'EventoTipo' => array(
 			'className' => 'EventoTipo',
 			'foreignKey' => 'evento_tipo_id',
@@ -75,16 +68,23 @@ class Evento extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'EstadoEvento' => array(
-			'className' => 'EstadoEvento',
-			'foreignKey' => 'estado_evento_id',
+		'Cliente' => array(
+			'className' => 'Cliente',
+			'foreignKey' => 'cliente_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Cliente' => array(
-			'className' => 'Cliente',
-			'foreignKey' => 'cliente_id',
+		'Recinto' => array(
+			'className' => 'Recinto',
+			'foreignKey' => 'recinto_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'EstadoEvento' => array(
+			'className' => 'EstadoEvento',
+			'foreignKey' => 'estado_evento_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -97,34 +97,21 @@ class Evento extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Bitacora' => array(
-			'className' => 'Bitacora',
-			'foreignKey' => 'evento_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'RecursosPorEvento' => array(
-			'className' => 'RecursosPorEvento',
-			'foreignKey' => 'evento_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'ItinerarioParticipante' => array(
 			'className' => 'ItinerarioParticipante',
+			'foreignKey' => 'evento_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Bitacora' => array(
+			'className' => 'Bitacora',
 			'foreignKey' => 'evento_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -145,6 +132,21 @@ class Evento extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
+		'Recurso' => array(
+			'className' => 'Recurso',
+			'joinTable' => 'eventos_recursos',
+			'foreignKey' => 'evento_id',
+			'associationForeignKey' => 'recurso_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'Empleado' => array(
 			'className' => 'Empleado',
 			'joinTable' => 'empleados_eventos',

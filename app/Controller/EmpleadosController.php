@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Empleados Controller
  *
  * @property Empleado $Empleado
+ * @property PaginatorComponent $Paginator
  */
 class EmpleadosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class EmpleadosController extends AppController {
  */
 	public function index() {
 		$this->Empleado->recursive = 0;
-		$this->set('empleados', $this->paginate());
+		$this->set('empleados', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class EmpleadosController extends AppController {
 			$this->Empleado->create();
 			if ($this->Empleado->save($this->request->data)) {
 				$this->Session->setFlash(__('The empleado has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The empleado could not be saved. Please, try again.'));
 			}
@@ -66,7 +74,7 @@ class EmpleadosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Empleado->save($this->request->data)) {
 				$this->Session->setFlash(__('The empleado has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The empleado could not be saved. Please, try again.'));
 			}
@@ -94,9 +102,9 @@ class EmpleadosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Empleado->delete()) {
 			$this->Session->setFlash(__('Empleado deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Empleado was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

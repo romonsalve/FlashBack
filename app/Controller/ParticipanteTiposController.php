@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * ParticipanteTipos Controller
  *
  * @property ParticipanteTipo $ParticipanteTipo
+ * @property PaginatorComponent $Paginator
  */
 class ParticipanteTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ParticipanteTiposController extends AppController {
  */
 	public function index() {
 		$this->ParticipanteTipo->recursive = 0;
-		$this->set('participanteTipos', $this->paginate());
+		$this->set('participanteTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,13 +50,14 @@ class ParticipanteTiposController extends AppController {
 			$this->ParticipanteTipo->create();
 			if ($this->ParticipanteTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The participante tipo could not be saved. Please, try again.'));
 			}
 		}
+		$solicitudCotizaciones = $this->ParticipanteTipo->SolicitudCotizacione->find('list');
 		$eventoTipos = $this->ParticipanteTipo->EventoTipo->find('list');
-		$this->set(compact('eventoTipos'));
+		$this->set(compact('solicitudCotizaciones', 'eventoTipos'));
 	}
 
 /**
@@ -65,7 +74,7 @@ class ParticipanteTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ParticipanteTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The participante tipo could not be saved. Please, try again.'));
 			}
@@ -73,8 +82,9 @@ class ParticipanteTiposController extends AppController {
 			$options = array('conditions' => array('ParticipanteTipo.' . $this->ParticipanteTipo->primaryKey => $id));
 			$this->request->data = $this->ParticipanteTipo->find('first', $options);
 		}
+		$solicitudCotizaciones = $this->ParticipanteTipo->SolicitudCotizacione->find('list');
 		$eventoTipos = $this->ParticipanteTipo->EventoTipo->find('list');
-		$this->set(compact('eventoTipos'));
+		$this->set(compact('solicitudCotizaciones', 'eventoTipos'));
 	}
 
 /**
@@ -92,9 +102,9 @@ class ParticipanteTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ParticipanteTipo->delete()) {
 			$this->Session->setFlash(__('Participante tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Participante tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

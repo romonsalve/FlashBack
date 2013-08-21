@@ -78,24 +78,6 @@ class MyAppSchema extends CakeSchema {
 	protected $_foo = array('bar');
 
 /**
- * setup method
- *
- * @param mixed $version
- * @return void
- */
-	public function setup($version) {
-	}
-
-/**
- * teardown method
- *
- * @param mixed $version
- * @return void
- */
-	public function teardown($version) {
-	}
-
-/**
  * getVar method
  *
  * @param string $var Name of var
@@ -533,7 +515,6 @@ class CakeSchemaTest extends CakeTestCase {
 /**
  * testSchemaReadWithAppModel method
  *
- * @access public
  * @return void
  */
 	public function testSchemaReadWithAppModel() {

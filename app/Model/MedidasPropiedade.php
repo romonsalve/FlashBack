@@ -15,8 +15,8 @@ class MedidasPropiedade extends AppModel {
  */
 	public $validate = array(
 		'medida_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

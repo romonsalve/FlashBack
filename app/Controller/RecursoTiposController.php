@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * RecursoTipos Controller
  *
  * @property RecursoTipo $RecursoTipo
+ * @property PaginatorComponent $Paginator
  */
 class RecursoTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class RecursoTiposController extends AppController {
  */
 	public function index() {
 		$this->RecursoTipo->recursive = 0;
-		$this->set('recursoTipos', $this->paginate());
+		$this->set('recursoTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,15 +50,15 @@ class RecursoTiposController extends AppController {
 			$this->RecursoTipo->create();
 			if ($this->RecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recurso tipo could not be saved. Please, try again.'));
 			}
 		}
-		$proveedores = $this->RecursoTipo->Proveedore->find('list');
 		$eventoTipos = $this->RecursoTipo->EventoTipo->find('list');
 		$propiedades = $this->RecursoTipo->Propiedade->find('list');
-		$this->set(compact('proveedores', 'eventoTipos', 'propiedades'));
+		$proveedores = $this->RecursoTipo->Proveedore->find('list');
+		$this->set(compact('eventoTipos', 'propiedades', 'proveedores'));
 	}
 
 /**
@@ -67,7 +75,7 @@ class RecursoTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->RecursoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The recurso tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recurso tipo could not be saved. Please, try again.'));
 			}
@@ -75,10 +83,10 @@ class RecursoTiposController extends AppController {
 			$options = array('conditions' => array('RecursoTipo.' . $this->RecursoTipo->primaryKey => $id));
 			$this->request->data = $this->RecursoTipo->find('first', $options);
 		}
-		$proveedores = $this->RecursoTipo->Proveedore->find('list');
 		$eventoTipos = $this->RecursoTipo->EventoTipo->find('list');
 		$propiedades = $this->RecursoTipo->Propiedade->find('list');
-		$this->set(compact('proveedores', 'eventoTipos', 'propiedades'));
+		$proveedores = $this->RecursoTipo->Proveedore->find('list');
+		$this->set(compact('eventoTipos', 'propiedades', 'proveedores'));
 	}
 
 /**
@@ -96,9 +104,9 @@ class RecursoTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->RecursoTipo->delete()) {
 			$this->Session->setFlash(__('Recurso tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Recurso tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

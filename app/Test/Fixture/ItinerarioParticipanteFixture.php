@@ -11,9 +11,9 @@ class ItinerarioParticipanteFixture extends CakeTestFixture {
  * @var array
  */
 	public $fields = array(
-		'participante_id' => array('type' => 'integer', 'null' => false),
-		'evento_id' => array('type' => 'integer', 'null' => false),
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 11, 'key' => 'primary'),
+		'evento_id' => array('type' => 'integer', 'null' => false),
+		'participante_id' => array('type' => 'integer', 'null' => false),
 		'hora_ini_par' => array('type' => 'time', 'null' => true),
 		'hora_ter_par' => array('type' => 'time', 'null' => true),
 		'desc_iti_par' => array('type' => 'text', 'null' => true, 'length' => 1073741824),
@@ -33,11 +33,11 @@ class ItinerarioParticipanteFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'participante_id' => 1,
-			'evento_id' => 1,
 			'id' => 1,
-			'hora_ini_par' => '01:33:26',
-			'hora_ter_par' => '01:33:26',
+			'evento_id' => 1,
+			'participante_id' => 1,
+			'hora_ini_par' => '06:07:00',
+			'hora_ter_par' => '06:07:00',
 			'desc_iti_par' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
 		),
 	);

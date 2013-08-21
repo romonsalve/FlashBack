@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Actividades Controller
  *
  * @property Actividade $Actividade
+ * @property PaginatorComponent $Paginator
  */
 class ActividadesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ActividadesController extends AppController {
  */
 	public function index() {
 		$this->Actividade->recursive = 0;
-		$this->set('actividades', $this->paginate());
+		$this->set('actividades', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ActividadesController extends AppController {
 			$this->Actividade->create();
 			if ($this->Actividade->save($this->request->data)) {
 				$this->Session->setFlash(__('The actividade has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The actividade could not be saved. Please, try again.'));
 			}
@@ -66,7 +74,7 @@ class ActividadesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Actividade->save($this->request->data)) {
 				$this->Session->setFlash(__('The actividade has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The actividade could not be saved. Please, try again.'));
 			}
@@ -94,9 +102,9 @@ class ActividadesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Actividade->delete()) {
 			$this->Session->setFlash(__('Actividade deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Actividade was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

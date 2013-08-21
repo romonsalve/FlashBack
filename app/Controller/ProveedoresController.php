@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Proveedores Controller
  *
  * @property Proveedore $Proveedore
+ * @property PaginatorComponent $Paginator
  */
 class ProveedoresController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ProveedoresController extends AppController {
  */
 	public function index() {
 		$this->Proveedore->recursive = 0;
-		$this->set('proveedores', $this->paginate());
+		$this->set('proveedores', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ProveedoresController extends AppController {
 			$this->Proveedore->create();
 			if ($this->Proveedore->save($this->request->data)) {
 				$this->Session->setFlash(__('The proveedore has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The proveedore could not be saved. Please, try again.'));
 			}
@@ -65,7 +73,7 @@ class ProveedoresController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Proveedore->save($this->request->data)) {
 				$this->Session->setFlash(__('The proveedore has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The proveedore could not be saved. Please, try again.'));
 			}
@@ -92,9 +100,9 @@ class ProveedoresController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Proveedore->delete()) {
 			$this->Session->setFlash(__('Proveedore deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Proveedore was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

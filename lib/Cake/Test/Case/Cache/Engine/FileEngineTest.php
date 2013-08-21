@@ -52,7 +52,7 @@ class FileEngineTest extends CakeTestCase {
  */
 	public function tearDown() {
 		parent::tearDown();
-		Cache::clear(false, 'file_test');
+		// Cache::clear(false, 'file_test');
 		Cache::drop('file_test');
 		Cache::drop('file_groups');
 		Cache::drop('file_groups2');
@@ -256,6 +256,41 @@ class FileEngineTest extends CakeTestCase {
 	}
 
 /**
+ * Test that clear() also removes files with group tags.
+ *
+ * @return void
+ */
+	public function testClearWithGroups() {
+		$engine = new FileEngine();
+		$engine->init(array(
+			'prefix' => 'cake_test_',
+			'duration' => DAY,
+			'groups' => array('short', 'round')
+		));
+		$key = 'cake_test_test_key';
+		$engine->write($key, 'it works', DAY);
+		$engine->clear(false);
+		$this->assertFalse($engine->read($key), 'Key should have been removed');
+	}
+
+/**
+ * Test that clear() also removes files with group tags.
+ *
+ * @return void
+ */
+	public function testClearWithNoKeys() {
+		$engine = new FileEngine();
+		$engine->init(array(
+			'prefix' => 'cake_test_',
+			'duration' => DAY,
+			'groups' => array('one', 'two')
+		));
+		$key = 'cake_test_test_key';
+		$engine->clear(false);
+		$this->assertFalse($engine->read($key), 'No errors should be found');
+	}
+
+/**
  * testKeyPath method
  *
  * @return void
@@ -366,7 +401,7 @@ class FileEngineTest extends CakeTestCase {
 		Cache::config('mask_test', array('engine' => 'File', 'path' => TMP . 'tests'));
 		$data = 'This is some test content';
 		$write = Cache::write('masking_test', $data, 'mask_test');
-		$result = substr(sprintf('%o',fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
+		$result = substr(sprintf('%o', fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
 		$expected = '0664';
 		$this->assertEquals($expected, $result);
 		Cache::delete('masking_test', 'mask_test');
@@ -374,7 +409,7 @@ class FileEngineTest extends CakeTestCase {
 
 		Cache::config('mask_test', array('engine' => 'File', 'mask' => 0666, 'path' => TMP . 'tests'));
 		$write = Cache::write('masking_test', $data, 'mask_test');
-		$result = substr(sprintf('%o',fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
+		$result = substr(sprintf('%o', fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
 		$expected = '0666';
 		$this->assertEquals($expected, $result);
 		Cache::delete('masking_test', 'mask_test');
@@ -382,7 +417,7 @@ class FileEngineTest extends CakeTestCase {
 
 		Cache::config('mask_test', array('engine' => 'File', 'mask' => 0644, 'path' => TMP . 'tests'));
 		$write = Cache::write('masking_test', $data, 'mask_test');
-		$result = substr(sprintf('%o',fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
+		$result = substr(sprintf('%o', fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
 		$expected = '0644';
 		$this->assertEquals($expected, $result);
 		Cache::delete('masking_test', 'mask_test');
@@ -390,7 +425,7 @@ class FileEngineTest extends CakeTestCase {
 
 		Cache::config('mask_test', array('engine' => 'File', 'mask' => 0640, 'path' => TMP . 'tests'));
 		$write = Cache::write('masking_test', $data, 'mask_test');
-		$result = substr(sprintf('%o',fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
+		$result = substr(sprintf('%o', fileperms(TMP . 'tests' . DS . 'cake_masking_test')), -4);
 		$expected = '0640';
 		$this->assertEquals($expected, $result);
 		Cache::delete('masking_test', 'mask_test');

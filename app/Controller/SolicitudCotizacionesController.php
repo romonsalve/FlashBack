@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * SolicitudCotizaciones Controller
  *
  * @property SolicitudCotizacione $SolicitudCotizacione
+ * @property PaginatorComponent $Paginator
  */
 class SolicitudCotizacionesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class SolicitudCotizacionesController extends AppController {
  */
 	public function index() {
 		$this->SolicitudCotizacione->recursive = 0;
-		$this->set('solicitudCotizaciones', $this->paginate());
+		$this->set('solicitudCotizaciones', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class SolicitudCotizacionesController extends AppController {
 			$this->SolicitudCotizacione->create();
 			if ($this->SolicitudCotizacione->save($this->request->data)) {
 				$this->Session->setFlash(__('The solicitud cotizacione has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The solicitud cotizacione could not be saved. Please, try again.'));
 			}
@@ -51,7 +59,8 @@ class SolicitudCotizacionesController extends AppController {
 		$eventoTipos = $this->SolicitudCotizacione->EventoTipo->find('list');
 		$clientes = $this->SolicitudCotizacione->Cliente->find('list');
 		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list');
-		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos'));
+		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list');
+		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos'));
 	}
 
 /**
@@ -68,7 +77,7 @@ class SolicitudCotizacionesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->SolicitudCotizacione->save($this->request->data)) {
 				$this->Session->setFlash(__('The solicitud cotizacione has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The solicitud cotizacione could not be saved. Please, try again.'));
 			}
@@ -80,7 +89,8 @@ class SolicitudCotizacionesController extends AppController {
 		$eventoTipos = $this->SolicitudCotizacione->EventoTipo->find('list');
 		$clientes = $this->SolicitudCotizacione->Cliente->find('list');
 		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list');
-		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos'));
+		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list');
+		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos'));
 	}
 
 /**
@@ -98,9 +108,9 @@ class SolicitudCotizacionesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->SolicitudCotizacione->delete()) {
 			$this->Session->setFlash(__('Solicitud cotizacione deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Solicitud cotizacione was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

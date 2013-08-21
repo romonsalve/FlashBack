@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Auditoria Controller
  *
  * @property Auditorium $Auditorium
+ * @property PaginatorComponent $Paginator
  */
 class AuditoriaController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class AuditoriaController extends AppController {
  */
 	public function index() {
 		$this->Auditorium->recursive = 0;
-		$this->set('auditoria', $this->paginate());
+		$this->set('auditoria', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class AuditoriaController extends AppController {
 			$this->Auditorium->create();
 			if ($this->Auditorium->save($this->request->data)) {
 				$this->Session->setFlash(__('The auditorium has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The auditorium could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class AuditoriaController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Auditorium->save($this->request->data)) {
 				$this->Session->setFlash(__('The auditorium has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The auditorium could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class AuditoriaController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Auditorium->delete()) {
 			$this->Session->setFlash(__('Auditorium deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Auditorium was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

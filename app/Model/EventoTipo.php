@@ -5,10 +5,10 @@ App::uses('AppModel', 'Model');
  *
  * @property Evento $Evento
  * @property SolicitudCotizacione $SolicitudCotizacione
- * @property Actividade $Actividade
- * @property ParticipanteTipo $ParticipanteTipo
  * @property RecintoTipo $RecintoTipo
  * @property RecursoTipo $RecursoTipo
+ * @property Actividade $Actividade
+ * @property ParticipanteTipo $ParticipanteTipo
  */
 class EventoTipo extends AppModel {
 
@@ -56,36 +56,6 @@ class EventoTipo extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'Actividade' => array(
-			'className' => 'Actividade',
-			'joinTable' => 'actividades_evento_tipos',
-			'foreignKey' => 'evento_tipo_id',
-			'associationForeignKey' => 'actividade_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		),
-		'ParticipanteTipo' => array(
-			'className' => 'ParticipanteTipo',
-			'joinTable' => 'evento_tipos_participante_tipos',
-			'foreignKey' => 'evento_tipo_id',
-			'associationForeignKey' => 'participante_tipo_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		),
 		'RecintoTipo' => array(
 			'className' => 'RecintoTipo',
 			'joinTable' => 'evento_tipos_recinto_tipos',
@@ -106,6 +76,36 @@ class EventoTipo extends AppModel {
 			'joinTable' => 'evento_tipos_recurso_tipos',
 			'foreignKey' => 'evento_tipo_id',
 			'associationForeignKey' => 'recurso_tipo_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'Actividade' => array(
+			'className' => 'Actividade',
+			'joinTable' => 'actividades_evento_tipos',
+			'foreignKey' => 'evento_tipo_id',
+			'associationForeignKey' => 'actividade_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'ParticipanteTipo' => array(
+			'className' => 'ParticipanteTipo',
+			'joinTable' => 'evento_tipos_participante_tipos',
+			'foreignKey' => 'evento_tipo_id',
+			'associationForeignKey' => 'participante_tipo_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

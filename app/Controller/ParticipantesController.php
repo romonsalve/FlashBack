@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Participantes Controller
  *
  * @property Participante $Participante
+ * @property PaginatorComponent $Paginator
  */
 class ParticipantesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ParticipantesController extends AppController {
  */
 	public function index() {
 		$this->Participante->recursive = 0;
-		$this->set('participantes', $this->paginate());
+		$this->set('participantes', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ParticipantesController extends AppController {
 			$this->Participante->create();
 			if ($this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
 			}
@@ -65,7 +73,7 @@ class ParticipantesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
 			}
@@ -92,9 +100,9 @@ class ParticipantesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Participante->delete()) {
 			$this->Session->setFlash(__('Participante deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Participante was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

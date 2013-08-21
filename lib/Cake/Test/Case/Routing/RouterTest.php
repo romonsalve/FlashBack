@@ -944,7 +944,7 @@ class RouterTest extends CakeTestCase {
 	public function testUrlParsing() {
 		extract(Router::getNamedExpressions());
 
-		Router::connect('/posts/:value/:somevalue/:othervalue/*', array('controller' => 'posts', 'action' => 'view'), array('value','somevalue', 'othervalue'));
+		Router::connect('/posts/:value/:somevalue/:othervalue/*', array('controller' => 'posts', 'action' => 'view'), array('value', 'somevalue', 'othervalue'));
 		$result = Router::parse('/posts/2007/08/01/title-of-post-here');
 		$expected = array('value' => '2007', 'somevalue' => '08', 'othervalue' => '01', 'controller' => 'posts', 'action' => 'view', 'plugin' => '', 'pass' => array('0' => 'title-of-post-here'), 'named' => array());
 		$this->assertEquals($expected, $result);
@@ -1065,13 +1065,13 @@ class RouterTest extends CakeTestCase {
 		Router::connect(
 			'/:lang/:color/posts/view/*',
 			array('controller' => 'posts', 'action' => 'view'),
-			array('persist' => array('lang', 'color')
-		));
+			array('persist' => array('lang', 'color'))
+		);
 		Router::connect(
 			'/:lang/:color/posts/index',
 			array('controller' => 'posts', 'action' => 'index'),
-			array('persist' => array('lang')
-		));
+			array('persist' => array('lang'))
+		);
 		Router::connect('/:lang/:color/posts/edit/*', array('controller' => 'posts', 'action' => 'edit'));
 		Router::connect('/about', array('controller' => 'pages', 'action' => 'view', 'about'));
 		Router::parse('/en/red/posts/view/5');
@@ -2591,22 +2591,22 @@ class RouterTest extends CakeTestCase {
 	public function testResourceMap() {
 		$default = Router::resourceMap();
 		$expected = array(
-			array('action' => 'index',	'method' => 'GET',		'id' => false),
-			array('action' => 'view',	'method' => 'GET',		'id' => true),
-			array('action' => 'add',	'method' => 'POST',		'id' => false),
-			array('action' => 'edit',	'method' => 'PUT',		'id' => true),
-			array('action' => 'delete',	'method' => 'DELETE',	'id' => true),
-			array('action' => 'edit',	'method' => 'POST',		'id' => true)
+			array('action' => 'index', 'method' => 'GET', 'id' => false),
+			array('action' => 'view', 'method' => 'GET', 'id' => true),
+			array('action' => 'add', 'method' => 'POST', 'id' => false),
+			array('action' => 'edit', 'method' => 'PUT', 'id' => true),
+			array('action' => 'delete', 'method' => 'DELETE', 'id' => true),
+			array('action' => 'edit', 'method' => 'POST', 'id' => true)
 		);
 		$this->assertEquals($default, $expected);
 
 		$custom = array(
-			array('action' => 'index',	'method' => 'GET',		'id' => false),
-			array('action' => 'view',	'method' => 'GET',		'id' => true),
-			array('action' => 'add',	'method' => 'POST',		'id' => false),
-			array('action' => 'edit',	'method' => 'PUT',		'id' => true),
-			array('action' => 'delete',	'method' => 'DELETE',	'id' => true),
-			array('action' => 'update',	'method' => 'POST',		'id' => true)
+			array('action' => 'index', 'method' => 'GET', 'id' => false),
+			array('action' => 'view', 'method' => 'GET', 'id' => true),
+			array('action' => 'add', 'method' => 'POST', 'id' => false),
+			array('action' => 'edit', 'method' => 'PUT', 'id' => true),
+			array('action' => 'delete', 'method' => 'DELETE', 'id' => true),
+			array('action' => 'update', 'method' => 'POST', 'id' => true)
 		);
 		Router::resourceMap($custom);
 		$this->assertEquals(Router::resourceMap(), $custom);

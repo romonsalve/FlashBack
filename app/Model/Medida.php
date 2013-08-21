@@ -3,38 +3,33 @@ App::uses('AppModel', 'Model');
 /**
  * Medida Model
  *
- * @property MedidasPropiedade $MedidasPropiedade
+ * @property Propiedade $Propiedade
  */
 class Medida extends AppModel {
-
-/**
- * Use table
- *
- * @var mixed False or table name
- */
-	public $useTable = 'medida';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasMany associations
+ * hasAndBelongsToMany associations
  *
  * @var array
  */
-	public $hasMany = array(
-		'MedidasPropiedade' => array(
-			'className' => 'MedidasPropiedade',
+	public $hasAndBelongsToMany = array(
+		'Propiedade' => array(
+			'className' => 'Propiedade',
+			'joinTable' => 'medidas_propiedades',
 			'foreignKey' => 'medida_id',
-			'dependent' => false,
+			'associationForeignKey' => 'propiedade_id',
+			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
-			'exclusive' => '',
 			'finderQuery' => '',
-			'counterQuery' => ''
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

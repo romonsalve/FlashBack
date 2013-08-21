@@ -128,12 +128,12 @@ class Router {
  * @var array
  */
 	protected static $_resourceMap = array(
-		array('action' => 'index',	'method' => 'GET',		'id' => false),
-		array('action' => 'view',	'method' => 'GET',		'id' => true),
-		array('action' => 'add',	'method' => 'POST',		'id' => false),
-		array('action' => 'edit',	'method' => 'PUT',		'id' => true),
-		array('action' => 'delete',	'method' => 'DELETE',	'id' => true),
-		array('action' => 'edit',	'method' => 'POST',		'id' => true)
+		array('action' => 'index', 'method' => 'GET', 'id' => false),
+		array('action' => 'view', 'method' => 'GET', 'id' => true),
+		array('action' => 'add', 'method' => 'POST', 'id' => false),
+		array('action' => 'edit', 'method' => 'PUT', 'id' => true),
+		array('action' => 'delete', 'method' => 'DELETE', 'id' => true),
+		array('action' => 'edit', 'method' => 'POST', 'id' => true)
 	);
 
 /**
@@ -848,9 +848,7 @@ class Router {
 			for ($i = 0, $len = count(self::$routes); $i < $len; $i++) {
 				$originalUrl = $url;
 
-				if (isset(self::$routes[$i]->options['persist'], $params)) {
-					$url = self::$routes[$i]->persistParams($url, $params);
-				}
+				$url = self::$routes[$i]->persistParams($url, $params);
 
 				if ($match = self::$routes[$i]->match($url)) {
 					$output = trim($match, '/');

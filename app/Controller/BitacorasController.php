@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Bitacoras Controller
  *
  * @property Bitacora $Bitacora
+ * @property PaginatorComponent $Paginator
  */
 class BitacorasController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class BitacorasController extends AppController {
  */
 	public function index() {
 		$this->Bitacora->recursive = 0;
-		$this->set('bitacoras', $this->paginate());
+		$this->set('bitacoras', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class BitacorasController extends AppController {
 			$this->Bitacora->create();
 			if ($this->Bitacora->save($this->request->data)) {
 				$this->Session->setFlash(__('The bitacora has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The bitacora could not be saved. Please, try again.'));
 			}
@@ -66,7 +74,7 @@ class BitacorasController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Bitacora->save($this->request->data)) {
 				$this->Session->setFlash(__('The bitacora has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The bitacora could not be saved. Please, try again.'));
 			}
@@ -94,9 +102,9 @@ class BitacorasController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Bitacora->delete()) {
 			$this->Session->setFlash(__('Bitacora deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Bitacora was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

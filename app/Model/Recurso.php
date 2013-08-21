@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property RecursoTipo $RecursoTipo
  * @property Proveedore $Proveedore
+ * @property Evento $Evento
  * @property Propiedade $Propiedade
  */
 class Recurso extends AppModel {
@@ -16,8 +17,8 @@ class Recurso extends AppModel {
  */
 	public $validate = array(
 		'recurso_tipo_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -57,6 +58,21 @@ class Recurso extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
+		'Evento' => array(
+			'className' => 'Evento',
+			'joinTable' => 'eventos_recursos',
+			'foreignKey' => 'recurso_id',
+			'associationForeignKey' => 'evento_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'Propiedade' => array(
 			'className' => 'Propiedade',
 			'joinTable' => 'propiedades_recursos',

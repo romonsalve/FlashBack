@@ -223,40 +223,77 @@ class FileEngine extends CacheEngine {
 		if (!$this->_init) {
 			return false;
 		}
-		$dir = dir($this->settings['path']);
+		$this->_File = null;
+
+		$threshold = $now = false;
 		if ($check) {
 			$now = time();
 			$threshold = $now - $this->settings['duration'];
 		}
+
+		$this->_clearDirectory($this->settings['path'], $now, $threshold);
+
+		$directory = new RecursiveDirectoryIterator($this->settings['path']);
+		$contents = new RecursiveIteratorIterator($directory, RecursiveIteratorIterator::SELF_FIRST);
+		$cleared = array();
+		foreach ($contents as $path) {
+			if ($path->isFile()) {
+				continue;
+			}
+
+			$path = $path->getRealPath() . DS;
+			if (!in_array($path, $cleared)) {
+				$this->_clearDirectory($path, $now, $threshold);
+				$cleared[] = $path;
+			}
+		}
+		return true;
+	}
+
+/**
+ * Used to clear a directory of matching files.
+ *
+ * @param string $path The path to search.
+ * @param integer $now The current timestamp
+ * @param integer $threshold Any file not modified after this value will be deleted.
+ * @return void
+ */
+	protected function _clearDirectory($path, $now, $threshold) {
 		$prefixLength = strlen($this->settings['prefix']);
+
+		if (!is_dir($path)) {
+			return;
+		}
+
+		$dir = dir($path);
 		while (($entry = $dir->read()) !== false) {
 			if (substr($entry, 0, $prefixLength) !== $this->settings['prefix']) {
 				continue;
 			}
-			if ($this->_setKey($entry) === false) {
+			$filePath = $path . $entry;
+			if (!file_exists($filePath) || is_dir($filePath)) {
 				continue;
 			}
-			if ($check) {
-				$mtime = $this->_File->getMTime();
+			$file = new SplFileObject($path . $entry, 'r');
+
+			if ($threshold) {
+				$mtime = $file->getMTime();
 
 				if ($mtime > $threshold) {
 					continue;
 				}
-
-				$expires = (int)$this->_File->current();
+				$expires = (int)$file->current();
 
 				if ($expires > $now) {
 					continue;
 				}
 			}
-			$path = $this->_File->getRealPath();
-			$this->_File = null;
-			if (file_exists($path)) {
-				unlink($path);
+			if ($file->isFile()) {
+				$_path = $file->getRealPath();
+				$file = null;
+				unlink($_path);
 			}
 		}
-		$dir->close();
-		return true;
 	}
 
 /**
@@ -361,6 +398,7 @@ class FileEngine extends CacheEngine {
  * @return boolean success
  */
 	public function clearGroup($group) {
+		$this->_File = null;
 		$directoryIterator = new RecursiveDirectoryIterator($this->settings['path']);
 		$contents = new RecursiveIteratorIterator($directoryIterator, RecursiveIteratorIterator::CHILD_FIRST);
 		foreach ($contents as $object) {
@@ -370,7 +408,6 @@ class FileEngine extends CacheEngine {
 				unlink($object->getPathName());
 			}
 		}
-		$this->_File = null;
 		return true;
 	}
 }

@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * PropiedadesRecursos Controller
  *
  * @property PropiedadesRecurso $PropiedadesRecurso
+ * @property PaginatorComponent $Paginator
  */
 class PropiedadesRecursosController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class PropiedadesRecursosController extends AppController {
  */
 	public function index() {
 		$this->PropiedadesRecurso->recursive = 0;
-		$this->set('propiedadesRecursos', $this->paginate());
+		$this->set('propiedadesRecursos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class PropiedadesRecursosController extends AppController {
 			$this->PropiedadesRecurso->create();
 			if ($this->PropiedadesRecurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedades recurso has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The propiedades recurso could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class PropiedadesRecursosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->PropiedadesRecurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedades recurso has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The propiedades recurso could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class PropiedadesRecursosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->PropiedadesRecurso->delete()) {
 			$this->Session->setFlash(__('Propiedades recurso deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Propiedades recurso was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

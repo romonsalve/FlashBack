@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * ClienteTipos Controller
  *
  * @property ClienteTipo $ClienteTipo
+ * @property PaginatorComponent $Paginator
  */
 class ClienteTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ClienteTiposController extends AppController {
  */
 	public function index() {
 		$this->ClienteTipo->recursive = 0;
-		$this->set('clienteTipos', $this->paginate());
+		$this->set('clienteTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ClienteTiposController extends AppController {
 			$this->ClienteTipo->create();
 			if ($this->ClienteTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The cliente tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The cliente tipo could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class ClienteTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ClienteTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The cliente tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The cliente tipo could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class ClienteTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ClienteTipo->delete()) {
 			$this->Session->setFlash(__('Cliente tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Cliente tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

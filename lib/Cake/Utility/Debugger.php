@@ -230,24 +230,24 @@ class Debugger {
 			case E_USER_ERROR:
 				$error = 'Fatal Error';
 				$level = LOG_ERR;
-			break;
+				break;
 			case E_WARNING:
 			case E_USER_WARNING:
 			case E_COMPILE_WARNING:
 			case E_RECOVERABLE_ERROR:
 				$error = 'Warning';
 				$level = LOG_WARNING;
-			break;
+				break;
 			case E_NOTICE:
 			case E_USER_NOTICE:
 				$error = 'Notice';
 				$level = LOG_NOTICE;
-			break;
+				break;
 			case E_DEPRECATED:
 			case E_USER_DEPRECATED:
 				$error = 'Deprecated';
 				$level = LOG_NOTICE;
-			break;
+				break;
 			default:
 				return;
 		}
@@ -500,6 +500,8 @@ class Debugger {
 				return strtolower(gettype($var));
 			case 'null':
 				return 'null';
+			case 'unknown':
+				return 'unknown';
 			default:
 				return self::_object($var, $depth - 1, $indent + 1);
 		}
@@ -591,24 +593,20 @@ class Debugger {
 			if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
 				$ref = new ReflectionObject($var);
 
-				$reflectionProperties = $ref->getProperties(ReflectionProperty::IS_PROTECTED);
-				foreach ($reflectionProperties as $reflectionProperty) {
-					$reflectionProperty->setAccessible(true);
-					$property = $reflectionProperty->getValue($var);
+				$filters = array(
+					ReflectionProperty::IS_PROTECTED => 'protected',
+					ReflectionProperty::IS_PRIVATE => 'private',
+				);
+				foreach ($filters as $filter => $visibility) {
+					$reflectionProperties = $ref->getProperties($filter);
+					foreach ($reflectionProperties as $reflectionProperty) {
+						$reflectionProperty->setAccessible(true);
+						$property = $reflectionProperty->getValue($var);
 
-					$value = self::_export($property, $depth - 1, $indent);
-					$key = $reflectionProperty->name;
-					$props[] = "[protected] $key => " . $value;
-				}
-
-				$reflectionProperties = $ref->getProperties(ReflectionProperty::IS_PRIVATE);
-				foreach ($reflectionProperties as $reflectionProperty) {
-					$reflectionProperty->setAccessible(true);
-					$property = $reflectionProperty->getValue($var);
-
-					$value = self::_export($property, $depth - 1, $indent);
-					$key = $reflectionProperty->name;
-					$props[] = "[private] $key => " . $value;
+						$value = self::_export($property, $depth - 1, $indent);
+						$key = $reflectionProperty->name;
+						$props[] = sprintf('[%s] %s => %s', $visibility, $key, $value);
+					}
 				}
 			}
 
@@ -701,7 +699,7 @@ class Debugger {
  *    straight HTML output, or 'txt' for unformatted text.
  * @param array $strings Template strings to be used for the output format.
  * @return string
- * @deprecated Use Debugger::outputAs() and  Debugger::addFormat(). Will be removed
+ * @deprecated Use Debugger::outputAs() and Debugger::addFormat(). Will be removed
  *   in 3.0
  */
 	public function output($format = null, $strings = array()) {

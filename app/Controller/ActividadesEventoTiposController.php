@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * ActividadesEventoTipos Controller
  *
  * @property ActividadesEventoTipo $ActividadesEventoTipo
+ * @property PaginatorComponent $Paginator
  */
 class ActividadesEventoTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class ActividadesEventoTiposController extends AppController {
  */
 	public function index() {
 		$this->ActividadesEventoTipo->recursive = 0;
-		$this->set('actividadesEventoTipos', $this->paginate());
+		$this->set('actividadesEventoTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class ActividadesEventoTiposController extends AppController {
 			$this->ActividadesEventoTipo->create();
 			if ($this->ActividadesEventoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The actividades evento tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The actividades evento tipo could not be saved. Please, try again.'));
 			}
@@ -63,7 +71,7 @@ class ActividadesEventoTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ActividadesEventoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The actividades evento tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The actividades evento tipo could not be saved. Please, try again.'));
 			}
@@ -88,9 +96,9 @@ class ActividadesEventoTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ActividadesEventoTipo->delete()) {
 			$this->Session->setFlash(__('Actividades evento tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Actividades evento tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

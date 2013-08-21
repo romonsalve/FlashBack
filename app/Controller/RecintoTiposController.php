@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * RecintoTipos Controller
  *
  * @property RecintoTipo $RecintoTipo
+ * @property PaginatorComponent $Paginator
  */
 class RecintoTiposController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -14,7 +22,7 @@ class RecintoTiposController extends AppController {
  */
 	public function index() {
 		$this->RecintoTipo->recursive = 0;
-		$this->set('recintoTipos', $this->paginate());
+		$this->set('recintoTipos', $this->Paginator->paginate());
 	}
 
 /**
@@ -42,7 +50,7 @@ class RecintoTiposController extends AppController {
 			$this->RecintoTipo->create();
 			if ($this->RecintoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The recinto tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recinto tipo could not be saved. Please, try again.'));
 			}
@@ -65,7 +73,7 @@ class RecintoTiposController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->RecintoTipo->save($this->request->data)) {
 				$this->Session->setFlash(__('The recinto tipo has been saved'));
-				$this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recinto tipo could not be saved. Please, try again.'));
 			}
@@ -92,9 +100,9 @@ class RecintoTiposController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->RecintoTipo->delete()) {
 			$this->Session->setFlash(__('Recinto tipo deleted'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Recinto tipo was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

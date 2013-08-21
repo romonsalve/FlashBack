@@ -4,7 +4,7 @@ App::uses('AppModel', 'Model');
  * ParticipanteTipo Model
  *
  * @property Participante $Participante
- * @property ParTipSolCot $ParTipSolCot
+ * @property SolicitudCotizacione $SolicitudCotizacione
  * @property EventoTipo $EventoTipo
  */
 class ParticipanteTipo extends AppModel {
@@ -30,19 +30,6 @@ class ParticipanteTipo extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
-		'ParTipSolCot' => array(
-			'className' => 'ParTipSolCot',
-			'foreignKey' => 'participante_tipo_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
 
@@ -53,6 +40,21 @@ class ParticipanteTipo extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
+		'SolicitudCotizacione' => array(
+			'className' => 'SolicitudCotizacione',
+			'joinTable' => 'participante_tipos_solicitud_cotizaciones',
+			'foreignKey' => 'participante_tipo_id',
+			'associationForeignKey' => 'solicitud_cotizacione_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'EventoTipo' => array(
 			'className' => 'EventoTipo',
 			'joinTable' => 'evento_tipos_participante_tipos',

@@ -7,7 +7,7 @@ App::uses('AppModel', 'Model');
  * @property EventoTipo $EventoTipo
  * @property Cliente $Cliente
  * @property RecintoTipo $RecintoTipo
- * @property ParTipSolCot $ParTipSolCot
+ * @property ParticipanteTipo $ParticipanteTipo
  */
 class SolicitudCotizacione extends AppModel {
 
@@ -78,23 +78,25 @@ class SolicitudCotizacione extends AppModel {
 	);
 
 /**
- * hasMany associations
+ * hasAndBelongsToMany associations
  *
  * @var array
  */
-	public $hasMany = array(
-		'ParTipSolCot' => array(
-			'className' => 'ParTipSolCot',
+	public $hasAndBelongsToMany = array(
+		'ParticipanteTipo' => array(
+			'className' => 'ParticipanteTipo',
+			'joinTable' => 'participante_tipos_solicitud_cotizaciones',
 			'foreignKey' => 'solicitud_cotizacione_id',
-			'dependent' => false,
+			'associationForeignKey' => 'participante_tipo_id',
+			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
-			'exclusive' => '',
 			'finderQuery' => '',
-			'counterQuery' => ''
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

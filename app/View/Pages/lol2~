@@ -1,0 +1,157 @@
+
+        <!-- Content starts -->
+
+        <div class="box-body">
+          
+                     <!-- Pricing table -->                     
+                     <!-- Price details. Note down the class name before you edit. -->
+                     <div class="row-fluid">
+                     
+                        <div class="span3">
+                        
+                           
+                           <!-- Pricing table #1. -->
+                           <div class="pricel center">
+                                 <div class="phead-top b-red">
+                                    <!-- Title -->
+                                    <h4>Starter</h4>
+                                 </div>
+                                 <div class="phead-bottom">
+                                    <!-- Price. Use the syntax correctly. -->
+                                    <p><span class="pst">$</span> 4.99 <span class="psb">/m</span></p>
+                                 </div>
+                                 <div class="arrow-down"></div>
+                              <div class="plist">
+                                 <!-- List -->
+                                 <ul>
+                                    <li>1 GB Disk Space</li>
+                                    <li>10 GB Data Transfer</li>
+                                    <li>Single Domain</li>
+                                    <li>10 Email Ids</li>
+                                    <li>Top Notch Support</li>
+                                    <li>Instant Activation</li>
+                                 </ul>
+                              </div>
+
+                              <div class="pbutton">  
+                                 <!-- button -->
+                                 <a href="#" class="btn"><i class="icon-shopping-cart"></i> Buy Now</a>
+                              </div>
+                              
+                           </div>
+                        </div>
+
+
+                        <div class="span3">
+                        
+                           
+                           <!-- Pricing table #2. -->
+                           <div class="pricel center">
+                                 <div class="phead-top b-blue">
+                                    <!-- Title -->
+                                    <h4>Small Business</h4>
+                                 </div>
+                                 <div class="phead-bottom">
+                                    <!-- Price. Use the syntax correctly. -->
+                                    <p><span class="pst">$</span> 8.99 <span class="psb">/m</span></p>
+                                 </div>
+                                 <div class="arrow-down"></div>
+                              <div class="plist">
+                                 <!-- List -->
+                                 <ul>
+                                    <li>1 GB Disk Space</li>
+                                    <li>10 GB Data Transfer</li>
+                                    <li>Single Domain</li>
+                                    <li>10 Email Ids</li>
+                                    <li>Top Notch Support</li>
+                                    <li>Instant Activation</li>
+                                 </ul>
+                              </div>
+
+                              <div class="pbutton">  
+                                 <!-- button -->
+                                 <a href="#" class="btn"><i class="icon-shopping-cart"></i> Buy Now</a>
+                              </div>
+                              
+                           </div>
+                        </div>
+
+
+                        <div class="span3">
+                        
+                           
+                           <!-- Pricing table #3. -->
+                           <div class="pricel center">
+                                 <div class="phead-top b-green">
+                                    <!-- Title -->
+                                    <h4>Business</h4>
+                                 </div>
+                                 <div class="phead-bottom">
+                                    <!-- Price. Use the syntax correctly. -->
+                                    <p><span class="pst">$</span> 12.99 <span class="psb">/m</span></p>
+                                 </div>
+                                 <div class="arrow-down"></div>
+                              <div class="plist">
+                                 <!-- List -->
+                                 <ul>
+                                    <li>1 GB Disk Space</li>
+                                    <li>10 GB Data Transfer</li>
+                                    <li>Single Domain</li>
+                                    <li>10 Email Ids</li>
+                                    <li>Top Notch Support</li>
+                                    <li>Instant Activation</li>
+                                 </ul>
+                              </div>
+
+                              <div class="pbutton">  
+                                 <!-- button -->
+                                 <a href="#" class="btn"><i class="icon-shopping-cart"></i> Buy Now</a>
+                              </div>
+                              
+                           </div>
+                        </div>
+
+
+                        <div class="span3">
+                        
+                           
+                           <!-- Pricing table #4. -->
+                           <div class="pricel center">
+                                 <div class="phead-top b-purple">
+                                    <!-- Title -->
+                                    <h4>Enterprice</h4>
+                                 </div>
+                                 <div class="phead-bottom">
+                                    <!-- Price. Use the syntax correctly. -->
+                                    <p><span class="pst">$</span> 16.99 <span class="psb">/m</span></p>
+                                 </div>
+                                 <div class="arrow-down"></div>
+                              <div class="plist">
+                                 <!-- List -->
+                                 <ul>
+                                    <li>1 GB Disk Space</li>
+                                    <li>10 GB Data Transfer</li>
+                                    <li>Single Domain</li>
+                                    <li>10 Email Ids</li>
+                                    <li>Top Notch Support</li>
+                                    <li>Instant Activation</li>
+                                 </ul>
+                              </div>
+
+                              <div class="pbutton">  
+                                 <!-- button -->
+                                 <a href="#" class="btn"><i class="icon-shopping-cart"></i> Buy Now</a>
+                              </div>
+                              
+                           </div>
+                        </div>                                                                        
+
+                          
+                     </div>
+
+        </div>
+
+        <!-- Content ends -->
+
+                     
+
