@@ -35,17 +35,20 @@
 		echo $this->Form->input('id', array('class' =>'span9','placeholder' => 'Ingrese id'));
 				//echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
 		echo '<hr /> ';
-				echo $this->Form->input('name', array('class' =>'span9','placeholder' => 'Ingrese name'));
+				echo $this->Form->input('name', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese name'));
 				//echo $this->Form->input('name', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese name'));
 		echo '<hr /> ';
-				echo $this->Form->input('username', array('class' =>'span9','placeholder' => 'Ingrese username'));
+				echo $this->Form->input('username', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese username'));
 				//echo $this->Form->input('username', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese username'));
-		echo '<hr /> ';
+				echo '<hr /> ';
 				echo $this->Form->input('password', array('class' =>'span9','placeholder' => 'Ingrese password'));
-				//echo $this->Form->input('password', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese password'));
+		
 		echo '<hr /> ';
-				echo $this->Form->input('role', array('class' =>'span9','placeholder' => 'Ingrese role'));
-				//echo $this->Form->input('role', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese role'));
+				echo $this->Form->input('password_confirmation', array('class' =>'span9','placeholder' => 'Confirme password','type' => 'password'));
+			
+		echo '<hr /> ';
+				echo $this->Form->input('role', array('class' =>'span9','label' => 'Rol', 'options' => array('gerente' => 'Gerente', 'organizador' => 'Organizador','empleado' => 'Empleado', 'cliente' => 'Cliente')
+        ));//echo $this->Form->input('role', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese role'));
 		echo '<hr /> ';
 				echo $this->Form->input('email', array('class' =>'span9','placeholder' => 'Ingrese email'));
 				//echo $this->Form->input('email', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese email'));
