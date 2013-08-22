@@ -15,8 +15,9 @@ public $validate = array(
     'nombre_recit' => array(
 	'unico' => array(
 		'rule'    => 'isUnique',
-		'message' => 'Este tipo de recurso ya ha sido ingresado.',
+		'message' => 'Este tipo de recinto ya ha sido ingresado.',
 		'required' => true,
+		'on' => 'create',
 	    	),
 	'alfanumerico' => array(
 		'rule' => 'alphanumeric',

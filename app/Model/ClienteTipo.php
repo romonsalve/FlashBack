@@ -14,8 +14,9 @@ public $validate = array(
     'nombre_cli_tipo' => array(
 	'unico' => array(
 		'rule'    => 'isUnique',
-		'message' => 'Este tipo de recurso ya ha sido ingresado.',
+		'message' => 'Este tipo de cliente ya ha sido ingresado.',
 		'required' => true,
+		'on' => 'create',
 	    	),
 	'alfanumerico' => array(
 		'rule' => 'alphanumeric',

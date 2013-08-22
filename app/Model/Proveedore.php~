@@ -9,7 +9,7 @@ App::uses('AppModel', 'Model');
 class Proveedore extends AppModel {
 
 	public $validate = array(
-		'nombre_pro' => array(
+		'nombre_artistico_par' => array(
 			'req' => array(
 				'rule'    => array('minLength', 1),
         			'message' => 'Ingrese un nombre.'

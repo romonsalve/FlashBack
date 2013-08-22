@@ -1,19 +1,20 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * VehiculoTipo Model
+ * ClienteTipo Model
  *
- * @property Vehiculo $Vehiculo
+ * @property Cliente $Cliente
  */
-class VehiculoTipo extends AppModel {
+class ClienteTipo extends AppModel {
 
-public $displayField = 'nombre_veht';
+public $displayField = 'nombre_cli_tipo';
+
 
 public $validate = array(
-    'nombre_veht' => array(
+    'nombre_cli_tipo' => array(
 	'unico' => array(
 		'rule'    => 'isUnique',
-		'message' => 'Este tipo de vehículo ya ha sido ingresado.',
+		'message' => 'Este tipo de recurso ya ha sido ingresado.',
 		'required' => true,
 		'on' => 'create',
 	    	),
@@ -32,9 +33,9 @@ public $validate = array(
  * @var array
  */
 	public $hasMany = array(
-		'Vehiculo' => array(
-			'className' => 'Vehiculo',
-			'foreignKey' => 'vehiculo_tipo_id',
+		'Cliente' => array(
+			'className' => 'Cliente',
+			'foreignKey' => 'cliente_tipo_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

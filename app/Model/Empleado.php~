@@ -1,12 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Recinto Model
+ * Empleado Model
  *
- * @property RecintoTipo $RecintoTipo
+ * @property EmpleadoTipo $EmpleadoTipo
  * @property Evento $Evento
  */
-class Recinto extends AppModel {
+class Empleado extends AppModel {
 
 /**
  * Validation rules
@@ -14,7 +14,7 @@ class Recinto extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recinto_tipo_id' => array(
+		'empleado_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -26,6 +26,15 @@ class Recinto extends AppModel {
 		),
 	);
 
+	public function verificarRut($check){
+		$rut = explode('-', array_values($check)[0]);
+		$r = $rut[0];
+		$s=1;
+		for($m=0;$r!=0;$r/=10)
+			$s=($s+$r%10*(9-$m++%6))%11;
+		$dv = chr($s?$s+47:75);
+		return (strcasecmp($dv, $rut[1]) == 0 );
+	}
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -34,9 +43,9 @@ class Recinto extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'RecintoTipo' => array(
-			'className' => 'RecintoTipo',
-			'foreignKey' => 'recinto_tipo_id',
+		'EmpleadoTipo' => array(
+			'className' => 'EmpleadoTipo',
+			'foreignKey' => 'empleado_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -44,23 +53,25 @@ class Recinto extends AppModel {
 	);
 
 /**
- * hasMany associations
+ * hasAndBelongsToMany associations
  *
  * @var array
  */
-	public $hasMany = array(
+	public $hasAndBelongsToMany = array(
 		'Evento' => array(
 			'className' => 'Evento',
-			'foreignKey' => 'recinto_id',
-			'dependent' => false,
+			'joinTable' => 'empleados_eventos',
+			'foreignKey' => 'empleado_id',
+			'associationForeignKey' => 'evento_id',
+			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
-			'exclusive' => '',
 			'finderQuery' => '',
-			'counterQuery' => ''
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

@@ -16,7 +16,7 @@ public $validate = array(
     'nombre_part' => array(
 	'unico' => array(
 		'rule'    => 'isUnique',
-		'message' => 'Este tipo de participante ya ha sido ingresado.',
+		'message' => 'Este tipo de recurso ya ha sido ingresado.',
 		'required' => true,
 		'on' => 'create',
 	    	),

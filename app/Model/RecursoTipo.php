@@ -18,6 +18,7 @@ public $validate = array(
 		'rule'    => 'isUnique',
 		'message' => 'Este tipo de recurso ya ha sido ingresado.',
 		'required' => true,
+		'on' => 'create',
 	    	),
 	'alfanumerico' => array(
 		'rule' => 'alphanumeric',

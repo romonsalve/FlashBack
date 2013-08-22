@@ -19,7 +19,7 @@ public $validate = array(
     'nombre_evt' => array(
 	'unico' => array(
 		'rule'    => 'isUnique',
-		'message' => 'Este tipo de evento ya ha sido ingresado.',
+		'message' => 'Este tipo de recurso ya ha sido ingresado.',
 		'required' => true,
 		'on' => 'create',
 	    	),
