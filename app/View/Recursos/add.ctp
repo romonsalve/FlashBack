@@ -1,10 +1,11 @@
 
 <script type="text/javascript">
 function obtenerPropiedades(valor){
-	alert('/FlashBack/recursos/buscarPropiedades/'+valor+' #listaPropiedades');
 	$('#propi').load('/FlashBack/recursos/buscarPropiedades/'+valor+' #listaPropiedades');
 }
+
 </script>
+
 <?php echo $this->Form->create('Recurso'); ?>
 <div class="container-fluid">
         <!-- Title starts -->
@@ -38,10 +39,10 @@ function obtenerPropiedades(valor){
 
 	<!--<?php echo __('Add Recurso'); ?></legend>-->
 	<?php
-		echo $this->Form->input('recurso_tipo_id', array('class' =>'span9','placeholder' => 'Ingrese recurso_tipo_id','onchange' => 'obtenerPropiedades(this.value)'));
+		echo $this->Form->input('recurso_tipo_id', array('class' =>'span9','empty' => '(Seleccione Una Opcion)','id'=>'ec_tip', 'onchange' => 'obtenerPropiedades(this.value)'));
 				//echo $this->Form->input('recurso_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recurso_tipo_id'));
 		echo '<hr /> ';
-				echo $this->Form->input('proveedore_id', array('class' =>'span9','placeholder' => 'Ingrese proveedore_id'));
+				echo $this->Form->input('proveedore_id', array('class' =>'span9','empty' => 'Sin proveedor','placeholder' => 'Ingrese proveedore_id', 'selected' => 'null'));
 				//echo $this->Form->input('proveedore_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese proveedore_id'));
 		echo '<hr /> ';
 				echo $this->Form->input('cantidad_rec', array('class' =>'span9','placeholder' => 'Ingrese cantidad_rec'));

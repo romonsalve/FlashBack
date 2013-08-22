@@ -88,7 +88,19 @@ class RecursosController extends AppController {
 		$recursoTipos = $this->Recurso->RecursoTipo->find('list');
 		$proveedores = $this->Recurso->Proveedore->find('list');
 		$eventos = $this->Recurso->Evento->find('list');
-		$propiedades = $this->Recurso->Propiedade->find('list');
+		$propiedades = $this->Recurso->Propiedade->find('list',array(             
+                  'joins' =>
+                   array(
+                    array(
+                        'table' => 'propiedades_recurso_tipos',
+                        'alias' => 'propiedadesRecursoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('propiedadesRecursoTipo.propiedade_id = Propiedade.id', 'propiedadesRecursoTipo.recurso_tipo_id' => '2')
+                    )           
+     		   )
+		));	
+		$this->set("id", $id);
 		$this->set(compact('recursoTipos', 'proveedores', 'eventos', 'propiedades'));
 	}
 
@@ -113,7 +125,11 @@ class RecursosController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 
-	public function buscarPropiedades($recursoTipo = null){
+	public function buscarPropiedades($recursoTipo = null, $id = null){
+		if ($this->Recurso->exists($id)) {
+			$options = array('conditions' => array('Recurso.' . $this->Recurso->primaryKey => $id));
+			$this->request->data = $this->Recurso->find('first', $options);
+		}
 		
 		$propiedades = $this->Recurso->Propiedade->find('list',array(             
                   'joins' =>
@@ -123,7 +139,8 @@ class RecursosController extends AppController {
                         'alias' => 'propiedadesRecursoTipo',
                         'type' => 'INNER',
                         'foreignKey' => null,
-                        'conditions'=> array('propiedadesRecursoTipo.propiedade_id = Propiedade.id', 'propiedadesRecursoTipo.recurso_tipo_id' => $recursoTipo)
+                        'conditions'=> array('propiedadesRecursoTipo.propiedade_id = Propiedade.id',
+                        	'propiedadesRecursoTipo.recurso_tipo_id' => $recursoTipo )
                     )           
      		   )
 		));	
