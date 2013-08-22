@@ -10,7 +10,22 @@ App::uses('AppModel', 'Model');
  */
 class RecursoTipo extends AppModel {
 
+public $displayField = 'nombre_rect';
 
+public $validate = array(
+    'nombre_rect' => array(
+	'unico' => array(
+		'rule'    => 'isUnique',
+		'message' => 'Este tipo de recurso ya ha sido ingresado.',
+		'required' => true,
+	    	),
+	'alfanumerico' => array(
+		'rule' => 'alphanumeric',
+		'required' => true,
+		'message' => 'Ingrese sólo caracteres alfanuméricos.'
+		),
+	)
+);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
