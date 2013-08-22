@@ -76,6 +76,7 @@ class RecursosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Recurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The recurso has been saved'));
+				$this->set('datos', $this->request->data);
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The recurso could not be saved. Please, try again.'));
@@ -110,5 +111,31 @@ class RecursosController extends AppController {
 		}
 		$this->Session->setFlash(__('Recurso was not deleted'));
 		return $this->redirect(array('action' => 'index'));
+	}
+
+	public function buscarPropiedades($recursoTipo = null){
+		
+		$propiedades = $this->Recurso->Propiedade->find('list',array(             
+                  'joins' =>
+                   array(
+                    array(
+                        'table' => 'propiedades_recurso_tipos',
+                        'alias' => 'propiedadesRecursoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('propiedadesRecursoTipo.propiedade_id = Propiedade.id', 'propiedadesRecursoTipo.recurso_tipo_id' => $recursoTipo)
+                    )           
+     		   )
+		));	
+		$this->set(compact('propiedades'));
+//,array( 'fields' => 'propiedade_id' )
+//		);
+
+
+
+// opcion funca!
+//		$this->Recurso->RecursoTipo->recursive = 1;
+//		$temp = $this->Recurso->RecursoTipo->find('all', array('conditions' => array('RecursoTipo.id' => $recursoTipo)));
+//		$this->set('propiedades', $temp[0]['Propiedade']);
 	}
 }

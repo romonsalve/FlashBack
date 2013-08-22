@@ -24,7 +24,18 @@ class EventosController extends AppController {
 		$this->Evento->recursive = 0;
 		$this->set('eventos', $this->Paginator->paginate());
 	}
-
+	public function calendario() {
+		if ($this->request->is('post')) {
+			$id= $_POST['id'];
+			$fecha = $_POST['fecha'];
+			$fecha_t = $_POST['fecha_t'];
+			if($fecha_t==null) $fecha_t = $fecha;
+			$data = array('id' =>$id, 'fecha_de_inicio' => $fecha, 'fecha_de_termino' => $fecha_t); 
+		 	$this->Evento->save($data);
+		 }
+		
+		$this->set('posts', $this->Evento->find('all'));
+	}
 /**
  * view method
  *
