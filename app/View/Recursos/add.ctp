@@ -1,7 +1,7 @@
 
 <script type="text/javascript">
 function obtenerPropiedades(valor){
-	$('#propi').load('/cakephp-cakephp-4b9e390/recursos/buscarPropiedades/'+valor);
+	$('#propi').load('/cakephp-cakephp-4b9e390/recursos/buscarPropiedades/'+valor+'#listaPropiedades');
 }
 </script>
 <?php echo $this->Form->create('Recurso'); ?>
