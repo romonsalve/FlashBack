@@ -47,7 +47,7 @@ class Proveedore extends AppModel {
 			'rule' => 'email',
 			'message' => 'Ingrese un correo electrónico válido',
 			'allowEmpty' => true,
-		)
+		),
 		'fono_conta'=> array(
 			'rule' => array('range', 99999, 57000000000),
 			'message' => 'Ingrese un número de teléfono válido.',
