@@ -100,11 +100,25 @@ class EventosController extends AppController {
 		}
 		$eventoTipos = $this->Evento->EventoTipo->find('list');
 		$clientes = $this->Evento->Cliente->find('list');
-		$recintos = $this->Evento->Recinto->find('list');
+		$recintos = $this->Evento->Recinto->find('list' , array(
+				'joins' =>
+                   array(
+                    array(
+                        'table' => 'evento_tipos_recinto_tipos',
+                        'alias' => 'eventoTipoRecintoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('eventoTipoRecintoTipo.recinto_tipo_id = Recinto.recinto_tipo_id',
+                        	'eventoTipoRecintoTipo.evento_tipo_id' => $this->request->data['Evento']['evento_tipo_id']
+                        )
+                    )
+                  ))
+         );
 		$estadoEventos = $this->Evento->EstadoEvento->find('list');
 		$recursos = $this->Evento->Recurso->find('list');
 		$empleados = $this->Evento->Empleado->find('list');
 		$actividades = $this->Evento->Actividade->find('list');
+		$this->set(compact($id));
 		$this->set(compact('eventoTipos', 'clientes', 'recintos', 'estadoEventos', 'recursos', 'empleados', 'actividades'));
 	}
 
@@ -128,4 +142,63 @@ class EventosController extends AppController {
 		$this->Session->setFlash(__('Evento was not deleted'));
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function buscarRecinto($eventoTipo = null,  $id = null){
+		if ($this->Evento->exists($id)) {
+			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
+			$this->request->data = $this->Evento->find('first', $options);
+		}
+		$recintos = $this->Evento->Recinto->find('list',array(             
+                  'joins' =>
+                   array(
+                    array(
+                        'table' => 'evento_tipos_recinto_tipos',
+                        'alias' => 'eventoTipoRecintoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('eventoTipoRecintoTipo.recinto_tipo_id = Recinto.recinto_tipo_id',
+                        	'eventoTipoRecintoTipo.evento_tipo_id' => $eventoTipo )
+                    )
+     	  )));
+		$this->set(compact('recintos'));
+	}
+	public function buscarActividades($eventoTipo = null,  $id = null){
+		if ($this->Evento->exists($id)) {
+			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
+			$this->request->data = $this->Evento->find('first', $options);
+		}
+		$actividades = $this->Evento->Actividade->find('list',array(             
+                  'joins' =>
+                   array(
+                    array(
+                        'table' => 'actividades_evento_tipos',
+                        'alias' => 'tabla',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('tabla.actividade_id = Actividade.id',
+                        	'tabla.evento_tipo_id' => $eventoTipo )
+                    )
+     	  )));
+		$this->set(compact('actividades'));
+	}
+	public function buscarRecursos($eventoTipo = null,  $id = null){
+		if ($this->Evento->exists($id)) {
+			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
+			$this->request->data = $this->Evento->find('first', $options);
+		}
+		$recursos = $this->Evento->Recurso->find('list',array(             
+                  'joins' =>
+                   array(
+                    array(
+                        'table' => 'evento_tipos_recurso_tipos',
+                        'alias' => 'tabla',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('tabla.recurso_tipo_id = Recurso.recurso_tipo_id',
+                        	'tabla.evento_tipo_id' => $eventoTipo )
+                    )
+     	  )));
+		$this->set(compact('recursos'));
+	}
 }
+

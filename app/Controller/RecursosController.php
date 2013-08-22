@@ -96,7 +96,8 @@ class RecursosController extends AppController {
                         'alias' => 'propiedadesRecursoTipo',
                         'type' => 'INNER',
                         'foreignKey' => null,
-                        'conditions'=> array('propiedadesRecursoTipo.propiedade_id = Propiedade.id', 'propiedadesRecursoTipo.recurso_tipo_id' => '2')
+                        'conditions'=> array('propiedadesRecursoTipo.propiedade_id = Propiedade.id', 
+                        	'propiedadesRecursoTipo.recurso_tipo_id' => $id)
                     )           
      		   )
 		));	

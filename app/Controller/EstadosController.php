@@ -101,4 +101,5 @@ class EstadosController extends AppController {
 		$this->Session->setFlash(__('Estado was not deleted'));
 		return $this->redirect(array('action' => 'index'));
 	}
+
 }

@@ -39,7 +39,7 @@ function obtenerPropiedades(valor){
 
 	<!--<?php echo __('Add Recurso'); ?></legend>-->
 	<?php
-		echo $this->Form->input('recurso_tipo_id', array('class' =>'span9','empty' => '(Seleccione Una Opcion)','id'=>'ec_tip', 'onchange' => 'obtenerPropiedades(this.value)'));
+		echo $this->Form->input('recurso_tipo_id', array('class' =>'span9','empty' => '(Seleccione Una opción)', 'onchange' => 'obtenerPropiedades(this.value)'));
 				//echo $this->Form->input('recurso_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recurso_tipo_id'));
 		echo '<hr /> ';
 				echo $this->Form->input('proveedore_id', array('class' =>'span9','empty' => 'Sin proveedor','placeholder' => 'Ingrese proveedore_id', 'selected' => 'null'));

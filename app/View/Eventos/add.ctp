@@ -1,4 +1,11 @@
+<script type="text/javascript">
+function obtenerPropiedades(valor){
+	$('#recinto').load('/FlashBack/eventos/buscarRecinto/'+valor+' #listaRecintos');
+	$('#recursos').load('/FlashBack/eventos/buscarRecursos/'+valor+' #listaRecintos');
+	$('#actividad').load('/FlashBack/eventos/buscarActividades/'+valor+' #listaRecintos');
 
+}
+</script>
 <?php echo $this->Form->create('Evento'); ?>
 <div class="container-fluid">
         <!-- Title starts -->
@@ -24,7 +31,6 @@
 
         <div class="box-body">
           <div class="row-fluid">
-
             <div class='span6' >
               <div class="well">
                 <h6>Add Evento</h6>
@@ -32,13 +38,12 @@
 
 	<!--<?php echo __('Add Evento'); ?></legend>-->
 	<?php
-		echo $this->Form->input('evento_tipo_id', array('class' =>'span9','placeholder' => 'Ingrese evento_tipo_id'));
+		echo $this->Form->input('evento_tipo_id', array('class' =>'span9','empty' => '(Seleccione una opción)', 'onchange' => 'obtenerPropiedades(this.value)' ));
 				//echo $this->Form->input('evento_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese evento_tipo_id'));
 		echo '<hr /> ';
 				echo $this->Form->input('cliente_id', array('class' =>'span9','placeholder' => 'Ingrese cliente_id'));
 				//echo $this->Form->input('cliente_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese cliente_id'));
-		echo '<hr /> ';
-				echo $this->Form->input('recinto_id', array('class' =>'span9','placeholder' => 'Ingrese recinto_id'));
+		echo '<div id="recinto"> </div>';
 				//echo $this->Form->input('recinto_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recinto_id'));
 		echo '<hr /> ';
 				echo $this->Form->input('estado_evento_id', array('class' =>'span9','placeholder' => 'Ingrese estado_evento_id'));
@@ -68,10 +73,13 @@
 	     </div>
 	     <div class="span6 ">
                 <div class="well">
-		<?php
-echo '<h6> <?php echo Recurso ?></h6> <hr />'; 		echo $this->Form->input('Recurso', array('type' => 'select', 'multiple'=>'checkbox') );
+		
+		<div id = "recursos"></div>
+<?php
 echo '<h6> <?php echo Empleado ?></h6> <hr />'; 		echo $this->Form->input('Empleado', array('type' => 'select', 'multiple'=>'checkbox') );
-echo '<h6> <?php echo Actividade ?></h6> <hr />'; 		echo $this->Form->input('Actividade', array('type' => 'select', 'multiple'=>'checkbox') );
+?>	
+	<div id = "actividad">	</div>
+<?php
 $this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
 		<button class='btn btn-primary'>Guardar</button>
               </div>
