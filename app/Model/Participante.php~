@@ -7,6 +7,8 @@ App::uses('AppModel', 'Model');
  */
 class Participante extends AppModel {
 
+	$displayField = 'nombre_artistico_par';
+
 /**
  * Validation rules
  *

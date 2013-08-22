@@ -1,12 +1,13 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * EmpleadosEvento Model
+ * Recinto Model
  *
- * @property Empleado $Empleado
+ * @property RecintoTipo $RecintoTipo
  * @property Evento $Evento
  */
-class EmpleadosEvento extends AppModel {
+class Recinto extends AppModel {
+	public $displayField = 'nombre_reci';
 
 /**
  * Validation rules
@@ -14,7 +15,7 @@ class EmpleadosEvento extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'empleado_id' => array(
+		'recinto_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,20 +25,15 @@ class EmpleadosEvento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'evento_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'cargo_ete' => array(
-			'Ingrese un cargo para el empleado en este evento' => array(
+		'nombre_reci' => array(
+			'Sólo carácteres alfanuméricos' => array(
 				'rule' => 'alphaNumeric',
 				'required' => true,
+			),
+		),
+		'dimension_reci' => array(
+			'Ingrese un número.' => array(
+				'rule' => 'numeric',
 			),
 		),
 	);
@@ -50,19 +46,34 @@ class EmpleadosEvento extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Empleado' => array(
-			'className' => 'Empleado',
-			'foreignKey' => 'empleado_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Evento' => array(
-			'className' => 'Evento',
-			'foreignKey' => 'evento_id',
+		'RecintoTipo' => array(
+			'className' => 'RecintoTipo',
+			'foreignKey' => 'recinto_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Evento' => array(
+			'className' => 'Evento',
+			'foreignKey' => 'recinto_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

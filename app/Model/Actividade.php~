@@ -11,11 +11,9 @@ class Actividade extends AppModel {
 
 
 	public $validate = array(
-		'nombre_act' => array(
-			'Esta actividad ya está almacenada' => array(
-				'rule' => 'isUnique',
-			)
-		)
+	
+
+
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

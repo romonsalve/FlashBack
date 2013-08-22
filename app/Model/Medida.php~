@@ -10,7 +10,7 @@ class Medida extends AppModel {
 	public $displayField = 'nombre_medida';
 
 	public $validate = array(
-		'nombre_medida' => array(
+		'nombre_estado_evt' => array(
 			'rule' => 'isUnique',
 			'message' => 'Ya existe una medida con ese nombre',
 		),
