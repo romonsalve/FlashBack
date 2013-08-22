@@ -7,6 +7,7 @@ App::uses('AppModel', 'Model');
  * @property Evento $Evento
  */
 class Recinto extends AppModel {
+	public $displayField = 'nombre_reci';
 
 /**
  * Validation rules
@@ -14,14 +15,15 @@ class Recinto extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recinto_tipo_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+		'nombre_reci' => array(
+			'Sólo carácteres alfanuméricos' => array(
+				'rule' => 'alphaNumeric',
+				'required' => true,
+			),
+		),
+		'dimension_reci' => array(
+			'Ingrese un número.' => array(
+				'rule' => 'numeric',
 			),
 		),
 	);

@@ -26,11 +26,6 @@ class Recurso extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'cantidad_rec' => array(
-			'numeric' => array(
-				'rule' => array('naturalNumber'),
-			),
-		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

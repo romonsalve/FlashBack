@@ -11,7 +11,7 @@ class EstadoEvento extends AppModel {
 	public $validate = array(
 		'nombre_estado_evt' => array(
 			'rule' => 'isUnique',
-			'message' => 'Ya existe un estado con ese nombre.',
+			'message' => 'Ya existe un estado con ese nombre',
 		),
 	);
 
