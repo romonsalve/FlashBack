@@ -33,8 +33,8 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('empleados_id', 'empleados_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('eventos_id', 'eventos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('empleado_id', 'empleado_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_id', 'evento_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('hora_inicio', 'hora_inicio'); ?></th>
 			<th><?php echo $this->Paginator->sort('hora_termino', 'hora_termino'); ?></th>
 			<th><?php echo $this->Paginator->sort('cargo', 'cargo'); ?></th>
@@ -48,10 +48,10 @@
 	<?php foreach ($empleadosEventos as $empleadosEvento): ?>
 		<td><?php echo h($empleadosEvento['EmpleadosEvento']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($empleadosEvento['Empleados']['id'], array('controller' => 'empleados', 'action' => 'view', $empleadosEvento['Empleados']['id'])); ?>
+			<?php echo $this->Html->link($empleadosEvento['Empleado']['id'], array('controller' => 'empleados', 'action' => 'view', $empleadosEvento['Empleado']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($empleadosEvento['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $empleadosEvento['Eventos']['id'])); ?>
+			<?php echo $this->Html->link($empleadosEvento['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $empleadosEvento['Evento']['id'])); ?>
 		</td>
 		<td><?php echo h($empleadosEvento['EmpleadosEvento']['hora_inicio']); ?>&nbsp;</td>
 		<td><?php echo h($empleadosEvento['EmpleadosEvento']['hora_termino']); ?>&nbsp;</td>

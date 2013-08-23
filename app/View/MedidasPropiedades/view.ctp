@@ -33,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-<li><?php echo "<div class='col-l' style = 'text-align: right;'> Medidas</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($medidasPropiedade['Medidas']['id'], array('controller' => 'medidas', 'action' => 'view', $medidasPropiedade['Medidas']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Propiedades</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($medidasPropiedade['Propiedades']['id'], array('controller' => 'propiedades', 'action' => 'view', $medidasPropiedade['Propiedades']['id']))." &nbsp</div>"; ?> </li></ul>
+<li><?php echo "<div class='col-l' style = 'text-align: right;'> Medida</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($medidasPropiedade['Medida']['id'], array('controller' => 'medidas', 'action' => 'view', $medidasPropiedade['Medida']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Propiedade</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($medidasPropiedade['Propiedade']['id'], array('controller' => 'propiedades', 'action' => 'view', $medidasPropiedade['Propiedade']['id']))." &nbsp</div>"; ?> </li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -55,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Medidas Propiedades'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Medidas Propiedade'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Medidas'), array('controller' => 'medidas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Medidas'), array('controller' => 'medidas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Medida'), array('controller' => 'medidas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Propiedades'), array('controller' => 'propiedades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Propiedades'), array('controller' => 'propiedades', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Propiedade'), array('controller' => 'propiedades', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->

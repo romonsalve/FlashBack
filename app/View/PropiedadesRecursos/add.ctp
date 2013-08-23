@@ -24,10 +24,10 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('recursos_id', array('class' =>'span12','label' => 'Ingrese recursos_id', 'placeholder' => '',
+		echo $this->Form->input('recurso_id', array('class' =>'span12','label' => 'Ingrese recurso_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('propiedades_id', array('class' =>'span12','label' => 'Ingrese propiedades_id', 'placeholder' => '',
+				echo $this->Form->input('propiedade_id', array('class' =>'span12','label' => 'Ingrese propiedade_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('valor', array('class' =>'span12','label' => 'Ingrese valor', 'placeholder' => '',

@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * PropiedadesRecurso Model
  *
- * @property Recursos $Recursos
- * @property Propiedades $Propiedades
+ * @property Recurso $Recurso
+ * @property Propiedade $Propiedade
  */
 class PropiedadesRecurso extends AppModel {
 
@@ -14,7 +14,7 @@ class PropiedadesRecurso extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recursos_id' => array(
+		'recurso_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class PropiedadesRecurso extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'propiedades_id' => array(
+		'propiedade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class PropiedadesRecurso extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Recursos' => array(
-			'className' => 'Recursos',
-			'foreignKey' => 'recursos_id',
+		'Recurso' => array(
+			'className' => 'Recurso',
+			'foreignKey' => 'recurso_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Propiedades' => array(
-			'className' => 'Propiedades',
-			'foreignKey' => 'propiedades_id',
+		'Propiedade' => array(
+			'className' => 'Propiedade',
+			'foreignKey' => 'propiedade_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

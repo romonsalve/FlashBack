@@ -3,9 +3,9 @@ App::uses('AppModel', 'Model');
 /**
  * Evento Model
  *
- * @property Recintos $Recintos
- * @property EventoTipos $EventoTipos
- * @property Clientes $Clientes
+ * @property Recinto $Recinto
+ * @property EventoTipo $EventoTipo
+ * @property Cliente $Cliente
  * @property Bitacora $Bitacora
  * @property ItinerarioParticipante $ItinerarioParticipante
  * @property Recurso $Recurso
@@ -20,7 +20,7 @@ class Evento extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recintos_id' => array(
+		'recinto_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -30,7 +30,7 @@ class Evento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'evento_tipos_id' => array(
+		'evento_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -50,23 +50,23 @@ class Evento extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Recintos' => array(
-			'className' => 'Recintos',
-			'foreignKey' => 'recintos_id',
+		'Recinto' => array(
+			'className' => 'Recinto',
+			'foreignKey' => 'recinto_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'EventoTipos' => array(
-			'className' => 'EventoTipos',
-			'foreignKey' => 'evento_tipos_id',
+		'EventoTipo' => array(
+			'className' => 'EventoTipo',
+			'foreignKey' => 'evento_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Clientes' => array(
-			'className' => 'Clientes',
-			'foreignKey' => 'clientes_id',
+		'Cliente' => array(
+			'className' => 'Cliente',
+			'foreignKey' => 'cliente_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

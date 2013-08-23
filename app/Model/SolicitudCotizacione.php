@@ -3,10 +3,10 @@ App::uses('AppModel', 'Model');
 /**
  * SolicitudCotizacione Model
  *
- * @property Estados $Estados
- * @property EventoTipos $EventoTipos
- * @property Clientes $Clientes
- * @property RecintoTipos $RecintoTipos
+ * @property Estado $Estado
+ * @property EventoTipo $EventoTipo
+ * @property Cliente $Cliente
+ * @property RecintoTipo $RecintoTipo
  * @property ParticipanteTipo $ParticipanteTipo
  * @property Actividade $Actividade
  */
@@ -18,7 +18,7 @@ class SolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'estados_id' => array(
+		'estado_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -28,7 +28,7 @@ class SolicitudCotizacione extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'clientes_id' => array(
+		'cliente_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -48,30 +48,30 @@ class SolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Estados' => array(
-			'className' => 'Estados',
-			'foreignKey' => 'estados_id',
+		'Estado' => array(
+			'className' => 'Estado',
+			'foreignKey' => 'estado_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'EventoTipos' => array(
-			'className' => 'EventoTipos',
-			'foreignKey' => 'evento_tipos_id',
+		'EventoTipo' => array(
+			'className' => 'EventoTipo',
+			'foreignKey' => 'evento_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Clientes' => array(
-			'className' => 'Clientes',
-			'foreignKey' => 'clientes_id',
+		'Cliente' => array(
+			'className' => 'Cliente',
+			'foreignKey' => 'cliente_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'RecintoTipos' => array(
-			'className' => 'RecintoTipos',
-			'foreignKey' => 'recinto_tipos_id',
+		'RecintoTipo' => array(
+			'className' => 'RecintoTipo',
+			'foreignKey' => 'recinto_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

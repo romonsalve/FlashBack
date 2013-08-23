@@ -33,7 +33,7 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recinto_tipos_id', 'recinto_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recinto_tipo_id', 'recinto_tipo_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
 			<th><?php echo $this->Paginator->sort('mapa', 'mapa'); ?></th>
 			<th><?php echo $this->Paginator->sort('dimension', 'dimension'); ?></th>
@@ -48,7 +48,7 @@
 	<?php foreach ($recintos as $recinto): ?>
 		<td><?php echo h($recinto['Recinto']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($recinto['RecintoTipos']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $recinto['RecintoTipos']['id'])); ?>
+			<?php echo $this->Html->link($recinto['RecintoTipo']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $recinto['RecintoTipo']['id'])); ?>
 		</td>
 		<td><?php echo h($recinto['Recinto']['nombre']); ?>&nbsp;</td>
 		<td><?php echo h($recinto['Recinto']['mapa']); ?>&nbsp;</td>

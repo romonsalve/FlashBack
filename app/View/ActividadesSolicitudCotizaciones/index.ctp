@@ -32,8 +32,8 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('solicitud_cotizaciones_id', 'solicitud_cotizaciones_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('actividades_id', 'actividades_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('solicitud_cotizacione_id', 'solicitud_cotizacione_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('actividade_id', 'actividade_id'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -43,10 +43,10 @@
 
 	<?php foreach ($actividadesSolicitudCotizaciones as $actividadesSolicitudCotizacione): ?>
 		<td>
-			<?php echo $this->Html->link($actividadesSolicitudCotizacione['SolicitudCotizaciones']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $actividadesSolicitudCotizacione['SolicitudCotizaciones']['id'])); ?>
+			<?php echo $this->Html->link($actividadesSolicitudCotizacione['SolicitudCotizacione']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $actividadesSolicitudCotizacione['SolicitudCotizacione']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($actividadesSolicitudCotizacione['Actividades']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesSolicitudCotizacione['Actividades']['id'])); ?>
+			<?php echo $this->Html->link($actividadesSolicitudCotizacione['Actividade']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesSolicitudCotizacione['Actividade']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $actividadesSolicitudCotizacione['ActividadesSolicitudCotizacione']['id'])); ?>

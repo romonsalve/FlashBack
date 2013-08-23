@@ -11,9 +11,9 @@
                     <!-- Title -->
                     <h3>Vehiculo Tipos</h3>
                     <!-- Para -->
-                    <p>Listado de tipos de vehículos de la empresa, útil para filtrar vehículos según las necesidades del evento.</p>
+                    <p>Listado de ...</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Tipo de Vehículo</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,7 +32,8 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('nombre', 'Tipo de Vehículo'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -41,8 +42,10 @@
              <tr>
 
 	<?php foreach ($vehiculoTipos as $vehiculoTipo): ?>
+		<td><?php echo h($vehiculoTipo['VehiculoTipo']['id']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculoTipo['VehiculoTipo']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $vehiculoTipo['VehiculoTipo']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $vehiculoTipo['VehiculoTipo']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $vehiculoTipo['VehiculoTipo']['id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $vehiculoTipo['VehiculoTipo']['id'])); ?>
 		</td>

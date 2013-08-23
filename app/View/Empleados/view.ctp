@@ -79,9 +79,9 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Recintos Id'); ?></th>
-		<th><?php echo __('Evento Tipos Id'); ?></th>
-		<th><?php echo __('Clientes Id'); ?></th>
+		<th><?php echo __('Recinto Id'); ?></th>
+		<th><?php echo __('Evento Tipo Id'); ?></th>
+		<th><?php echo __('Cliente Id'); ?></th>
 		<th><?php echo __('Nombre'); ?></th>
 		<th><?php echo __('Fecha Inicio'); ?></th>
 		<th><?php echo __('Fecha Termino'); ?></th>
@@ -99,9 +99,9 @@
 		foreach ($empleado['Evento'] as $evento): ?>
 		<tr>
 			<td><?php echo $evento['id']; ?></td>
-			<td><?php echo $evento['recintos_id']; ?></td>
-			<td><?php echo $evento['evento_tipos_id']; ?></td>
-			<td><?php echo $evento['clientes_id']; ?></td>
+			<td><?php echo $evento['recinto_id']; ?></td>
+			<td><?php echo $evento['evento_tipo_id']; ?></td>
+			<td><?php echo $evento['cliente_id']; ?></td>
 			<td><?php echo $evento['nombre']; ?></td>
 			<td><?php echo $evento['fecha_inicio']; ?></td>
 			<td><?php echo $evento['fecha_termino']; ?></td>

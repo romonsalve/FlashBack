@@ -54,6 +54,10 @@
 		<li><?php echo $this->Form->postLink(__('Delete Evento Tipo'), array('action' => 'delete', $eventoTipo['EventoTipo']['id']), null, __('Are you sure you want to delete # %s?', $eventoTipo['EventoTipo']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Evento Tipos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Evento Tipo'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Actividades'), array('controller' => 'actividades', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Actividade'), array('controller' => 'actividades', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Participante Tipos'), array('controller' => 'participante_tipos', 'action' => 'index')); ?> </li>
@@ -72,10 +76,130 @@
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
                            <!-- Title with experience details. -->
-                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Actividades'); ?></h5>
+                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Eventos'); ?></h5>
                 </a>
             </div>
             <div id="collapse1" class="accordion-body collapse">
+                 <div class="accordion-inner">
+
+	<?php if (!empty($eventoTipo['Evento'])): ?>
+	<table class="table table-striped table-bordered table-hover">
+	<thead>
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Recinto Id'); ?></th>
+		<th><?php echo __('Evento Tipo Id'); ?></th>
+		<th><?php echo __('Cliente Id'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Fecha Inicio'); ?></th>
+		<th><?php echo __('Fecha Termino'); ?></th>
+		<th><?php echo __('Lista Invitados'); ?></th>
+		<th><?php echo __('Estado'); ?></th>
+		<th><?php echo __('Precio'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
+		<th><?php echo __('Acciones'); ?></th>
+	</tr>
+	</thead>
+        <tbody>
+
+	<?php
+		$i = 0;
+		foreach ($eventoTipo['Evento'] as $evento): ?>
+		<tr>
+			<td><?php echo $evento['id']; ?></td>
+			<td><?php echo $evento['recinto_id']; ?></td>
+			<td><?php echo $evento['evento_tipo_id']; ?></td>
+			<td><?php echo $evento['cliente_id']; ?></td>
+			<td><?php echo $evento['nombre']; ?></td>
+			<td><?php echo $evento['fecha_inicio']; ?></td>
+			<td><?php echo $evento['fecha_termino']; ?></td>
+			<td><?php echo $evento['lista_invitados']; ?></td>
+			<td><?php echo $evento['estado']; ?></td>
+			<td><?php echo $evento['precio']; ?></td>
+			<td><?php echo $evento['descripcion']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'eventos', 'action' => 'view', $evento['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'eventos', 'action' => 'edit', $evento['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'eventos', 'action' => 'delete', $evento['id']), null, __('¿Estás segudo de que quieres eliminar el elemento # %s?', $evento['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+	</table>
+<?php endif; ?>
+
+		<div class="actions">
+			<ul>
+				<li><?php echo $this->Html->link(__('Nuevo Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
+			</ul>
+		</div>
+	     </div></div></div>
+
+	<hr />
+	<div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+                           <!-- Title with experience details. -->
+                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Solicitud Cotizaciones'); ?></h5>
+                </a>
+            </div>
+            <div id="collapse2" class="accordion-body collapse">
+                 <div class="accordion-inner">
+
+	<?php if (!empty($eventoTipo['SolicitudCotizacione'])): ?>
+	<table class="table table-striped table-bordered table-hover">
+	<thead>
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Estado Id'); ?></th>
+		<th><?php echo __('Evento Tipo Id'); ?></th>
+		<th><?php echo __('Cliente Id'); ?></th>
+		<th><?php echo __('Recinto Tipo Id'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
+		<th><?php echo __('Acciones'); ?></th>
+	</tr>
+	</thead>
+        <tbody>
+
+	<?php
+		$i = 0;
+		foreach ($eventoTipo['SolicitudCotizacione'] as $solicitudCotizacione): ?>
+		<tr>
+			<td><?php echo $solicitudCotizacione['id']; ?></td>
+			<td><?php echo $solicitudCotizacione['estado_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['evento_tipo_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['cliente_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['recinto_tipo_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['nombre']; ?></td>
+			<td><?php echo $solicitudCotizacione['descripcion']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $solicitudCotizacione['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'edit', $solicitudCotizacione['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'delete', $solicitudCotizacione['id']), null, __('¿Estás segudo de que quieres eliminar el elemento # %s?', $solicitudCotizacione['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+	</table>
+<?php endif; ?>
+
+		<div class="actions">
+			<ul>
+				<li><?php echo $this->Html->link(__('Nuevo Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
+			</ul>
+		</div>
+	     </div></div></div>
+
+	<hr />
+	<div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+                           <!-- Title with experience details. -->
+                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Actividades'); ?></h5>
+                </a>
+            </div>
+            <div id="collapse3" class="accordion-body collapse">
                  <div class="accordion-inner">
 
 	<?php if (!empty($eventoTipo['Actividade'])): ?>
@@ -118,12 +242,12 @@
 	<hr />
 	<div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
                            <!-- Title with experience details. -->
                   <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Participante Tipos'); ?></h5>
                 </a>
             </div>
-            <div id="collapse2" class="accordion-body collapse">
+            <div id="collapse4" class="accordion-body collapse">
                  <div class="accordion-inner">
 
 	<?php if (!empty($eventoTipo['ParticipanteTipo'])): ?>
@@ -164,12 +288,12 @@
 	<hr />
 	<div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
                            <!-- Title with experience details. -->
                   <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Recinto Tipos'); ?></h5>
                 </a>
             </div>
-            <div id="collapse3" class="accordion-body collapse">
+            <div id="collapse5" class="accordion-body collapse">
                  <div class="accordion-inner">
 
 	<?php if (!empty($eventoTipo['RecintoTipo'])): ?>
@@ -210,12 +334,12 @@
 	<hr />
 	<div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
                            <!-- Title with experience details. -->
                   <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Recurso Tipos'); ?></h5>
                 </a>
             </div>
-            <div id="collapse4" class="accordion-body collapse">
+            <div id="collapse6" class="accordion-body collapse">
                  <div class="accordion-inner">
 
 	<?php if (!empty($eventoTipo['RecursoTipo'])): ?>

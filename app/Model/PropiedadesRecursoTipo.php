@@ -3,9 +3,9 @@ App::uses('AppModel', 'Model');
 /**
  * PropiedadesRecursoTipo Model
  *
- * @property Medidas $Medidas
- * @property Propiedades $Propiedades
- * @property RecursoTipos $RecursoTipos
+ * @property Medida $Medida
+ * @property Propiedade $Propiedade
+ * @property RecursoTipo $RecursoTipo
  */
 class PropiedadesRecursoTipo extends AppModel {
 
@@ -15,7 +15,7 @@ class PropiedadesRecursoTipo extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'propiedades_id' => array(
+		'propiedade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -25,7 +25,7 @@ class PropiedadesRecursoTipo extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'recurso_tipos_id' => array(
+		'recurso_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -45,23 +45,23 @@ class PropiedadesRecursoTipo extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Medidas' => array(
-			'className' => 'Medidas',
-			'foreignKey' => 'medidas_id',
+		'Medida' => array(
+			'className' => 'Medida',
+			'foreignKey' => 'medida_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Propiedades' => array(
-			'className' => 'Propiedades',
-			'foreignKey' => 'propiedades_id',
+		'Propiedade' => array(
+			'className' => 'Propiedade',
+			'foreignKey' => 'propiedade_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'RecursoTipos' => array(
-			'className' => 'RecursoTipos',
-			'foreignKey' => 'recurso_tipos_id',
+		'RecursoTipo' => array(
+			'className' => 'RecursoTipo',
+			'foreignKey' => 'recurso_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

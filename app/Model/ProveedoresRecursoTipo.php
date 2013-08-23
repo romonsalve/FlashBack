@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * ProveedoresRecursoTipo Model
  *
- * @property Proveedores $Proveedores
- * @property RecursoTipos $RecursoTipos
+ * @property Proveedore $Proveedore
+ * @property RecursoTipo $RecursoTipo
  */
 class ProveedoresRecursoTipo extends AppModel {
 
@@ -14,7 +14,7 @@ class ProveedoresRecursoTipo extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'proveedores_id' => array(
+		'proveedore_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class ProveedoresRecursoTipo extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'recurso_tipos_id' => array(
+		'recurso_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class ProveedoresRecursoTipo extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Proveedores' => array(
-			'className' => 'Proveedores',
-			'foreignKey' => 'proveedores_id',
+		'Proveedore' => array(
+			'className' => 'Proveedore',
+			'foreignKey' => 'proveedore_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'RecursoTipos' => array(
-			'className' => 'RecursoTipos',
-			'foreignKey' => 'recurso_tipos_id',
+		'RecursoTipo' => array(
+			'className' => 'RecursoTipo',
+			'foreignKey' => 'recurso_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

@@ -3,7 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * Recinto Model
  *
- * @property RecintoTipos $RecintoTipos
+ * @property RecintoTipo $RecintoTipo
+ * @property Evento $Evento
  */
 class Recinto extends AppModel {
 
@@ -13,7 +14,7 @@ class Recinto extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recinto_tipos_id' => array(
+		'recinto_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -33,12 +34,34 @@ class Recinto extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'RecintoTipos' => array(
-			'className' => 'RecintoTipos',
-			'foreignKey' => 'recinto_tipos_id',
+		'RecintoTipo' => array(
+			'className' => 'RecintoTipo',
+			'foreignKey' => 'recinto_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Evento' => array(
+			'className' => 'Evento',
+			'foreignKey' => 'recinto_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

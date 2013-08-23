@@ -33,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Empleados</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($empleadosEvento['Empleados']['id'], array('controller' => 'empleados', 'action' => 'view', $empleadosEvento['Empleados']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Eventos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($empleadosEvento['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $empleadosEvento['Eventos']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Inicio </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['hora_inicio'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Termino </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['hora_termino'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cargo </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['cargo'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Empleado</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($empleadosEvento['Empleado']['id'], array('controller' => 'empleados', 'action' => 'view', $empleadosEvento['Empleado']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Evento</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($empleadosEvento['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $empleadosEvento['Evento']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Inicio </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['hora_inicio'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Termino </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['hora_termino'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cargo </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadosEvento['EmpleadosEvento']['cargo'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -55,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Empleados Eventos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Empleados Evento'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Empleados'), array('controller' => 'empleados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Empleados'), array('controller' => 'empleados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Empleado'), array('controller' => 'empleados', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Eventos'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->

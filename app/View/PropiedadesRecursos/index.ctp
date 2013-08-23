@@ -33,8 +33,8 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recursos_id', 'recursos_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('propiedades_id', 'propiedades_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recurso_id', 'recurso_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('propiedade_id', 'propiedade_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('valor', 'valor'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
@@ -46,10 +46,10 @@
 	<?php foreach ($propiedadesRecursos as $propiedadesRecurso): ?>
 		<td><?php echo h($propiedadesRecurso['PropiedadesRecurso']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecurso['Recursos']['id'], array('controller' => 'recursos', 'action' => 'view', $propiedadesRecurso['Recursos']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $propiedadesRecurso['Recurso']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecurso['Propiedades']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedades']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecurso['Propiedade']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedade']['id'])); ?>
 		</td>
 		<td><?php echo h($propiedadesRecurso['PropiedadesRecurso']['valor']); ?>&nbsp;</td>
 		<td class="actions">

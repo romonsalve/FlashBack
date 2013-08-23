@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * EventoTiposRecintoTipo Model
  *
- * @property RecintoTipos $RecintoTipos
- * @property EventoTipos $EventoTipos
+ * @property RecintoTipo $RecintoTipo
+ * @property EventoTipo $EventoTipo
  */
 class EventoTiposRecintoTipo extends AppModel {
 
@@ -14,7 +14,7 @@ class EventoTiposRecintoTipo extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recinto_tipos_id' => array(
+		'recinto_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class EventoTiposRecintoTipo extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'evento_tipos_id' => array(
+		'evento_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class EventoTiposRecintoTipo extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'RecintoTipos' => array(
-			'className' => 'RecintoTipos',
-			'foreignKey' => 'recinto_tipos_id',
+		'RecintoTipo' => array(
+			'className' => 'RecintoTipo',
+			'foreignKey' => 'recinto_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'EventoTipos' => array(
-			'className' => 'EventoTipos',
-			'foreignKey' => 'evento_tipos_id',
+		'EventoTipo' => array(
+			'className' => 'EventoTipo',
+			'foreignKey' => 'evento_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

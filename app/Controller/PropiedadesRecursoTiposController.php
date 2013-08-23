@@ -55,6 +55,10 @@ class PropiedadesRecursoTiposController extends AppController {
 				$this->Session->setFlash(__('The propiedades recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
+		$medidas = $this->PropiedadesRecursoTipo->Medida->find('list');
+		$propiedades = $this->PropiedadesRecursoTipo->Propiedade->find('list');
+		$recursoTipos = $this->PropiedadesRecursoTipo->RecursoTipo->find('list');
+		$this->set(compact('medidas', 'propiedades', 'recursoTipos'));
 	}
 
 /**
@@ -79,6 +83,10 @@ class PropiedadesRecursoTiposController extends AppController {
 			$options = array('conditions' => array('PropiedadesRecursoTipo.' . $this->PropiedadesRecursoTipo->primaryKey => $id));
 			$this->request->data = $this->PropiedadesRecursoTipo->find('first', $options);
 		}
+		$medidas = $this->PropiedadesRecursoTipo->Medida->find('list');
+		$propiedades = $this->PropiedadesRecursoTipo->Propiedade->find('list');
+		$recursoTipos = $this->PropiedadesRecursoTipo->RecursoTipo->find('list');
+		$this->set(compact('medidas', 'propiedades', 'recursoTipos'));
 	}
 
 /**

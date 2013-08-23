@@ -81,8 +81,8 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Recurso Tipos Id'); ?></th>
-		<th><?php echo __('Proveedores Id'); ?></th>
+		<th><?php echo __('Recurso Tipo Id'); ?></th>
+		<th><?php echo __('Proveedore Id'); ?></th>
 		<th><?php echo __('Cantidad'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
@@ -94,8 +94,8 @@
 		foreach ($propiedade['Recurso'] as $recurso): ?>
 		<tr>
 			<td><?php echo $recurso['id']; ?></td>
-			<td><?php echo $recurso['recurso_tipos_id']; ?></td>
-			<td><?php echo $recurso['proveedores_id']; ?></td>
+			<td><?php echo $recurso['recurso_tipo_id']; ?></td>
+			<td><?php echo $recurso['proveedore_id']; ?></td>
 			<td><?php echo $recurso['cantidad']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'recursos', 'action' => 'view', $recurso['id'])); ?>

@@ -33,8 +33,8 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('solicitud_cotizaciones_id', 'solicitud_cotizaciones_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('participante_tipos_id', 'participante_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('solicitud_cotizacione_id', 'solicitud_cotizacione_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('participante_tipo_id', 'participante_tipo_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
@@ -46,10 +46,10 @@
 	<?php foreach ($participanteTiposSolicitudCotizaciones as $participanteTiposSolicitudCotizacione): ?>
 		<td><?php echo h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['SolicitudCotizaciones']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $participanteTiposSolicitudCotizacione['SolicitudCotizaciones']['id'])); ?>
+			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['SolicitudCotizacione']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $participanteTiposSolicitudCotizacione['SolicitudCotizacione']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['ParticipanteTipos']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $participanteTiposSolicitudCotizacione['ParticipanteTipos']['id'])); ?>
+			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['ParticipanteTipo']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $participanteTiposSolicitudCotizacione['ParticipanteTipo']['id'])); ?>
 		</td>
 		<td><?php echo h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">

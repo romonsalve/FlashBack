@@ -24,10 +24,10 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('evento_tipos_id', array('class' =>'span12','label' => 'Ingrese evento_tipos_id', 'placeholder' => '',
+		echo $this->Form->input('evento_tipo_id', array('class' =>'span12','label' => 'Ingrese evento_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('actividades_id', array('class' =>'span12','label' => 'Ingrese actividades_id', 'placeholder' => '',
+				echo $this->Form->input('actividade_id', array('class' =>'span12','label' => 'Ingrese actividade_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 

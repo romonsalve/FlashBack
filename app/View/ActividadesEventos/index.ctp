@@ -33,8 +33,8 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('eventos_id', 'eventos_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('actividades_id', 'actividades_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_id', 'evento_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('actividade_id', 'actividade_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('fecha_inicio', 'fecha_inicio'); ?></th>
 			<th><?php echo $this->Paginator->sort('fecha_termino', 'fecha_termino'); ?></th>
 			<th><?php echo $this->Paginator->sort('estado', 'estado'); ?></th>
@@ -48,10 +48,10 @@
 	<?php foreach ($actividadesEventos as $actividadesEvento): ?>
 		<td><?php echo h($actividadesEvento['ActividadesEvento']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($actividadesEvento['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $actividadesEvento['Eventos']['id'])); ?>
+			<?php echo $this->Html->link($actividadesEvento['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $actividadesEvento['Evento']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($actividadesEvento['Actividades']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesEvento['Actividades']['id'])); ?>
+			<?php echo $this->Html->link($actividadesEvento['Actividade']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesEvento['Actividade']['id'])); ?>
 		</td>
 		<td><?php echo h($actividadesEvento['ActividadesEvento']['fecha_inicio']); ?>&nbsp;</td>
 		<td><?php echo h($actividadesEvento['ActividadesEvento']['fecha_termino']); ?>&nbsp;</td>

@@ -3,7 +3,9 @@ App::uses('AppModel', 'Model');
 /**
  * Cliente Model
  *
- * @property ClienteTipos $ClienteTipos
+ * @property ClienteTipo $ClienteTipo
+ * @property Evento $Evento
+ * @property SolicitudCotizacione $SolicitudCotizacione
  */
 class Cliente extends AppModel {
 
@@ -13,7 +15,7 @@ class Cliente extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'cliente_tipos_id' => array(
+		'cliente_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -33,12 +35,47 @@ class Cliente extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'ClienteTipos' => array(
-			'className' => 'ClienteTipos',
-			'foreignKey' => 'cliente_tipos_id',
+		'ClienteTipo' => array(
+			'className' => 'ClienteTipo',
+			'foreignKey' => 'cliente_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Evento' => array(
+			'className' => 'Evento',
+			'foreignKey' => 'cliente_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'SolicitudCotizacione' => array(
+			'className' => 'SolicitudCotizacione',
+			'foreignKey' => 'cliente_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

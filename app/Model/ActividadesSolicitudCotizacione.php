@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * ActividadesSolicitudCotizacione Model
  *
- * @property SolicitudCotizaciones $SolicitudCotizaciones
- * @property Actividades $Actividades
+ * @property SolicitudCotizacione $SolicitudCotizacione
+ * @property Actividade $Actividade
  */
 class ActividadesSolicitudCotizacione extends AppModel {
 
@@ -14,7 +14,7 @@ class ActividadesSolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'solicitud_cotizaciones_id' => array(
+		'solicitud_cotizacione_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class ActividadesSolicitudCotizacione extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'actividades_id' => array(
+		'actividade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class ActividadesSolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'SolicitudCotizaciones' => array(
-			'className' => 'SolicitudCotizaciones',
-			'foreignKey' => 'solicitud_cotizaciones_id',
+		'SolicitudCotizacione' => array(
+			'className' => 'SolicitudCotizacione',
+			'foreignKey' => 'solicitud_cotizacione_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Actividades' => array(
-			'className' => 'Actividades',
-			'foreignKey' => 'actividades_id',
+		'Actividade' => array(
+			'className' => 'Actividade',
+			'foreignKey' => 'actividade_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

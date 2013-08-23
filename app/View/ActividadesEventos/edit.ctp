@@ -27,10 +27,10 @@
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('eventos_id', array('class' =>'span12','label' => 'Ingrese eventos_id', 'placeholder' => '',
+				echo $this->Form->input('evento_id', array('class' =>'span12','label' => 'Ingrese evento_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('actividades_id', array('class' =>'span12','label' => 'Ingrese actividades_id', 'placeholder' => '',
+				echo $this->Form->input('actividade_id', array('class' =>'span12','label' => 'Ingrese actividade_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('fecha_inicio', array('class' =>'span12','label' => 'Ingrese fecha_inicio', 'placeholder' => '',

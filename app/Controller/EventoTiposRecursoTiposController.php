@@ -55,9 +55,6 @@ class EventoTiposRecursoTiposController extends AppController {
 				$this->Session->setFlash(__('The evento tipos recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
-		$eventoTipos = $this->EventoTiposRecursoTipo->EventoTipo->find('list');
-		$recursoTipos = $this->EventoTiposRecursoTipo->RecursoTipo->find('list');
-		$this->set(compact('eventoTipos', 'recursoTipos'));
 	}
 
 /**
@@ -82,9 +79,6 @@ class EventoTiposRecursoTiposController extends AppController {
 			$options = array('conditions' => array('EventoTiposRecursoTipo.' . $this->EventoTiposRecursoTipo->primaryKey => $id));
 			$this->request->data = $this->EventoTiposRecursoTipo->find('first', $options);
 		}
-		$eventoTipos = $this->EventoTiposRecursoTipo->EventoTipo->find('list');
-		$recursoTipos = $this->EventoTiposRecursoTipo->RecursoTipo->find('list');
-		$this->set(compact('eventoTipos', 'recursoTipos'));
 	}
 
 /**

@@ -33,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-<li><?php echo "<div class='col-l' style = 'text-align: right;'> Evento Tipos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventoTiposParticipanteTipo['EventoTipos']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['EventoTipos']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Participante Tipos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventoTiposParticipanteTipo['ParticipanteTipos']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['ParticipanteTipos']['id']))." &nbsp</div>"; ?> </li></ul>
+<li><?php echo "<div class='col-l' style = 'text-align: right;'> Evento Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventoTiposParticipanteTipo['EventoTipo']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['EventoTipo']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Participante Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventoTiposParticipanteTipo['ParticipanteTipo']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['ParticipanteTipo']['id']))." &nbsp</div>"; ?> </li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -55,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Evento Tipos Participante Tipos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Evento Tipos Participante Tipo'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Evento Tipos'), array('controller' => 'evento_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento Tipos'), array('controller' => 'evento_tipos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Evento Tipo'), array('controller' => 'evento_tipos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Participante Tipos'), array('controller' => 'participante_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Participante Tipos'), array('controller' => 'participante_tipos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Participante Tipo'), array('controller' => 'participante_tipos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->

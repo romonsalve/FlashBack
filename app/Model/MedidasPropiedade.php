@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * MedidasPropiedade Model
  *
- * @property Medidas $Medidas
- * @property Propiedades $Propiedades
+ * @property Medida $Medida
+ * @property Propiedade $Propiedade
  */
 class MedidasPropiedade extends AppModel {
 
@@ -14,7 +14,7 @@ class MedidasPropiedade extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'medidas_id' => array(
+		'medida_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class MedidasPropiedade extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'propiedades_id' => array(
+		'propiedade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class MedidasPropiedade extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Medidas' => array(
-			'className' => 'Medidas',
-			'foreignKey' => 'medidas_id',
+		'Medida' => array(
+			'className' => 'Medida',
+			'foreignKey' => 'medida_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Propiedades' => array(
-			'className' => 'Propiedades',
-			'foreignKey' => 'propiedades_id',
+		'Propiedade' => array(
+			'className' => 'Propiedade',
+			'foreignKey' => 'propiedade_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

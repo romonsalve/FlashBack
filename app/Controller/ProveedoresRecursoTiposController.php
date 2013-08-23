@@ -55,9 +55,6 @@ class ProveedoresRecursoTiposController extends AppController {
 				$this->Session->setFlash(__('The proveedores recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
-		$proveedores = $this->ProveedoresRecursoTipo->Proveedore->find('list');
-		$recursoTipos = $this->ProveedoresRecursoTipo->RecursoTipo->find('list');
-		$this->set(compact('proveedores', 'recursoTipos'));
 	}
 
 /**
@@ -82,9 +79,6 @@ class ProveedoresRecursoTiposController extends AppController {
 			$options = array('conditions' => array('ProveedoresRecursoTipo.' . $this->ProveedoresRecursoTipo->primaryKey => $id));
 			$this->request->data = $this->ProveedoresRecursoTipo->find('first', $options);
 		}
-		$proveedores = $this->ProveedoresRecursoTipo->Proveedore->find('list');
-		$recursoTipos = $this->ProveedoresRecursoTipo->RecursoTipo->find('list');
-		$this->set(compact('proveedores', 'recursoTipos'));
 	}
 
 /**

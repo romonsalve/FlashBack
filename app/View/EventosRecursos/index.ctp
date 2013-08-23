@@ -33,8 +33,8 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('eventos_id', 'eventos_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recursos_id', 'recursos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_id', 'evento_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recurso_id', 'recurso_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('cantidad', 'cantidad'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
@@ -46,10 +46,10 @@
 	<?php foreach ($eventosRecursos as $eventosRecurso): ?>
 		<td><?php echo h($eventosRecurso['EventosRecurso']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($eventosRecurso['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $eventosRecurso['Eventos']['id'])); ?>
+			<?php echo $this->Html->link($eventosRecurso['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $eventosRecurso['Evento']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($eventosRecurso['Recursos']['id'], array('controller' => 'recursos', 'action' => 'view', $eventosRecurso['Recursos']['id'])); ?>
+			<?php echo $this->Html->link($eventosRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $eventosRecurso['Recurso']['id'])); ?>
 		</td>
 		<td><?php echo h($eventosRecurso['EventosRecurso']['cantidad']); ?>&nbsp;</td>
 		<td class="actions">

@@ -33,7 +33,7 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('cliente_tipos_id', 'cliente_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('cliente_tipo_id', 'cliente_tipo_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('rut', 'rut'); ?></th>
 			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
 			<th><?php echo $this->Paginator->sort('apellido_paterno', 'apellido_paterno'); ?></th>
@@ -51,7 +51,7 @@
 	<?php foreach ($clientes as $cliente): ?>
 		<td><?php echo h($cliente['Cliente']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($cliente['ClienteTipos']['id'], array('controller' => 'cliente_tipos', 'action' => 'view', $cliente['ClienteTipos']['id'])); ?>
+			<?php echo $this->Html->link($cliente['ClienteTipo']['id'], array('controller' => 'cliente_tipos', 'action' => 'view', $cliente['ClienteTipo']['id'])); ?>
 		</td>
 		<td><?php echo h($cliente['Cliente']['rut']); ?>&nbsp;</td>
 		<td><?php echo h($cliente['Cliente']['nombre']); ?>&nbsp;</td>

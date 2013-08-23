@@ -24,13 +24,13 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('medidas_id', array('class' =>'span12','label' => 'Ingrese medidas_id', 'placeholder' => '',
+		echo $this->Form->input('medida_id', array('class' =>'span12','label' => 'Ingrese medida_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('propiedades_id', array('class' =>'span12','label' => 'Ingrese propiedades_id', 'placeholder' => '',
+				echo $this->Form->input('propiedade_id', array('class' =>'span12','label' => 'Ingrese propiedade_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('recurso_tipos_id', array('class' =>'span12','label' => 'Ingrese recurso_tipos_id', 'placeholder' => '',
+				echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('maximo__medida', array('class' =>'span12','label' => 'Ingrese maximo__medida', 'placeholder' => '',

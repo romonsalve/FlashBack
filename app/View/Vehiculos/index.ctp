@@ -11,10 +11,9 @@
                     <!-- Title -->
                     <h3>Vehiculos</h3>
                     <!-- Para -->
-                    <p>Listado de vehículos relacionados con la empresa</p>
+                    <p>Listado de ...</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Vehículo</button>", array("action" => "add"), array("escape" => false));
-			  echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Tipo de Vehículo</button>", array("controller" => "VehiculoTipos", "action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -33,7 +32,7 @@
         <thead>
           <tr>
 
-
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
 			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'vehiculo_tipo_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('patente', 'patente'); ?></th>
 			<th><?php echo $this->Paginator->sort('modelo', 'modelo'); ?></th>
@@ -49,14 +48,14 @@
 	<?php foreach ($vehiculos as $vehiculo): ?>
 		<td><?php echo h($vehiculo['Vehiculo']['id']); ?>&nbsp;</td>
 		<td>
-
+			<?php echo $this->Html->link($vehiculo['VehiculoTipo']['id'], array('controller' => 'vehiculo_tipos', 'action' => 'view', $vehiculo['VehiculoTipo']['id'])); ?>
 		</td>
 		<td><?php echo h($vehiculo['Vehiculo']['patente']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['modelo']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['marca']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver Detalles'), array('action' => 'view', $vehiculo['Vehiculo']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $vehiculo['Vehiculo']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $vehiculo['Vehiculo']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $vehiculo['Vehiculo']['id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $vehiculo['Vehiculo']['id'])); ?>
 		</td>

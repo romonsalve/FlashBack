@@ -33,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recurso Tipos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['RecursoTipos']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipos']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Proveedores</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['Proveedores']['id'], array('controller' => 'proveedores', 'action' => 'view', $recurso['Proveedores']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cantidad </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['cantidad'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recurso Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['RecursoTipo']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipo']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Proveedore</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['Proveedore']['id'], array('controller' => 'proveedores', 'action' => 'view', $recurso['Proveedore']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cantidad </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['cantidad'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -55,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Recursos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Recurso'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Recurso Tipos'), array('controller' => 'recurso_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso Tipos'), array('controller' => 'recurso_tipos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Recurso Tipo'), array('controller' => 'recurso_tipos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Proveedores'), array('controller' => 'proveedores', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Proveedores'), array('controller' => 'proveedores', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Proveedore'), array('controller' => 'proveedores', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Propiedades'), array('controller' => 'propiedades', 'action' => 'index')); ?> </li>
@@ -83,9 +83,9 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Recintos Id'); ?></th>
-		<th><?php echo __('Evento Tipos Id'); ?></th>
-		<th><?php echo __('Clientes Id'); ?></th>
+		<th><?php echo __('Recinto Id'); ?></th>
+		<th><?php echo __('Evento Tipo Id'); ?></th>
+		<th><?php echo __('Cliente Id'); ?></th>
 		<th><?php echo __('Nombre'); ?></th>
 		<th><?php echo __('Fecha Inicio'); ?></th>
 		<th><?php echo __('Fecha Termino'); ?></th>
@@ -103,9 +103,9 @@
 		foreach ($recurso['Evento'] as $evento): ?>
 		<tr>
 			<td><?php echo $evento['id']; ?></td>
-			<td><?php echo $evento['recintos_id']; ?></td>
-			<td><?php echo $evento['evento_tipos_id']; ?></td>
-			<td><?php echo $evento['clientes_id']; ?></td>
+			<td><?php echo $evento['recinto_id']; ?></td>
+			<td><?php echo $evento['evento_tipo_id']; ?></td>
+			<td><?php echo $evento['cliente_id']; ?></td>
 			<td><?php echo $evento['nombre']; ?></td>
 			<td><?php echo $evento['fecha_inicio']; ?></td>
 			<td><?php echo $evento['fecha_termino']; ?></td>

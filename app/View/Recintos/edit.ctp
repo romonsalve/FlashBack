@@ -27,7 +27,7 @@
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('recinto_tipos_id', array('class' =>'span12','label' => 'Ingrese recinto_tipos_id', 'placeholder' => '',
+				echo $this->Form->input('recinto_tipo_id', array('class' =>'span12','label' => 'Ingrese recinto_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',

@@ -54,11 +54,73 @@
 		<li><?php echo $this->Form->postLink(__('Delete Cliente Tipo'), array('action' => 'delete', $clienteTipo['ClienteTipo']['id']), null, __('Are you sure you want to delete # %s?', $clienteTipo['ClienteTipo']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Cliente Tipos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Cliente Tipo'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Clientes'), array('controller' => 'clientes', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Cliente'), array('controller' => 'clientes', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->
 
 <div class="accordion" id="accordion">
+	<hr />
+	<div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
+                           <!-- Title with experience details. -->
+                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Clientes'); ?></h5>
+                </a>
+            </div>
+            <div id="collapse1" class="accordion-body collapse">
+                 <div class="accordion-inner">
+
+	<?php if (!empty($clienteTipo['Cliente'])): ?>
+	<table class="table table-striped table-bordered table-hover">
+	<thead>
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Cliente Tipo Id'); ?></th>
+		<th><?php echo __('Rut'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Apellido Paterno'); ?></th>
+		<th><?php echo __('Apellido Materno'); ?></th>
+		<th><?php echo __('Direccion'); ?></th>
+		<th><?php echo __('Fono'); ?></th>
+		<th><?php echo __('Correo'); ?></th>
+		<th><?php echo __('Acciones'); ?></th>
+	</tr>
+	</thead>
+        <tbody>
+
+	<?php
+		$i = 0;
+		foreach ($clienteTipo['Cliente'] as $cliente): ?>
+		<tr>
+			<td><?php echo $cliente['id']; ?></td>
+			<td><?php echo $cliente['cliente_tipo_id']; ?></td>
+			<td><?php echo $cliente['rut']; ?></td>
+			<td><?php echo $cliente['nombre']; ?></td>
+			<td><?php echo $cliente['apellido_paterno']; ?></td>
+			<td><?php echo $cliente['apellido_materno']; ?></td>
+			<td><?php echo $cliente['direccion']; ?></td>
+			<td><?php echo $cliente['fono']; ?></td>
+			<td><?php echo $cliente['correo']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'clientes', 'action' => 'view', $cliente['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'clientes', 'action' => 'edit', $cliente['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'clientes', 'action' => 'delete', $cliente['id']), null, __('¿Estás segudo de que quieres eliminar el elemento # %s?', $cliente['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+	</table>
+<?php endif; ?>
+
+		<div class="actions">
+			<ul>
+				<li><?php echo $this->Html->link(__('Nuevo Cliente'), array('controller' => 'clientes', 'action' => 'add')); ?> </li>
+			</ul>
+		</div>
+	     </div></div></div>
+
 
 </div>
 

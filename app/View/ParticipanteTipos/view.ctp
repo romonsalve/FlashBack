@@ -195,10 +195,10 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Estados Id'); ?></th>
-		<th><?php echo __('Evento Tipos Id'); ?></th>
-		<th><?php echo __('Clientes Id'); ?></th>
-		<th><?php echo __('Recinto Tipos Id'); ?></th>
+		<th><?php echo __('Estado Id'); ?></th>
+		<th><?php echo __('Evento Tipo Id'); ?></th>
+		<th><?php echo __('Cliente Id'); ?></th>
+		<th><?php echo __('Recinto Tipo Id'); ?></th>
 		<th><?php echo __('Nombre'); ?></th>
 		<th><?php echo __('Descripcion'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
@@ -211,10 +211,10 @@
 		foreach ($participanteTipo['SolicitudCotizacione'] as $solicitudCotizacione): ?>
 		<tr>
 			<td><?php echo $solicitudCotizacione['id']; ?></td>
-			<td><?php echo $solicitudCotizacione['estados_id']; ?></td>
-			<td><?php echo $solicitudCotizacione['evento_tipos_id']; ?></td>
-			<td><?php echo $solicitudCotizacione['clientes_id']; ?></td>
-			<td><?php echo $solicitudCotizacione['recinto_tipos_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['estado_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['evento_tipo_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['cliente_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['recinto_tipo_id']; ?></td>
 			<td><?php echo $solicitudCotizacione['nombre']; ?></td>
 			<td><?php echo $solicitudCotizacione['descripcion']; ?></td>
 			<td class="actions">

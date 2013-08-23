@@ -32,8 +32,8 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('recinto_tipos_id', 'recinto_tipos_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_tipos_id', 'evento_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recinto_tipo_id', 'recinto_tipo_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_tipo_id', 'evento_tipo_id'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -43,10 +43,10 @@
 
 	<?php foreach ($eventoTiposRecintoTipos as $eventoTiposRecintoTipo): ?>
 		<td>
-			<?php echo $this->Html->link($eventoTiposRecintoTipo['RecintoTipos']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $eventoTiposRecintoTipo['RecintoTipos']['id'])); ?>
+			<?php echo $this->Html->link($eventoTiposRecintoTipo['RecintoTipo']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $eventoTiposRecintoTipo['RecintoTipo']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($eventoTiposRecintoTipo['EventoTipos']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $eventoTiposRecintoTipo['EventoTipos']['id'])); ?>
+			<?php echo $this->Html->link($eventoTiposRecintoTipo['EventoTipo']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $eventoTiposRecintoTipo['EventoTipo']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $eventoTiposRecintoTipo['EventoTiposRecintoTipo']['id'])); ?>

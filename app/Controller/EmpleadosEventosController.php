@@ -55,9 +55,6 @@ class EmpleadosEventosController extends AppController {
 				$this->Session->setFlash(__('The empleados evento could not be saved. Please, try again.'), 'ferror');
 			}
 		}
-		$empleados = $this->EmpleadosEvento->Empleado->find('list');
-		$eventos = $this->EmpleadosEvento->Evento->find('list');
-		$this->set(compact('empleados', 'eventos'));
 	}
 
 /**
@@ -82,9 +79,6 @@ class EmpleadosEventosController extends AppController {
 			$options = array('conditions' => array('EmpleadosEvento.' . $this->EmpleadosEvento->primaryKey => $id));
 			$this->request->data = $this->EmpleadosEvento->find('first', $options);
 		}
-		$empleados = $this->EmpleadosEvento->Empleado->find('list');
-		$eventos = $this->EmpleadosEvento->Evento->find('list');
-		$this->set(compact('empleados', 'eventos'));
 	}
 
 /**

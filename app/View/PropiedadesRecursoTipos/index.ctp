@@ -33,9 +33,9 @@
           <tr>
 
 			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('medidas_id', 'medidas_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('propiedades_id', 'propiedades_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recurso_tipos_id', 'recurso_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('medida_id', 'medida_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('propiedade_id', 'propiedade_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recurso_tipo_id', 'recurso_tipo_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('maximo__medida', 'maximo__medida'); ?></th>
 			<th><?php echo $this->Paginator->sort('minimo_medida', 'minimo_medida'); ?></th>
 	
@@ -48,13 +48,13 @@
 	<?php foreach ($propiedadesRecursoTipos as $propiedadesRecursoTipo): ?>
 		<td><?php echo h($propiedadesRecursoTipo['PropiedadesRecursoTipo']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecursoTipo['Medidas']['id'], array('controller' => 'medidas', 'action' => 'view', $propiedadesRecursoTipo['Medidas']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecursoTipo['Medida']['id'], array('controller' => 'medidas', 'action' => 'view', $propiedadesRecursoTipo['Medida']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecursoTipo['Propiedades']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecursoTipo['Propiedades']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecursoTipo['Propiedade']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecursoTipo['Propiedade']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecursoTipo['RecursoTipos']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $propiedadesRecursoTipo['RecursoTipos']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecursoTipo['RecursoTipo']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $propiedadesRecursoTipo['RecursoTipo']['id'])); ?>
 		</td>
 		<td><?php echo h($propiedadesRecursoTipo['PropiedadesRecursoTipo']['maximo__medida']); ?>&nbsp;</td>
 		<td><?php echo h($propiedadesRecursoTipo['PropiedadesRecursoTipo']['minimo_medida']); ?>&nbsp;</td>

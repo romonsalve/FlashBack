@@ -27,7 +27,7 @@
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('cliente_tipos_id', array('class' =>'span12','label' => 'Ingrese cliente_tipos_id', 'placeholder' => '',
+				echo $this->Form->input('cliente_tipo_id', array('class' =>'span12','label' => 'Ingrese cliente_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('rut', array('class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',

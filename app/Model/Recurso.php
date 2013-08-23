@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * Recurso Model
  *
- * @property RecursoTipos $RecursoTipos
- * @property Proveedores $Proveedores
+ * @property RecursoTipo $RecursoTipo
+ * @property Proveedore $Proveedore
  * @property Evento $Evento
  * @property Propiedade $Propiedade
  */
@@ -16,7 +16,7 @@ class Recurso extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recurso_tipos_id' => array(
+		'recurso_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -36,16 +36,16 @@ class Recurso extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'RecursoTipos' => array(
-			'className' => 'RecursoTipos',
-			'foreignKey' => 'recurso_tipos_id',
+		'RecursoTipo' => array(
+			'className' => 'RecursoTipo',
+			'foreignKey' => 'recurso_tipo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Proveedores' => array(
-			'className' => 'Proveedores',
-			'foreignKey' => 'proveedores_id',
+		'Proveedore' => array(
+			'className' => 'Proveedore',
+			'foreignKey' => 'proveedore_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

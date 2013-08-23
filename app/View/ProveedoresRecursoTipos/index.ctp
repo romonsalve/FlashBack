@@ -32,8 +32,8 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('proveedores_id', 'proveedores_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recurso_tipos_id', 'recurso_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('proveedore_id', 'proveedore_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recurso_tipo_id', 'recurso_tipo_id'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -43,10 +43,10 @@
 
 	<?php foreach ($proveedoresRecursoTipos as $proveedoresRecursoTipo): ?>
 		<td>
-			<?php echo $this->Html->link($proveedoresRecursoTipo['Proveedores']['id'], array('controller' => 'proveedores', 'action' => 'view', $proveedoresRecursoTipo['Proveedores']['id'])); ?>
+			<?php echo $this->Html->link($proveedoresRecursoTipo['Proveedore']['id'], array('controller' => 'proveedores', 'action' => 'view', $proveedoresRecursoTipo['Proveedore']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($proveedoresRecursoTipo['RecursoTipos']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $proveedoresRecursoTipo['RecursoTipos']['id'])); ?>
+			<?php echo $this->Html->link($proveedoresRecursoTipo['RecursoTipo']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $proveedoresRecursoTipo['RecursoTipo']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $proveedoresRecursoTipo['ProveedoresRecursoTipo']['id'])); ?>

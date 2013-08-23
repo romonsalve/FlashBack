@@ -24,10 +24,10 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('recurso_tipos_id', array('class' =>'span12','label' => 'Ingrese recurso_tipos_id', 'placeholder' => '',
+		echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('proveedores_id', array('class' =>'span12','label' => 'Ingrese proveedores_id', 'placeholder' => '',
+				echo $this->Form->input('proveedore_id', array('class' =>'span12','label' => 'Ingrese proveedore_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese cantidad', 'placeholder' => '',

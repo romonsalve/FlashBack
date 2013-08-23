@@ -33,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Solicitud Cotizaciones</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($participanteTiposSolicitudCotizacione['SolicitudCotizaciones']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $participanteTiposSolicitudCotizacione['SolicitudCotizaciones']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Participante Tipos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($participanteTiposSolicitudCotizacione['ParticipanteTipos']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $participanteTiposSolicitudCotizacione['ParticipanteTipos']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Descripcion </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['descripcion'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Solicitud Cotizacione</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($participanteTiposSolicitudCotizacione['SolicitudCotizacione']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $participanteTiposSolicitudCotizacione['SolicitudCotizacione']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Participante Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($participanteTiposSolicitudCotizacione['ParticipanteTipo']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $participanteTiposSolicitudCotizacione['ParticipanteTipo']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Descripcion </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['descripcion'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -55,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Participante Tipos Solicitud Cotizaciones'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Participante Tipos Solicitud Cotizacione'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Participante Tipos'), array('controller' => 'participante_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Participante Tipos'), array('controller' => 'participante_tipos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Participante Tipo'), array('controller' => 'participante_tipos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->

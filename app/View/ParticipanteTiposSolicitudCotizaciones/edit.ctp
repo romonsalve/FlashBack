@@ -27,10 +27,10 @@
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('solicitud_cotizaciones_id', array('class' =>'span12','label' => 'Ingrese solicitud_cotizaciones_id', 'placeholder' => '',
+				echo $this->Form->input('solicitud_cotizacione_id', array('class' =>'span12','label' => 'Ingrese solicitud_cotizacione_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('participante_tipos_id', array('class' =>'span12','label' => 'Ingrese participante_tipos_id', 'placeholder' => '',
+				echo $this->Form->input('participante_tipo_id', array('class' =>'span12','label' => 'Ingrese participante_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Ingrese descripcion', 'placeholder' => '',
