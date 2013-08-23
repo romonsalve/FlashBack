@@ -36,7 +36,7 @@
 				echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('maximo__medida', array('class' =>'span12','label' => 'Ingrese maximo__medida', 'placeholder' => '',
+				echo $this->Form->input('maximo_medida', array('class' =>'span12','label' => 'Ingrese maximo_medida', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('minimo_medida', array('class' =>'span12','label' => 'Ingrese minimo_medida', 'placeholder' => '',
@@ -44,9 +44,7 @@
 		echo '<hr /> ';
 		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
-
             </div>
-
           </div>
         </div>
 

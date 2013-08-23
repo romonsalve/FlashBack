@@ -36,7 +36,7 @@
 			<th><?php echo $this->Paginator->sort('medida_id', 'medida_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('propiedade_id', 'propiedade_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('recurso_tipo_id', 'recurso_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('maximo__medida', 'maximo__medida'); ?></th>
+			<th><?php echo $this->Paginator->sort('maximo_medida', 'maximo_medida'); ?></th>
 			<th><?php echo $this->Paginator->sort('minimo_medida', 'minimo_medida'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
@@ -56,7 +56,7 @@
 		<td>
 			<?php echo $this->Html->link($propiedadesRecursoTipo['RecursoTipo']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $propiedadesRecursoTipo['RecursoTipo']['id'])); ?>
 		</td>
-		<td><?php echo h($propiedadesRecursoTipo['PropiedadesRecursoTipo']['maximo__medida']); ?>&nbsp;</td>
+		<td><?php echo h($propiedadesRecursoTipo['PropiedadesRecursoTipo']['maximo_medida']); ?>&nbsp;</td>
 		<td><?php echo h($propiedadesRecursoTipo['PropiedadesRecursoTipo']['minimo_medida']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $propiedadesRecursoTipo['PropiedadesRecursoTipo']['id'])); ?>
