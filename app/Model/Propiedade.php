@@ -3,20 +3,13 @@ App::uses('AppModel', 'Model');
 /**
  * Propiedade Model
  *
+ * @property Recurso $Recurso
  * @property Medida $Medida
  * @property RecursoTipo $RecursoTipo
- * @property Recurso $Recurso
  */
 class Propiedade extends AppModel {
 
-	public $displayField = 'nombre_prop';
 
-	public $validate = array(
-		'nombre_prop' => array(
-			'rule' => 'isUnique',
-			'message' => 'Ya existe una propiedad con ese nombre.',
-		),
-	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -25,6 +18,21 @@ class Propiedade extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
+		'Recurso' => array(
+			'className' => 'Recurso',
+			'joinTable' => 'propiedades_recursos',
+			'foreignKey' => 'propiedade_id',
+			'associationForeignKey' => 'recurso_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'Medida' => array(
 			'className' => 'Medida',
 			'joinTable' => 'medidas_propiedades',
@@ -45,21 +53,6 @@ class Propiedade extends AppModel {
 			'joinTable' => 'propiedades_recurso_tipos',
 			'foreignKey' => 'propiedade_id',
 			'associationForeignKey' => 'recurso_tipo_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		),
-		'Recurso' => array(
-			'className' => 'Recurso',
-			'joinTable' => 'propiedades_recursos',
-			'foreignKey' => 'propiedade_id',
-			'associationForeignKey' => 'recurso_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

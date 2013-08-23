@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Participantes</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Participantes", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,21 +32,21 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('participante_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_artistico_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('desc_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('ranking_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('contrato_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('rut_cont_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_cont_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('apellidop_cont_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('apellidom_cont_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('direccion_cont_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('fono_cont_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('correo_cont_par'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('participante_tipo_id', 'participante_tipo_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre_artistico', 'nombre_artistico'); ?></th>
+			<th><?php echo $this->Paginator->sort('contrato', 'contrato'); ?></th>
+			<th><?php echo $this->Paginator->sort('ranking', 'ranking'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
+			<th><?php echo $this->Paginator->sort('rut', 'rut'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('apellido_paterno', 'apellido_paterno'); ?></th>
+			<th><?php echo $this->Paginator->sort('apellido_materno', 'apellido_materno'); ?></th>
+			<th><?php echo $this->Paginator->sort('direccion', 'direccion'); ?></th>
+			<th><?php echo $this->Paginator->sort('fono', 'fono'); ?></th>
+			<th><?php echo $this->Paginator->sort('correo', 'correo'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -61,17 +57,17 @@
 		<td>
 			<?php echo $this->Html->link($participante['ParticipanteTipo']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $participante['ParticipanteTipo']['id'])); ?>
 		</td>
-		<td><?php echo h($participante['Participante']['nombre_artistico_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['desc_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['ranking_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['contrato_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['rut_cont_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['nombre_cont_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['apellidop_cont_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['apellidom_cont_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['direccion_cont_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['fono_cont_par']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['correo_cont_par']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['nombre_artistico']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['contrato']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['ranking']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['descripcion']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['rut']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['apellido_paterno']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['apellido_materno']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['direccion']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['fono']); ?>&nbsp;</td>
+		<td><?php echo h($participante['Participante']['correo']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $participante['Participante']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $participante['Participante']['id'])); ?>

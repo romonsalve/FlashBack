@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Propiedades Recurso'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("propiedadesRecursos", array('controller' => 'PropiedadesRecurso', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Propiedades Recurso", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($propiedadesRecurso['PropiedadesRecurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recurso</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($propiedadesRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $propiedadesRecurso['Recurso']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Propiedade</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($propiedadesRecurso['Propiedade']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedade']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Valor Pro Rec </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($propiedadesRecurso['PropiedadesRecurso']['valor_pro_rec'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($propiedadesRecurso['PropiedadesRecurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recursos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($propiedadesRecurso['Recursos']['id'], array('controller' => 'recursos', 'action' => 'view', $propiedadesRecurso['Recursos']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Propiedades</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($propiedadesRecurso['Propiedades']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedades']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Valor </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($propiedadesRecurso['PropiedadesRecurso']['valor'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -61,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Propiedades Recursos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Propiedades Recurso'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Recursos'), array('controller' => 'recursos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso'), array('controller' => 'recursos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Recursos'), array('controller' => 'recursos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Propiedades'), array('controller' => 'propiedades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Propiedade'), array('controller' => 'propiedades', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Propiedades'), array('controller' => 'propiedades', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->

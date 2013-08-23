@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Edit Auditorium</h2>
+          <h2>!!!Edit Auditorium</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">auditoria</a> <span class="divider">/</span></li>
-          <li class="active">Edit</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("auditoria", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -25,36 +20,32 @@
         <div class="box-body">
           <div class="row-fluid">
 
-            <div class='span9' >
+            <div class='span8' >
               <div class="well">
-                <h6>Edit Auditorium</h6>
                 <hr />
-
-	<!--<?php echo __('Edit Auditorium'); ?></legend>-->
 	<?php
-		echo $this->Form->input('id', array('class' =>'span9','placeholder' => 'Ingrese id'));
-				//echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
+		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre_tabla_audit', array('class' =>'span9','placeholder' => 'Ingrese nombre_tabla_audit'));
-				//echo $this->Form->input('nombre_tabla_audit', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_tabla_audit'));
+				echo $this->Form->input('nombre_tabla_audit', array('class' =>'span12','label' => 'Ingrese nombre_tabla_audit', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('operacion_audit', array('class' =>'span9','placeholder' => 'Ingrese operacion_audit'));
-				//echo $this->Form->input('operacion_audit', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese operacion_audit'));
+				echo $this->Form->input('operacion_audit', array('class' =>'span12','label' => 'Ingrese operacion_audit', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('valor_antiguo', array('class' =>'span9','placeholder' => 'Ingrese valor_antiguo'));
-				//echo $this->Form->input('valor_antiguo', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese valor_antiguo'));
+				echo $this->Form->input('valor_antiguo', array('class' =>'span12','label' => 'Ingrese valor_antiguo', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('valor_nuevo', array('class' =>'span9','placeholder' => 'Ingrese valor_nuevo'));
-				//echo $this->Form->input('valor_nuevo', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese valor_nuevo'));
+				echo $this->Form->input('valor_nuevo', array('class' =>'span12','label' => 'Ingrese valor_nuevo', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('hora', array('class' =>'span9','placeholder' => 'Ingrese hora'));
-				//echo $this->Form->input('hora', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese hora'));
+				echo $this->Form->input('hora', array('class' =>'span12','label' => 'Ingrese hora', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('usuario', array('class' =>'span9','placeholder' => 'Ingrese usuario'));
-				//echo $this->Form->input('usuario', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese usuario'));
+				echo $this->Form->input('usuario', array('class' =>'span12','label' => 'Ingrese usuario', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-		$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -69,19 +60,5 @@
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Auditorium.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Auditorium.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Auditoria'), array('action' => 'index')); ?></li>
-	</ul>
-</div>
---!>
 
 

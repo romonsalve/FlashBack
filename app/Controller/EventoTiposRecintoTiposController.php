@@ -49,10 +49,10 @@ class EventoTiposRecintoTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->EventoTiposRecintoTipo->create();
 			if ($this->EventoTiposRecintoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The evento tipos recinto tipo has been saved'));
+				$this->Session->setFlash(__('The evento tipos recinto tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The evento tipos recinto tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The evento tipos recinto tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class EventoTiposRecintoTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EventoTiposRecintoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The evento tipos recinto tipo has been saved'));
+				$this->Session->setFlash(__('The evento tipos recinto tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The evento tipos recinto tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The evento tipos recinto tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('EventoTiposRecintoTipo.' . $this->EventoTiposRecintoTipo->primaryKey => $id));
@@ -95,10 +95,10 @@ class EventoTiposRecintoTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EventoTiposRecintoTipo->delete()) {
-			$this->Session->setFlash(__('Evento tipos recinto tipo deleted'));
+			$this->Session->setFlash(__('Evento tipos recinto tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Evento tipos recinto tipo was not deleted'));
+		$this->Session->setFlash(__('Evento tipos recinto tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

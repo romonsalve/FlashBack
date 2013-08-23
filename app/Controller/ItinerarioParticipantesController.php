@@ -49,15 +49,15 @@ class ItinerarioParticipantesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->ItinerarioParticipante->create();
 			if ($this->ItinerarioParticipante->save($this->request->data)) {
-				$this->Session->setFlash(__('The itinerario participante has been saved'));
+				$this->Session->setFlash(__('The itinerario participante has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The itinerario participante could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The itinerario participante could not be saved. Please, try again.'), 'ferror');
 			}
 		}
-		$eventos = $this->ItinerarioParticipante->Evento->find('list');
 		$participantes = $this->ItinerarioParticipante->Participante->find('list');
-		$this->set(compact('eventos', 'participantes'));
+		$eventos = $this->ItinerarioParticipante->Evento->find('list');
+		$this->set(compact('participantes', 'eventos'));
 	}
 
 /**
@@ -73,18 +73,18 @@ class ItinerarioParticipantesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ItinerarioParticipante->save($this->request->data)) {
-				$this->Session->setFlash(__('The itinerario participante has been saved'));
+				$this->Session->setFlash(__('The itinerario participante has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The itinerario participante could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The itinerario participante could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('ItinerarioParticipante.' . $this->ItinerarioParticipante->primaryKey => $id));
 			$this->request->data = $this->ItinerarioParticipante->find('first', $options);
 		}
-		$eventos = $this->ItinerarioParticipante->Evento->find('list');
 		$participantes = $this->ItinerarioParticipante->Participante->find('list');
-		$this->set(compact('eventos', 'participantes'));
+		$eventos = $this->ItinerarioParticipante->Evento->find('list');
+		$this->set(compact('participantes', 'eventos'));
 	}
 
 /**
@@ -101,10 +101,10 @@ class ItinerarioParticipantesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ItinerarioParticipante->delete()) {
-			$this->Session->setFlash(__('Itinerario participante deleted'));
+			$this->Session->setFlash(__('Itinerario participante deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Itinerario participante was not deleted'));
+		$this->Session->setFlash(__('Itinerario participante was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

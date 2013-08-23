@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Propiedades Recursos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Propiedades Recursos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,12 +32,12 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recurso_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('propiedade_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('valor_pro_rec'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recursos_id', 'recursos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('propiedades_id', 'propiedades_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('valor', 'valor'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -50,12 +46,12 @@
 	<?php foreach ($propiedadesRecursos as $propiedadesRecurso): ?>
 		<td><?php echo h($propiedadesRecurso['PropiedadesRecurso']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $propiedadesRecurso['Recurso']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecurso['Recursos']['id'], array('controller' => 'recursos', 'action' => 'view', $propiedadesRecurso['Recursos']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecurso['Propiedade']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedade']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecurso['Propiedades']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedades']['id'])); ?>
 		</td>
-		<td><?php echo h($propiedadesRecurso['PropiedadesRecurso']['valor_pro_rec']); ?>&nbsp;</td>
+		<td><?php echo h($propiedadesRecurso['PropiedadesRecurso']['valor']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $propiedadesRecurso['PropiedadesRecurso']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $propiedadesRecurso['PropiedadesRecurso']['id'])); ?>

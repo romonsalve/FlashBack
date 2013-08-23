@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * EmpleadosEvento Model
  *
- * @property Empleado $Empleado
- * @property Evento $Evento
+ * @property Empleados $Empleados
+ * @property Eventos $Eventos
  */
 class EmpleadosEvento extends AppModel {
 
@@ -14,7 +14,7 @@ class EmpleadosEvento extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'empleado_id' => array(
+		'empleados_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class EmpleadosEvento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'evento_id' => array(
+		'eventos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -32,12 +32,6 @@ class EmpleadosEvento extends AppModel {
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'cargo_ete' => array(
-			'Ingrese un cargo para el empleado en este evento' => array(
-				'rule' => 'alphaNumeric',
-				'required' => true,
 			),
 		),
 	);
@@ -50,16 +44,16 @@ class EmpleadosEvento extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Empleado' => array(
-			'className' => 'Empleado',
-			'foreignKey' => 'empleado_id',
+		'Empleados' => array(
+			'className' => 'Empleados',
+			'foreignKey' => 'empleados_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Evento' => array(
-			'className' => 'Evento',
-			'foreignKey' => 'evento_id',
+		'Eventos' => array(
+			'className' => 'Eventos',
+			'foreignKey' => 'eventos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

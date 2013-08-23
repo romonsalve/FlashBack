@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Actividades Evento Tipos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Actividades Evento Tipos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,10 +32,10 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('evento_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('actividade_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_tipos_id', 'evento_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('actividades_id', 'actividades_id'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -47,10 +43,10 @@
 
 	<?php foreach ($actividadesEventoTipos as $actividadesEventoTipo): ?>
 		<td>
-			<?php echo $this->Html->link($actividadesEventoTipo['EventoTipo']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $actividadesEventoTipo['EventoTipo']['id'])); ?>
+			<?php echo $this->Html->link($actividadesEventoTipo['EventoTipos']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $actividadesEventoTipo['EventoTipos']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($actividadesEventoTipo['Actividade']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesEventoTipo['Actividade']['id'])); ?>
+			<?php echo $this->Html->link($actividadesEventoTipo['Actividades']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesEventoTipo['Actividades']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $actividadesEventoTipo['ActividadesEventoTipo']['id'])); ?>

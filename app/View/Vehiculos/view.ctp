@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Vehiculo'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("vehiculos", array('controller' => 'Vehiculo', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Vehiculo", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Vehiculo Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($vehiculo['VehiculoTipo']['id'], array('controller' => 'vehiculo_tipos', 'action' => 'view', $vehiculo['VehiculoTipo']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Patente Veh </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['patente_veh'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Modelo Veh </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['modelo_veh'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Marca Veh </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['marca_veh'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Desc Veh </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['desc_veh'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Vehiculo Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($vehiculo['VehiculoTipo']['id'], array('controller' => 'vehiculo_tipos', 'action' => 'view', $vehiculo['VehiculoTipo']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Patente </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['patente'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Modelo </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['modelo'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Marca </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['marca'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Descripcion </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculo['Vehiculo']['descripcion'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -87,9 +81,9 @@
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Evento Id'); ?></th>
 		<th><?php echo __('Vehiculo Id'); ?></th>
-		<th><?php echo __('Hora Ini Bit'); ?></th>
-		<th><?php echo __('Hora Ter Bit'); ?></th>
-		<th><?php echo __('Desc Bit'); ?></th>
+		<th><?php echo __('Hora Inicio'); ?></th>
+		<th><?php echo __('Hora Termino'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -102,9 +96,9 @@
 			<td><?php echo $bitacora['id']; ?></td>
 			<td><?php echo $bitacora['evento_id']; ?></td>
 			<td><?php echo $bitacora['vehiculo_id']; ?></td>
-			<td><?php echo $bitacora['hora_ini_bit']; ?></td>
-			<td><?php echo $bitacora['hora_ter_bit']; ?></td>
-			<td><?php echo $bitacora['desc_bit']; ?></td>
+			<td><?php echo $bitacora['hora_inicio']; ?></td>
+			<td><?php echo $bitacora['hora_termino']; ?></td>
+			<td><?php echo $bitacora['descripcion']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'bitacoras', 'action' => 'view', $bitacora['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'bitacoras', 'action' => 'edit', $bitacora['id'])); ?>

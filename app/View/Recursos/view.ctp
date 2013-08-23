@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Recurso'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("recursos", array('controller' => 'Recurso', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Recurso", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recurso Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['RecursoTipo']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipo']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Proveedore</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['Proveedore']['id'], array('controller' => 'proveedores', 'action' => 'view', $recurso['Proveedore']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cantidad Rec </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['cantidad_rec'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recurso Tipos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['RecursoTipos']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipos']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Proveedores</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($recurso['Proveedores']['id'], array('controller' => 'proveedores', 'action' => 'view', $recurso['Proveedores']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cantidad </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($recurso['Recurso']['cantidad'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -61,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Recursos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Recurso'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Recurso Tipos'), array('controller' => 'recurso_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso Tipo'), array('controller' => 'recurso_tipos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Recurso Tipos'), array('controller' => 'recurso_tipos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Proveedores'), array('controller' => 'proveedores', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Proveedore'), array('controller' => 'proveedores', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Proveedores'), array('controller' => 'proveedores', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Propiedades'), array('controller' => 'propiedades', 'action' => 'index')); ?> </li>
@@ -89,16 +83,16 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Evento Tipo Id'); ?></th>
-		<th><?php echo __('Cliente Id'); ?></th>
-		<th><?php echo __('Recinto Id'); ?></th>
-		<th><?php echo __('Estado Evento Id'); ?></th>
-		<th><?php echo __('Nombre Evento'); ?></th>
-		<th><?php echo __('Fecha De Inicio'); ?></th>
-		<th><?php echo __('Fecha De Termino'); ?></th>
-		<th><?php echo __('Precio Evento'); ?></th>
+		<th><?php echo __('Recintos Id'); ?></th>
+		<th><?php echo __('Evento Tipos Id'); ?></th>
+		<th><?php echo __('Clientes Id'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Fecha Inicio'); ?></th>
+		<th><?php echo __('Fecha Termino'); ?></th>
 		<th><?php echo __('Lista Invitados'); ?></th>
-		<th><?php echo __('Descripcion Evento'); ?></th>
+		<th><?php echo __('Estado'); ?></th>
+		<th><?php echo __('Precio'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -109,16 +103,16 @@
 		foreach ($recurso['Evento'] as $evento): ?>
 		<tr>
 			<td><?php echo $evento['id']; ?></td>
-			<td><?php echo $evento['evento_tipo_id']; ?></td>
-			<td><?php echo $evento['cliente_id']; ?></td>
-			<td><?php echo $evento['recinto_id']; ?></td>
-			<td><?php echo $evento['estado_evento_id']; ?></td>
-			<td><?php echo $evento['nombre_evento']; ?></td>
-			<td><?php echo $evento['fecha_de_inicio']; ?></td>
-			<td><?php echo $evento['fecha_de_termino']; ?></td>
-			<td><?php echo $evento['precio_evento']; ?></td>
+			<td><?php echo $evento['recintos_id']; ?></td>
+			<td><?php echo $evento['evento_tipos_id']; ?></td>
+			<td><?php echo $evento['clientes_id']; ?></td>
+			<td><?php echo $evento['nombre']; ?></td>
+			<td><?php echo $evento['fecha_inicio']; ?></td>
+			<td><?php echo $evento['fecha_termino']; ?></td>
 			<td><?php echo $evento['lista_invitados']; ?></td>
-			<td><?php echo $evento['descripcion_evento']; ?></td>
+			<td><?php echo $evento['estado']; ?></td>
+			<td><?php echo $evento['precio']; ?></td>
+			<td><?php echo $evento['descripcion']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'eventos', 'action' => 'view', $evento['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'eventos', 'action' => 'edit', $evento['id'])); ?>
@@ -153,7 +147,7 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Nombre Prop'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -164,7 +158,7 @@
 		foreach ($recurso['Propiedade'] as $propiedade): ?>
 		<tr>
 			<td><?php echo $propiedade['id']; ?></td>
-			<td><?php echo $propiedade['nombre_prop']; ?></td>
+			<td><?php echo $propiedade['nombre']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'propiedades', 'action' => 'view', $propiedade['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'propiedades', 'action' => 'edit', $propiedade['id'])); ?>

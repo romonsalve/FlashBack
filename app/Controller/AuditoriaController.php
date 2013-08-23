@@ -49,10 +49,10 @@ class AuditoriaController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Auditorium->create();
 			if ($this->Auditorium->save($this->request->data)) {
-				$this->Session->setFlash(__('The auditorium has been saved'));
+				$this->Session->setFlash(__('The auditorium has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The auditorium could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The auditorium could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class AuditoriaController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Auditorium->save($this->request->data)) {
-				$this->Session->setFlash(__('The auditorium has been saved'));
+				$this->Session->setFlash(__('The auditorium has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The auditorium could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The auditorium could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Auditorium.' . $this->Auditorium->primaryKey => $id));
@@ -95,10 +95,10 @@ class AuditoriaController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Auditorium->delete()) {
-			$this->Session->setFlash(__('Auditorium deleted'));
+			$this->Session->setFlash(__('Auditorium deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Auditorium was not deleted'));
+		$this->Session->setFlash(__('Auditorium was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

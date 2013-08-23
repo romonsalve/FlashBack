@@ -7,23 +7,7 @@ App::uses('AppModel', 'Model');
  */
 class EmpleadoTipo extends AppModel {
 
-public $displayField = 'nombre_empt';
 
-public $validate = array(
-    'nombre_empt' => array(
-	'unico' => array(
-		'rule'    => 'isUnique',
-		'message' => 'Este tipo de empleado ya ha sido ingresado.',
-		'required' => true,
-		'on' => 'create',
-	    	),
-	'alfanumerico' => array(
-		'rule' => 'alphanumeric',
-		'required' => true,
-		'message' => 'Ingrese sólo caracteres alfanuméricos.'
-		),
-	)
-);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**

@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Empleados Eventos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Empleados Eventos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,14 +32,14 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('empleado_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora_ini_ete'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora_ter_ete'); ?></th>
-			<th><?php echo $this->Paginator->sort('cargo_ete'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('empleados_id', 'empleados_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('eventos_id', 'eventos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('hora_inicio', 'hora_inicio'); ?></th>
+			<th><?php echo $this->Paginator->sort('hora_termino', 'hora_termino'); ?></th>
+			<th><?php echo $this->Paginator->sort('cargo', 'cargo'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -52,14 +48,14 @@
 	<?php foreach ($empleadosEventos as $empleadosEvento): ?>
 		<td><?php echo h($empleadosEvento['EmpleadosEvento']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($empleadosEvento['Empleado']['id'], array('controller' => 'empleados', 'action' => 'view', $empleadosEvento['Empleado']['id'])); ?>
+			<?php echo $this->Html->link($empleadosEvento['Empleados']['id'], array('controller' => 'empleados', 'action' => 'view', $empleadosEvento['Empleados']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($empleadosEvento['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $empleadosEvento['Evento']['id'])); ?>
+			<?php echo $this->Html->link($empleadosEvento['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $empleadosEvento['Eventos']['id'])); ?>
 		</td>
-		<td><?php echo h($empleadosEvento['EmpleadosEvento']['hora_ini_ete']); ?>&nbsp;</td>
-		<td><?php echo h($empleadosEvento['EmpleadosEvento']['hora_ter_ete']); ?>&nbsp;</td>
-		<td><?php echo h($empleadosEvento['EmpleadosEvento']['cargo_ete']); ?>&nbsp;</td>
+		<td><?php echo h($empleadosEvento['EmpleadosEvento']['hora_inicio']); ?>&nbsp;</td>
+		<td><?php echo h($empleadosEvento['EmpleadosEvento']['hora_termino']); ?>&nbsp;</td>
+		<td><?php echo h($empleadosEvento['EmpleadosEvento']['cargo']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $empleadosEvento['EmpleadosEvento']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $empleadosEvento['EmpleadosEvento']['id'])); ?>

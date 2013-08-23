@@ -49,10 +49,10 @@ class SolicitudCotizacionesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->SolicitudCotizacione->create();
 			if ($this->SolicitudCotizacione->save($this->request->data)) {
-				$this->Session->setFlash(__('The solicitud cotizacione has been saved'));
+				$this->Session->setFlash(__('The solicitud cotizacione has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The solicitud cotizacione could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The solicitud cotizacione could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$estados = $this->SolicitudCotizacione->Estado->find('list');
@@ -60,7 +60,8 @@ class SolicitudCotizacionesController extends AppController {
 		$clientes = $this->SolicitudCotizacione->Cliente->find('list');
 		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list');
 		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list');
-		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos'));
+		$actividades = $this->SolicitudCotizacione->Actividade->find('list');
+		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos', 'actividades'));
 	}
 
 /**
@@ -76,10 +77,10 @@ class SolicitudCotizacionesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->SolicitudCotizacione->save($this->request->data)) {
-				$this->Session->setFlash(__('The solicitud cotizacione has been saved'));
+				$this->Session->setFlash(__('The solicitud cotizacione has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The solicitud cotizacione could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The solicitud cotizacione could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('SolicitudCotizacione.' . $this->SolicitudCotizacione->primaryKey => $id));
@@ -90,7 +91,8 @@ class SolicitudCotizacionesController extends AppController {
 		$clientes = $this->SolicitudCotizacione->Cliente->find('list');
 		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list');
 		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list');
-		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos'));
+		$actividades = $this->SolicitudCotizacione->Actividade->find('list');
+		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos', 'actividades'));
 	}
 
 /**
@@ -107,10 +109,10 @@ class SolicitudCotizacionesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->SolicitudCotizacione->delete()) {
-			$this->Session->setFlash(__('Solicitud cotizacione deleted'));
+			$this->Session->setFlash(__('Solicitud cotizacione deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Solicitud cotizacione was not deleted'));
+		$this->Session->setFlash(__('Solicitud cotizacione was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

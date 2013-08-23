@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Vehiculos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Vehiculos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,14 +32,14 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('patente_veh'); ?></th>
-			<th><?php echo $this->Paginator->sort('modelo_veh'); ?></th>
-			<th><?php echo $this->Paginator->sort('marca_veh'); ?></th>
-			<th><?php echo $this->Paginator->sort('desc_veh'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'vehiculo_tipo_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('patente', 'patente'); ?></th>
+			<th><?php echo $this->Paginator->sort('modelo', 'modelo'); ?></th>
+			<th><?php echo $this->Paginator->sort('marca', 'marca'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -54,10 +50,10 @@
 		<td>
 			<?php echo $this->Html->link($vehiculo['VehiculoTipo']['id'], array('controller' => 'vehiculo_tipos', 'action' => 'view', $vehiculo['VehiculoTipo']['id'])); ?>
 		</td>
-		<td><?php echo h($vehiculo['Vehiculo']['patente_veh']); ?>&nbsp;</td>
-		<td><?php echo h($vehiculo['Vehiculo']['modelo_veh']); ?>&nbsp;</td>
-		<td><?php echo h($vehiculo['Vehiculo']['marca_veh']); ?>&nbsp;</td>
-		<td><?php echo h($vehiculo['Vehiculo']['desc_veh']); ?>&nbsp;</td>
+		<td><?php echo h($vehiculo['Vehiculo']['patente']); ?>&nbsp;</td>
+		<td><?php echo h($vehiculo['Vehiculo']['modelo']); ?>&nbsp;</td>
+		<td><?php echo h($vehiculo['Vehiculo']['marca']); ?>&nbsp;</td>
+		<td><?php echo h($vehiculo['Vehiculo']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $vehiculo['Vehiculo']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $vehiculo['Vehiculo']['id'])); ?>

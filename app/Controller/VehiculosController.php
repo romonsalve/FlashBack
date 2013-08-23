@@ -49,10 +49,10 @@ class VehiculosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Vehiculo->create();
 			if ($this->Vehiculo->save($this->request->data)) {
-				$this->Session->setFlash(__('The vehiculo has been saved'));
+				$this->Session->setFlash(__('The vehiculo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The vehiculo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The vehiculo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$vehiculoTipos = $this->Vehiculo->VehiculoTipo->find('list');
@@ -72,10 +72,10 @@ class VehiculosController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Vehiculo->save($this->request->data)) {
-				$this->Session->setFlash(__('The vehiculo has been saved'));
+				$this->Session->setFlash(__('The vehiculo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The vehiculo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The vehiculo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Vehiculo.' . $this->Vehiculo->primaryKey => $id));
@@ -99,10 +99,10 @@ class VehiculosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Vehiculo->delete()) {
-			$this->Session->setFlash(__('Vehiculo deleted'));
+			$this->Session->setFlash(__('Vehiculo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Vehiculo was not deleted'));
+		$this->Session->setFlash(__('Vehiculo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

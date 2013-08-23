@@ -49,10 +49,10 @@ class ProveedoresController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Proveedore->create();
 			if ($this->Proveedore->save($this->request->data)) {
-				$this->Session->setFlash(__('The proveedore has been saved'));
+				$this->Session->setFlash(__('The proveedore has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The proveedore could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The proveedore could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$recursoTipos = $this->Proveedore->RecursoTipo->find('list');
@@ -72,10 +72,10 @@ class ProveedoresController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Proveedore->save($this->request->data)) {
-				$this->Session->setFlash(__('The proveedore has been saved'));
+				$this->Session->setFlash(__('The proveedore has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The proveedore could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The proveedore could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Proveedore.' . $this->Proveedore->primaryKey => $id));
@@ -99,10 +99,10 @@ class ProveedoresController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Proveedore->delete()) {
-			$this->Session->setFlash(__('Proveedore deleted'));
+			$this->Session->setFlash(__('Proveedore deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Proveedore was not deleted'));
+		$this->Session->setFlash(__('Proveedore was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

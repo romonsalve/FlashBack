@@ -49,10 +49,10 @@ class RecintosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Recinto->create();
 			if ($this->Recinto->save($this->request->data)) {
-				$this->Session->setFlash(__('The recinto has been saved'));
+				$this->Session->setFlash(__('The recinto has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The recinto could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The recinto could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$recintoTipos = $this->Recinto->RecintoTipo->find('list');
@@ -72,10 +72,10 @@ class RecintosController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Recinto->save($this->request->data)) {
-				$this->Session->setFlash(__('The recinto has been saved'));
+				$this->Session->setFlash(__('The recinto has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The recinto could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The recinto could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Recinto.' . $this->Recinto->primaryKey => $id));
@@ -99,10 +99,10 @@ class RecintosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Recinto->delete()) {
-			$this->Session->setFlash(__('Recinto deleted'));
+			$this->Session->setFlash(__('Recinto deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Recinto was not deleted'));
+		$this->Session->setFlash(__('Recinto was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

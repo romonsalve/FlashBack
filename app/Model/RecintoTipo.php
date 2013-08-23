@@ -3,65 +3,12 @@ App::uses('AppModel', 'Model');
 /**
  * RecintoTipo Model
  *
- * @property SolicitudCotizacione $SolicitudCotizacione
- * @property Recinto $Recinto
  * @property EventoTipo $EventoTipo
  */
 class RecintoTipo extends AppModel {
 
-public $displayField = 'nombre_recit';
 
-public $validate = array(
-    'nombre_recit' => array(
-	'unico' => array(
-		'rule'    => 'isUnique',
-		'message' => 'Este tipo de recinto ya ha sido ingresado.',
-		'required' => true,
-		'on' => 'create',
-	    	),
-	'alfanumerico' => array(
-		'rule' => 'alphanumeric',
-		'required' => true,
-		'message' => 'Ingrese sólo caracteres alfanuméricos.'
-		),
-	)
-);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'SolicitudCotizacione' => array(
-			'className' => 'SolicitudCotizacione',
-			'foreignKey' => 'recinto_tipo_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Recinto' => array(
-			'className' => 'Recinto',
-			'foreignKey' => 'recinto_tipo_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
 
 /**
  * hasAndBelongsToMany associations

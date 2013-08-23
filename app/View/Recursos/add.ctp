@@ -1,28 +1,16 @@
 
-<script type="text/javascript">
-function obtenerPropiedades(valor){
-	$('#propi').load('/FlashBack/recursos/buscarPropiedades/'+valor+' #listaPropiedades');
-}
-
-</script>
-
 <?php echo $this->Form->create('Recurso'); ?>
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Add Recurso</h2>
+          <h2>!!!Add Recurso</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">recursos</a> <span class="divider">/</span></li>
-          <li class="active">Add</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("recursos", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -34,19 +22,16 @@ function obtenerPropiedades(valor){
 
             <div class='span6' >
               <div class="well">
-                <h6>Add Recurso</h6>
                 <hr />
-
-	<!--<?php echo __('Add Recurso'); ?></legend>-->
 	<?php
-		echo $this->Form->input('recurso_tipo_id', array('class' =>'span9','empty' => '(Seleccione Una opción)', 'onchange' => 'obtenerPropiedades(this.value)'));
-				//echo $this->Form->input('recurso_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recurso_tipo_id'));
+		echo $this->Form->input('recurso_tipos_id', array('class' =>'span12','label' => 'Ingrese recurso_tipos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('proveedore_id', array('class' =>'span9','empty' => 'Sin proveedor','placeholder' => 'Ingrese proveedore_id', 'selected' => 'null'));
-				//echo $this->Form->input('proveedore_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese proveedore_id'));
+				echo $this->Form->input('proveedores_id', array('class' =>'span12','label' => 'Ingrese proveedores_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('cantidad_rec', array('class' =>'span9','placeholder' => 'Ingrese cantidad_rec'));
-				//echo $this->Form->input('cantidad_rec', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese cantidad_rec'));
+				echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese cantidad', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
 	
@@ -55,12 +40,9 @@ function obtenerPropiedades(valor){
 	     <div class="span6 ">
                 <div class="well">
 		<?php
-		echo '<h6> Evento </h6> <hr /> ';
-		echo $this->Form->input('Evento', array('type'=>'select', 'multiple'=>'checkbox'));
-		echo '<h6> Propiedade </h6> <hr />';?> 
-		<div id="propi"></div>
-		<button class='btn btn-primary'>Guardar</button>
-	<?php echo $this->Form->end(); ?>
+echo '<h6> <?php echo Evento ?></h6> <hr />'; 		echo $this->Form->input('Evento', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo '<h6> <?php echo Propiedade ?></h6> <hr />'; 		echo $this->Form->input('Propiedade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -75,26 +57,5 @@ function obtenerPropiedades(valor){
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Recursos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Recurso Tipos'), array('controller' => 'recurso_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso Tipo'), array('controller' => 'recurso_tipos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Proveedores'), array('controller' => 'proveedores', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Proveedore'), array('controller' => 'proveedores', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Propiedades'), array('controller' => 'propiedades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Propiedade'), array('controller' => 'propiedades', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

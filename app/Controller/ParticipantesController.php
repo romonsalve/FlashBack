@@ -49,10 +49,10 @@ class ParticipantesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Participante->create();
 			if ($this->Participante->save($this->request->data)) {
-				$this->Session->setFlash(__('The participante has been saved'));
+				$this->Session->setFlash(__('The participante has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$participanteTipos = $this->Participante->ParticipanteTipo->find('list');
@@ -72,10 +72,10 @@ class ParticipantesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Participante->save($this->request->data)) {
-				$this->Session->setFlash(__('The participante has been saved'));
+				$this->Session->setFlash(__('The participante has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Participante.' . $this->Participante->primaryKey => $id));
@@ -99,10 +99,10 @@ class ParticipantesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Participante->delete()) {
-			$this->Session->setFlash(__('Participante deleted'));
+			$this->Session->setFlash(__('Participante deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Participante was not deleted'));
+		$this->Session->setFlash(__('Participante was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

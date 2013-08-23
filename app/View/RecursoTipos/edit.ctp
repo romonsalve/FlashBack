@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Edit Recurso Tipo</h2>
+          <h2>!!!Edit Recurso Tipo</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">recursoTipos</a> <span class="divider">/</span></li>
-          <li class="active">Edit</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("recursoTipos", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -27,22 +22,19 @@
 
             <div class='span6' >
               <div class="well">
-                <h6>Edit Recurso Tipo</h6>
                 <hr />
-
-	<!--<?php echo __('Edit Recurso Tipo'); ?></legend>-->
 	<?php
-		echo $this->Form->input('id', array('class' =>'span9','placeholder' => 'Ingrese id'));
-				//echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
+		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre_rect', array('class' =>'span9','placeholder' => 'Ingrese nombre_rect'));
-				//echo $this->Form->input('nombre_rect', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_rect'));
+				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('clasif_rect', array('class' =>'span9','placeholder' => 'Ingrese clasif_rect'));
-				//echo $this->Form->input('clasif_rect', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese clasif_rect'));
+				echo $this->Form->input('clasificacion', array('class' =>'span12','label' => 'Ingrese clasificacion', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('desc_rect', array('class' =>'span9','placeholder' => 'Ingrese desc_rect'));
-				//echo $this->Form->input('desc_rect', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese desc_rect'));
+				echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Ingrese descripcion', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
 	
@@ -51,11 +43,10 @@
 	     <div class="span6 ">
                 <div class="well">
 		<?php
-echo '<h6> <?php echo EventoTipo ?></h6> <hr />'; 		echo $this->Form->input('EventoTipo', array('type' => 'select', 'multiple'=>'checkbox') );
-echo '<h6> <?php echo Propiedade ?></h6> <hr />'; 		echo $this->Form->input('Propiedade', array('type' => 'select', 'multiple'=>'checkbox') );
-echo '<h6> <?php echo Proveedore ?></h6> <hr />'; 		echo $this->Form->input('Proveedore', array('type' => 'select', 'multiple'=>'checkbox') );
-$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+echo '<h6> <?php echo EventoTipo ?></h6> <hr />'; 		echo $this->Form->input('EventoTipo', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo '<h6> <?php echo Proveedore ?></h6> <hr />'; 		echo $this->Form->input('Proveedore', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo '<h6> <?php echo Propiedade ?></h6> <hr />'; 		echo $this->Form->input('Propiedade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -70,27 +61,5 @@ $this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('RecursoTipo.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('RecursoTipo.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Recurso Tipos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Recursos'), array('controller' => 'recursos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso'), array('controller' => 'recursos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Evento Tipos'), array('controller' => 'evento_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento Tipo'), array('controller' => 'evento_tipos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Propiedades'), array('controller' => 'propiedades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Propiedade'), array('controller' => 'propiedades', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Proveedores'), array('controller' => 'proveedores', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Proveedore'), array('controller' => 'proveedores', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

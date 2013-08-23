@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Edit Solicitud Cotizacione</h2>
+          <h2>!!!Edit Solicitud Cotizacione</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">solicitudCotizaciones</a> <span class="divider">/</span></li>
-          <li class="active">Edit</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("solicitudCotizaciones", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -27,31 +22,28 @@
 
             <div class='span6' >
               <div class="well">
-                <h6>Edit Solicitud Cotizacione</h6>
                 <hr />
-
-	<!--<?php echo __('Edit Solicitud Cotizacione'); ?></legend>-->
 	<?php
-		echo $this->Form->input('id', array('class' =>'span9','placeholder' => 'Ingrese id'));
-				//echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
+		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('estado_id', array('class' =>'span9','placeholder' => 'Ingrese estado_id'));
-				//echo $this->Form->input('estado_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese estado_id'));
+				echo $this->Form->input('estados_id', array('class' =>'span12','label' => 'Ingrese estados_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('evento_tipo_id', array('class' =>'span9','placeholder' => 'Ingrese evento_tipo_id'));
-				//echo $this->Form->input('evento_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese evento_tipo_id'));
+				echo $this->Form->input('evento_tipos_id', array('class' =>'span12','label' => 'Ingrese evento_tipos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('cliente_id', array('class' =>'span9','placeholder' => 'Ingrese cliente_id'));
-				//echo $this->Form->input('cliente_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese cliente_id'));
+				echo $this->Form->input('clientes_id', array('class' =>'span12','label' => 'Ingrese clientes_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('recinto_tipo_id', array('class' =>'span9','placeholder' => 'Ingrese recinto_tipo_id'));
-				//echo $this->Form->input('recinto_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recinto_tipo_id'));
+				echo $this->Form->input('recinto_tipos_id', array('class' =>'span12','label' => 'Ingrese recinto_tipos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre_cot', array('class' =>'span9','placeholder' => 'Ingrese nombre_cot'));
-				//echo $this->Form->input('nombre_cot', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_cot'));
+				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('desc_cot', array('class' =>'span9','placeholder' => 'Ingrese desc_cot'));
-				//echo $this->Form->input('desc_cot', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese desc_cot'));
+				echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Ingrese descripcion', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
 	
@@ -60,9 +52,9 @@
 	     <div class="span6 ">
                 <div class="well">
 		<?php
-echo '<h6> <?php echo ParticipanteTipo ?></h6> <hr />'; 		echo $this->Form->input('ParticipanteTipo', array('type' => 'select', 'multiple'=>'checkbox') );
-$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+echo '<h6> <?php echo ParticipanteTipo ?></h6> <hr />'; 		echo $this->Form->input('ParticipanteTipo', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo '<h6> <?php echo Actividade ?></h6> <hr />'; 		echo $this->Form->input('Actividade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -77,29 +69,5 @@ $this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('SolicitudCotizacione.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('SolicitudCotizacione.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Estados'), array('controller' => 'estados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Estado'), array('controller' => 'estados', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Evento Tipos'), array('controller' => 'evento_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento Tipo'), array('controller' => 'evento_tipos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Clientes'), array('controller' => 'clientes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Cliente'), array('controller' => 'clientes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Recinto Tipos'), array('controller' => 'recinto_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recinto Tipo'), array('controller' => 'recinto_tipos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Participante Tipos'), array('controller' => 'participante_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Participante Tipo'), array('controller' => 'participante_tipos', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

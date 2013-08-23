@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Add Proveedore</h2>
+          <h2>!!!Add Proveedore</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">proveedores</a> <span class="divider">/</span></li>
-          <li class="active">Add</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("proveedores", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -27,43 +22,40 @@
 
             <div class='span6' >
               <div class="well">
-                <h6>Add Proveedore</h6>
                 <hr />
-
-	<!--<?php echo __('Add Proveedore'); ?></legend>-->
 	<?php
-		echo $this->Form->input('rut_pro', array('class' =>'span9','placeholder' => 'Ingrese rut_pro'));
-				//echo $this->Form->input('rut_pro', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese rut_pro'));
+		echo $this->Form->input('rut', array('class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre_pro', array('class' =>'span9','placeholder' => 'Ingrese nombre_pro'));
-				//echo $this->Form->input('nombre_pro', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_pro'));
+				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('direccion_pro', array('class' =>'span9','placeholder' => 'Ingrese direccion_pro'));
-				//echo $this->Form->input('direccion_pro', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese direccion_pro'));
+				echo $this->Form->input('direccion', array('class' =>'span12','label' => 'Ingrese direccion', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fono_pro', array('class' =>'span9','placeholder' => 'Ingrese fono_pro'));
-				//echo $this->Form->input('fono_pro', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese fono_pro'));
+				echo $this->Form->input('fono', array('class' =>'span12','label' => 'Ingrese fono', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('correo_pro', array('class' =>'span9','placeholder' => 'Ingrese correo_pro'));
-				//echo $this->Form->input('correo_pro', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese correo_pro'));
+				echo $this->Form->input('correo', array('class' =>'span12','label' => 'Ingrese correo', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('ranking_pro', array('class' =>'span9','placeholder' => 'Ingrese ranking_pro'));
-				//echo $this->Form->input('ranking_pro', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese ranking_pro'));
+				echo $this->Form->input('ranking', array('class' =>'span12','label' => 'Ingrese ranking', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('contrato_pro', array('class' =>'span9','placeholder' => 'Ingrese contrato_pro'));
-				//echo $this->Form->input('contrato_pro', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese contrato_pro'));
+				echo $this->Form->input('contrato', array('class' =>'span12','label' => 'Ingrese contrato', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre_conta', array('class' =>'span9','placeholder' => 'Ingrese nombre_conta'));
-				//echo $this->Form->input('nombre_conta', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_conta'));
+				echo $this->Form->input('nombre_contacto', array('class' =>'span12','label' => 'Ingrese nombre_contacto', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellido_conta', array('class' =>'span9','placeholder' => 'Ingrese apellido_conta'));
-				//echo $this->Form->input('apellido_conta', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese apellido_conta'));
+				echo $this->Form->input('apellido_contacto', array('class' =>'span12','label' => 'Ingrese apellido_contacto', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('correo_conta', array('class' =>'span9','placeholder' => 'Ingrese correo_conta'));
-				//echo $this->Form->input('correo_conta', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese correo_conta'));
+				echo $this->Form->input('correo_contacto', array('class' =>'span12','label' => 'Ingrese correo_contacto', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fono_conta', array('class' =>'span9','placeholder' => 'Ingrese fono_conta'));
-				//echo $this->Form->input('fono_conta', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese fono_conta'));
+				echo $this->Form->input('fono_contacto', array('class' =>'span12','label' => 'Ingrese fono_contacto', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
 	
@@ -72,9 +64,8 @@
 	     <div class="span6 ">
                 <div class="well">
 		<?php
-echo '<h6> <?php echo RecursoTipo ?></h6> <hr />'; 		echo $this->Form->input('RecursoTipo', array('type' => 'select', 'multiple'=>'checkbox') );
-$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+echo '<h6> <?php echo RecursoTipo ?></h6> <hr />'; 		echo $this->Form->input('RecursoTipo', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -89,22 +80,5 @@ $this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Proveedores'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Recursos'), array('controller' => 'recursos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso'), array('controller' => 'recursos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Recurso Tipos'), array('controller' => 'recurso_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso Tipo'), array('controller' => 'recurso_tipos', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

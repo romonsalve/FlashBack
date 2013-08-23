@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Eventos Recurso'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("eventosRecursos", array('controller' => 'EventosRecurso', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Eventos Recurso", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($eventosRecurso['EventosRecurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Evento</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventosRecurso['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $eventosRecurso['Evento']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recurso</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventosRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $eventosRecurso['Recurso']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cantidad </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($eventosRecurso['EventosRecurso']['cantidad'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($eventosRecurso['EventosRecurso']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Eventos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventosRecurso['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $eventosRecurso['Eventos']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Recursos</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($eventosRecurso['Recursos']['id'], array('controller' => 'recursos', 'action' => 'view', $eventosRecurso['Recursos']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Cantidad </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($eventosRecurso['EventosRecurso']['cantidad'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -61,9 +55,9 @@
 		<li><?php echo $this->Html->link(__('List Eventos Recursos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Eventos Recurso'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Eventos'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Recursos'), array('controller' => 'recursos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso'), array('controller' => 'recursos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Recursos'), array('controller' => 'recursos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->

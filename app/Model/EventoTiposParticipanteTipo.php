@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * EventoTiposParticipanteTipo Model
  *
- * @property EventoTipo $EventoTipo
- * @property ParticipanteTipo $ParticipanteTipo
+ * @property EventoTipos $EventoTipos
+ * @property ParticipanteTipos $ParticipanteTipos
  */
 class EventoTiposParticipanteTipo extends AppModel {
 
@@ -14,7 +14,7 @@ class EventoTiposParticipanteTipo extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'evento_tipo_id' => array(
+		'evento_tipos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class EventoTiposParticipanteTipo extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'participante_tipo_id' => array(
+		'participante_tipos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class EventoTiposParticipanteTipo extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'EventoTipo' => array(
-			'className' => 'EventoTipo',
-			'foreignKey' => 'evento_tipo_id',
+		'EventoTipos' => array(
+			'className' => 'EventoTipos',
+			'foreignKey' => 'evento_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'ParticipanteTipo' => array(
-			'className' => 'ParticipanteTipo',
-			'foreignKey' => 'participante_tipo_id',
+		'ParticipanteTipos' => array(
+			'className' => 'ParticipanteTipos',
+			'foreignKey' => 'participante_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

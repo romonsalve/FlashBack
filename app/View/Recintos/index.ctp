@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Recintos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Recintos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,14 +32,14 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recinto_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_reci'); ?></th>
-			<th><?php echo $this->Paginator->sort('mapa_reci'); ?></th>
-			<th><?php echo $this->Paginator->sort('dimension_reci'); ?></th>
-			<th><?php echo $this->Paginator->sort('ubicacion_reci'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recinto_tipos_id', 'recinto_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('mapa', 'mapa'); ?></th>
+			<th><?php echo $this->Paginator->sort('dimension', 'dimension'); ?></th>
+			<th><?php echo $this->Paginator->sort('ubicacion', 'ubicacion'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -52,12 +48,12 @@
 	<?php foreach ($recintos as $recinto): ?>
 		<td><?php echo h($recinto['Recinto']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($recinto['RecintoTipo']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $recinto['RecintoTipo']['id'])); ?>
+			<?php echo $this->Html->link($recinto['RecintoTipos']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $recinto['RecintoTipos']['id'])); ?>
 		</td>
-		<td><?php echo h($recinto['Recinto']['nombre_reci']); ?>&nbsp;</td>
-		<td><?php echo h($recinto['Recinto']['mapa_reci']); ?>&nbsp;</td>
-		<td><?php echo h($recinto['Recinto']['dimension_reci']); ?>&nbsp;</td>
-		<td><?php echo h($recinto['Recinto']['ubicacion_reci']); ?>&nbsp;</td>
+		<td><?php echo h($recinto['Recinto']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($recinto['Recinto']['mapa']); ?>&nbsp;</td>
+		<td><?php echo h($recinto['Recinto']['dimension']); ?>&nbsp;</td>
+		<td><?php echo h($recinto['Recinto']['ubicacion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $recinto['Recinto']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $recinto['Recinto']['id'])); ?>

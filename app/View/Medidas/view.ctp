@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Medida'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("medidas", array('controller' => 'Medida', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Medida", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($medida['Medida']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre Medida </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($medida['Medida']['nombre_medida'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($medida['Medida']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($medida['Medida']['nombre'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -83,7 +77,7 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Nombre Prop'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -94,7 +88,7 @@
 		foreach ($medida['Propiedade'] as $propiedade): ?>
 		<tr>
 			<td><?php echo $propiedade['id']; ?></td>
-			<td><?php echo $propiedade['nombre_prop']; ?></td>
+			<td><?php echo $propiedade['nombre']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'propiedades', 'action' => 'view', $propiedade['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'propiedades', 'action' => 'edit', $propiedade['id'])); ?>

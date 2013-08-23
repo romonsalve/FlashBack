@@ -49,15 +49,16 @@ class ActividadesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Actividade->create();
 			if ($this->Actividade->save($this->request->data)) {
-				$this->Session->setFlash(__('The actividade has been saved'));
+				$this->Session->setFlash(__('The actividade has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The actividade could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The actividade could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$eventoTipos = $this->Actividade->EventoTipo->find('list');
 		$eventos = $this->Actividade->Evento->find('list');
-		$this->set(compact('eventoTipos', 'eventos'));
+		$solicitudCotizaciones = $this->Actividade->SolicitudCotizacione->find('list');
+		$this->set(compact('eventoTipos', 'eventos', 'solicitudCotizaciones'));
 	}
 
 /**
@@ -73,10 +74,10 @@ class ActividadesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Actividade->save($this->request->data)) {
-				$this->Session->setFlash(__('The actividade has been saved'));
+				$this->Session->setFlash(__('The actividade has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The actividade could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The actividade could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Actividade.' . $this->Actividade->primaryKey => $id));
@@ -84,7 +85,8 @@ class ActividadesController extends AppController {
 		}
 		$eventoTipos = $this->Actividade->EventoTipo->find('list');
 		$eventos = $this->Actividade->Evento->find('list');
-		$this->set(compact('eventoTipos', 'eventos'));
+		$solicitudCotizaciones = $this->Actividade->SolicitudCotizacione->find('list');
+		$this->set(compact('eventoTipos', 'eventos', 'solicitudCotizaciones'));
 	}
 
 /**
@@ -101,10 +103,10 @@ class ActividadesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Actividade->delete()) {
-			$this->Session->setFlash(__('Actividade deleted'));
+			$this->Session->setFlash(__('Actividade deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Actividade was not deleted'));
+		$this->Session->setFlash(__('Actividade was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

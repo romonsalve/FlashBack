@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Medidas Propiedades</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Medidas Propiedades", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,10 +32,10 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('medida_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('propiedade_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('medidas_id', 'medidas_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('propiedades_id', 'propiedades_id'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -47,10 +43,10 @@
 
 	<?php foreach ($medidasPropiedades as $medidasPropiedade): ?>
 		<td>
-			<?php echo $this->Html->link($medidasPropiedade['Medida']['id'], array('controller' => 'medidas', 'action' => 'view', $medidasPropiedade['Medida']['id'])); ?>
+			<?php echo $this->Html->link($medidasPropiedade['Medidas']['id'], array('controller' => 'medidas', 'action' => 'view', $medidasPropiedade['Medidas']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($medidasPropiedade['Propiedade']['id'], array('controller' => 'propiedades', 'action' => 'view', $medidasPropiedade['Propiedade']['id'])); ?>
+			<?php echo $this->Html->link($medidasPropiedade['Propiedades']['id'], array('controller' => 'propiedades', 'action' => 'view', $medidasPropiedade['Propiedades']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $medidasPropiedade['MedidasPropiedade']['id'])); ?>

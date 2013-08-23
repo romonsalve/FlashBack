@@ -14,27 +14,6 @@ class Vehiculo extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'patente_veh' => array(
-			'patenteValida' => array(
-				'rule' => '/([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){4}[0-9]{2}/',
-				'message' => 'Ingrese una patente válida, en mayúsculas, sin guiones ni espacios.',
-				'required' => true,
-			),
-		),
-		'modelo_veh' => array(
-			'req' => array(
-				'rule' => 'alphanumeric',
-				'required' => true,
-				'message' => 'Ingrese sólo caracteres alfanuméricos'
-			),
-		),
-		'marca_veh' => array(
-			'req' => array(
-				'rule' => 'alphanumeric',
-				'required' => true,
-				'message' => 'Ingrese sólo caracteres alfanuméricos'
-			),
-		),
 		'vehiculo_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),

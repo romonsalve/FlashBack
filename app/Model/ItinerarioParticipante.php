@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * ItinerarioParticipante Model
  *
- * @property Evento $Evento
  * @property Participante $Participante
+ * @property Evento $Evento
  */
 class ItinerarioParticipante extends AppModel {
 
@@ -14,7 +14,7 @@ class ItinerarioParticipante extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'evento_id' => array(
+		'participante_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class ItinerarioParticipante extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'participante_id' => array(
+		'evento_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class ItinerarioParticipante extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Evento' => array(
-			'className' => 'Evento',
-			'foreignKey' => 'evento_id',
+		'Participante' => array(
+			'className' => 'Participante',
+			'foreignKey' => 'participante_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Participante' => array(
-			'className' => 'Participante',
-			'foreignKey' => 'participante_id',
+		'Evento' => array(
+			'className' => 'Evento',
+			'foreignKey' => 'evento_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

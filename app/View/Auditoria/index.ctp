@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Auditoria</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Auditoria", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,15 +32,15 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_tabla_audit'); ?></th>
-			<th><?php echo $this->Paginator->sort('operacion_audit'); ?></th>
-			<th><?php echo $this->Paginator->sort('valor_antiguo'); ?></th>
-			<th><?php echo $this->Paginator->sort('valor_nuevo'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora'); ?></th>
-			<th><?php echo $this->Paginator->sort('usuario'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre_tabla_audit', 'nombre_tabla_audit'); ?></th>
+			<th><?php echo $this->Paginator->sort('operacion_audit', 'operacion_audit'); ?></th>
+			<th><?php echo $this->Paginator->sort('valor_antiguo', 'valor_antiguo'); ?></th>
+			<th><?php echo $this->Paginator->sort('valor_nuevo', 'valor_nuevo'); ?></th>
+			<th><?php echo $this->Paginator->sort('hora', 'hora'); ?></th>
+			<th><?php echo $this->Paginator->sort('usuario', 'usuario'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>

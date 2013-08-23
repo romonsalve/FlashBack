@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Vehiculo Tipo'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("vehiculoTipos", array('controller' => 'VehiculoTipo', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Vehiculo Tipo", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculoTipo['VehiculoTipo']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre Veht </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculoTipo['VehiculoTipo']['nombre_veht'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculoTipo['VehiculoTipo']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($vehiculoTipo['VehiculoTipo']['nombre'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -84,10 +78,10 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Vehiculo Tipo Id'); ?></th>
-		<th><?php echo __('Patente Veh'); ?></th>
-		<th><?php echo __('Modelo Veh'); ?></th>
-		<th><?php echo __('Marca Veh'); ?></th>
-		<th><?php echo __('Desc Veh'); ?></th>
+		<th><?php echo __('Patente'); ?></th>
+		<th><?php echo __('Modelo'); ?></th>
+		<th><?php echo __('Marca'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -99,10 +93,10 @@
 		<tr>
 			<td><?php echo $vehiculo['id']; ?></td>
 			<td><?php echo $vehiculo['vehiculo_tipo_id']; ?></td>
-			<td><?php echo $vehiculo['patente_veh']; ?></td>
-			<td><?php echo $vehiculo['modelo_veh']; ?></td>
-			<td><?php echo $vehiculo['marca_veh']; ?></td>
-			<td><?php echo $vehiculo['desc_veh']; ?></td>
+			<td><?php echo $vehiculo['patente']; ?></td>
+			<td><?php echo $vehiculo['modelo']; ?></td>
+			<td><?php echo $vehiculo['marca']; ?></td>
+			<td><?php echo $vehiculo['descripcion']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'vehiculos', 'action' => 'view', $vehiculo['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'vehiculos', 'action' => 'edit', $vehiculo['id'])); ?>

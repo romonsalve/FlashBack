@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Clientes</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Clientes", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,17 +32,17 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('cliente_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('rut_cli'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_cli'); ?></th>
-			<th><?php echo $this->Paginator->sort('apellidom_cli'); ?></th>
-			<th><?php echo $this->Paginator->sort('apellidop_cli'); ?></th>
-			<th><?php echo $this->Paginator->sort('direccion_cli'); ?></th>
-			<th><?php echo $this->Paginator->sort('fono_cli'); ?></th>
-			<th><?php echo $this->Paginator->sort('correo_cli'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('cliente_tipos_id', 'cliente_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('rut', 'rut'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('apellido_paterno', 'apellido_paterno'); ?></th>
+			<th><?php echo $this->Paginator->sort('apellido_materno', 'apellido_materno'); ?></th>
+			<th><?php echo $this->Paginator->sort('direccion', 'direccion'); ?></th>
+			<th><?php echo $this->Paginator->sort('fono', 'fono'); ?></th>
+			<th><?php echo $this->Paginator->sort('correo', 'correo'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -55,15 +51,15 @@
 	<?php foreach ($clientes as $cliente): ?>
 		<td><?php echo h($cliente['Cliente']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($cliente['ClienteTipo']['id'], array('controller' => 'cliente_tipos', 'action' => 'view', $cliente['ClienteTipo']['id'])); ?>
+			<?php echo $this->Html->link($cliente['ClienteTipos']['id'], array('controller' => 'cliente_tipos', 'action' => 'view', $cliente['ClienteTipos']['id'])); ?>
 		</td>
-		<td><?php echo h($cliente['Cliente']['rut_cli']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['nombre_cli']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['apellidom_cli']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['apellidop_cli']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['direccion_cli']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['fono_cli']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['correo_cli']); ?>&nbsp;</td>
+		<td><?php echo h($cliente['Cliente']['rut']); ?>&nbsp;</td>
+		<td><?php echo h($cliente['Cliente']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($cliente['Cliente']['apellido_paterno']); ?>&nbsp;</td>
+		<td><?php echo h($cliente['Cliente']['apellido_materno']); ?>&nbsp;</td>
+		<td><?php echo h($cliente['Cliente']['direccion']); ?>&nbsp;</td>
+		<td><?php echo h($cliente['Cliente']['fono']); ?>&nbsp;</td>
+		<td><?php echo h($cliente['Cliente']['correo']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $cliente['Cliente']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $cliente['Cliente']['id'])); ?>

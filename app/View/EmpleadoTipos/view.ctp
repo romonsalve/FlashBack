@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Empleado Tipo'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("empleadoTipos", array('controller' => 'EmpleadoTipo', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Empleado Tipo", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadoTipo['EmpleadoTipo']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre Empt </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadoTipo['EmpleadoTipo']['nombre_empt'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadoTipo['EmpleadoTipo']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleadoTipo['EmpleadoTipo']['nombre'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -84,14 +78,14 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Empleado Tipo Id'); ?></th>
-		<th><?php echo __('Rut Emp'); ?></th>
-		<th><?php echo __('Nombre Emp'); ?></th>
-		<th><?php echo __('Apellidom Emp'); ?></th>
-		<th><?php echo __('Apellidop Emp'); ?></th>
-		<th><?php echo __('Direccion Emp'); ?></th>
-		<th><?php echo __('Fono Emp'); ?></th>
-		<th><?php echo __('Correo Emp'); ?></th>
-		<th><?php echo __('Contrato Emp'); ?></th>
+		<th><?php echo __('Rut'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Apellido Paterno'); ?></th>
+		<th><?php echo __('Apellido Materno'); ?></th>
+		<th><?php echo __('Direccion'); ?></th>
+		<th><?php echo __('Fono'); ?></th>
+		<th><?php echo __('Correo'); ?></th>
+		<th><?php echo __('Contrato'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -103,14 +97,14 @@
 		<tr>
 			<td><?php echo $empleado['id']; ?></td>
 			<td><?php echo $empleado['empleado_tipo_id']; ?></td>
-			<td><?php echo $empleado['rut_emp']; ?></td>
-			<td><?php echo $empleado['nombre_emp']; ?></td>
-			<td><?php echo $empleado['apellidom_emp']; ?></td>
-			<td><?php echo $empleado['apellidop_emp']; ?></td>
-			<td><?php echo $empleado['direccion_emp']; ?></td>
-			<td><?php echo $empleado['fono_emp']; ?></td>
-			<td><?php echo $empleado['correo_emp']; ?></td>
-			<td><?php echo $empleado['contrato_emp']; ?></td>
+			<td><?php echo $empleado['rut']; ?></td>
+			<td><?php echo $empleado['nombre']; ?></td>
+			<td><?php echo $empleado['apellido_paterno']; ?></td>
+			<td><?php echo $empleado['apellido_materno']; ?></td>
+			<td><?php echo $empleado['direccion']; ?></td>
+			<td><?php echo $empleado['fono']; ?></td>
+			<td><?php echo $empleado['correo']; ?></td>
+			<td><?php echo $empleado['contrato']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'empleados', 'action' => 'view', $empleado['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'empleados', 'action' => 'edit', $empleado['id'])); ?>

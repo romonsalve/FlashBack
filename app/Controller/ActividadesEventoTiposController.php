@@ -49,12 +49,15 @@ class ActividadesEventoTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->ActividadesEventoTipo->create();
 			if ($this->ActividadesEventoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The actividades evento tipo has been saved'));
+				$this->Session->setFlash(__('The actividades evento tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The actividades evento tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The actividades evento tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
+		$eventoTipos = $this->ActividadesEventoTipo->EventoTipo->find('list');
+		$actividades = $this->ActividadesEventoTipo->Actividade->find('list');
+		$this->set(compact('eventoTipos', 'actividades'));
 	}
 
 /**
@@ -70,15 +73,18 @@ class ActividadesEventoTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ActividadesEventoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The actividades evento tipo has been saved'));
+				$this->Session->setFlash(__('The actividades evento tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The actividades evento tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The actividades evento tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('ActividadesEventoTipo.' . $this->ActividadesEventoTipo->primaryKey => $id));
 			$this->request->data = $this->ActividadesEventoTipo->find('first', $options);
 		}
+		$eventoTipos = $this->ActividadesEventoTipo->EventoTipo->find('list');
+		$actividades = $this->ActividadesEventoTipo->Actividade->find('list');
+		$this->set(compact('eventoTipos', 'actividades'));
 	}
 
 /**
@@ -95,10 +101,10 @@ class ActividadesEventoTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ActividadesEventoTipo->delete()) {
-			$this->Session->setFlash(__('Actividades evento tipo deleted'));
+			$this->Session->setFlash(__('Actividades evento tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Actividades evento tipo was not deleted'));
+		$this->Session->setFlash(__('Actividades evento tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Vehiculo Tipos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Vehiculo Tipos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,10 +32,10 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_veht'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -47,7 +43,7 @@
 
 	<?php foreach ($vehiculoTipos as $vehiculoTipo): ?>
 		<td><?php echo h($vehiculoTipo['VehiculoTipo']['id']); ?>&nbsp;</td>
-		<td><?php echo h($vehiculoTipo['VehiculoTipo']['nombre_veht']); ?>&nbsp;</td>
+		<td><?php echo h($vehiculoTipo['VehiculoTipo']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $vehiculoTipo['VehiculoTipo']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $vehiculoTipo['VehiculoTipo']['id'])); ?>

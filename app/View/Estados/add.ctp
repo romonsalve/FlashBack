@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Add Estado</h2>
+          <h2>!!!Add Estado</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">estados</a> <span class="divider">/</span></li>
-          <li class="active">Add</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("estados", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -25,21 +20,17 @@
         <div class="box-body">
           <div class="row-fluid">
 
-            <div class='span9' >
+            <div class='span8' >
               <div class="well">
-                <h6>Add Estado</h6>
                 <hr />
-
-	<!--<?php echo __('Add Estado'); ?></legend>-->
 	<?php
-		echo $this->Form->input('nombre_est', array('class' =>'span9','placeholder' => 'Ingrese nombre_est'));
-				//echo $this->Form->input('nombre_est', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_est'));
+		echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('desc_est', array('class' =>'span9','placeholder' => 'Ingrese desc_est'));
-				//echo $this->Form->input('desc_est', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese desc_est'));
+				echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Ingrese descripcion', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-		$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -54,20 +45,5 @@
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Estados'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

@@ -49,10 +49,10 @@ class ParticipanteTiposSolicitudCotizacionesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->ParticipanteTiposSolicitudCotizacione->create();
 			if ($this->ParticipanteTiposSolicitudCotizacione->save($this->request->data)) {
-				$this->Session->setFlash(__('The participante tipos solicitud cotizacione has been saved'));
+				$this->Session->setFlash(__('The participante tipos solicitud cotizacione has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The participante tipos solicitud cotizacione could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The participante tipos solicitud cotizacione could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class ParticipanteTiposSolicitudCotizacionesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ParticipanteTiposSolicitudCotizacione->save($this->request->data)) {
-				$this->Session->setFlash(__('The participante tipos solicitud cotizacione has been saved'));
+				$this->Session->setFlash(__('The participante tipos solicitud cotizacione has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The participante tipos solicitud cotizacione could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The participante tipos solicitud cotizacione could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('ParticipanteTiposSolicitudCotizacione.' . $this->ParticipanteTiposSolicitudCotizacione->primaryKey => $id));
@@ -95,10 +95,10 @@ class ParticipanteTiposSolicitudCotizacionesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ParticipanteTiposSolicitudCotizacione->delete()) {
-			$this->Session->setFlash(__('Participante tipos solicitud cotizacione deleted'));
+			$this->Session->setFlash(__('Participante tipos solicitud cotizacione deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Participante tipos solicitud cotizacione was not deleted'));
+		$this->Session->setFlash(__('Participante tipos solicitud cotizacione was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

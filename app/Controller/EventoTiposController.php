@@ -49,17 +49,17 @@ class EventoTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->EventoTipo->create();
 			if ($this->EventoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The evento tipo has been saved'));
+				$this->Session->setFlash(__('The evento tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The evento tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The evento tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
-		$recintoTipos = $this->EventoTipo->RecintoTipo->find('list');
-		$recursoTipos = $this->EventoTipo->RecursoTipo->find('list');
 		$actividades = $this->EventoTipo->Actividade->find('list');
 		$participanteTipos = $this->EventoTipo->ParticipanteTipo->find('list');
-		$this->set(compact('recintoTipos', 'recursoTipos', 'actividades', 'participanteTipos'));
+		$recintoTipos = $this->EventoTipo->RecintoTipo->find('list');
+		$recursoTipos = $this->EventoTipo->RecursoTipo->find('list');
+		$this->set(compact('actividades', 'participanteTipos', 'recintoTipos', 'recursoTipos'));
 	}
 
 /**
@@ -75,20 +75,20 @@ class EventoTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EventoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The evento tipo has been saved'));
+				$this->Session->setFlash(__('The evento tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The evento tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The evento tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('EventoTipo.' . $this->EventoTipo->primaryKey => $id));
 			$this->request->data = $this->EventoTipo->find('first', $options);
 		}
-		$recintoTipos = $this->EventoTipo->RecintoTipo->find('list');
-		$recursoTipos = $this->EventoTipo->RecursoTipo->find('list');
 		$actividades = $this->EventoTipo->Actividade->find('list');
 		$participanteTipos = $this->EventoTipo->ParticipanteTipo->find('list');
-		$this->set(compact('recintoTipos', 'recursoTipos', 'actividades', 'participanteTipos'));
+		$recintoTipos = $this->EventoTipo->RecintoTipo->find('list');
+		$recursoTipos = $this->EventoTipo->RecursoTipo->find('list');
+		$this->set(compact('actividades', 'participanteTipos', 'recintoTipos', 'recursoTipos'));
 	}
 
 /**
@@ -105,10 +105,10 @@ class EventoTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EventoTipo->delete()) {
-			$this->Session->setFlash(__('Evento tipo deleted'));
+			$this->Session->setFlash(__('Evento tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Evento tipo was not deleted'));
+		$this->Session->setFlash(__('Evento tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

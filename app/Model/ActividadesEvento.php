@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * ActividadesEvento Model
  *
- * @property Evento $Evento
- * @property Actividade $Actividade
+ * @property Eventos $Eventos
+ * @property Actividades $Actividades
  */
 class ActividadesEvento extends AppModel {
 
@@ -14,7 +14,7 @@ class ActividadesEvento extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'evento_id' => array(
+		'eventos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class ActividadesEvento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'actividade_id' => array(
+		'actividades_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -32,12 +32,6 @@ class ActividadesEvento extends AppModel {
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'estado_act' => array(
-			'Ingrese un estado de actividad' => array(
-				'rule' => array('alphaNumeric'),
-				'allowEmpty' => true,
 			),
 		),
 	);
@@ -50,16 +44,16 @@ class ActividadesEvento extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Evento' => array(
-			'className' => 'Evento',
-			'foreignKey' => 'evento_id',
+		'Eventos' => array(
+			'className' => 'Eventos',
+			'foreignKey' => 'eventos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Actividade' => array(
-			'className' => 'Actividade',
-			'foreignKey' => 'actividade_id',
+		'Actividades' => array(
+			'className' => 'Actividades',
+			'foreignKey' => 'actividades_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

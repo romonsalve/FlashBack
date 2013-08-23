@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Actividade'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("actividades", array('controller' => 'Actividade', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Actividade", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($actividade['Actividade']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre Act </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($actividade['Actividade']['nombre_act'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Desc Act </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($actividade['Actividade']['desc_act'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($actividade['Actividade']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($actividade['Actividade']['nombre'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Descripcion </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($actividade['Actividade']['descripcion'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -64,6 +58,8 @@
 		<li><?php echo $this->Html->link(__('New Evento Tipo'), array('controller' => 'evento_tipos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->
@@ -85,7 +81,7 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Nombre Evt'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -96,7 +92,7 @@
 		foreach ($actividade['EventoTipo'] as $eventoTipo): ?>
 		<tr>
 			<td><?php echo $eventoTipo['id']; ?></td>
-			<td><?php echo $eventoTipo['nombre_evt']; ?></td>
+			<td><?php echo $eventoTipo['nombre']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'evento_tipos', 'action' => 'view', $eventoTipo['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'evento_tipos', 'action' => 'edit', $eventoTipo['id'])); ?>
@@ -131,16 +127,16 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Evento Tipo Id'); ?></th>
-		<th><?php echo __('Cliente Id'); ?></th>
-		<th><?php echo __('Recinto Id'); ?></th>
-		<th><?php echo __('Estado Evento Id'); ?></th>
-		<th><?php echo __('Nombre Evento'); ?></th>
-		<th><?php echo __('Fecha De Inicio'); ?></th>
-		<th><?php echo __('Fecha De Termino'); ?></th>
-		<th><?php echo __('Precio Evento'); ?></th>
+		<th><?php echo __('Recintos Id'); ?></th>
+		<th><?php echo __('Evento Tipos Id'); ?></th>
+		<th><?php echo __('Clientes Id'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Fecha Inicio'); ?></th>
+		<th><?php echo __('Fecha Termino'); ?></th>
 		<th><?php echo __('Lista Invitados'); ?></th>
-		<th><?php echo __('Descripcion Evento'); ?></th>
+		<th><?php echo __('Estado'); ?></th>
+		<th><?php echo __('Precio'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -151,16 +147,16 @@
 		foreach ($actividade['Evento'] as $evento): ?>
 		<tr>
 			<td><?php echo $evento['id']; ?></td>
-			<td><?php echo $evento['evento_tipo_id']; ?></td>
-			<td><?php echo $evento['cliente_id']; ?></td>
-			<td><?php echo $evento['recinto_id']; ?></td>
-			<td><?php echo $evento['estado_evento_id']; ?></td>
-			<td><?php echo $evento['nombre_evento']; ?></td>
-			<td><?php echo $evento['fecha_de_inicio']; ?></td>
-			<td><?php echo $evento['fecha_de_termino']; ?></td>
-			<td><?php echo $evento['precio_evento']; ?></td>
+			<td><?php echo $evento['recintos_id']; ?></td>
+			<td><?php echo $evento['evento_tipos_id']; ?></td>
+			<td><?php echo $evento['clientes_id']; ?></td>
+			<td><?php echo $evento['nombre']; ?></td>
+			<td><?php echo $evento['fecha_inicio']; ?></td>
+			<td><?php echo $evento['fecha_termino']; ?></td>
 			<td><?php echo $evento['lista_invitados']; ?></td>
-			<td><?php echo $evento['descripcion_evento']; ?></td>
+			<td><?php echo $evento['estado']; ?></td>
+			<td><?php echo $evento['precio']; ?></td>
+			<td><?php echo $evento['descripcion']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'eventos', 'action' => 'view', $evento['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'eventos', 'action' => 'edit', $evento['id'])); ?>
@@ -175,6 +171,62 @@
 		<div class="actions">
 			<ul>
 				<li><?php echo $this->Html->link(__('Nuevo Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
+			</ul>
+		</div>
+	     </div></div></div>
+
+	<hr />
+	<div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+                           <!-- Title with experience details. -->
+                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Solicitud Cotizaciones'); ?></h5>
+                </a>
+            </div>
+            <div id="collapse3" class="accordion-body collapse">
+                 <div class="accordion-inner">
+
+	<?php if (!empty($actividade['SolicitudCotizacione'])): ?>
+	<table class="table table-striped table-bordered table-hover">
+	<thead>
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Estados Id'); ?></th>
+		<th><?php echo __('Evento Tipos Id'); ?></th>
+		<th><?php echo __('Clientes Id'); ?></th>
+		<th><?php echo __('Recinto Tipos Id'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
+		<th><?php echo __('Acciones'); ?></th>
+	</tr>
+	</thead>
+        <tbody>
+
+	<?php
+		$i = 0;
+		foreach ($actividade['SolicitudCotizacione'] as $solicitudCotizacione): ?>
+		<tr>
+			<td><?php echo $solicitudCotizacione['id']; ?></td>
+			<td><?php echo $solicitudCotizacione['estados_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['evento_tipos_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['clientes_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['recinto_tipos_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['nombre']; ?></td>
+			<td><?php echo $solicitudCotizacione['descripcion']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $solicitudCotizacione['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'edit', $solicitudCotizacione['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'delete', $solicitudCotizacione['id']), null, __('¿Estás segudo de que quieres eliminar el elemento # %s?', $solicitudCotizacione['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+	</table>
+<?php endif; ?>
+
+		<div class="actions">
+			<ul>
+				<li><?php echo $this->Html->link(__('Nuevo Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
 			</ul>
 		</div>
 	     </div></div></div>

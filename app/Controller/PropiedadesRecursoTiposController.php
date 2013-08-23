@@ -49,10 +49,10 @@ class PropiedadesRecursoTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->PropiedadesRecursoTipo->create();
 			if ($this->PropiedadesRecursoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The propiedades recurso tipo has been saved'));
+				$this->Session->setFlash(__('The propiedades recurso tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The propiedades recurso tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The propiedades recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class PropiedadesRecursoTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->PropiedadesRecursoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The propiedades recurso tipo has been saved'));
+				$this->Session->setFlash(__('The propiedades recurso tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The propiedades recurso tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The propiedades recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('PropiedadesRecursoTipo.' . $this->PropiedadesRecursoTipo->primaryKey => $id));
@@ -95,10 +95,10 @@ class PropiedadesRecursoTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->PropiedadesRecursoTipo->delete()) {
-			$this->Session->setFlash(__('Propiedades recurso tipo deleted'));
+			$this->Session->setFlash(__('Propiedades recurso tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Propiedades recurso tipo was not deleted'));
+		$this->Session->setFlash(__('Propiedades recurso tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

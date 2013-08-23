@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * EventoTiposRecursoTipo Model
  *
- * @property EventoTipo $EventoTipo
- * @property RecursoTipo $RecursoTipo
+ * @property EventoTipos $EventoTipos
+ * @property RecursoTipos $RecursoTipos
  */
 class EventoTiposRecursoTipo extends AppModel {
 
@@ -14,7 +14,7 @@ class EventoTiposRecursoTipo extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'evento_tipo_id' => array(
+		'evento_tipos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class EventoTiposRecursoTipo extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'recurso_tipo_id' => array(
+		'recurso_tipos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class EventoTiposRecursoTipo extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'EventoTipo' => array(
-			'className' => 'EventoTipo',
-			'foreignKey' => 'evento_tipo_id',
+		'EventoTipos' => array(
+			'className' => 'EventoTipos',
+			'foreignKey' => 'evento_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'RecursoTipo' => array(
-			'className' => 'RecursoTipo',
-			'foreignKey' => 'recurso_tipo_id',
+		'RecursoTipos' => array(
+			'className' => 'RecursoTipos',
+			'foreignKey' => 'recurso_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

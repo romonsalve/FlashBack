@@ -49,10 +49,10 @@ class EstadosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Estado->create();
 			if ($this->Estado->save($this->request->data)) {
-				$this->Session->setFlash(__('The estado has been saved'));
+				$this->Session->setFlash(__('The estado has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The estado could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The estado could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class EstadosController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Estado->save($this->request->data)) {
-				$this->Session->setFlash(__('The estado has been saved'));
+				$this->Session->setFlash(__('The estado has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The estado could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The estado could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Estado.' . $this->Estado->primaryKey => $id));
@@ -95,11 +95,10 @@ class EstadosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Estado->delete()) {
-			$this->Session->setFlash(__('Estado deleted'));
+			$this->Session->setFlash(__('Estado deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Estado was not deleted'));
+		$this->Session->setFlash(__('Estado was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
-
 }

@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Actividades Eventos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Actividades Eventos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,14 +32,14 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('actividade_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('fecha_ini_act'); ?></th>
-			<th><?php echo $this->Paginator->sort('fecha_ter_act'); ?></th>
-			<th><?php echo $this->Paginator->sort('estado_act'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('eventos_id', 'eventos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('actividades_id', 'actividades_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('fecha_inicio', 'fecha_inicio'); ?></th>
+			<th><?php echo $this->Paginator->sort('fecha_termino', 'fecha_termino'); ?></th>
+			<th><?php echo $this->Paginator->sort('estado', 'estado'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -52,14 +48,14 @@
 	<?php foreach ($actividadesEventos as $actividadesEvento): ?>
 		<td><?php echo h($actividadesEvento['ActividadesEvento']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($actividadesEvento['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $actividadesEvento['Evento']['id'])); ?>
+			<?php echo $this->Html->link($actividadesEvento['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $actividadesEvento['Eventos']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($actividadesEvento['Actividade']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesEvento['Actividade']['id'])); ?>
+			<?php echo $this->Html->link($actividadesEvento['Actividades']['id'], array('controller' => 'actividades', 'action' => 'view', $actividadesEvento['Actividades']['id'])); ?>
 		</td>
-		<td><?php echo h($actividadesEvento['ActividadesEvento']['fecha_ini_act']); ?>&nbsp;</td>
-		<td><?php echo h($actividadesEvento['ActividadesEvento']['fecha_ter_act']); ?>&nbsp;</td>
-		<td><?php echo h($actividadesEvento['ActividadesEvento']['estado_act']); ?>&nbsp;</td>
+		<td><?php echo h($actividadesEvento['ActividadesEvento']['fecha_inicio']); ?>&nbsp;</td>
+		<td><?php echo h($actividadesEvento['ActividadesEvento']['fecha_termino']); ?>&nbsp;</td>
+		<td><?php echo h($actividadesEvento['ActividadesEvento']['estado']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $actividadesEvento['ActividadesEvento']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $actividadesEvento['ActividadesEvento']['id'])); ?>

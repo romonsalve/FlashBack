@@ -49,16 +49,16 @@ class RecursoTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->RecursoTipo->create();
 			if ($this->RecursoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The recurso tipo has been saved'));
+				$this->Session->setFlash(__('The recurso tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The recurso tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$eventoTipos = $this->RecursoTipo->EventoTipo->find('list');
-		$propiedades = $this->RecursoTipo->Propiedade->find('list');
 		$proveedores = $this->RecursoTipo->Proveedore->find('list');
-		$this->set(compact('eventoTipos', 'propiedades', 'proveedores'));
+		$propiedades = $this->RecursoTipo->Propiedade->find('list');
+		$this->set(compact('eventoTipos', 'proveedores', 'propiedades'));
 	}
 
 /**
@@ -74,19 +74,19 @@ class RecursoTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->RecursoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The recurso tipo has been saved'));
+				$this->Session->setFlash(__('The recurso tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The recurso tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('RecursoTipo.' . $this->RecursoTipo->primaryKey => $id));
 			$this->request->data = $this->RecursoTipo->find('first', $options);
 		}
 		$eventoTipos = $this->RecursoTipo->EventoTipo->find('list');
-		$propiedades = $this->RecursoTipo->Propiedade->find('list');
 		$proveedores = $this->RecursoTipo->Proveedore->find('list');
-		$this->set(compact('eventoTipos', 'propiedades', 'proveedores'));
+		$propiedades = $this->RecursoTipo->Propiedade->find('list');
+		$this->set(compact('eventoTipos', 'proveedores', 'propiedades'));
 	}
 
 /**
@@ -103,10 +103,10 @@ class RecursoTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->RecursoTipo->delete()) {
-			$this->Session->setFlash(__('Recurso tipo deleted'));
+			$this->Session->setFlash(__('Recurso tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Recurso tipo was not deleted'));
+		$this->Session->setFlash(__('Recurso tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

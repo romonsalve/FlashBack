@@ -49,10 +49,10 @@ class ClienteTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->ClienteTipo->create();
 			if ($this->ClienteTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The cliente tipo has been saved'));
+				$this->Session->setFlash(__('The cliente tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The cliente tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The cliente tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class ClienteTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ClienteTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The cliente tipo has been saved'));
+				$this->Session->setFlash(__('The cliente tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The cliente tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The cliente tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('ClienteTipo.' . $this->ClienteTipo->primaryKey => $id));
@@ -95,10 +95,10 @@ class ClienteTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ClienteTipo->delete()) {
-			$this->Session->setFlash(__('Cliente tipo deleted'));
+			$this->Session->setFlash(__('Cliente tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Cliente tipo was not deleted'));
+		$this->Session->setFlash(__('Cliente tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

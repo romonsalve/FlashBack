@@ -49,10 +49,10 @@ class EmpleadosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Empleado->create();
 			if ($this->Empleado->save($this->request->data)) {
-				$this->Session->setFlash(__('The empleado has been saved'));
+				$this->Session->setFlash(__('The empleado has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The empleado could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The empleado could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$empleadoTipos = $this->Empleado->EmpleadoTipo->find('list');
@@ -73,10 +73,10 @@ class EmpleadosController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Empleado->save($this->request->data)) {
-				$this->Session->setFlash(__('The empleado has been saved'));
+				$this->Session->setFlash(__('The empleado has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The empleado could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The empleado could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Empleado.' . $this->Empleado->primaryKey => $id));
@@ -101,10 +101,10 @@ class EmpleadosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Empleado->delete()) {
-			$this->Session->setFlash(__('Empleado deleted'));
+			$this->Session->setFlash(__('Empleado deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Empleado was not deleted'));
+		$this->Session->setFlash(__('Empleado was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

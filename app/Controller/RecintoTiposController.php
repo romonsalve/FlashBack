@@ -49,10 +49,10 @@ class RecintoTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->RecintoTipo->create();
 			if ($this->RecintoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The recinto tipo has been saved'));
+				$this->Session->setFlash(__('The recinto tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The recinto tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The recinto tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$eventoTipos = $this->RecintoTipo->EventoTipo->find('list');
@@ -72,10 +72,10 @@ class RecintoTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->RecintoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The recinto tipo has been saved'));
+				$this->Session->setFlash(__('The recinto tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The recinto tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The recinto tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('RecintoTipo.' . $this->RecintoTipo->primaryKey => $id));
@@ -99,10 +99,10 @@ class RecintoTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->RecintoTipo->delete()) {
-			$this->Session->setFlash(__('Recinto tipo deleted'));
+			$this->Session->setFlash(__('Recinto tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Recinto tipo was not deleted'));
+		$this->Session->setFlash(__('Recinto tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

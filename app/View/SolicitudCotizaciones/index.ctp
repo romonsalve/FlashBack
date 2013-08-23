@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Solicitud Cotizaciones</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Solicitud Cotizaciones", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,15 +32,15 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('estado_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('cliente_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recinto_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_cot'); ?></th>
-			<th><?php echo $this->Paginator->sort('desc_cot'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('estados_id', 'estados_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_tipos_id', 'evento_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('clientes_id', 'clientes_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recinto_tipos_id', 'recinto_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -53,19 +49,19 @@
 	<?php foreach ($solicitudCotizaciones as $solicitudCotizacione): ?>
 		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['Estado']['id'], array('controller' => 'estados', 'action' => 'view', $solicitudCotizacione['Estado']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['Estados']['id'], array('controller' => 'estados', 'action' => 'view', $solicitudCotizacione['Estados']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['EventoTipo']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $solicitudCotizacione['EventoTipo']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['EventoTipos']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $solicitudCotizacione['EventoTipos']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['Cliente']['id'], array('controller' => 'clientes', 'action' => 'view', $solicitudCotizacione['Cliente']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['Clientes']['id'], array('controller' => 'clientes', 'action' => 'view', $solicitudCotizacione['Clientes']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['RecintoTipo']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $solicitudCotizacione['RecintoTipo']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['RecintoTipos']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $solicitudCotizacione['RecintoTipos']['id'])); ?>
 		</td>
-		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['nombre_cot']); ?>&nbsp;</td>
-		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['desc_cot']); ?>&nbsp;</td>
+		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $solicitudCotizacione['SolicitudCotizacione']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $solicitudCotizacione['SolicitudCotizacione']['id'])); ?>

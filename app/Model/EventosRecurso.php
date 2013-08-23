@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * EventosRecurso Model
  *
- * @property Evento $Evento
- * @property Recurso $Recurso
+ * @property Eventos $Eventos
+ * @property Recursos $Recursos
  */
 class EventosRecurso extends AppModel {
 
@@ -14,7 +14,7 @@ class EventosRecurso extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'evento_id' => array(
+		'eventos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class EventosRecurso extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'recurso_id' => array(
+		'recursos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -39,7 +39,7 @@ class EventosRecurso extends AppModel {
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
-				'required' => true,
+				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
@@ -54,16 +54,16 @@ class EventosRecurso extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Evento' => array(
-			'className' => 'Evento',
-			'foreignKey' => 'evento_id',
+		'Eventos' => array(
+			'className' => 'Eventos',
+			'foreignKey' => 'eventos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Recurso' => array(
-			'className' => 'Recurso',
-			'foreignKey' => 'recurso_id',
+		'Recursos' => array(
+			'className' => 'Recursos',
+			'foreignKey' => 'recursos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

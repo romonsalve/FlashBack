@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Empleado'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("empleados", array('controller' => 'Empleado', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Empleado", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Empleado Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($empleado['EmpleadoTipo']['id'], array('controller' => 'empleado_tipos', 'action' => 'view', $empleado['EmpleadoTipo']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Rut Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['rut_emp'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['nombre_emp'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Apellidom Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['apellidom_emp'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Apellidop Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['apellidop_emp'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Direccion Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['direccion_emp'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Fono Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['fono_emp'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Correo Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['correo_emp'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Contrato Emp </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['contrato_emp'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Empleado Tipo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($empleado['EmpleadoTipo']['id'], array('controller' => 'empleado_tipos', 'action' => 'view', $empleado['EmpleadoTipo']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Rut </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['rut'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['nombre'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Apellido Paterno </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['apellido_paterno'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Apellido Materno </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['apellido_materno'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Direccion </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['direccion'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Fono </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['fono'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Correo </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['correo'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Contrato </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($empleado['Empleado']['contrato'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -85,16 +79,16 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Evento Tipo Id'); ?></th>
-		<th><?php echo __('Cliente Id'); ?></th>
-		<th><?php echo __('Recinto Id'); ?></th>
-		<th><?php echo __('Estado Evento Id'); ?></th>
-		<th><?php echo __('Nombre Evento'); ?></th>
-		<th><?php echo __('Fecha De Inicio'); ?></th>
-		<th><?php echo __('Fecha De Termino'); ?></th>
-		<th><?php echo __('Precio Evento'); ?></th>
+		<th><?php echo __('Recintos Id'); ?></th>
+		<th><?php echo __('Evento Tipos Id'); ?></th>
+		<th><?php echo __('Clientes Id'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Fecha Inicio'); ?></th>
+		<th><?php echo __('Fecha Termino'); ?></th>
 		<th><?php echo __('Lista Invitados'); ?></th>
-		<th><?php echo __('Descripcion Evento'); ?></th>
+		<th><?php echo __('Estado'); ?></th>
+		<th><?php echo __('Precio'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -105,16 +99,16 @@
 		foreach ($empleado['Evento'] as $evento): ?>
 		<tr>
 			<td><?php echo $evento['id']; ?></td>
-			<td><?php echo $evento['evento_tipo_id']; ?></td>
-			<td><?php echo $evento['cliente_id']; ?></td>
-			<td><?php echo $evento['recinto_id']; ?></td>
-			<td><?php echo $evento['estado_evento_id']; ?></td>
-			<td><?php echo $evento['nombre_evento']; ?></td>
-			<td><?php echo $evento['fecha_de_inicio']; ?></td>
-			<td><?php echo $evento['fecha_de_termino']; ?></td>
-			<td><?php echo $evento['precio_evento']; ?></td>
+			<td><?php echo $evento['recintos_id']; ?></td>
+			<td><?php echo $evento['evento_tipos_id']; ?></td>
+			<td><?php echo $evento['clientes_id']; ?></td>
+			<td><?php echo $evento['nombre']; ?></td>
+			<td><?php echo $evento['fecha_inicio']; ?></td>
+			<td><?php echo $evento['fecha_termino']; ?></td>
 			<td><?php echo $evento['lista_invitados']; ?></td>
-			<td><?php echo $evento['descripcion_evento']; ?></td>
+			<td><?php echo $evento['estado']; ?></td>
+			<td><?php echo $evento['precio']; ?></td>
+			<td><?php echo $evento['descripcion']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'eventos', 'action' => 'view', $evento['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'eventos', 'action' => 'edit', $evento['id'])); ?>

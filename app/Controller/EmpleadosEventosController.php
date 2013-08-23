@@ -49,12 +49,15 @@ class EmpleadosEventosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->EmpleadosEvento->create();
 			if ($this->EmpleadosEvento->save($this->request->data)) {
-				$this->Session->setFlash(__('The empleados evento has been saved'));
+				$this->Session->setFlash(__('The empleados evento has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The empleados evento could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The empleados evento could not be saved. Please, try again.'), 'ferror');
 			}
 		}
+		$empleados = $this->EmpleadosEvento->Empleado->find('list');
+		$eventos = $this->EmpleadosEvento->Evento->find('list');
+		$this->set(compact('empleados', 'eventos'));
 	}
 
 /**
@@ -70,15 +73,18 @@ class EmpleadosEventosController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EmpleadosEvento->save($this->request->data)) {
-				$this->Session->setFlash(__('The empleados evento has been saved'));
+				$this->Session->setFlash(__('The empleados evento has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The empleados evento could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The empleados evento could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('EmpleadosEvento.' . $this->EmpleadosEvento->primaryKey => $id));
 			$this->request->data = $this->EmpleadosEvento->find('first', $options);
 		}
+		$empleados = $this->EmpleadosEvento->Empleado->find('list');
+		$eventos = $this->EmpleadosEvento->Evento->find('list');
+		$this->set(compact('empleados', 'eventos'));
 	}
 
 /**
@@ -95,10 +101,10 @@ class EmpleadosEventosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EmpleadosEvento->delete()) {
-			$this->Session->setFlash(__('Empleados evento deleted'));
+			$this->Session->setFlash(__('Empleados evento deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Empleados evento was not deleted'));
+		$this->Session->setFlash(__('Empleados evento was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

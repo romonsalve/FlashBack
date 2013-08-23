@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Add Recinto</h2>
+          <h2>!!!Add Recinto</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">recintos</a> <span class="divider">/</span></li>
-          <li class="active">Add</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("recintos", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -25,30 +20,26 @@
         <div class="box-body">
           <div class="row-fluid">
 
-            <div class='span9' >
+            <div class='span8' >
               <div class="well">
-                <h6>Add Recinto</h6>
                 <hr />
-
-	<!--<?php echo __('Add Recinto'); ?></legend>-->
 	<?php
-		echo $this->Form->input('recinto_tipo_id', array('class' =>'span9','placeholder' => 'Ingrese recinto_tipo_id'));
-				//echo $this->Form->input('recinto_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recinto_tipo_id'));
+		echo $this->Form->input('recinto_tipos_id', array('class' =>'span12','label' => 'Ingrese recinto_tipos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre_reci', array('class' =>'span9','placeholder' => 'Ingrese nombre_reci'));
-				//echo $this->Form->input('nombre_reci', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_reci'));
+				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('mapa_reci', array('class' =>'span9','placeholder' => 'Ingrese mapa_reci'));
-				//echo $this->Form->input('mapa_reci', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese mapa_reci'));
+				echo $this->Form->input('mapa', array('class' =>'span12','label' => 'Ingrese mapa', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('dimension_reci', array('class' =>'span9','placeholder' => 'Ingrese dimension_reci'));
-				//echo $this->Form->input('dimension_reci', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese dimension_reci'));
+				echo $this->Form->input('dimension', array('class' =>'span12','label' => 'Ingrese dimension', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('ubicacion_reci', array('class' =>'span9','placeholder' => 'Ingrese ubicacion_reci'));
-				//echo $this->Form->input('ubicacion_reci', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese ubicacion_reci'));
+				echo $this->Form->input('ubicacion', array('class' =>'span12','label' => 'Ingrese ubicacion', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-		$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -63,22 +54,5 @@
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Recintos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Recinto Tipos'), array('controller' => 'recinto_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recinto Tipo'), array('controller' => 'recinto_tipos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

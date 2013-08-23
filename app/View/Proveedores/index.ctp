@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Proveedores</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Proveedores", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,20 +32,20 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('rut_pro'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_pro'); ?></th>
-			<th><?php echo $this->Paginator->sort('direccion_pro'); ?></th>
-			<th><?php echo $this->Paginator->sort('fono_pro'); ?></th>
-			<th><?php echo $this->Paginator->sort('correo_pro'); ?></th>
-			<th><?php echo $this->Paginator->sort('ranking_pro'); ?></th>
-			<th><?php echo $this->Paginator->sort('contrato_pro'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_conta'); ?></th>
-			<th><?php echo $this->Paginator->sort('apellido_conta'); ?></th>
-			<th><?php echo $this->Paginator->sort('correo_conta'); ?></th>
-			<th><?php echo $this->Paginator->sort('fono_conta'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('rut', 'rut'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('direccion', 'direccion'); ?></th>
+			<th><?php echo $this->Paginator->sort('fono', 'fono'); ?></th>
+			<th><?php echo $this->Paginator->sort('correo', 'correo'); ?></th>
+			<th><?php echo $this->Paginator->sort('ranking', 'ranking'); ?></th>
+			<th><?php echo $this->Paginator->sort('contrato', 'contrato'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre_contacto', 'nombre_contacto'); ?></th>
+			<th><?php echo $this->Paginator->sort('apellido_contacto', 'apellido_contacto'); ?></th>
+			<th><?php echo $this->Paginator->sort('correo_contacto', 'correo_contacto'); ?></th>
+			<th><?php echo $this->Paginator->sort('fono_contacto', 'fono_contacto'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -57,17 +53,17 @@
 
 	<?php foreach ($proveedores as $proveedore): ?>
 		<td><?php echo h($proveedore['Proveedore']['id']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['rut_pro']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['nombre_pro']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['direccion_pro']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['fono_pro']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['correo_pro']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['ranking_pro']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['contrato_pro']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['nombre_conta']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['apellido_conta']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['correo_conta']); ?>&nbsp;</td>
-		<td><?php echo h($proveedore['Proveedore']['fono_conta']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['rut']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['direccion']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['fono']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['correo']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['ranking']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['contrato']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['nombre_contacto']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['apellido_contacto']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['correo_contacto']); ?>&nbsp;</td>
+		<td><?php echo h($proveedore['Proveedore']['fono_contacto']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $proveedore['Proveedore']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $proveedore['Proveedore']['id'])); ?>

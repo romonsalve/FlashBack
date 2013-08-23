@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Edit Actividades Evento</h2>
+          <h2>!!!Edit Actividades Evento</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">actividadesEventos</a> <span class="divider">/</span></li>
-          <li class="active">Edit</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("actividadesEventos", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -25,33 +20,29 @@
         <div class="box-body">
           <div class="row-fluid">
 
-            <div class='span9' >
+            <div class='span8' >
               <div class="well">
-                <h6>Edit Actividades Evento</h6>
                 <hr />
-
-	<!--<?php echo __('Edit Actividades Evento'); ?></legend>-->
 	<?php
-		echo $this->Form->input('id', array('class' =>'span9','placeholder' => 'Ingrese id'));
-				//echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
+		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('evento_id', array('class' =>'span9','placeholder' => 'Ingrese evento_id'));
-				//echo $this->Form->input('evento_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese evento_id'));
+				echo $this->Form->input('eventos_id', array('class' =>'span12','label' => 'Ingrese eventos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('actividade_id', array('class' =>'span9','placeholder' => 'Ingrese actividade_id'));
-				//echo $this->Form->input('actividade_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese actividade_id'));
+				echo $this->Form->input('actividades_id', array('class' =>'span12','label' => 'Ingrese actividades_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fecha_ini_act', array('class' =>'span9','placeholder' => 'Ingrese fecha_ini_act'));
-				//echo $this->Form->input('fecha_ini_act', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese fecha_ini_act'));
+				echo $this->Form->input('fecha_inicio', array('class' =>'span12','label' => 'Ingrese fecha_inicio', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fecha_ter_act', array('class' =>'span9','placeholder' => 'Ingrese fecha_ter_act'));
-				//echo $this->Form->input('fecha_ter_act', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese fecha_ter_act'));
+				echo $this->Form->input('fecha_termino', array('class' =>'span12','label' => 'Ingrese fecha_termino', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('estado_act', array('class' =>'span9','placeholder' => 'Ingrese estado_act'));
-				//echo $this->Form->input('estado_act', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese estado_act'));
+				echo $this->Form->input('estado', array('class' =>'span12','label' => 'Ingrese estado', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-		$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -66,23 +57,5 @@
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('ActividadesEvento.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('ActividadesEvento.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Actividades Eventos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Actividades'), array('controller' => 'actividades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Actividade'), array('controller' => 'actividades', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

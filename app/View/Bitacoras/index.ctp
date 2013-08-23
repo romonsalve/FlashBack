@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Bitacoras</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Bitacoras", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,14 +32,14 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('vehiculo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora_ini_bit'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora_ter_bit'); ?></th>
-			<th><?php echo $this->Paginator->sort('desc_bit'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_id', 'evento_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('vehiculo_id', 'vehiculo_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('hora_inicio', 'hora_inicio'); ?></th>
+			<th><?php echo $this->Paginator->sort('hora_termino', 'hora_termino'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -57,9 +53,9 @@
 		<td>
 			<?php echo $this->Html->link($bitacora['Vehiculo']['id'], array('controller' => 'vehiculos', 'action' => 'view', $bitacora['Vehiculo']['id'])); ?>
 		</td>
-		<td><?php echo h($bitacora['Bitacora']['hora_ini_bit']); ?>&nbsp;</td>
-		<td><?php echo h($bitacora['Bitacora']['hora_ter_bit']); ?>&nbsp;</td>
-		<td><?php echo h($bitacora['Bitacora']['desc_bit']); ?>&nbsp;</td>
+		<td><?php echo h($bitacora['Bitacora']['hora_inicio']); ?>&nbsp;</td>
+		<td><?php echo h($bitacora['Bitacora']['hora_termino']); ?>&nbsp;</td>
+		<td><?php echo h($bitacora['Bitacora']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $bitacora['Bitacora']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $bitacora['Bitacora']['id'])); ?>

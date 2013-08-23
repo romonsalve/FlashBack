@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Eventos Recursos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Eventos Recursos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,12 +32,12 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recurso_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('cantidad'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('eventos_id', 'eventos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('recursos_id', 'recursos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('cantidad', 'cantidad'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -50,10 +46,10 @@
 	<?php foreach ($eventosRecursos as $eventosRecurso): ?>
 		<td><?php echo h($eventosRecurso['EventosRecurso']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($eventosRecurso['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $eventosRecurso['Evento']['id'])); ?>
+			<?php echo $this->Html->link($eventosRecurso['Eventos']['id'], array('controller' => 'eventos', 'action' => 'view', $eventosRecurso['Eventos']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($eventosRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $eventosRecurso['Recurso']['id'])); ?>
+			<?php echo $this->Html->link($eventosRecurso['Recursos']['id'], array('controller' => 'recursos', 'action' => 'view', $eventosRecurso['Recursos']['id'])); ?>
 		</td>
 		<td><?php echo h($eventosRecurso['EventosRecurso']['cantidad']); ?>&nbsp;</td>
 		<td class="actions">

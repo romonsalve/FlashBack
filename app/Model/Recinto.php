@@ -3,11 +3,9 @@ App::uses('AppModel', 'Model');
 /**
  * Recinto Model
  *
- * @property RecintoTipo $RecintoTipo
- * @property Evento $Evento
+ * @property RecintoTipos $RecintoTipos
  */
 class Recinto extends AppModel {
-	public $displayField = 'nombre_reci';
 
 /**
  * Validation rules
@@ -15,15 +13,14 @@ class Recinto extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'nombre_reci' => array(
-			'Sólo carácteres alfanuméricos' => array(
-				'rule' => 'alphaNumeric',
-				'required' => true,
-			),
-		),
-		'dimension_reci' => array(
-			'Ingrese un número.' => array(
-				'rule' => 'numeric',
+		'recinto_tipos_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 	);
@@ -36,34 +33,12 @@ class Recinto extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'RecintoTipo' => array(
-			'className' => 'RecintoTipo',
-			'foreignKey' => 'recinto_tipo_id',
+		'RecintoTipos' => array(
+			'className' => 'RecintoTipos',
+			'foreignKey' => 'recinto_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'Evento' => array(
-			'className' => 'Evento',
-			'foreignKey' => 'recinto_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
 }

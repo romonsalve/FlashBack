@@ -3,34 +3,39 @@ App::uses('AppModel', 'Model');
 /**
  * SolicitudCotizacione Model
  *
- * @property Estado $Estado
- * @property EventoTipo $EventoTipo
- * @property Cliente $Cliente
- * @property RecintoTipo $RecintoTipo
+ * @property Estados $Estados
+ * @property EventoTipos $EventoTipos
+ * @property Clientes $Clientes
+ * @property RecintoTipos $RecintoTipos
  * @property ParticipanteTipo $ParticipanteTipo
+ * @property Actividade $Actividade
  */
 class SolicitudCotizacione extends AppModel {
-	public $displayField = 'nombre_cot';
+
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'estado_id' => array(
+		'estados_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'cliente_id' => array(
+		'clientes_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-			),
-		),
-		'nombre_cot' => array(
-			'Escriba un nombre para su cotización' => array(
-				'rule' => array('alphaNumeric'),
-				'required' => true,
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 	);
@@ -43,30 +48,30 @@ class SolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Estado' => array(
-			'className' => 'Estado',
-			'foreignKey' => 'estado_id',
+		'Estados' => array(
+			'className' => 'Estados',
+			'foreignKey' => 'estados_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'EventoTipo' => array(
-			'className' => 'EventoTipo',
-			'foreignKey' => 'evento_tipo_id',
+		'EventoTipos' => array(
+			'className' => 'EventoTipos',
+			'foreignKey' => 'evento_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Cliente' => array(
-			'className' => 'Cliente',
-			'foreignKey' => 'cliente_id',
+		'Clientes' => array(
+			'className' => 'Clientes',
+			'foreignKey' => 'clientes_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'RecintoTipo' => array(
-			'className' => 'RecintoTipo',
-			'foreignKey' => 'recinto_tipo_id',
+		'RecintoTipos' => array(
+			'className' => 'RecintoTipos',
+			'foreignKey' => 'recinto_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -84,6 +89,21 @@ class SolicitudCotizacione extends AppModel {
 			'joinTable' => 'participante_tipos_solicitud_cotizaciones',
 			'foreignKey' => 'solicitud_cotizacione_id',
 			'associationForeignKey' => 'participante_tipo_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'Actividade' => array(
+			'className' => 'Actividade',
+			'joinTable' => 'actividades_solicitud_cotizaciones',
+			'foreignKey' => 'solicitud_cotizacione_id',
+			'associationForeignKey' => 'actividade_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

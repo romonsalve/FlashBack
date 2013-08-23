@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Evento Tipos Participante Tipos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Evento Tipos Participante Tipos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,10 +32,10 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('evento_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('participante_tipo_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_tipos_id', 'evento_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('participante_tipos_id', 'participante_tipos_id'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -47,10 +43,10 @@
 
 	<?php foreach ($eventoTiposParticipanteTipos as $eventoTiposParticipanteTipo): ?>
 		<td>
-			<?php echo $this->Html->link($eventoTiposParticipanteTipo['EventoTipo']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['EventoTipo']['id'])); ?>
+			<?php echo $this->Html->link($eventoTiposParticipanteTipo['EventoTipos']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['EventoTipos']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($eventoTiposParticipanteTipo['ParticipanteTipo']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['ParticipanteTipo']['id'])); ?>
+			<?php echo $this->Html->link($eventoTiposParticipanteTipo['ParticipanteTipos']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $eventoTiposParticipanteTipo['ParticipanteTipos']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $eventoTiposParticipanteTipo['EventoTiposParticipanteTipo']['id'])); ?>

@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * Recurso Model
  *
- * @property RecursoTipo $RecursoTipo
- * @property Proveedore $Proveedore
+ * @property RecursoTipos $RecursoTipos
+ * @property Proveedores $Proveedores
  * @property Evento $Evento
  * @property Propiedade $Propiedade
  */
@@ -16,7 +16,7 @@ class Recurso extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'recurso_tipo_id' => array(
+		'recurso_tipos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,11 +24,6 @@ class Recurso extends AppModel {
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'cantidad_rec' => array(
-			'numeric' => array(
-				'rule' => array('naturalNumber'),
 			),
 		),
 	);
@@ -41,16 +36,16 @@ class Recurso extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'RecursoTipo' => array(
-			'className' => 'RecursoTipo',
-			'foreignKey' => 'recurso_tipo_id',
+		'RecursoTipos' => array(
+			'className' => 'RecursoTipos',
+			'foreignKey' => 'recurso_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Proveedore' => array(
-			'className' => 'Proveedore',
-			'foreignKey' => 'proveedore_id',
+		'Proveedores' => array(
+			'className' => 'Proveedores',
+			'foreignKey' => 'proveedores_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

@@ -49,10 +49,10 @@ class MedidasController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Medida->create();
 			if ($this->Medida->save($this->request->data)) {
-				$this->Session->setFlash(__('The medida has been saved'));
+				$this->Session->setFlash(__('The medida has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The medida could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The medida could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 		$propiedades = $this->Medida->Propiedade->find('list');
@@ -72,10 +72,10 @@ class MedidasController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Medida->save($this->request->data)) {
-				$this->Session->setFlash(__('The medida has been saved'));
+				$this->Session->setFlash(__('The medida has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The medida could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The medida could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Medida.' . $this->Medida->primaryKey => $id));
@@ -99,10 +99,10 @@ class MedidasController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Medida->delete()) {
-			$this->Session->setFlash(__('Medida deleted'));
+			$this->Session->setFlash(__('Medida deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Medida was not deleted'));
+		$this->Session->setFlash(__('Medida was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

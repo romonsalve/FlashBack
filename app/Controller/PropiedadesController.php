@@ -49,16 +49,16 @@ class PropiedadesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Propiedade->create();
 			if ($this->Propiedade->save($this->request->data)) {
-				$this->Session->setFlash(__('The propiedade has been saved'));
+				$this->Session->setFlash(__('The propiedade has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The propiedade could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The propiedade could not be saved. Please, try again.'), 'ferror');
 			}
 		}
+		$recursos = $this->Propiedade->Recurso->find('list');
 		$medidas = $this->Propiedade->Medida->find('list');
 		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
-		$recursos = $this->Propiedade->Recurso->find('list');
-		$this->set(compact('medidas', 'recursoTipos', 'recursos'));
+		$this->set(compact('recursos', 'medidas', 'recursoTipos'));
 	}
 
 /**
@@ -74,19 +74,19 @@ class PropiedadesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Propiedade->save($this->request->data)) {
-				$this->Session->setFlash(__('The propiedade has been saved'));
+				$this->Session->setFlash(__('The propiedade has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The propiedade could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The propiedade could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('Propiedade.' . $this->Propiedade->primaryKey => $id));
 			$this->request->data = $this->Propiedade->find('first', $options);
 		}
+		$recursos = $this->Propiedade->Recurso->find('list');
 		$medidas = $this->Propiedade->Medida->find('list');
 		$recursoTipos = $this->Propiedade->RecursoTipo->find('list');
-		$recursos = $this->Propiedade->Recurso->find('list');
-		$this->set(compact('medidas', 'recursoTipos', 'recursos'));
+		$this->set(compact('recursos', 'medidas', 'recursoTipos'));
 	}
 
 /**
@@ -103,10 +103,10 @@ class PropiedadesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Propiedade->delete()) {
-			$this->Session->setFlash(__('Propiedade deleted'));
+			$this->Session->setFlash(__('Propiedade deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Propiedade was not deleted'));
+		$this->Session->setFlash(__('Propiedade was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

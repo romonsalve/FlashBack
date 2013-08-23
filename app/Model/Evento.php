@@ -3,12 +3,11 @@ App::uses('AppModel', 'Model');
 /**
  * Evento Model
  *
- * @property EventoTipo $EventoTipo
- * @property Cliente $Cliente
- * @property Recinto $Recinto
- * @property EstadoEvento $EstadoEvento
- * @property ItinerarioParticipante $ItinerarioParticipante
+ * @property Recintos $Recintos
+ * @property EventoTipos $EventoTipos
+ * @property Clientes $Clientes
  * @property Bitacora $Bitacora
+ * @property ItinerarioParticipante $ItinerarioParticipante
  * @property Recurso $Recurso
  * @property Empleado $Empleado
  * @property Actividade $Actividade
@@ -21,10 +20,24 @@ class Evento extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'precio_evento' => array(
-			'Ingrese un precio en números.' => array(
-				'rule' => 'numeric',
-				'required' => true,
+		'recintos_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'evento_tipos_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 	);
@@ -37,30 +50,23 @@ class Evento extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'EventoTipo' => array(
-			'className' => 'EventoTipo',
-			'foreignKey' => 'evento_tipo_id',
+		'Recintos' => array(
+			'className' => 'Recintos',
+			'foreignKey' => 'recintos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Cliente' => array(
-			'className' => 'Cliente',
-			'foreignKey' => 'cliente_id',
+		'EventoTipos' => array(
+			'className' => 'EventoTipos',
+			'foreignKey' => 'evento_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Recinto' => array(
-			'className' => 'Recinto',
-			'foreignKey' => 'recinto_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'EstadoEvento' => array(
-			'className' => 'EstadoEvento',
-			'foreignKey' => 'estado_evento_id',
+		'Clientes' => array(
+			'className' => 'Clientes',
+			'foreignKey' => 'clientes_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -73,8 +79,8 @@ class Evento extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'ItinerarioParticipante' => array(
-			'className' => 'ItinerarioParticipante',
+		'Bitacora' => array(
+			'className' => 'Bitacora',
 			'foreignKey' => 'evento_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -86,8 +92,8 @@ class Evento extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Bitacora' => array(
-			'className' => 'Bitacora',
+		'ItinerarioParticipante' => array(
+			'className' => 'ItinerarioParticipante',
 			'foreignKey' => 'evento_id',
 			'dependent' => false,
 			'conditions' => '',

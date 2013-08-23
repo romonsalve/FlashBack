@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Participante Tipos Solicitud Cotizaciones</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Participante Tipos Solicitud Cotizaciones", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,12 +32,12 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('solicitud_cotizacione_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('participante_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('desc_par_sol'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('solicitud_cotizaciones_id', 'solicitud_cotizaciones_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('participante_tipos_id', 'participante_tipos_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -50,12 +46,12 @@
 	<?php foreach ($participanteTiposSolicitudCotizaciones as $participanteTiposSolicitudCotizacione): ?>
 		<td><?php echo h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['SolicitudCotizacione']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $participanteTiposSolicitudCotizacione['SolicitudCotizacione']['id'])); ?>
+			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['SolicitudCotizaciones']['id'], array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $participanteTiposSolicitudCotizacione['SolicitudCotizaciones']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['ParticipanteTipo']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $participanteTiposSolicitudCotizacione['ParticipanteTipo']['id'])); ?>
+			<?php echo $this->Html->link($participanteTiposSolicitudCotizacione['ParticipanteTipos']['id'], array('controller' => 'participante_tipos', 'action' => 'view', $participanteTiposSolicitudCotizacione['ParticipanteTipos']['id'])); ?>
 		</td>
-		<td><?php echo h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['desc_par_sol']); ?>&nbsp;</td>
+		<td><?php echo h($participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $participanteTiposSolicitudCotizacione['ParticipanteTiposSolicitudCotizacione']['id'])); ?>

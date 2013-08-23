@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Participante Tipo'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("participanteTipos", array('controller' => 'ParticipanteTipo', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Participante Tipo", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTipo['ParticipanteTipo']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre Part </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTipo['ParticipanteTipo']['nombre_part'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTipo['ParticipanteTipo']['id'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Nombre </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($participanteTipo['ParticipanteTipo']['nombre'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  
@@ -62,10 +56,10 @@
 		<li><?php echo $this->Html->link(__('New Participante Tipo'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Participantes'), array('controller' => 'participantes', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Participante'), array('controller' => 'participantes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Evento Tipos'), array('controller' => 'evento_tipos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Evento Tipo'), array('controller' => 'evento_tipos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 -->
@@ -88,17 +82,17 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Participante Tipo Id'); ?></th>
-		<th><?php echo __('Nombre Artistico Par'); ?></th>
-		<th><?php echo __('Desc Par'); ?></th>
-		<th><?php echo __('Ranking Par'); ?></th>
-		<th><?php echo __('Contrato Par'); ?></th>
-		<th><?php echo __('Rut Cont Par'); ?></th>
-		<th><?php echo __('Nombre Cont Par'); ?></th>
-		<th><?php echo __('Apellidop Cont Par'); ?></th>
-		<th><?php echo __('Apellidom Cont Par'); ?></th>
-		<th><?php echo __('Direccion Cont Par'); ?></th>
-		<th><?php echo __('Fono Cont Par'); ?></th>
-		<th><?php echo __('Correo Cont Par'); ?></th>
+		<th><?php echo __('Nombre Artistico'); ?></th>
+		<th><?php echo __('Contrato'); ?></th>
+		<th><?php echo __('Ranking'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
+		<th><?php echo __('Rut'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Apellido Paterno'); ?></th>
+		<th><?php echo __('Apellido Materno'); ?></th>
+		<th><?php echo __('Direccion'); ?></th>
+		<th><?php echo __('Fono'); ?></th>
+		<th><?php echo __('Correo'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -110,17 +104,17 @@
 		<tr>
 			<td><?php echo $participante['id']; ?></td>
 			<td><?php echo $participante['participante_tipo_id']; ?></td>
-			<td><?php echo $participante['nombre_artistico_par']; ?></td>
-			<td><?php echo $participante['desc_par']; ?></td>
-			<td><?php echo $participante['ranking_par']; ?></td>
-			<td><?php echo $participante['contrato_par']; ?></td>
-			<td><?php echo $participante['rut_cont_par']; ?></td>
-			<td><?php echo $participante['nombre_cont_par']; ?></td>
-			<td><?php echo $participante['apellidop_cont_par']; ?></td>
-			<td><?php echo $participante['apellidom_cont_par']; ?></td>
-			<td><?php echo $participante['direccion_cont_par']; ?></td>
-			<td><?php echo $participante['fono_cont_par']; ?></td>
-			<td><?php echo $participante['correo_cont_par']; ?></td>
+			<td><?php echo $participante['nombre_artistico']; ?></td>
+			<td><?php echo $participante['contrato']; ?></td>
+			<td><?php echo $participante['ranking']; ?></td>
+			<td><?php echo $participante['descripcion']; ?></td>
+			<td><?php echo $participante['rut']; ?></td>
+			<td><?php echo $participante['nombre']; ?></td>
+			<td><?php echo $participante['apellido_paterno']; ?></td>
+			<td><?php echo $participante['apellido_materno']; ?></td>
+			<td><?php echo $participante['direccion']; ?></td>
+			<td><?php echo $participante['fono']; ?></td>
+			<td><?php echo $participante['correo']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'participantes', 'action' => 'view', $participante['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'participantes', 'action' => 'edit', $participante['id'])); ?>
@@ -144,66 +138,10 @@
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
                            <!-- Title with experience details. -->
-                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Solicitud Cotizaciones'); ?></h5>
-                </a>
-            </div>
-            <div id="collapse2" class="accordion-body collapse">
-                 <div class="accordion-inner">
-
-	<?php if (!empty($participanteTipo['SolicitudCotizacione'])): ?>
-	<table class="table table-striped table-bordered table-hover">
-	<thead>
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Estado Id'); ?></th>
-		<th><?php echo __('Evento Tipo Id'); ?></th>
-		<th><?php echo __('Cliente Id'); ?></th>
-		<th><?php echo __('Recinto Tipo Id'); ?></th>
-		<th><?php echo __('Nombre Cot'); ?></th>
-		<th><?php echo __('Desc Cot'); ?></th>
-		<th><?php echo __('Acciones'); ?></th>
-	</tr>
-	</thead>
-        <tbody>
-
-	<?php
-		$i = 0;
-		foreach ($participanteTipo['SolicitudCotizacione'] as $solicitudCotizacione): ?>
-		<tr>
-			<td><?php echo $solicitudCotizacione['id']; ?></td>
-			<td><?php echo $solicitudCotizacione['estado_id']; ?></td>
-			<td><?php echo $solicitudCotizacione['evento_tipo_id']; ?></td>
-			<td><?php echo $solicitudCotizacione['cliente_id']; ?></td>
-			<td><?php echo $solicitudCotizacione['recinto_tipo_id']; ?></td>
-			<td><?php echo $solicitudCotizacione['nombre_cot']; ?></td>
-			<td><?php echo $solicitudCotizacione['desc_cot']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('Ver'), array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $solicitudCotizacione['id'])); ?>
-				<?php echo $this->Html->link(__('Editar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'edit', $solicitudCotizacione['id'])); ?>
-				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'delete', $solicitudCotizacione['id']), null, __('¿Estás segudo de que quieres eliminar el elemento # %s?', $solicitudCotizacione['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</tbody>
-	</table>
-<?php endif; ?>
-
-		<div class="actions">
-			<ul>
-				<li><?php echo $this->Html->link(__('Nuevo Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
-			</ul>
-		</div>
-	     </div></div></div>
-
-	<hr />
-	<div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
-                           <!-- Title with experience details. -->
                   <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Evento Tipos'); ?></h5>
                 </a>
             </div>
-            <div id="collapse3" class="accordion-body collapse">
+            <div id="collapse2" class="accordion-body collapse">
                  <div class="accordion-inner">
 
 	<?php if (!empty($participanteTipo['EventoTipo'])): ?>
@@ -211,7 +149,7 @@
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Nombre Evt'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
 		<th><?php echo __('Acciones'); ?></th>
 	</tr>
 	</thead>
@@ -222,7 +160,7 @@
 		foreach ($participanteTipo['EventoTipo'] as $eventoTipo): ?>
 		<tr>
 			<td><?php echo $eventoTipo['id']; ?></td>
-			<td><?php echo $eventoTipo['nombre_evt']; ?></td>
+			<td><?php echo $eventoTipo['nombre']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('Ver'), array('controller' => 'evento_tipos', 'action' => 'view', $eventoTipo['id'])); ?>
 				<?php echo $this->Html->link(__('Editar'), array('controller' => 'evento_tipos', 'action' => 'edit', $eventoTipo['id'])); ?>
@@ -237,6 +175,62 @@
 		<div class="actions">
 			<ul>
 				<li><?php echo $this->Html->link(__('Nuevo Evento Tipo'), array('controller' => 'evento_tipos', 'action' => 'add')); ?> </li>
+			</ul>
+		</div>
+	     </div></div></div>
+
+	<hr />
+	<div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+                           <!-- Title with experience details. -->
+                  <h5><?php echo __(' <i class="icon-chevron-down"></i> Relación con Solicitud Cotizaciones'); ?></h5>
+                </a>
+            </div>
+            <div id="collapse3" class="accordion-body collapse">
+                 <div class="accordion-inner">
+
+	<?php if (!empty($participanteTipo['SolicitudCotizacione'])): ?>
+	<table class="table table-striped table-bordered table-hover">
+	<thead>
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Estados Id'); ?></th>
+		<th><?php echo __('Evento Tipos Id'); ?></th>
+		<th><?php echo __('Clientes Id'); ?></th>
+		<th><?php echo __('Recinto Tipos Id'); ?></th>
+		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Descripcion'); ?></th>
+		<th><?php echo __('Acciones'); ?></th>
+	</tr>
+	</thead>
+        <tbody>
+
+	<?php
+		$i = 0;
+		foreach ($participanteTipo['SolicitudCotizacione'] as $solicitudCotizacione): ?>
+		<tr>
+			<td><?php echo $solicitudCotizacione['id']; ?></td>
+			<td><?php echo $solicitudCotizacione['estados_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['evento_tipos_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['clientes_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['recinto_tipos_id']; ?></td>
+			<td><?php echo $solicitudCotizacione['nombre']; ?></td>
+			<td><?php echo $solicitudCotizacione['descripcion']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'solicitud_cotizaciones', 'action' => 'view', $solicitudCotizacione['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'edit', $solicitudCotizacione['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'solicitud_cotizaciones', 'action' => 'delete', $solicitudCotizacione['id']), null, __('¿Estás segudo de que quieres eliminar el elemento # %s?', $solicitudCotizacione['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+	</table>
+<?php endif; ?>
+
+		<div class="actions">
+			<ul>
+				<li><?php echo $this->Html->link(__('Nuevo Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
 			</ul>
 		</div>
 	     </div></div></div>

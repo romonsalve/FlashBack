@@ -10,13 +10,7 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo __('Bitacora'); ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("bitacoras", array('controller' => 'Bitacora', 'action' => 'index'));echo $this->TwitterBootstrap->add_crumb("Ver Bitacora", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
         <hr />
         <div class="box-body">
@@ -39,7 +33,7 @@
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Evento</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($bitacora['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $bitacora['Evento']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Vehiculo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($bitacora['Vehiculo']['id'], array('controller' => 'vehiculos', 'action' => 'view', $bitacora['Vehiculo']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Ini Bit </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['hora_ini_bit'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Ter Bit </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['hora_ter_bit'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Desc Bit </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['desc_bit'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['id'])." &nbsp</div>";  ?></li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Evento</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($bitacora['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $bitacora['Evento']['id']))." &nbsp</div>"; ?> </li><li><?php echo "<div class='col-l' style = 'text-align: right;'> Vehiculo</div>:<div class='col-r' style = 'text-align: left;'> ".$this->Html->link($bitacora['Vehiculo']['id'], array('controller' => 'vehiculos', 'action' => 'view', $bitacora['Vehiculo']['id']))." &nbsp</div>"; ?> </li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Inicio </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['hora_inicio'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Hora Termino </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['hora_termino'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Descripcion </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($bitacora['Bitacora']['descripcion'])." &nbsp</div>";  ?></li></ul>
                               </div>
 
                               <div class="pbutton">  

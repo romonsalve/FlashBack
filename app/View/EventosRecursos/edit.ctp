@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Edit Eventos Recurso</h2>
+          <h2>!!!Edit Eventos Recurso</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">eventosRecursos</a> <span class="divider">/</span></li>
-          <li class="active">Edit</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("eventosRecursos", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -25,27 +20,23 @@
         <div class="box-body">
           <div class="row-fluid">
 
-            <div class='span9' >
+            <div class='span8' >
               <div class="well">
-                <h6>Edit Eventos Recurso</h6>
                 <hr />
-
-	<!--<?php echo __('Edit Eventos Recurso'); ?></legend>-->
 	<?php
-		echo $this->Form->input('id', array('class' =>'span9','placeholder' => 'Ingrese id'));
-				//echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
+		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('evento_id', array('class' =>'span9','placeholder' => 'Ingrese evento_id'));
-				//echo $this->Form->input('evento_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese evento_id'));
+				echo $this->Form->input('eventos_id', array('class' =>'span12','label' => 'Ingrese eventos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('recurso_id', array('class' =>'span9','placeholder' => 'Ingrese recurso_id'));
-				//echo $this->Form->input('recurso_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recurso_id'));
+				echo $this->Form->input('recursos_id', array('class' =>'span12','label' => 'Ingrese recursos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('cantidad', array('class' =>'span9','placeholder' => 'Ingrese cantidad'));
-				//echo $this->Form->input('cantidad', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese cantidad'));
+				echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese cantidad', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-		$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -60,23 +51,5 @@
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('EventosRecurso.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('EventosRecurso.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Eventos Recursos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Recursos'), array('controller' => 'recursos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recurso'), array('controller' => 'recursos', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

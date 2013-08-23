@@ -5,18 +5,11 @@ App::uses('AppModel', 'Model');
  *
  * @property EventoTipo $EventoTipo
  * @property Evento $Evento
+ * @property SolicitudCotizacione $SolicitudCotizacione
  */
 class Actividade extends AppModel {
-	public $displayField = 'nombre_act';
 
 
-	public $validate = array(
-		'nombre_act' => array(
-			'Esta actividad ya está almacenada' => array(
-				'rule' => 'isUnique',
-			)
-		)
-	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -45,6 +38,21 @@ class Actividade extends AppModel {
 			'joinTable' => 'actividades_eventos',
 			'foreignKey' => 'actividade_id',
 			'associationForeignKey' => 'evento_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'SolicitudCotizacione' => array(
+			'className' => 'SolicitudCotizacione',
+			'joinTable' => 'actividades_solicitud_cotizaciones',
+			'foreignKey' => 'actividade_id',
+			'associationForeignKey' => 'solicitud_cotizacione_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

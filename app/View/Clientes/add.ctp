@@ -3,19 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>Add Cliente</h2>
+          <h2>!!!Add Cliente</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index">clientes</a> <span class="divider">/</span></li>
-          <li class="active">Add</li>
-        </ul>        
-
+	<?php echo $this->TwitterBootstrap->add_crumb("clientes", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -25,39 +20,35 @@
         <div class="box-body">
           <div class="row-fluid">
 
-            <div class='span9' >
+            <div class='span8' >
               <div class="well">
-                <h6>Add Cliente</h6>
                 <hr />
-
-	<!--<?php echo __('Add Cliente'); ?></legend>-->
 	<?php
-		echo $this->Form->input('cliente_tipo_id', array('class' =>'span9','placeholder' => 'Ingrese cliente_tipo_id'));
-				//echo $this->Form->input('cliente_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese cliente_tipo_id'));
+		echo $this->Form->input('cliente_tipos_id', array('class' =>'span12','label' => 'Ingrese cliente_tipos_id', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('rut_cli', array('class' =>'span9','placeholder' => 'Ingrese rut_cli'));
-				//echo $this->Form->input('rut_cli', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese rut_cli'));
+				echo $this->Form->input('rut', array('class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre_cli', array('class' =>'span9','placeholder' => 'Ingrese nombre_cli'));
-				//echo $this->Form->input('nombre_cli', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese nombre_cli'));
+				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellidom_cli', array('class' =>'span9','placeholder' => 'Ingrese apellidom_cli'));
-				//echo $this->Form->input('apellidom_cli', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese apellidom_cli'));
+				echo $this->Form->input('apellido_paterno', array('class' =>'span12','label' => 'Ingrese apellido_paterno', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellidop_cli', array('class' =>'span9','placeholder' => 'Ingrese apellidop_cli'));
-				//echo $this->Form->input('apellidop_cli', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese apellidop_cli'));
+				echo $this->Form->input('apellido_materno', array('class' =>'span12','label' => 'Ingrese apellido_materno', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('direccion_cli', array('class' =>'span9','placeholder' => 'Ingrese direccion_cli'));
-				//echo $this->Form->input('direccion_cli', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese direccion_cli'));
+				echo $this->Form->input('direccion', array('class' =>'span12','label' => 'Ingrese direccion', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fono_cli', array('class' =>'span9','placeholder' => 'Ingrese fono_cli'));
-				//echo $this->Form->input('fono_cli', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese fono_cli'));
+				echo $this->Form->input('fono', array('class' =>'span12','label' => 'Ingrese fono', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('correo_cli', array('class' =>'span9','placeholder' => 'Ingrese correo_cli'));
-				//echo $this->Form->input('correo_cli', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese correo_cli'));
+				echo $this->Form->input('correo', array('class' =>'span12','label' => 'Ingrese correo', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-		$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));	?> 
-		<button class='btn btn-primary'>Guardar</button>
+		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
@@ -72,24 +63,5 @@
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Clientes'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Cliente Tipos'), array('controller' => 'cliente_tipos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Cliente Tipo'), array('controller' => 'cliente_tipos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Eventos'), array('controller' => 'eventos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Evento'), array('controller' => 'eventos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Solicitud Cotizaciones'), array('controller' => 'solicitud_cotizaciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Solicitud Cotizacione'), array('controller' => 'solicitud_cotizaciones', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
---!>
 
 

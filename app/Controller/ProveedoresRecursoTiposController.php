@@ -49,12 +49,15 @@ class ProveedoresRecursoTiposController extends AppController {
 		if ($this->request->is('post')) {
 			$this->ProveedoresRecursoTipo->create();
 			if ($this->ProveedoresRecursoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The proveedores recurso tipo has been saved'));
+				$this->Session->setFlash(__('The proveedores recurso tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The proveedores recurso tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The proveedores recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		}
+		$proveedores = $this->ProveedoresRecursoTipo->Proveedore->find('list');
+		$recursoTipos = $this->ProveedoresRecursoTipo->RecursoTipo->find('list');
+		$this->set(compact('proveedores', 'recursoTipos'));
 	}
 
 /**
@@ -70,15 +73,18 @@ class ProveedoresRecursoTiposController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ProveedoresRecursoTipo->save($this->request->data)) {
-				$this->Session->setFlash(__('The proveedores recurso tipo has been saved'));
+				$this->Session->setFlash(__('The proveedores recurso tipo has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The proveedores recurso tipo could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The proveedores recurso tipo could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('ProveedoresRecursoTipo.' . $this->ProveedoresRecursoTipo->primaryKey => $id));
 			$this->request->data = $this->ProveedoresRecursoTipo->find('first', $options);
 		}
+		$proveedores = $this->ProveedoresRecursoTipo->Proveedore->find('list');
+		$recursoTipos = $this->ProveedoresRecursoTipo->RecursoTipo->find('list');
+		$this->set(compact('proveedores', 'recursoTipos'));
 	}
 
 /**
@@ -95,10 +101,10 @@ class ProveedoresRecursoTiposController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ProveedoresRecursoTipo->delete()) {
-			$this->Session->setFlash(__('Proveedores recurso tipo deleted'));
+			$this->Session->setFlash(__('Proveedores recurso tipo deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Proveedores recurso tipo was not deleted'));
+		$this->Session->setFlash(__('Proveedores recurso tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

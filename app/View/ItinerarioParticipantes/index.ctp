@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Itinerario Participantes</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Itinerario Participantes", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,14 +32,14 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('participante_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora_ini_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora_ter_par'); ?></th>
-			<th><?php echo $this->Paginator->sort('desc_iti_par'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('participante_id', 'participante_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_id', 'evento_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('hora_inicio', 'hora_inicio'); ?></th>
+			<th><?php echo $this->Paginator->sort('hora_termino', 'hora_termino'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -52,14 +48,14 @@
 	<?php foreach ($itinerarioParticipantes as $itinerarioParticipante): ?>
 		<td><?php echo h($itinerarioParticipante['ItinerarioParticipante']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($itinerarioParticipante['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $itinerarioParticipante['Evento']['id'])); ?>
-		</td>
-		<td>
 			<?php echo $this->Html->link($itinerarioParticipante['Participante']['id'], array('controller' => 'participantes', 'action' => 'view', $itinerarioParticipante['Participante']['id'])); ?>
 		</td>
-		<td><?php echo h($itinerarioParticipante['ItinerarioParticipante']['hora_ini_par']); ?>&nbsp;</td>
-		<td><?php echo h($itinerarioParticipante['ItinerarioParticipante']['hora_ter_par']); ?>&nbsp;</td>
-		<td><?php echo h($itinerarioParticipante['ItinerarioParticipante']['desc_iti_par']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($itinerarioParticipante['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $itinerarioParticipante['Evento']['id'])); ?>
+		</td>
+		<td><?php echo h($itinerarioParticipante['ItinerarioParticipante']['hora_inicio']); ?>&nbsp;</td>
+		<td><?php echo h($itinerarioParticipante['ItinerarioParticipante']['hora_termino']); ?>&nbsp;</td>
+		<td><?php echo h($itinerarioParticipante['ItinerarioParticipante']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $itinerarioParticipante['ItinerarioParticipante']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $itinerarioParticipante['ItinerarioParticipante']['id'])); ?>

@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * ParticipanteTiposSolicitudCotizacione Model
  *
- * @property SolicitudCotizacione $SolicitudCotizacione
- * @property ParticipanteTipo $ParticipanteTipo
+ * @property SolicitudCotizaciones $SolicitudCotizaciones
+ * @property ParticipanteTipos $ParticipanteTipos
  */
 class ParticipanteTiposSolicitudCotizacione extends AppModel {
 
@@ -14,7 +14,7 @@ class ParticipanteTiposSolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'solicitud_cotizacione_id' => array(
+		'solicitud_cotizaciones_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -24,7 +24,7 @@ class ParticipanteTiposSolicitudCotizacione extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'participante_tipo_id' => array(
+		'participante_tipos_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -44,16 +44,16 @@ class ParticipanteTiposSolicitudCotizacione extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'SolicitudCotizacione' => array(
-			'className' => 'SolicitudCotizacione',
-			'foreignKey' => 'solicitud_cotizacione_id',
+		'SolicitudCotizaciones' => array(
+			'className' => 'SolicitudCotizaciones',
+			'foreignKey' => 'solicitud_cotizaciones_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'ParticipanteTipo' => array(
-			'className' => 'ParticipanteTipo',
-			'foreignKey' => 'participante_tipo_id',
+		'ParticipanteTipos' => array(
+			'className' => 'ParticipanteTipos',
+			'foreignKey' => 'participante_tipos_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

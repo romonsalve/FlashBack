@@ -49,15 +49,12 @@ class EventosRecursosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->EventosRecurso->create();
 			if ($this->EventosRecurso->save($this->request->data)) {
-				$this->Session->setFlash(__('The eventos recurso has been saved'));
+				$this->Session->setFlash(__('The eventos recurso has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The eventos recurso could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The eventos recurso could not be saved. Please, try again.'), 'ferror');
 			}
 		}
-		$eventos = $this->EventosRecurso->Evento->find('list');
-		$recursos = $this->EventosRecurso->Recurso->find('list');
-		$this->set(compact('eventos', 'recursos'));
 	}
 
 /**
@@ -73,18 +70,15 @@ class EventosRecursosController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EventosRecurso->save($this->request->data)) {
-				$this->Session->setFlash(__('The eventos recurso has been saved'));
+				$this->Session->setFlash(__('The eventos recurso has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The eventos recurso could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The eventos recurso could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('EventosRecurso.' . $this->EventosRecurso->primaryKey => $id));
 			$this->request->data = $this->EventosRecurso->find('first', $options);
 		}
-		$eventos = $this->EventosRecurso->Evento->find('list');
-		$recursos = $this->EventosRecurso->Recurso->find('list');
-		$this->set(compact('eventos', 'recursos'));
 	}
 
 /**
@@ -101,10 +95,10 @@ class EventosRecursosController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EventosRecurso->delete()) {
-			$this->Session->setFlash(__('Eventos recurso deleted'));
+			$this->Session->setFlash(__('Eventos recurso deleted'), 'fexito');
 			return $this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Eventos recurso was not deleted'));
+		$this->Session->setFlash(__('Eventos recurso was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
 }

@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Empleados</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Empleados", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,18 +32,18 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('empleado_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('rut_emp'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_emp'); ?></th>
-			<th><?php echo $this->Paginator->sort('apellidom_emp'); ?></th>
-			<th><?php echo $this->Paginator->sort('apellidop_emp'); ?></th>
-			<th><?php echo $this->Paginator->sort('direccion_emp'); ?></th>
-			<th><?php echo $this->Paginator->sort('fono_emp'); ?></th>
-			<th><?php echo $this->Paginator->sort('correo_emp'); ?></th>
-			<th><?php echo $this->Paginator->sort('contrato_emp'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('empleado_tipo_id', 'empleado_tipo_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('rut', 'rut'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('apellido_paterno', 'apellido_paterno'); ?></th>
+			<th><?php echo $this->Paginator->sort('apellido_materno', 'apellido_materno'); ?></th>
+			<th><?php echo $this->Paginator->sort('direccion', 'direccion'); ?></th>
+			<th><?php echo $this->Paginator->sort('fono', 'fono'); ?></th>
+			<th><?php echo $this->Paginator->sort('correo', 'correo'); ?></th>
+			<th><?php echo $this->Paginator->sort('contrato', 'contrato'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -58,14 +54,14 @@
 		<td>
 			<?php echo $this->Html->link($empleado['EmpleadoTipo']['id'], array('controller' => 'empleado_tipos', 'action' => 'view', $empleado['EmpleadoTipo']['id'])); ?>
 		</td>
-		<td><?php echo h($empleado['Empleado']['rut_emp']); ?>&nbsp;</td>
-		<td><?php echo h($empleado['Empleado']['nombre_emp']); ?>&nbsp;</td>
-		<td><?php echo h($empleado['Empleado']['apellidom_emp']); ?>&nbsp;</td>
-		<td><?php echo h($empleado['Empleado']['apellidop_emp']); ?>&nbsp;</td>
-		<td><?php echo h($empleado['Empleado']['direccion_emp']); ?>&nbsp;</td>
-		<td><?php echo h($empleado['Empleado']['fono_emp']); ?>&nbsp;</td>
-		<td><?php echo h($empleado['Empleado']['correo_emp']); ?>&nbsp;</td>
-		<td><?php echo h($empleado['Empleado']['contrato_emp']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['rut']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['apellido_paterno']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['apellido_materno']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['direccion']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['fono']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['correo']); ?>&nbsp;</td>
+		<td><?php echo h($empleado['Empleado']['contrato']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $empleado['Empleado']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $empleado['Empleado']['id'])); ?>

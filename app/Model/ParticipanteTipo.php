@@ -4,29 +4,12 @@ App::uses('AppModel', 'Model');
  * ParticipanteTipo Model
  *
  * @property Participante $Participante
- * @property SolicitudCotizacione $SolicitudCotizacione
  * @property EventoTipo $EventoTipo
+ * @property SolicitudCotizacione $SolicitudCotizacione
  */
-
 class ParticipanteTipo extends AppModel {
 
-public $displayField = 'nombre_part';
 
-public $validate = array(
-    'nombre_part' => array(
-	'unico' => array(
-		'rule'    => 'isUnique',
-		'message' => 'Este tipo de participante ya ha sido ingresado.',
-		'required' => true,
-		'on' => 'create',
-	    	),
-	'alfanumerico' => array(
-		'rule' => 'alphanumeric',
-		'required' => true,
-		'message' => 'Ingrese sólo caracteres alfanuméricos.'
-		),
-	)
-);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -57,11 +40,11 @@ public $validate = array(
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'SolicitudCotizacione' => array(
-			'className' => 'SolicitudCotizacione',
-			'joinTable' => 'participante_tipos_solicitud_cotizaciones',
+		'EventoTipo' => array(
+			'className' => 'EventoTipo',
+			'joinTable' => 'evento_tipos_participante_tipos',
 			'foreignKey' => 'participante_tipo_id',
-			'associationForeignKey' => 'solicitud_cotizacione_id',
+			'associationForeignKey' => 'evento_tipo_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
@@ -72,11 +55,11 @@ public $validate = array(
 			'deleteQuery' => '',
 			'insertQuery' => ''
 		),
-		'EventoTipo' => array(
-			'className' => 'EventoTipo',
-			'joinTable' => 'evento_tipos_participante_tipos',
+		'SolicitudCotizacione' => array(
+			'className' => 'SolicitudCotizacione',
+			'joinTable' => 'participante_tipos_solicitud_cotizaciones',
 			'foreignKey' => 'participante_tipo_id',
-			'associationForeignKey' => 'evento_tipo_id',
+			'associationForeignKey' => 'solicitud_cotizacione_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

@@ -2,11 +2,7 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Recurso Tipos</li>
-                  </ul>
-		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Recurso Tipos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
@@ -36,12 +32,12 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre_rect'); ?></th>
-			<th><?php echo $this->Paginator->sort('clasif_rect'); ?></th>
-			<th><?php echo $this->Paginator->sort('desc_rect'); ?></th>
+			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('clasificacion', 'clasificacion'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
@@ -49,9 +45,9 @@
 
 	<?php foreach ($recursoTipos as $recursoTipo): ?>
 		<td><?php echo h($recursoTipo['RecursoTipo']['id']); ?>&nbsp;</td>
-		<td><?php echo h($recursoTipo['RecursoTipo']['nombre_rect']); ?>&nbsp;</td>
-		<td><?php echo h($recursoTipo['RecursoTipo']['clasif_rect']); ?>&nbsp;</td>
-		<td><?php echo h($recursoTipo['RecursoTipo']['desc_rect']); ?>&nbsp;</td>
+		<td><?php echo h($recursoTipo['RecursoTipo']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($recursoTipo['RecursoTipo']['clasificacion']); ?>&nbsp;</td>
+		<td><?php echo h($recursoTipo['RecursoTipo']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $recursoTipo['RecursoTipo']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $recursoTipo['RecursoTipo']['id'])); ?>
