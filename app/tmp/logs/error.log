@@ -9497,3 +9497,13 @@ Stack Trace:
 #1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2013-08-23 08:05:15 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\BitNami\apache2\htdocs\FlashBack\app\Controller\EventosController.php, line 72]
+2013-08-23 08:05:15 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 C:\BitNami\apache2\htdocs\FlashBack\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\BitNami\apac...', 72)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\BitNami\apac...', 72, Array)
+#2 C:\BitNami\apache2\htdocs\FlashBack\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\BitNami\apac...', 72, Array)
+#3 C:\BitNami\apache2\htdocs\FlashBack\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

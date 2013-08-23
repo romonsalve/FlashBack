@@ -1,3 +1,10 @@
+<script type="text/javascript">
+function obtenerPropiedades(valor){
+	$('#recinto').load('/FlashBack/eventos/buscarRecinto/'+valor+' #listaRecintos');
+	$('#recursos').load('/FlashBack/eventos/buscarRecursos/'+valor+' #listaRecintos');
+	$('#actividad').load('/FlashBack/eventos/buscarActividades/'+valor+' #listaRecintos');
+}
+</script>
 
 <?php echo $this->Form->create('Evento'); ?>
 <div class="container-fluid">
@@ -27,7 +34,7 @@
 		echo $this->Form->input('recinto_id', array('class' =>'span12','label' => 'Ingrese recinto_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('evento_tipo_id', array('class' =>'span12','label' => 'Ingrese evento_tipo_id', 'placeholder' => '',
+				echo $this->Form->input('evento_tipo_id', array('class' =>'span12','label' => 'Ingrese evento_tipo_id', 'empty' => '(Seleccione una opción)', 'onchange' => 'obtenerPropiedades(this.value)',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('cliente_id', array('class' =>'span12','label' => 'Ingrese cliente_id', 'placeholder' => '',
