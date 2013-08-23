@@ -112,16 +112,16 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
           <ul>
             <li>
-            <?php echo $this->Html->link('Cotizaciones Pendientes', array('controller'=>'cotizaciones','action' => 'index/pendientes')); ?></li>
+            <?php echo $this->Html->link('Cotizaciones Pendientes', array('controller'=>'solicitudCotizaciones','action' => 'index/1')); ?></li>
 
             <li>
-            <?php echo $this->Html->link('Cotizaciones Preaprobadas', array('controller'=>'cotizaciones','action' => 'index/preaprobadas')); ?></li>
+            <?php echo $this->Html->link('Cotizaciones Preaprobadas', array('controller'=>'solicitudCotizaciones','action' => 'index/2')); ?></li>
 
             <li>
-            <?php echo $this->Html->link('Cotizaciones Aprobadas', array('controller'=>'cotizaciones','action' => 'index/aprobadas')); ?></li>
+            <?php echo $this->Html->link('Cotizaciones Aprobadas', array('controller'=>'solicitudCotizaciones','action' => 'index/3')); ?></li>
 
             <li>
-            <?php echo $this->Html->link('Cotizaciones Rechazadas', array('controller'=>'cotizaciones','action' => 'index/rechazadas')); ?></li>
+            <?php echo $this->Html->link('Cotizaciones Rechazadas', array('controller'=>'solicitudCotizaciones','action' => 'index/4')); ?></li>
           </ul>
         </li>
 

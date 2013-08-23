@@ -7,7 +7,14 @@ App::uses('AppModel', 'Model');
  */
 class Estado extends AppModel {
 
+	public $displayField = 'nombre';
 
+	public $validate = array(
+		'nombre' => array(
+			'rule' => 'isUnique',
+			'message' => 'Ya existe un estado con ese nombre.',
+		),
+	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**

@@ -71,31 +71,6 @@ foreach ($fields as $field) {
                            </div>
                         </div>
                      </div>
-		
-<!--<hr />
-<div class="actions">
-	<h3><?php echo "<?php echo __('Actions'); ?>"; ?></h3>
-	<ul>
-<?php
-	echo "\t\t<li><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-	echo "\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-	echo "\t\t<li><?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?> </li>\n";
-	echo "\t\t<li><?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add')); ?> </li>\n";
-
-	$done = array();
-	foreach ($associations as $type => $data) {
-		foreach ($data as $alias => $details) {
-			if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-				echo "\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
-				echo "\t\t<li><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
-				$done[] = $details['controller'];
-			}
-		}
-	}
-?>
-	</ul>
-</div>
--->
 
 <div class="accordion" id="accordion">
 <?php

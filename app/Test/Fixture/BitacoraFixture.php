@@ -36,8 +36,8 @@ class BitacoraFixture extends CakeTestFixture {
 			'id' => 1,
 			'evento_id' => 1,
 			'vehiculo_id' => 1,
-			'hora_inicio' => '06:18:40',
-			'hora_termino' => '06:18:40',
+			'hora_inicio' => '08:26:23',
+			'hora_termino' => '08:26:23',
 			'descripcion' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
 		),
 	);

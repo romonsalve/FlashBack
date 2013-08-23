@@ -11,9 +11,9 @@
                     <!-- Title -->
                     <h3>Evento Tipos</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de tipos de eventos que realiza la empresa, para fines de filtrado y clasificación de eventos y solicitudes.</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar tipo de evento</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,8 +32,8 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+
+			<th><?php echo $this->Paginator->sort('nombre', 'Nombre del tipo de evento'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -42,7 +42,7 @@
              <tr>
 
 	<?php foreach ($eventoTipos as $eventoTipo): ?>
-		<td><?php echo h($eventoTipo['EventoTipo']['id']); ?>&nbsp;</td>
+
 		<td><?php echo h($eventoTipo['EventoTipo']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $eventoTipo['EventoTipo']['id'])); ?>

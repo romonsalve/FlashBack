@@ -14,35 +14,20 @@ class Vehiculo extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'patente_veh' => array(
-			'patenteValida' => array(
-				'rule' => '/([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){4}[0-9]{2}/',
-				'message' => 'Ingrese una patente válida, en mayúsculas, sin guiones ni espacios.',
-				'required' => true,
-			),
-		),
-		'modelo_veh' => array(
-			'req' => array(
-				'rule' => 'alphanumeric',
-				'required' => true,
-				'message' => 'Ingrese sólo caracteres alfanuméricos'
-			),
-		),
-		'marca_veh' => array(
-			'req' => array(
-				'rule' => 'alphanumeric',
-				'required' => true,
-				'message' => 'Ingrese sólo caracteres alfanuméricos'
-			),
-		),
 		'vehiculo_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
+				'message' => 'Por favor seleccione un tipo de vehículo',
+				'allowEmpty' => false,
+				'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'patente' => array(
+			'patenteValida' => array(
+				'rule' => '/([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){4}[0-9]{2}/',
+				'message' => 'Ingrese una patente válida sin espacios ni guiones.	',
 			),
 		),
 	);

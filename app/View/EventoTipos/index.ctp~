@@ -2,18 +2,18 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-	<?php echo $this->TwitterBootstrap->add_crumb("Vehiculo Tipos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Evento Tipos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
                 <div class="bor"></div>
                  <div class="ysheet1">
                     <!-- Title -->
-                    <h3>Vehiculo Tipos</h3>
+                    <h3>Evento Tipos</h3>
                     <!-- Para -->
-                    <p>Listado de tipos de vehículo disponibles.</p>
+                    <p>Listado de tipos de eventos que realiza la empresa, para fines de filtrado y clasificación de eventos y solicitudes.</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Tipo de Vehículo</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -33,19 +33,21 @@
           <tr>
 
 
-			<th><?php echo $this->Paginator->sort('nombre_veht', 'Tipo de Vehículo'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'Nombre del tipo de evento'); ?></th>
 	
-	<th class="actions"><?php echo __('Actions'); ?></th>
+	<th class="actions"><?php echo __('Acciones'); ?></th>
 
  	</thead>
            <tbody>
              <tr>
 
-	<?php foreach ($vehiculoTipos as $vehiculoTipo): ?>
-		<td><?php echo h($vehiculoTipo['VehiculoTipo']['nombre_veht']); ?>&nbsp;</td>
+	<?php foreach ($eventoTipos as $eventoTipo): ?>
+
+		<td><?php echo h($eventoTipo['EventoTipo']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $vehiculoTipo['VehiculoTipo']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $vehiculoTipo['VehiculoTipo']['id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $vehiculoTipo['VehiculoTipo']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $eventoTipo['EventoTipo']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $eventoTipo['EventoTipo']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $eventoTipo['EventoTipo']['id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $eventoTipo['EventoTipo']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -74,7 +76,7 @@
 	</div>
 	 <?php } ?>		
 	 <?php } 
-		 else {  echo "<hr /> <h1 style='text-align: center'> Aún no se han ingresado Vehiculo Tipos</h1> <hr />"; } ?>	</div>
+		 else {  echo "<hr /> <h1 style='text-align: center'> Aún no se han ingresado Evento Tipos</h1> <hr />"; } ?>	</div>
 	</div>
 
 

@@ -9497,3 +9497,241 @@ Stack Trace:
 #1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2013-08-23 08:15:59 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:16:14 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:16:23 Error: [MissingActionException] Action UsersController::login.html() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login.html',
+)
+Request URL: /FlashBack/users/login.html
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:17:36 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:17:44 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:18:51 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:19:07 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:31:36 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:31:39 Error: [MissingActionException] Action UsersController::login.html() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login.html',
+)
+Request URL: /FlashBack/users/login.html
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:35:17 Error: Fatal Error (4): syntax error, unexpected 'Conversación' (T_STRING), expecting function (T_FUNCTION) in [/var/www/FlashBack/app/Controller/UsersController.php, line 104]
+2013-08-23 08:35:17 Error: [FatalErrorException] syntax error, unexpected 'Conversación' (T_STRING), expecting function (T_FUNCTION)
+Request URL: /FlashBack/users/login.html
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 104)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 104, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 104, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-23 08:35:49 Error: [MissingActionException] Action UsersController::login.html() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login.html',
+)
+Request URL: /FlashBack/users/login.html
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:36:09 Error: [MissingActionException] Action UsersController::register.html() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'register.html',
+)
+Request URL: /FlashBack/users/register.html
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:36:12 Error: [MissingActionException] Action UsersController::register() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'register',
+)
+Request URL: /FlashBack/users/register
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:36:58 Error: [MissingActionException] Action UsersController::register.html() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'register.html',
+)
+Request URL: /FlashBack/users/register.html
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:37:01 Error: [MissingActionException] Action UsersController::register() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'register',
+)
+Request URL: /FlashBack/users/register
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 08:38:07 Error: [MissingControllerException] Controller class Login.htmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Login.htmlController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/login.html
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-23 08:38:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/login
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-23 09:47:11 Error: [MissingControllerException] Controller class CotizacionesController could not be found.
+Exception Attributes: array (
+  'class' => 'CotizacionesController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/cotizaciones/index/pendientes
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-23 09:47:55 Error: [MissingControllerException] Controller class CotizacionesController could not be found.
+Exception Attributes: array (
+  'class' => 'CotizacionesController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/cotizaciones/index/pendientes
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-23 09:54:10 Error: [MissingActionException] Action EstadosController::aa() could not be found.
+Exception Attributes: array (
+  'controller' => 'EstadosController',
+  'action' => 'aa',
+)
+Request URL: /FlashBack/estados/aa
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EstadosController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-23 09:55:31 Error: [MissingControllerException] Controller class CotizacionesController could not be found.
+Exception Attributes: array (
+  'class' => 'CotizacionesController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/cotizaciones/index/pendientes
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-23 10:04:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-23 10:22:34 Error: [MissingControllerException] Controller class RecintoTipoController could not be found.
+Exception Attributes: array (
+  'class' => 'RecintoTipoController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/RecintoTipo
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
