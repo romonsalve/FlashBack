@@ -10,7 +10,7 @@
 
         <!-- Breadcrumb starts -->
 
-	<?php echo $this->TwitterBootstrap->add_crumb("clientes", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
+	<?php echo $this->TwitterBootstrap->add_crumb("Clientes", 'index');echo $this->TwitterBootstrap->add_crumb("Registro", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
