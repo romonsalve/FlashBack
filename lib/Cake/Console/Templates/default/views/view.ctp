@@ -10,12 +10,10 @@
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
-
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></a> <span class="divider">/</span></li>
-          <li class="active">Ver</li>
-        </ul>        
+	<? echo '<?php echo $this->TwitterBootstrap->add_crumb("' . $pluralVar . '", array(\'controller\' => \'' . $modelClass . '\', \'action\' => \'index\'));';
+	   echo 'echo $this->TwitterBootstrap->add_crumb("Ver ' . $singularHumanName . '", null);';
+	   echo 'echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>';
+		 ?>
 
         <!-- Breadcrumb ends -->
         <hr />

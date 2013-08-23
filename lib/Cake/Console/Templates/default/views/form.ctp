@@ -3,18 +3,17 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2><?php echo Inflector::humanize($action) ?> <?php echo $singularHumanName ?></h2>
+          <h2>!!!<?php echo Inflector::humanize($action) ?> <?php echo $singularHumanName ?></h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-        <ul class="breadcrumb">
-          <li><a href="#">gerente</a> <span class="divider">/</span></li>
-          <li><a href="index"><?php echo $pluralVar; ?></a> <span class="divider">/</span></li>
-          <li class="active"><?php echo Inflector::humanize($action) ?></li>
-        </ul>        
+	<? echo '<?php echo $this->TwitterBootstrap->add_crumb("' . $pluralVar . '", \'index\');';
+	   echo 'echo $this->TwitterBootstrap->add_crumb("' . Inflector::humanize($action) . '", null);';
+	   echo 'echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>';
+		 ?>
 
         <!-- Breadcrumb ends -->
 
@@ -25,20 +24,18 @@
         <div class="box-body">
           <div class="row-fluid">
 
-            <div <?php if (!empty($associations['hasAndBelongsToMany'])) echo "class='span6'"; else echo "class='span9'" ?> >
+            <div <?php if (!empty($associations['hasAndBelongsToMany'])) echo "class='span6'"; else echo "class='span8'" ?> >
               <div class="well">
-                <h6><?php echo Inflector::humanize($action)." ".$singularHumanName; ?></h6>
                 <hr />
-
-	<!--<?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?></legend>-->
 <?php  
 		echo "\t<?php\n";
 		foreach ($fields as $field) {
 			if (strpos($action, 'add') !== false && $field == $primaryKey) {
 				continue;
 			} elseif (!in_array($field, array('created', 'modified', 'updated'))) {
-				echo "\t\techo \$this->Form->input('{$field}', array('class' =>'span9','placeholder' => 'Ingrese {$field}'));\n\t\t";
-				echo "\t\t//echo \$this->Form->input('{$field}', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese {$field}'));\n\t\t";
+				echo "\t\techo \$this->Form->input('{$field}', array('class' =>'span12','label' => 'Ingrese {$field}', 'placeholder' => '',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));\n\t\t";
+				
 				echo "echo '<hr /> ';\n\t\t";
 			}
 		}
@@ -53,16 +50,15 @@
 	<?php echo "\t<?php\n";
 			foreach ($associations['hasAndBelongsToMany'] as $assocName => $assocData) { 
 			    echo "echo '<h6> <?php echo {$assocName} ?></h6> <hr />'; ";
-			    echo "\t\techo \$this->Form->input('{$assocName}', array('type' => 'select', 'multiple'=>'checkbox') );\n";
+			    echo "\t\techo \$this->Form->input('{$assocName}', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );\n";
 			}
 		}
 		
 	
-	echo '$this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary"));';
+	echo 'echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));';
 
 echo "\t?> \n";
 ?>
-		<button class='btn btn-primary'>Guardar</button>
               </div>
 
             </div>
@@ -77,33 +73,5 @@ echo "\t?> \n";
 
 
 
-
-
-<!--
-
-
-<div class="actions">
-	<h3><?php echo "<?php echo __('Actions'); ?>"; ?></h3>
-	<ul>
-
-<?php if (strpos($action, 'add') === false): ?>
-		<li><?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), null, __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>"; ?></li>
-<?php endif; ?>
-		<li><?php echo "<?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?>"; ?></li>
-<?php
-		$done = array();
-		foreach ($associations as $type => $data) {
-			foreach ($data as $alias => $details) {
-				if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-					echo "\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
-					echo "\t\t<li><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
-					$done[] = $details['controller'];
-				}
-			}
-		}
-?>
-	</ul>
-</div>
---!>
 
 

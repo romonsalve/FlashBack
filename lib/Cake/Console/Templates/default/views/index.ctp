@@ -2,10 +2,10 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-		  <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li class="active"><?php echo $pluralHumanName ?></li>
-                  </ul>
+	<? 
+	   echo '<?php echo $this->TwitterBootstrap->add_crumb("' . $pluralHumanName . '", null);';
+	   echo 'echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>';
+		 ?>
 		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
@@ -46,10 +46,10 @@
           <tr>
 
 	<?php foreach ($fields as $field): ?>
-		<th><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th>
+		<th><?php echo "<?php echo \$this->Paginator->sort('{$field}', '{$field}'); ?>"; ?></th>
 	<?php endforeach; ?>
 
-	<th class="actions"><?php echo "<?php echo __('Actions'); ?>"; ?></th>
+	<th class="actions"><?php echo "<?php echo __('Acciones'); ?>"; ?></th>
 
  	</thead>
            <tbody>
