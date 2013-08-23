@@ -144,6 +144,8 @@ class EventosController extends AppController {
 	}
 
 	public function buscarRecinto($eventoTipo = null,  $id = null){
+
+		$this->Evento->recursive = -1;
 		if ($this->Evento->exists($id)) {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
 			$this->request->data = $this->Evento->find('first', $options);
@@ -163,6 +165,8 @@ class EventosController extends AppController {
 		$this->set(compact('recintos'));
 	}
 	public function buscarActividades($eventoTipo = null,  $id = null){
+
+		$this->Evento->recursive = -1;
 		if ($this->Evento->exists($id)) {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
 			$this->request->data = $this->Evento->find('first', $options);
@@ -182,6 +186,7 @@ class EventosController extends AppController {
 		$this->set(compact('actividades'));
 	}
 	public function buscarRecursos($eventoTipo = null,  $id = null){
+		$this->Evento->recursive = -1;
 		if ($this->Evento->exists($id)) {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
 			$this->request->data = $this->Evento->find('first', $options);
