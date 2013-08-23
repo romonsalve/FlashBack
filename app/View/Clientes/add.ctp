@@ -3,7 +3,7 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Add Cliente</h2>
+          <h2>Registro de Cliente</h2>
           <hr />
         </div>
         <!-- Title ends -->
@@ -24,31 +24,24 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('cliente_tipo_id', array('class' =>'span12','label' => 'Ingrese cliente_tipo_id', 'placeholder' => '',
+		echo $this->Form->input('cliente_tipo_id', array('class' =>'span12','label' => '¿Es usted un particular o una empresa?', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo '<hr /> ';
+		echo $this->Form->input('rut', array('type'=>'text', 'class' =>'span12','label' => 'Ingrese su RUT', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo '<hr /> ';
+		echo $this->Form->input('nombre', array('type'=>'text', 'class' =>'span12','label' => 'Nombre: (o Razón Social en caso de ser una empresa)', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('rut', array('class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('apellido_paterno', array('type'=>'text', 'class' =>'span12','label' => 'Apellido Paterno:', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('apellido_materno', array('type'=>'text', 'class' =>'span12','label' => 'Apellido Materno:', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellido_paterno', array('class' =>'span12','label' => 'Ingrese apellido_paterno', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('direccion', array('type'=>'text', 'class' =>'span12','label' => 'Dirección:', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellido_materno', array('class' =>'span12','label' => 'Ingrese apellido_materno', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('fono', array('type'=>'text', 'class' =>'span12','label' => 'Teléfono:', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('direccion', array('class' =>'span12','label' => 'Ingrese direccion', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('correo', array('type'=>'text', 'class' =>'span12','label' => 'Correo electrónico:', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fono', array('class' =>'span12','label' => 'Ingrese fono', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-				echo $this->Form->input('correo', array('class' =>'span12','label' => 'Ingrese correo', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
+		echo $this->Form->button("Registrarse", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>
