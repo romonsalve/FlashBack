@@ -20,9 +20,18 @@ class SolicitudCotizacionesController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($estado = null) {
 		$this->SolicitudCotizacione->recursive = 0;
-		$this->set('solicitudCotizaciones', $this->Paginator->paginate());
+		if($estado != null){
+			$this->paginate = array(
+				'conditions' => array('SolicitudCotizacione.estado_id' => $estado),
+				'limit' => 10
+			    );
+			$this->set('solicitudCotizaciones', $this->Paginator->paginate());
+
+		}else{
+			$this->set('solicitudCotizaciones', $this->Paginator->paginate());
+		}	
 	}
 
 /**

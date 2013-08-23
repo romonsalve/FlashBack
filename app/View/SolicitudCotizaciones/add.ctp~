@@ -37,7 +37,7 @@
 		echo '<hr /> ';
 		echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Escriba los detalles a considerar en la cotización:', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-	?>
+			?>
 	
 	</div>
 	     </div>
