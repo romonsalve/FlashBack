@@ -9,7 +9,7 @@ App::uses('AppModel', 'Model');
  */
 class RecintoTipo extends AppModel {
 
-
+	public $displayField = 'nombre';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**

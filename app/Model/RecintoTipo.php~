@@ -3,28 +3,13 @@ App::uses('AppModel', 'Model');
 /**
  * RecintoTipo Model
  *
- * @property SolicitudCotizacione $SolicitudCotizacione
  * @property Recinto $Recinto
+ * @property SolicitudCotizacione $SolicitudCotizacione
  * @property EventoTipo $EventoTipo
  */
 class RecintoTipo extends AppModel {
 
-public $displayField = 'nombre_recit';
 
-public $validate = array(
-    'nombre_recit' => array(
-	'unico' => array(
-		'rule'    => 'isUnique',
-		'message' => 'Este tipo de recurso ya ha sido ingresado.',
-		'required' => true,
-	    	),
-	'alfanumerico' => array(
-		'rule' => 'alphanumeric',
-		'required' => true,
-		'message' => 'Ingrese sólo caracteres alfanuméricos.'
-		),
-	)
-);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -33,8 +18,8 @@ public $validate = array(
  * @var array
  */
 	public $hasMany = array(
-		'SolicitudCotizacione' => array(
-			'className' => 'SolicitudCotizacione',
+		'Recinto' => array(
+			'className' => 'Recinto',
 			'foreignKey' => 'recinto_tipo_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -46,8 +31,8 @@ public $validate = array(
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Recinto' => array(
-			'className' => 'Recinto',
+		'SolicitudCotizacione' => array(
+			'className' => 'SolicitudCotizacione',
 			'foreignKey' => 'recinto_tipo_id',
 			'dependent' => false,
 			'conditions' => '',
