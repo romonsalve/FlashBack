@@ -1,3 +1,9 @@
+<script type="text/javascript">
+function obtenerPropiedades(valor){
+	alert("ctm");
+	$('#recinto').load('/FlashBack/eventos/buscarRecinto/'+valor+' #listaRecintos');
+}
+</script>
 
 <?php echo $this->Form->create('Evento'); ?>
 <div class="container-fluid">
@@ -34,17 +40,18 @@
 	<?php
 		echo $this->Form->input('id', array('class' =>'span9','placeholder' => 'Ingrese id'));
 				//echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
-		echo '<hr /> ';
-				echo $this->Form->input('evento_tipo_id', array('class' =>'span9','placeholder' => 'Ingrese evento_tipo_id'));
+		echo ' <hr /> ';
+					echo $this->Form->input('evento_tipo_id', array('class' =>'span9', 'onChange' => 'obtenerPropiedades(this.value)' ));
 				//echo $this->Form->input('evento_tipo_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese evento_tipo_id'));
 		echo '<hr /> ';
-				echo $this->Form->input('cliente_id', array('class' =>'span9','placeholder' => 'Ingrese cliente_id'));
+				echo $this->Form->input('cliente_id', array('class' =>'span9'));
 				//echo $this->Form->input('cliente_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese cliente_id'));
-		echo '<hr /> ';
-				echo $this->Form->input('recinto_id', array('class' =>'span9','placeholder' => 'Ingrese recinto_id'));
+		echo '<div id="recinto"> <hr /> ';
+				echo $this->Form->input('recinto_id', array('class' =>'span9'));
+				echo "</div>";
 				//echo $this->Form->input('recinto_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese recinto_id'));
 		echo '<hr /> ';
-				echo $this->Form->input('estado_evento_id', array('class' =>'span9','placeholder' => 'Ingrese estado_evento_id'));
+				echo $this->Form->input('estado_evento_id', array('class' =>'span9','placeholder' => 'Ingrese estado_evento_id', 'onChange' => 'obtenerPropiedades(this.value)'));
 				//echo $this->Form->input('estado_evento_id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese estado_evento_id'));
 		echo '<hr /> ';
 				echo $this->Form->input('nombre_evento', array('class' =>'span9','placeholder' => 'Ingrese nombre_evento'));
