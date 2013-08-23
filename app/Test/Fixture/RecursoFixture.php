@@ -12,14 +12,14 @@ class RecursoFixture extends CakeTestFixture {
  */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 11, 'key' => 'primary'),
-		'recurso_tipo_id' => array('type' => 'integer', 'null' => false),
-		'proveedore_id' => array('type' => 'integer', 'null' => true),
-		'cantidad_rec' => array('type' => 'integer', 'null' => true),
+		'recurso_tipos_id' => array('type' => 'integer', 'null' => false),
+		'proveedores_id' => array('type' => 'integer', 'null' => true),
+		'cantidad' => array('type' => 'integer', 'null' => true),
 		'indexes' => array(
 			'PRIMARY' => array('unique' => true, 'column' => 'id'),
 			'recursos_pk' => array('unique' => true, 'column' => 'id'),
-			'proveedores_id' => array('unique' => false, 'column' => 'proveedore_id'),
-			'recurso_tipos_id' => array('unique' => false, 'column' => 'recurso_tipo_id')
+			'proveedores_id' => array('unique' => false, 'column' => 'proveedores_id'),
+			'recurso_tipos_id' => array('unique' => false, 'column' => 'recurso_tipos_id')
 		),
 		'tableParameters' => array()
 	);
@@ -32,9 +32,9 @@ class RecursoFixture extends CakeTestFixture {
 	public $records = array(
 		array(
 			'id' => 1,
-			'recurso_tipo_id' => 1,
-			'proveedore_id' => 1,
-			'cantidad_rec' => 1
+			'recurso_tipos_id' => 1,
+			'proveedores_id' => 1,
+			'cantidad' => 1
 		),
 	);
 

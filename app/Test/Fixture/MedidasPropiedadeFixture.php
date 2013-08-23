@@ -11,13 +11,13 @@ class MedidasPropiedadeFixture extends CakeTestFixture {
  * @var array
  */
 	public $fields = array(
-		'medida_id' => array('type' => 'integer', 'null' => false),
-		'propiedade_id' => array('type' => 'integer', 'null' => false),
+		'medidas_id' => array('type' => 'integer', 'null' => false),
+		'propiedades_id' => array('type' => 'integer', 'null' => false),
 		'indexes' => array(
-			'PRIMARY' => array('unique' => true, 'column' => array('medida_id', 'propiedade_id')),
-			'medidas_propiedades_pk' => array('unique' => true, 'column' => array('medida_id', 'propiedade_id')),
-			'medidas_id' => array('unique' => false, 'column' => 'medida_id'),
-			'propiedades_id3' => array('unique' => false, 'column' => 'propiedade_id')
+			'PRIMARY' => array('unique' => true, 'column' => array('medidas_id', 'propiedades_id')),
+			'medidas_propiedades_pk' => array('unique' => true, 'column' => array('medidas_id', 'propiedades_id')),
+			'medidas_id2' => array('unique' => false, 'column' => 'medidas_id'),
+			'propiedades_id3' => array('unique' => false, 'column' => 'propiedades_id')
 		),
 		'tableParameters' => array()
 	);
@@ -29,8 +29,8 @@ class MedidasPropiedadeFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'medida_id' => 1,
-			'propiedade_id' => 1
+			'medidas_id' => 1,
+			'propiedades_id' => 1
 		),
 	);
 

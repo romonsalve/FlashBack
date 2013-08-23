@@ -11,12 +11,12 @@ class EventoTiposParticipanteTipoFixture extends CakeTestFixture {
  * @var array
  */
 	public $fields = array(
-		'evento_tipo_id' => array('type' => 'integer', 'null' => false),
-		'participante_tipo_id' => array('type' => 'integer', 'null' => false),
+		'evento_tipos_id' => array('type' => 'integer', 'null' => false),
+		'participante_tipos_id' => array('type' => 'integer', 'null' => false),
 		'indexes' => array(
-			'PRIMARY' => array('unique' => true, 'column' => array('evento_tipo_id', 'participante_tipo_id')),
-			'evento_tipos_id4' => array('unique' => false, 'column' => 'evento_tipo_id'),
-			'participante_tipos_id2' => array('unique' => false, 'column' => 'participante_tipo_id')
+			'PRIMARY' => array('unique' => true, 'column' => array('evento_tipos_id', 'participante_tipos_id')),
+			'evento_tipos_id4' => array('unique' => false, 'column' => 'evento_tipos_id'),
+			'participante_tipos_id2' => array('unique' => false, 'column' => 'participante_tipos_id')
 		),
 		'tableParameters' => array()
 	);
@@ -28,8 +28,8 @@ class EventoTiposParticipanteTipoFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'evento_tipo_id' => 1,
-			'participante_tipo_id' => 1
+			'evento_tipos_id' => 1,
+			'participante_tipos_id' => 1
 		),
 	);
 

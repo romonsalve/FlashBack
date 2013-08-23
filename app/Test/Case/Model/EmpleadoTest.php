@@ -71,4 +71,12 @@ class EmpleadoTest extends CakeTestCase {
 		parent::tearDown();
 	}
 
+/**
+ * testVerificarRut method
+ *
+ * @return void
+ */
+	public function testVerificarRut() {
+	}
+
 }

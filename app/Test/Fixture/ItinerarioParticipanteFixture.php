@@ -12,11 +12,11 @@ class ItinerarioParticipanteFixture extends CakeTestFixture {
  */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 11, 'key' => 'primary'),
-		'evento_id' => array('type' => 'integer', 'null' => false),
 		'participante_id' => array('type' => 'integer', 'null' => false),
-		'hora_ini_par' => array('type' => 'time', 'null' => true),
-		'hora_ter_par' => array('type' => 'time', 'null' => true),
-		'desc_iti_par' => array('type' => 'text', 'null' => true, 'length' => 1073741824),
+		'evento_id' => array('type' => 'integer', 'null' => false),
+		'hora_inicio' => array('type' => 'time', 'null' => true),
+		'hora_termino' => array('type' => 'time', 'null' => true),
+		'descripcion' => array('type' => 'text', 'null' => true, 'length' => 1073741824),
 		'indexes' => array(
 			'PRIMARY' => array('unique' => true, 'column' => array('participante_id', 'evento_id', 'id')),
 			'itinerario_participantes_pk' => array('unique' => true, 'column' => array('participante_id', 'evento_id', 'id')),
@@ -34,11 +34,11 @@ class ItinerarioParticipanteFixture extends CakeTestFixture {
 	public $records = array(
 		array(
 			'id' => 1,
-			'evento_id' => 1,
 			'participante_id' => 1,
-			'hora_ini_par' => '06:07:00',
-			'hora_ter_par' => '06:07:00',
-			'desc_iti_par' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
+			'evento_id' => 1,
+			'hora_inicio' => '06:18:46',
+			'hora_termino' => '06:18:46',
+			'descripcion' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
 		),
 	);
 

@@ -158,11 +158,11 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
         <li>
         <?php echo $this->Html->link('<i class="icon-user icon-white"></i>Personal</a>', array(
-            'controller' => 'pages', 'action' => 'home'), array('class'=>'open br-purple','escape' => false) ); ?></li>
+            'controller' => 'Empleados', 'action' => 'index'), array('class'=>'open br-purple','escape' => false) ); ?></li>
 
         <li>
         <?php echo $this->Html->link('<i class="icon-user icon-white"></i>Proveedores</a>', array(
-            'controller' => 'pages', 'action' => 'home'), array('class'=>'open br-orange','escape' => false) ); ?></li>
+            'controller' => 'Proveedores', 'action' => 'index'), array('class'=>'open br-orange','escape' => false) ); ?></li>
 
         <li>
         <?php echo $this->Html->link('<i class="icon-user icon-white"></i>Participantes</a>', array(

@@ -11,13 +11,13 @@ class ActividadesEventoTipoFixture extends CakeTestFixture {
  * @var array
  */
 	public $fields = array(
-		'evento_tipo_id' => array('type' => 'integer', 'null' => false),
-		'actividade_id' => array('type' => 'integer', 'null' => false),
+		'evento_tipos_id' => array('type' => 'integer', 'null' => false),
+		'actividades_id' => array('type' => 'integer', 'null' => false),
 		'indexes' => array(
-			'PRIMARY' => array('unique' => true, 'column' => array('evento_tipo_id', 'actividade_id')),
-			'actividades_evento_tipos_pk' => array('unique' => true, 'column' => array('evento_tipo_id', 'actividade_id')),
-			'actividades_id2' => array('unique' => false, 'column' => 'actividade_id'),
-			'evento_tipos_id3' => array('unique' => false, 'column' => 'evento_tipo_id')
+			'PRIMARY' => array('unique' => true, 'column' => array('evento_tipos_id', 'actividades_id')),
+			'actividades_evento_tipos_pk' => array('unique' => true, 'column' => array('evento_tipos_id', 'actividades_id')),
+			'actividades_id2' => array('unique' => false, 'column' => 'actividades_id'),
+			'evento_tipos_id3' => array('unique' => false, 'column' => 'evento_tipos_id')
 		),
 		'tableParameters' => array()
 	);
@@ -29,8 +29,8 @@ class ActividadesEventoTipoFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'evento_tipo_id' => 1,
-			'actividade_id' => 1
+			'evento_tipos_id' => 1,
+			'actividades_id' => 1
 		),
 	);
 
