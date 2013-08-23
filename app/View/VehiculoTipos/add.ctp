@@ -3,7 +3,7 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Add Vehiculo Tipo</h2>
+          <h2>Agregar Tipo de Vehículo</h2>
           <hr />
         </div>
         <!-- Title ends -->
@@ -24,7 +24,7 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+		echo $this->Form->input('nombre', array('type' => 'text', 'class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 

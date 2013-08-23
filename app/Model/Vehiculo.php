@@ -17,11 +17,17 @@ class Vehiculo extends AppModel {
 		'vehiculo_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
+				'message' => 'Por favor seleccione un tipo de vehículo',
+				'allowEmpty' => false,
+				'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'patente' => array(
+			'patenteValida' => array(
+				'rule' => '/([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){4}[0-9]{2}/',
+				'message' => 'Ingrese una patente válida, en mayúsculas, sin espacios ni guiones.	',
 			),
 		),
 	);
