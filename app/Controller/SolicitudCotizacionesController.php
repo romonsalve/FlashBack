@@ -98,10 +98,49 @@ class SolicitudCotizacionesController extends AppController {
 		$estados = $this->SolicitudCotizacione->Estado->find('list');
 		$eventoTipos = $this->SolicitudCotizacione->EventoTipo->find('list');
 		$clientes = $this->SolicitudCotizacione->Cliente->find('list');
-		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list');
-		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list');
-		$actividades = $this->SolicitudCotizacione->Actividade->find('list');
-		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos', 'actividades'));
+		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list', array(
+				'joins' =>
+                   array(
+                    array(
+                        'table' => 'evento_tipos_recinto_tipos',
+                        'alias' => 'eventoTipoRecintoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('eventoTipoRecintoTipo.recinto_tipo_id = RecintoTipo.id',
+                        	'eventoTipoRecintoTipo.evento_tipo_id' => $this->request->data['SolicitudCotizacione']['evento_tipo_id']
+                        )
+                    )
+                  ))
+         );
+		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list', array(
+				'joins' =>
+                   array(
+                    array(
+                        'table' => 'evento_tipos_participante_tipos',
+                        'alias' => 'eventoTiposParticianteTipos',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('eventoTiposParticianteTipos.participante_tipo_id = ParticipanteTipo.id',
+                        	'eventoTiposParticianteTipos.evento_tipo_id' =>$this->request->data['SolicitudCotizacione']['evento_tipo_id']
+                        )
+                    )
+                  ))
+        );
+		$actividades = $this->SolicitudCotizacione->Actividade->find('list', array(
+				'joins' =>
+                   array(
+                    array(
+                        'table' => 'actividades_evento_tipos',
+                        'alias' => 'actividadesEventoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('actividadesEventoTipo.actividade_id = Actividade.id',
+                        	'actividadesEventoTipo.actividade_id' => $this->request->data['SolicitudCotizacione']['evento_tipo_id']
+                        )
+                    )
+                  ))
+         );
+		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos', 'actividades','id'));
 	}
 
 /**
@@ -125,6 +164,7 @@ class SolicitudCotizacionesController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 	public function buscarParticipantesActividades($eventoTipo=null, $id=null ){
+		$this->layout = 'ajax';
 		$this->SolicitudCotizacione->recursive = -1;
 		if($this->SolicitudCotizacione->exists($id)){
 			$options = array('conditions' => array('SolicitudCotizacione.' . $this->SolicitudCotizacione->primaryKey => $id));
@@ -161,6 +201,7 @@ class SolicitudCotizacionesController extends AppController {
 		$this->set(compact('participanteTipos', 'actividades','id'));
 	}
 	public function buscarRecintoTipo($eventoTipo=null, $id=null ){
+		$this->layout = 'ajax';
 		$this->SolicitudCotizacione->recursive = -1;
 		if($this->SolicitudCotizacione->exists($id)){
 			$options = array('conditions' => array('SolicitudCotizacione.' . $this->SolicitudCotizacione->primaryKey => $id));
@@ -181,6 +222,5 @@ class SolicitudCotizacionesController extends AppController {
                   ))
          );
 		$this->set(compact('recintoTipos'));
-
 	}
 }

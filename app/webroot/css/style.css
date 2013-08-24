@@ -1910,6 +1910,7 @@ footer{
 
 
 @media (max-width: 480px){
+
    .col-l{
 	   	width: 100%;
 	   	float: none;
@@ -1933,6 +1934,11 @@ footer{
 }
 
 @media (max-width: 767px){		
+	.logo{
+    	max-width: 50%;
+		text-align: center;
+		margin: 0 auto;
+    }
 	.content .container-fluid{
 		max-width: 400px;
 		margin: 0 auto;
@@ -2008,6 +2014,11 @@ footer{
 }
 
 @media (min-width: 768px) and (max-width: 979px){
+	.logo{
+    	max-width: 50%;
+		text-align: center;
+		margin: 0 auto;
+    }
 	.dropdown-menu a{
 		background: transparent !important;
 	}
