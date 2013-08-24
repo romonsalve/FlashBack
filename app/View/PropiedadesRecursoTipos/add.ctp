@@ -1,4 +1,8 @@
-
+<script type="text/javascript">
+function obtenerPropiedades(valor){
+  $('#medida').load('/FlashBack/propiedadesRecursoTipos/buscaMedida/'+valor+' #listaPropiedades');
+}
+</script>
 <?php echo $this->Form->create('PropiedadesRecursoTipo'); ?>
 <div class="container-fluid">
         <!-- Title starts -->
@@ -23,13 +27,13 @@
             <div class='span8' >
               <div class="well">
                 <hr />
-	<?php
-		echo $this->Form->input('medida_id', array('class' =>'span12','label' => 'Ingrese medida_id', 'placeholder' => '',
+  <?php
+				echo $this->Form->input('propiedade_id', array('class' =>'span12','label' => 'Ingrese propiedade_id', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('propiedade_id', array('class' =>'span12','label' => 'Ingrese propiedade_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
+    echo "<div id = 'medida'>";
+    echo '</div> ';
+    
 				echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';

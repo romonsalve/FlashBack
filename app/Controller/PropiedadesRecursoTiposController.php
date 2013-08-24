@@ -83,10 +83,23 @@ class PropiedadesRecursoTiposController extends AppController {
 			$options = array('conditions' => array('PropiedadesRecursoTipo.' . $this->PropiedadesRecursoTipo->primaryKey => $id));
 			$this->request->data = $this->PropiedadesRecursoTipo->find('first', $options);
 		}
-		$medidas = $this->PropiedadesRecursoTipo->Medida->find('list');
+		$medidas = $this->PropiedadesRecursoTipo->Medida->find('list', array(             
+                  'joins' =>
+                   array(
+                    array(
+                        'table' => 'medidas_propiedades',
+                        'alias' => 'medidasPropiedades',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('medidasPropiedades.medida_id = Medida.id',
+                        	'medidasPropiedades.propiedade_id' => $id )
+                    )
+     		   )
+		));
+
 		$propiedades = $this->PropiedadesRecursoTipo->Propiedade->find('list');
 		$recursoTipos = $this->PropiedadesRecursoTipo->RecursoTipo->find('list');
-		$this->set(compact('medidas', 'propiedades', 'recursoTipos'));
+		$this->set(compact('medidas', 'propiedades', 'recursoTipos','id'));
 	}
 
 /**
@@ -108,5 +121,25 @@ class PropiedadesRecursoTiposController extends AppController {
 		}
 		$this->Session->setFlash(__('Propiedades recurso tipo was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
+	}
+	public function buscaMedida($propiedad=null, $id=null){
+		if (!$this->PropiedadesRecursoTipo->exists($id)) {
+			$options = array('conditions' => array('PropiedadesRecursoTipo.' . $this->PropiedadesRecursoTipo->primaryKey => $id));
+			$this->request->data = $this->PropiedadesRecursoTipo->find('first', $options);
+		}
+		$medidas = $this->PropiedadesRecursoTipo->Medida->find('list', array(             
+                  'joins' =>
+                   array(
+                    array(
+                        'table' => 'medidas_propiedades',
+                        'alias' => 'medidasPropiedades',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('medidasPropiedades.medida_id = Medida.id',
+                        	'medidasPropiedades.propiedade_id' => $propiedad )
+                    )
+     		   )
+		));	
+		$this->set(compact('medidas'));
 	}
 }

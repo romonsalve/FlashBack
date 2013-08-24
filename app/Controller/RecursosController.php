@@ -1,3 +1,5 @@
+
+
 <?php
 App::uses('AppController', 'Controller');
 
@@ -103,8 +105,7 @@ class RecursosController extends AppController {
                     )  
      		   )
 		));	
-		$this->set("id", $id);
-		$this->set(compact('recursoTipos', 'proveedores', 'eventos', 'propiedades'));
+		$this->set(compact('recursoTipos', 'proveedores', 'eventos', 'propiedades','id'));
 	}
 
 /**
@@ -129,7 +130,6 @@ class RecursosController extends AppController {
 	}
 
 	public function buscarPropiedades($recursoTipo = null, $id = null){
-		this->Recursos->
 		if ($this->Recurso->exists($id)) {
 			$options = array('conditions' => array('Recurso.' . $this->Recurso->primaryKey => $id));
 			$this->request->data = $this->Recurso->find('first', $options);
