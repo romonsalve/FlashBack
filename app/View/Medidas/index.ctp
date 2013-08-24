@@ -9,11 +9,11 @@
                 <div class="bor"></div>
                  <div class="ysheet1">
                     <!-- Title -->
-                    <h3>Medidas</h3>
+                    <h3>Unidades de Medida</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de unidades de medida disponibles en el sistema, haga click en editar junto a una medida para editar las propiedades que puede medir la unidad de medida.</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar unidad de medida.</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,8 +32,7 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'Unidad de Medida'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -42,7 +41,7 @@
              <tr>
 
 	<?php foreach ($medidas as $medida): ?>
-		<td><?php echo h($medida['Medida']['id']); ?>&nbsp;</td>
+
 		<td><?php echo h($medida['Medida']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $medida['Medida']['id'])); ?>

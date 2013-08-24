@@ -24,7 +24,7 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese un nombre para la medida', 'placeholder' => 'Metros',
+		echo $this->Form->input('nombre', array('type' => 'text', 'class' =>'span12','label' => 'Ingrese un nombre para la medida', 'placeholder' => 'Metros',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
@@ -34,7 +34,7 @@
 	     <div class="span6 ">
                 <div class="well">
 		<?php
-echo '<h6> <?php echo Propiedade ?></h6> <hr />'; 		echo $this->Form->input('Propiedade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo '<h6> <?php echo Propiedade ?></h6> <hr />'; 		echo $this->Form->input('Propiedade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Seleccione las propiedades que se miden con esta unidad de medida:') );
 echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 

@@ -8,7 +8,13 @@ App::uses('AppModel', 'Model');
  */
 class Medida extends AppModel {
 
-
+	public $displayField = 'nombre';
+	public $validate = array(
+		'nombre' => array(
+			'rule' => 'unico',
+			'message' => 'Ya existe una medida con ese nombre',
+		),
+	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
