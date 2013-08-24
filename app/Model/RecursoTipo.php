@@ -12,7 +12,27 @@ class RecursoTipo extends AppModel {
 	public $displayField = 'nombre';
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
+	public $validate = array(
+	    'nombre' => array(
+			'unico' => array(
+				'rule'    => 'unico',
+				'message' => 'Este tipo de recurso ya ha sido ingresado.',
+				'required' => true,
+				'on' => 'create',
+			),
+			'alfanumerico' => array(
+				'rule' => 'alphanumeric',
+				'required' => true,
+				'message' => 'Ingrese sólo caracteres alfanuméricos.'
+			),
+		),
+	);
+	public function unico($check){
+		$dato = $check;
+		$dato[array_keys($check)[0]] = strtolower(array_values($check)[0]);
+		print_r($dato);
+		return Model::isUnique($dato);
+	}
 /**
  * hasMany associations
  *
