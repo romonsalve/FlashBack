@@ -38,39 +38,39 @@ class AppController extends Controller {
         'Session',
         'Auth' => array(
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login')
-        )
+        	)
         );
 
      public function estaAutorizado($rol, $controller, $action){
         $gerenteAutorizado = array(
        	/*controladores*/
         	'actividades' => array('index','view','add','edit','delete','noAutorizado'),
-        	'actividades_eventos' => array('index','view','add','edit','delete','noAutorizado'),
+        	'actividadeseventos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'bitacoras' => array('index','view','add','edit','delete','noAutorizado'),
-	        'cliente_tipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'clientetipos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'clientes' => array('index','view','add','edit','delete','noAutorizado'),
-	        'empleado_tipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'empleadotipos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'empleados' => array('index','view','add','edit','delete','noAutorizado'),
-	        'empleados_eventos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'empleadoseventos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'estados' => array('index','view','add','edit','delete','noAutorizado'),
-	        'evento_tipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'eventotipos' => array('index','view','add','edit','delete','noAutorizado'), 
 	        'eventos' => array('index','view','add','edit','delete','calendario','noAutorizado'),
-	        'eventos_recursos' => array('index','view','add','edit','delete','noAutorizado'),
-	        'itinerario_participantes' => array('index','view','add','edit','delete','noAutorizado'),
+	        'eventosrecursos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'itinerarioparticipantes' => array('index','view','add','edit','delete','noAutorizado'),
 	        'medidas' => array('index','view','add','edit','delete','noAutorizado'),
-	        'participante_tipos_solicitud_cotizaciones' => array('index','view','add','edit','delete','noAutorizado'),
+	        'participantetipossolicitudcotizaciones' => array('index','view','add','edit','delete','noAutorizado'),
 	        'participantes' => array('index','view','add','edit','delete','noAutorizado'),
 	        'propiedades' => array('index','view','add','edit','delete','noAutorizado'),
-	        'propiedades_recurso_tipos' => array('index','view','add','edit','delete','noAutorizado'),
-	        'propiedades_recursos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'propiedadesrecursotipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'propiedadesrecursos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'proveedores' => array('index','view','add','edit','delete','noAutorizado'),
-	        'proveedores_recurso_tipos' => array('index','view','add','edit','delete','noAutorizado'),
-	        'recinto_tipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'proveedoresrecursotipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'recintotipos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'recintos' => array('index','view','add','edit','delete','noAutorizado'),
-	        'recursos_tipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'recursotipos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'recursos' => array('index','view','add','edit','delete','noAutorizado'),
-	        'solicitud_cotizaciones' => array('index','view','add','edit','delete','noAutorizado'),
-	        'vehiculo_tipos' => array('index','view','add','edit','delete','noAutorizado'),
+	        'solicitudcotizaciones' => array('index','view','add','edit','delete','noAutorizado'),
+	        'vehiculotipos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'vehiculos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'users' => array('index','view','add','edit','delete','login','logout','noAutorizado'),
 	        'pages' => array('action' => 'display')
@@ -111,32 +111,32 @@ class AppController extends Controller {
         /***************************************************************************************************/
         $empleadoAutorizado = array(
         	'actividades' => array('index','view','noAutorizado'),
-        	'actividades_eventos' => array('index','view','noAutorizado'),
+        	'actividadeseventos' => array('index','view','noAutorizado'),
 	        'bitacoras' => array('noAutorizado'),
-	        'cliente_tipos' => array('noAutorizado'),
+	        'clientetipos' => array('noAutorizado'),
 	        'clientes' => array('noAutorizado'),
-	        'empleado_tipos' => array('index','view','noAutorizado'),
+	        'empleadotipos' => array('index','view','noAutorizado'),
 	        'empleados' => array('index','view','edit','noAutorizado'),
-	        'empleados_eventos' => array('index','view','noAutorizado'),
+	        'empleadoseventos' => array('index','view','noAutorizado'),
 	        'estados' => array('noAutorizado'),
-	        'evento_tipos' => array('noAutorizado'),
+	        'eventotipos' => array('noAutorizado'),
 	        'eventos' => array('index','view','noAutorizado'),
-	        'eventos_recursos' => array('noAutorizado'),
-	        'itinerario_participantes' => array('noAutorizado'),
+	        'eventosrecursos' => array('noAutorizado'),
+	        'itinerarioparticipantes' => array('noAutorizado'),
 	        'medidas' => array('noAutorizado'),
-	        'participante_tipos_solicitud_cotizaciones' => array('noAutorizado'),
+	        'participantetipossolicitudcotizaciones' => array('noAutorizado'),
 	        'participantes' => array('noAutorizado'),
 	        'propiedades' => array('noAutorizado'),
-	        'propiedades_recurso_tipos' => array('noAutorizado'),
-	        'propiedades_recursos' => array('noAutorizado'),
+	        'propiedadesrecursotipos' => array('noAutorizado'),
+	        'propiedadesrecursos' => array('noAutorizado'),
 	        'proveedores' => array('noAutorizado'),
-	        'proveedores_recurso_tipos' => array('noAutorizado'),
-	        'recinto_tipos' => array('noAutorizado'),
+	        'proveedoresrecursotipos' => array('noAutorizado'),
+	        'recintotipos' => array('noAutorizado'),
 	        'recintos' => array('noAutorizado'),
-	        'recursos_tipos' => array('noAutorizado'),
+	        'recursostipos' => array('noAutorizado'),
 	        'recursos' => array('noAutorizado'),
-	        'solicitud_cotizaciones' => array('noAutorizado'),
-	        'vehiculo_tipos' => array('noAutorizado'),
+	        'solicitudcotizaciones' => array('noAutorizado'),
+	        'vehiculotipos' => array('noAutorizado'),
 	        'vehiculos' => array('noAutorizado'),
 	        'users' => array('view','edit','delete','login','logout','noAutorizado'),
 	        'pages' => array('action' => 'display','empleado')
@@ -144,50 +144,58 @@ class AppController extends Controller {
         /***************************************************************************************************/
         $clienteAutorizado = array(
         	'actividades' => array('noAutorizado'),
-        	'actividades_eventos' => array('noAutorizado'),
+        	'actividadeseventos' => array('noAutorizado'),
 	        'bitacoras' => array('noAutorizado'),
-	        'cliente_tipos' => array('index','view','noAutorizado'),
+	        'clientetipos' => array('index','view','noAutorizado'),
 	        'clientes' => array('index','view','edit','noAutorizado'),
-	        'empleado_tipos' => array('index','view','noAutorizado'),
+	        'empleadotipos' => array('index','view','noAutorizado'),
 	        'empleados' => array('noAutorizado'),
-	        'empleados_eventos' => array('noAutorizado'),
+	        'empleadoseventos' => array('noAutorizado'),
 	        'estados' => array('index','view','noAutorizado'),
-	        'evento_tipos' => array('noAutorizado'),
+	        'eventotipos' => array('noAutorizado'),
 	        'eventos' => array('index','view','noAutorizado'),
-	        'eventos_recursos' => array('noAutorizado'),
-	        'itinerario_participantes' => array('noAutorizado'),
+	        'eventosrecursos' => array('noAutorizado'),
+	        'itinerarioparticipantes' => array('noAutorizado'),
 	        'medidas' => array('noAutorizado'),
-	        'participante_tipos_solicitud_cotizaciones' => array('noAutorizado'),
+	        'participantetipossolicitudcotizaciones' => array('noAutorizado'),
 	        'participantes' => array('noAutorizado'),
 	        'propiedades' => array('noAutorizado'),
-	        'propiedades_recurso_tipos' => array('noAutorizado'),
-	        'propiedades_recursos' => array('noAutorizado'),
+	        'propiedadesrecursotipos' => array('noAutorizado'),
+	        'propiedadesrecursos' => array('noAutorizado'),
 	        'proveedores' => array('noAutorizado'),
-	        'proveedores_recurso_tipos' => array('noAutorizado'),
-	        'recinto_tipos' => array('noAutorizado'),
+	        'proveedoresrecursotipos' => array('noAutorizado'),
+	        'recintotipos' => array('noAutorizado'),
 	        'recintos' => array('noAutorizado'),
-	        'recursos_tipos' => array('noAutorizado'),
+	        'recursostipos' => array('noAutorizado'),
 	        'recursos' => array('noAutorizado'),
-	        'solicitud_cotizaciones' => array('index','view','add','edit','delete','noAutorizado'),
-	        'vehiculo_tipos' => array('noAutorizado'),
+	        'solicitudcotizaciones' => array('index','view','add','edit','delete','noAutorizado'),
+	        'vehiculotipos' => array('noAutorizado'),
 	        'vehiculos' => array('noAutorizado'),
 	        'users' => array('view','edit','delete','login','logout','noAutorizado'),
 	        'pages' => array('action' => 'display','cliente')
         );
         /***************************************************************************************************/
         $controller = strtolower($controller);
+        $controller = str_replace('_','', $controller);
+
+
         $action = strtolower($action);
-     //   if($rol == 'gerente' && isset($gerenteAutorizado[$controller]) && in_array($action, $gerenteAutorizado[$controller])){
- 		if($rol == 'gerente'){
-        	$this->layout = 'gerente';
+        $action = str_replace('_','', $action);
+
+        if($rol == 'gerente' && isset($gerenteAutorizado[$controller]) && in_array($action, $gerenteAutorizado[$controller]) ||
+        	strpos($action, 'busca')!==false ){
+ 	    	$this->layout = 'gerente';
             return true;
-        }else if($rol == 'organizador' && isset($organizadorAutorizado[$controller]) && in_array($action, $organizadorAutorizado[$controller])){
+        }else if($rol == 'organizador' && isset($organizadorAutorizado[$controller]) && in_array($action, $organizadorAutorizado[$controller]) ||
+        	strpos($action, 'busca')!==false ){
  			$this->layout = 'organizador';
  			return true;
-        }else if($rol == 'empleado' && isset($empleadoAutorizado[$controller]) && in_array($action, $empleadoAutorizado[$controller])){
+        }else if($rol == 'empleado' && isset($empleadoAutorizado[$controller]) && in_array($action, $empleadoAutorizado[$controller]) ||
+        	strpos($action, 'busca')!==false ){
             $this->layout = 'empleado';
             return true;
-        }else if($rol == 'cliente' && isset($clienteAutorizado[$controller]) && in_array($action, $clienteAutorizado[$controller])){
+        }else if($rol == 'cliente' && isset($clienteAutorizado[$controller]) && in_array($action, $clienteAutorizado[$controller]) ||
+        	strpos($action, 'busca')!==false ){
         	$this->layout = 'cliente';
             return true;
         }
