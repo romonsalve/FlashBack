@@ -87,7 +87,7 @@ $cakeDescription = __d('cake_dev', 'Flashback');
       <!-- Logo -->
 
       <div class="logo">
-        <?php echo $this->Html->link($this->Html->image('logo.png', array('alt' => $cakeDescription, 'border' => '0')), 'index',                array('escape' => false)); ?>
+        <?php echo $this->Html->link($this->Html->image('logo.png', array('alt' => $cakeDescription, 'border' => '0')), $user['role'],                array('escape' => false)); ?>
       </div>
 
       <div class="sidebar-dropdown">
