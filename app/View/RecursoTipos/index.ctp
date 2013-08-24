@@ -2,18 +2,18 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-	<?php echo $this->TwitterBootstrap->add_crumb("Recurso Tipos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Tipos de Recurso", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
                 <div class="bor"></div>
                  <div class="ysheet1">
                     <!-- Title -->
-                    <h3>Recurso Tipos</h3>
+                    <h3>Tipos de Recurso</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de tipos de recursos disponibles en la empresa. Sirven para filtrar los recursos que necesite seleccionar.</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar tipo de Recurso</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,10 +32,9 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('clasificacion', 'clasificacion'); ?></th>
-			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'Tipo de recurso'); ?></th>
+			<th><?php echo $this->Paginator->sort('clasificacion', 'Clasificación'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'Descripción'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -44,7 +43,6 @@
              <tr>
 
 	<?php foreach ($recursoTipos as $recursoTipo): ?>
-		<td><?php echo h($recursoTipo['RecursoTipo']['id']); ?>&nbsp;</td>
 		<td><?php echo h($recursoTipo['RecursoTipo']['nombre']); ?>&nbsp;</td>
 		<td><?php echo h($recursoTipo['RecursoTipo']['clasificacion']); ?>&nbsp;</td>
 		<td><?php echo h($recursoTipo['RecursoTipo']['descripcion']); ?>&nbsp;</td>
