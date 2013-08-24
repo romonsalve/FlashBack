@@ -124,4 +124,63 @@ class SolicitudCotizacionesController extends AppController {
 		$this->Session->setFlash(__('Solicitud cotizacione was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
 	}
+	public function buscarParticipantesActividades($eventoTipo=null, $id=null ){
+		$this->SolicitudCotizacione->recursive = -1;
+		if($this->SolicitudCotizacione->exists($id)){
+			$options = array('conditions' => array('SolicitudCotizacione.' . $this->SolicitudCotizacione->primaryKey => $id));
+			$this->request->data = $this->SolicitudCotizacione->find('first', $options);
+		}
+		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list', array(
+				'joins' =>
+                   array(
+                    array(
+                        'table' => 'evento_tipos_participante_tipos',
+                        'alias' => 'eventoTiposParticianteTipos',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('eventoTiposParticianteTipos.participante_tipo_id = ParticipanteTipo.id',
+                        	'eventoTiposParticianteTipos.evento_tipo_id' => $eventoTipo
+                        )
+                    )
+                  ))
+         );
+		$actividades = $this->SolicitudCotizacione->Actividade->find('list', array(
+				'joins' =>
+                   array(
+                    array(
+                        'table' => 'actividades_evento_tipos',
+                        'alias' => 'actividadesEventoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('actividadesEventoTipo.actividade_id = Actividade.id',
+                        	'actividadesEventoTipo.actividade_id' => $eventoTipo
+                        )
+                    )
+                  ))
+         );
+		$this->set(compact('participanteTipos', 'actividades','id'));
+	}
+	public function buscarRecintoTipo($eventoTipo=null, $id=null ){
+		$this->SolicitudCotizacione->recursive = -1;
+		if($this->SolicitudCotizacione->exists($id)){
+			$options = array('conditions' => array('SolicitudCotizacione.' . $this->SolicitudCotizacione->primaryKey => $id));
+			$this->request->data = $this->SolicitudCotizacione->find('first', $options);
+		}
+		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list', array(
+				'joins' =>
+                   array(
+                    array(
+                        'table' => 'evento_tipos_recinto_tipos',
+                        'alias' => 'eventoTipoRecintoTipo',
+                        'type' => 'INNER',
+                        'foreignKey' => null,
+                        'conditions'=> array('eventoTipoRecintoTipo.recinto_tipo_id = RecintoTipo.id',
+                        	'eventoTipoRecintoTipo.evento_tipo_id' => $eventoTipo
+                        )
+                    )
+                  ))
+         );
+		$this->set(compact('recintoTipos'));
+
+	}
 }

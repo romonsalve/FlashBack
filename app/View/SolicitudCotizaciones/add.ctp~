@@ -44,18 +44,16 @@
 	     <div class="span6 ">
                 <div class="well">
 		<?php
-echo '<h6> <?php echo ParticipanteTipo ?></h6> <hr />'; 		echo $this->Form->input('ParticipanteTipo', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Escoja qué tipos de participantes le gustaría incluir en su evento:') );
-echo '<h6> <?php echo Actividade ?></h6> <hr />'; 		echo $this->Form->input('Actividade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Escoja qué tipo de actividades le gustaría realizar en su evento:') );
+echo '<h6> <?php echo ParticipanteTipo ?></h6> <hr /> '; 		
+echo $this->Form->input('ParticipanteTipo', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Escoja qué tipos de participantes le gustaría incluir en su evento:') );
+
+echo '<h6> <?php echo Actividade ?></h6> <hr /> '; 		
+echo $this->Form->input('Actividade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Escoja qué tipo de actividades le gustaría realizar en su evento:') );
 echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
-
             </div>
-
           </div>
         </div>
-
-        <!-- Content ends -->
-
       </div>
 
 
