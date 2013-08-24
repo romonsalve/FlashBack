@@ -9,7 +9,7 @@ App::uses('AppModel', 'Model');
  * @property Propiedade $Propiedade
  */
 class RecursoTipo extends AppModel {
-	public $displayName = 'nombre';
+	public $displayField = 'nombre';
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
