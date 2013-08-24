@@ -37,27 +37,7 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
 </head>
 <body>
-<!-- Navbar starts -->
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container-fluid">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <div class="nav-collapse collapse">
-          <ul class="nav pull-right">
-           <li><?php echo $this->Html->link('Registrar',array('controller' => 'users', 'action' => 'add'));?> </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
 
-<!-- Navbar ends -->
-
-<!-- Main content starts -->
 
 <div class="content">
   

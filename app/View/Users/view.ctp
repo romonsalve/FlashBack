@@ -1,3 +1,14 @@
+<?php 
+$currentUser = $this->Session->read('Auth.User');
+if($user['User']['id']!= $currentUser['id']){
+  if($currentUser['role']!='gerente'){
+    echo '<script type="text/javascript">
+
+window.location="../";
+
+</script>';
+  }
+}?>
  <div class="matter">
       <div class="container-fluid">
 

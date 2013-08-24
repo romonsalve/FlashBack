@@ -55,7 +55,7 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
 <body>
   <!-- Navbar starts -->
-
+<?php $user = $this->Session->read('Auth.User');?>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
@@ -64,18 +64,14 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
-            <li><a href="login.html">Login</a></li>
-
-            <li><a href="register.html">Register</a></li>
-
+            <li><a class="dropdown-toggle"><?php echo "Bienvenido ".$user['name'];?></a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle=
-              "dropdown">My Account</a>
+              "dropdown">Mi Cuenta</a>
 
               <ul class="dropdown-menu">
-                <li><a href="profile.html">Profile</a></li>
-
-                <li><a href="login.html">Logout</a></li>
+                <li><?php echo $this->Html->link('Ver cuenta',array('controller' => 'users', 'action' => 'view/'.$user['id']));?> </li>
+                <li><?php echo $this->Html->link('Salir (logout)',array('controller' => 'users', 'action' => 'logout'));?> </li>
               </ul>
             </li>
           </ul>
@@ -104,73 +100,14 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
       <ul id="nav">
         <li>
-        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Calendario de Eventos', array(
-            'controller' => 'eventos', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?></li>
-
-        <li class="has_sub">
-          <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Cotizaciones<span class="pull-right"><i class="icon-chevron-right icon-white"></i></span></a>', array(), array('class'=>'open br-purple','escape' => false) ); ?>
-
-          <ul>
-            <li>
-            <?php echo $this->Html->link('Cotizaciones Pendientes', array('controller'=>'solicitudCotizaciones','action' => 'index/1')); ?></li>
-
-            <li>
-            <?php echo $this->Html->link('Cotizaciones Preaprobadas', array('controller'=>'solicitudCotizaciones','action' => 'index/2')); ?></li>
-
-            <li>
-            <?php echo $this->Html->link('Cotizaciones Aprobadas', array('controller'=>'solicitudCotizaciones','action' => 'index/3')); ?></li>
-
-            <li>
-            <?php echo $this->Html->link('Cotizaciones Rechazadas', array('controller'=>'solicitudCotizaciones','action' => 'index/4')); ?></li>
-          </ul>
+        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Cotizar un evento', array(
+            'controller' => 'solicitud_cotizaciones', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?>
         </li>
-
-        <li class="has_sub">
-          <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Contratos<span class="pull-right"><i class="icon-chevron-right icon-white"></i></span></a>', array(), array('class'=>'open br-purple','escape' => false) ); ?>
-
-          <ul>
-            <li>
-            <?php echo $this->Html->link('Proveedores', array('controller'=>'proveedores','action' => 'index')); ?></li>
-
-            <li>
-            <?php echo $this->Html->link('Empleados', array('controller'=>'empleados','action' => 'index')); ?></li>
-
-            <li>
-            <?php echo $this->Html->link('Participantes', array('controller'=>'participantes','action' => 'index')); ?></li>
-          </ul>
+        <li>
+        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Eventos Predeterminados', array(
+            'controller' => 'solicitud_cotizaciones', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?>
         </li>
-
-        <li>
-        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Eventos Predeterminados ', array(
-            'controller' => 'eventoTipos', 'action' => 'index'), array('class'=>'open br-orange','escape' => false) ); ?></li>
-
-        <li class="has_sub">
-          <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Recursos<span class="pull-right"><i class="icon-chevron-right icon-white"></i></span></a>', array(), array('class'=>'open br-purple','escape' => false) ); ?>
-
-          <ul>
-            <li>
-            <?php echo $this->Html->link('Listaod recursos', array('controller'=>'recursos','action' => 'index')); ?></li>
-
-            <li>
-            <?php echo $this->Html->link('Definir recursos', array('controller'=>'recursoTipos','action' => 'index')); ?></li>
-          </ul>
-        </li>
-
-        <li>
-        <?php echo $this->Html->link('<i class="icon-user icon-white"></i>Personal</a>', array(
-            'controller' => 'Empleados', 'action' => 'index'), array('class'=>'open br-purple','escape' => false) ); ?></li>
-
-        <li>
-        <?php echo $this->Html->link('<i class="icon-user icon-white"></i>Proveedores</a>', array(
-            'controller' => 'Proveedores', 'action' => 'index'), array('class'=>'open br-orange','escape' => false) ); ?></li>
-
-        <li>
-        <?php echo $this->Html->link('<i class="icon-user icon-white"></i>Participantes</a>', array(
-            'controller' => 'Participantes', 'action' => 'index'), array('class'=>'open br-red','escape' => false) ); ?></li>
-
-        <li>
-        <?php echo $this->Html->link('<i class="icon-tag icon-white"></i>Vehiculos</a>', array(
-            'controller' => 'Vehiculos', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?></li>
+      
       </ul>
     </div>
   </div><!-- Mainbar starts -->

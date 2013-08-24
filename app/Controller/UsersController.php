@@ -20,6 +20,43 @@ class UsersController extends AppController {
  *
  * @return void
  */
+	/********************************************************/
+	public function beforeFilter() {
+	    parent::beforeFilter();
+		/*antes de filtrar los usuarios está permitido agregar*/
+		$this->Auth->allow('add');
+	}
+	/**********************************************************/
+	public function isAuthorized($user) {
+	    if ($user['role'] == 'gerente') {
+	        return true;
+	    }
+	    if (in_array($this->action, array('edit', 'delete'))) {
+	        if ($user['id'] != $this->request->params['pass'][0]) {
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	/**********************************************************/
+	public function login() {
+
+		$this->layout = 'simple';
+	    if ($this->request->is('post')) {
+	        if ($this->Auth->login()) {
+				$rol = $this->Auth->User('role');
+				/*si inicia sesion, ontiene su rol y lo manda a la vista correspondiente*/
+	            $this->redirect($this->Auth->redirect( array('controller' => 'pages', 'action' => 'display', $rol)));   
+	        } else {
+	            $this->Session->setFlash('Usuario/Contraseña inválidos');
+	        }
+	    }
+	}
+	/*********************************************************/
+	public function logout() {
+	    $this->redirect($this->Auth->logout());
+	}
+	/*********************************************************/
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
@@ -46,6 +83,9 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
+		if(!$this->Auth->User('id')){
+			$this->layout = 'registro';
+		}
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
@@ -70,13 +110,19 @@ class UsersController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'), 'fexito');
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The user has been saved'));
+				$rol = $this->Auth->User('role');
+				if($rol=='gerente'){
+					return $this->redirect(array('action' => 'index'));
+				}else{
+					return $this->redirect("view/".$id);
+				}
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'ferror');
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+			$this->set('user', $this->User->find('first', $options));
 			$this->request->data = $this->User->find('first', $options);
 		}
 	}
@@ -96,46 +142,9 @@ class UsersController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->User->delete()) {
 			$this->Session->setFlash(__('User deleted'), 'fexito');
-			return $this->redirect(array('action' => 'index'));
+			$this->redirect($this->Auth->logout());
 		}
 		$this->Session->setFlash(__('User was not deleted'), 'ferror');
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'delete'));
 	}
-
-/********************************************************/
-	public function beforeFilter() {
-	    parent::beforeFilter();
-		/*antes de filtrar los usuarios está permitido agregar*/
-		$this->Auth->allow('add');
-	}
-	/**********************************************************/
-	public function isAuthorized($user) {
-	    if ($user['role'] == 'gerente') {
-	        return true;
-	    }
-	    if (in_array($this->action, array('edit', 'delete'))) {
-	        if ($user['id'] != $this->request->params['pass'][0]) {
-	            return false;
-	        }
-	    }
-	    return true;
-	}
-	/**********************************************************/
-	public function login() {
-		$this->layout = 'simple';
-	    if ($this->request->is('post')) {
-	        if ($this->Auth->login()) {
-				$rol = $this->Auth->User('role');
-				/*si inicia sesion, ontiene su rol y lo manda a la vista correspondiente*/
-	            $this->redirect($this->Auth->redirect("../"));   
-	        } else {
-	            $this->Session->setFlash('Usuario/Contraseña inválidos');
-	        }
-	    }
-	}
-	/*********************************************************/
-	public function logout() {
-	    $this->redirect($this->Auth->logout());
-	}
-	/*********************************************************/
 }
