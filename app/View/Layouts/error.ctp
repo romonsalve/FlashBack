@@ -17,46 +17,71 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'Flashback');
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+  <?php echo $this->Html->charset(); ?>
 
-		echo $this->Html->css('cake.generic');
+  <title><?php echo $cakeDescription ?>:
+  <?php echo $title_for_layout; ?></title>
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1.0"><?php
+                  echo $this->Html->meta('icon');
+          
+                  echo $this->Html->css('bootstrap');
+                  echo $this->Html->css('flexslider');
+                  echo $this->Html->css('prettyPhoto');
+                  echo $this->Html->css('style');
+                  echo $this->Html->css('bootstrap-responsive');
+                  //CALENDARIO
+                  echo $this->Html->css('fullcalendar');
+                  echo $this->Html->css('fullcalendar.print');
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+                  echo $this->fetch('meta');
+                  echo $this->fetch('css');
+                  echo $this->fetch('script');
+          ?><?php echo $this->Html->script('jquery'); ?><?php echo $this->Html->script('bootstrap'); ?><?php echo $this->Html->script('filter'); ?><?php echo $this->Html->script('jquery.carouFredSel-6.1.0-packed'); ?><?php echo $this->Html->script('jquery.flexslider-min'); ?><?php echo $this->Html->script('jquery.isotope'); ?><?php echo $this->Html->script('jquery.prettyPhoto'); ?><?php echo $this->Html->script('jquery.tweet'); ?><?php echo $this->Html->script('custom'); 
+                  //CALENDARIO
+                  echo $this->Html->script('jquery-1.10.2.min'); 
+                  echo $this->Html->script('jquery-ui-1.10.3.custom.min'); 
+                  echo $this->Html->script('fullcalendar.min'); 
+  ?><!-- !-->
 </head>
+
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+  <!-- Navbar starts -->
 
-			<?php echo $this->Session->flash(); ?>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse"
+        data-target=".nav-collapse"></a>
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-right">
+            <li><?php echo $this->Html->link('Login',array('controller' => 'users', 'action' => 'login'));?> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div><!-- Navbar ends -->
+
+  <div class="content">
+    <!-- Sidebar starts -->
+
+    </div>
+
+  <div class="mainbar" style="padding-top: 10px;">
+        
+    <?php echo $this->Session->flash(); ?><?php echo $this->fetch('content'); ?><?php //echo $this->element('sql_dump'); ?>
+  </div><!-- Mainbar ends -->
+
+  <!-- Scroll to top -->
+  <span class="totop"><a href="#"></a></span>
 </body>
 </html>

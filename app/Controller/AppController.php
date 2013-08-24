@@ -177,7 +177,8 @@ class AppController extends Controller {
         /***************************************************************************************************/
         $controller = strtolower($controller);
         $action = strtolower($action);
-        if($rol == 'gerente' && isset($gerenteAutorizado[$controller]) && in_array($action, $gerenteAutorizado[$controller])){
+     //   if($rol == 'gerente' && isset($gerenteAutorizado[$controller]) && in_array($action, $gerenteAutorizado[$controller])){
+ 		if($rol == 'gerente'){
         	$this->layout = 'gerente';
             return true;
         }else if($rol == 'organizador' && isset($organizadorAutorizado[$controller]) && in_array($action, $organizadorAutorizado[$controller])){
@@ -189,6 +190,9 @@ class AppController extends Controller {
         }else if($rol == 'cliente' && isset($clienteAutorizado[$controller]) && in_array($action, $clienteAutorizado[$controller])){
         	$this->layout = 'cliente';
             return true;
+        }
+        else{
+        	$this->layout = 'error';
         }
     }
     public function beforeFilter() {
