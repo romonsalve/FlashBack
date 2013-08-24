@@ -1,4 +1,3 @@
-
 <?php echo $this->Form->create('RecursoTipo'); ?>
 <div class="container-fluid">
         <!-- Title starts -->
@@ -10,7 +9,7 @@
 
         <!-- Breadcrumb starts -->
 
-	<?php echo $this->TwitterBootstrap->add_crumb("recursoTipos", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
+	<?php echo $this->TwitterBootstrap->add_crumb("Tipos de Recurso", 'index');echo $this->TwitterBootstrap->add_crumb("Agregar", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />

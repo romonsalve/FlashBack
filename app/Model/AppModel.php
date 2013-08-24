@@ -43,4 +43,11 @@ class AppModel extends Model {
     public function beforeFilter() {
         $this->Auth->allow('index', 'view');
     }
+    public function unico($check){
+        $fields = array();
+        foreach ($check as $key => $value) {
+            $fields[$key . ' ILIKE'] = $value;
+        }
+        return !$this->find('count', array('conditions' => $fields, 'recursive' => -1));
+    }
 }

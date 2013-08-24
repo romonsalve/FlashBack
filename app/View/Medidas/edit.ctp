@@ -3,7 +3,7 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Edit Medida</h2>
+          <h2>Editando una unidad de medida.</h2>
           <hr />
         </div>
         <!-- Title ends -->
@@ -27,8 +27,7 @@
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese un nombre para la medida', 'placeholder' => 'Metros','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
 	

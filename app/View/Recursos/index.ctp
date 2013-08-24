@@ -11,9 +11,10 @@
                     <!-- Title -->
                     <h3>Recursos</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de Recursos pertenecientes a su empresa, haga click en editar al lado del recurso necesario para modificar sus datos en el registro.</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Recurso</button>", array("action" => "add"), array("escape" => false));
+		    echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Tipo de Recurso</button>", array("controller" => "recursoTipos", "action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,10 +33,9 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recurso_tipo_id', 'recurso_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('proveedore_id', 'proveedore_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('cantidad', 'cantidad'); ?></th>
+			<th><?php echo $this->Paginator->sort('recurso_tipo_id', 'Tipo de Recurso'); ?></th>
+			<th><?php echo $this->Paginator->sort('proveedore_id', 'Proveedor'); ?></th>
+			<th><?php echo $this->Paginator->sort('cantidad', 'Cantidad'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -44,9 +44,8 @@
              <tr>
 
 	<?php foreach ($recursos as $recurso): ?>
-		<td><?php echo h($recurso['Recurso']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($recurso['RecursoTipo']['id'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipo']['id'])); ?>
+			<?php echo $this->Html->link($recurso['RecursoTipo']['nombre'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipo']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($recurso['Proveedore']['id'], array('controller' => 'proveedores', 'action' => 'view', $recurso['Proveedore']['id'])); ?>

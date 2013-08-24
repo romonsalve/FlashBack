@@ -8,14 +8,14 @@ function obtenerPropiedades(valor){
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Edit Recurso</h2>
+          <h2>Editar Recurso</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-	<?php echo $this->TwitterBootstrap->add_crumb("recursos", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
+	<?php echo $this->TwitterBootstrap->add_crumb("Recursos", 'index');echo $this->TwitterBootstrap->add_crumb("Editar", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -29,16 +29,13 @@ function obtenerPropiedades(valor){
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)', 
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+			echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Especifique un tipo de recurso', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('proveedore_id', array('class' =>'span12','label' => 'Ingrese proveedore_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+				echo $this->Form->input('proveedore_id', array('class' =>'span12','label' => 'Especifique el proveedor que ofrece este recurso', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese cantidad', 'placeholder' => '',
+				echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese la cantidad de recursos a registrar', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
