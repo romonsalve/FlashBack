@@ -29,15 +29,12 @@ function obtenerPropiedades(valor){
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)', 
-      'empty' => '(Seleccione Una opción)',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Especifique un tipo de recurso', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)', 
+      'empty' => '(Seleccione Una opción)', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('proveedore_id', array('class' =>'span12','label' => 'Ingrese proveedore_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('proveedore_id', array('class' =>'span12','label' => 'Especifique el proveedor que provee este recurso', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese cantidad', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese la cantidad de recursos a registrar', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
 	
