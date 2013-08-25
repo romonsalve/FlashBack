@@ -50,14 +50,27 @@ public $displayField = 'nombre';
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'fecha_termino' => array(
+			'comparar' => array(
+				'rule' => array('greaterthanfield', 'fecha_inicio'),
+				'message' => 'el evento debe terminar después de la fecha de inicio.'
+			)
+		)
 	);
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
+
+    function greaterthanfield($check,$otherfield) 
+    { 
+        //get name of field 
+        $fname = ''; 
+        foreach ($check as $key => $value){ 
+            $fname = $key; 
+            break; 
+        } 
+        return $this->data[$this->name][$otherfield] <= $this->data[$this->name][$fname]; 
+    } 
+
+
 	public $belongsTo = array(
 		'Recinto' => array(
 			'className' => 'Recinto',
