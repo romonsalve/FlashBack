@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  */
 class Recinto extends AppModel {
 
+public $displayField = 'nombre';
 /**
  * Validation rules
  *

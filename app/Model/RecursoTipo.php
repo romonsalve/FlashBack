@@ -21,9 +21,9 @@ class RecursoTipo extends AppModel {
 				'on' => 'create',
 			),
 			'alfanumerico' => array(
-				'rule' => 'alphanumeric',
+				'rule' => '^[a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,}^',
 				'required' => true,
-				'message' => 'Ingrese sólo caracteres alfanuméricos.'
+				'message' => 'Ingrese sólo ĺetras, mínimo 3.'
 			),
 		),
 	);

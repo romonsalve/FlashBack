@@ -13,7 +13,7 @@ App::uses('AppModel', 'Model');
  * @property Actividade $Actividade
  */
 class Evento extends AppModel {
-
+public $displayField = 'nombre';
 /**
  * Validation rules
  *

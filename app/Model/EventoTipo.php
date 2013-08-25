@@ -18,15 +18,15 @@ public $displayField = 'nombre';
 public $validate = array(
     'nombre' => array(
 	'unico' => array(
-		'rule'    => 'isUnique',
+		'rule'    => 'unico',
 		'message' => 'Este tipo de evento ya ha sido ingresado.',
 		'required' => true,
 		'on' => 'create',
 	    	),
 	'alfanumerico' => array(
-		'rule' => 'alphanumeric',
+		'rule' => '^[a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,}^',
 		'required' => true,
-		'message' => 'Ingrese sólo caracteres alfanuméricos.'
+		'message' => 'Ingrese sólo letras. Mínimo 3 letras.'
 		),
 	)
 );

@@ -11,7 +11,7 @@
                     <!-- Title -->
                     <h3>Recinto Tipos</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de tipos de recintos disponibles en este sistema.</p>
 		    <div style= "text-align: right; padding-right: 10%">
 		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
@@ -32,8 +32,7 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'Tipo de Recinto'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -42,7 +41,6 @@
              <tr>
 
 	<?php foreach ($recintoTipos as $recintoTipo): ?>
-		<td><?php echo h($recintoTipo['RecintoTipo']['id']); ?>&nbsp;</td>
 		<td><?php echo h($recintoTipo['RecintoTipo']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $recintoTipo['RecintoTipo']['id'])); ?>

@@ -3,14 +3,14 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Edit Recurso Tipo</h2>
+          <h2>Editando un Tipo de Recurso</h2>
           <hr />
         </div>
         <!-- Title ends -->
 
         <!-- Breadcrumb starts -->
 
-	<?php echo $this->TwitterBootstrap->add_crumb("recursoTipos", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
+	<?php echo $this->TwitterBootstrap->add_crumb("Tipos de Recurso", 'index');echo $this->TwitterBootstrap->add_crumb("Editar", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -27,10 +27,10 @@
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+				echo $this->Form->input('nombre', array('type' => 'text','class' =>'span12','label' => 'Ingrese un nombre para el recurso tipo:', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('clasificacion', array('class' =>'span12','label' => 'Ingrese clasificacion', 'placeholder' => '',
+				echo $this->Form->input('clasificacion', array('type' => 'text','class' =>'span12','label' => 'Ingrese una clasificación:', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Ingrese descripcion', 'placeholder' => '',

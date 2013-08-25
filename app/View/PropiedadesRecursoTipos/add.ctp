@@ -14,7 +14,7 @@ function obtenerPropiedades(valor){
 
         <!-- Breadcrumb starts -->
 
-	<?php echo $this->TwitterBootstrap->add_crumb("propiedadesRecursoTipos", 'index');echo $this->TwitterBootstrap->add_crumb("Add", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
+	<?php echo $this->TwitterBootstrap->add_crumb("Restricciones", 'index');echo $this->TwitterBootstrap->add_crumb("Agregar", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
