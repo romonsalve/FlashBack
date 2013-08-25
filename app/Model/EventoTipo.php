@@ -17,19 +17,22 @@ public $displayField = 'nombre';
 
 public $validate = array(
     'nombre' => array(
-	'unico' => array(
-		'rule'    => 'unico',
-		'message' => 'Este tipo de evento ya ha sido ingresado.',
-		'required' => true,
-		'on' => 'create',
-	    	),
-	'alfanumerico' => array(
-		'rule' => '^[a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,}^',
-		'required' => true,
-		'message' => 'Ingrese sólo letras. Mínimo 3 letras.'
-		),
+		'unico' => array(
+			'rule'    => 'unico',
+			'message' => 'Este tipo de evento ya ha sido ingresado.',
+			'required' => true,
+			'on' => 'create',
+		    	),
+		'alfanumerico' => array(
+			'rule' => '^[a-zA-ZÑñáéíóúÁÉÍÓÚ ]{3,}^',
+			'required' => true,
+			'message' => 'Ingrese sólo letras. Mínimo 3 letras.'
+			),
 	)
+
 );
+
+
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
