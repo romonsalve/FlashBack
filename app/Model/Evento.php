@@ -20,16 +20,6 @@ public $displayField = 'nombre';
  * @var array
  */
 	public $validate = array(
-		'recinto_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'evento_tipo_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -40,25 +30,27 @@ public $displayField = 'nombre';
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'fecha_termino' => array(
-			'comparar' => array(
-				'rule' => array('greaterthanfield', 'fecha_inicio'),
-				'message' => 'el evento debe terminar después de la fecha de inicio.'
-			)
-		)
+		'recinto_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'estado_evento_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 	);
-
-
-    function greaterthanfield($check,$otherfield) 
-    { 
-        //get name of field 
-        $fname = ''; 
-        foreach ($check as $key => $value){ 
-            $fname = $key; 
-            break; 
-        } 
-        return $this->data[$this->name][$otherfield] < $this->data[$this->name][$fname]; 
-    } 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -89,7 +81,7 @@ public $displayField = 'nombre';
 			'order' => ''
 		)
 	);
-
+	
 /**
  * hasMany associations
  *

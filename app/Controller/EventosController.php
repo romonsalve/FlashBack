@@ -24,16 +24,15 @@ class EventosController extends AppController {
 		$this->Evento->recursive = 0;
 		$this->set('eventos', $this->Paginator->paginate());
 	}
-	public function calendario() {
+	public function calendario() {	
 		if ($this->request->is('post')) {
 			$id= $_POST['id'];
 			$fecha = $_POST['fecha'];
 			$fecha_t = $_POST['fecha_t'];
 			if($fecha_t==null) $fecha_t = $fecha;
-			$data = array('id' =>$id, 'fecha_de_inicio' => $fecha, 'fecha_de_termino' => $fecha_t); 
+			$data = array('id' =>$id, 'fecha_inicio' => $fecha, 'fecha_termino' => $fecha_t); 
 		 	$this->Evento->save($data);
 		 }
-		
 		$this->set('posts', $this->Evento->find('all'));
 	}
 /**
@@ -142,7 +141,7 @@ class EventosController extends AppController {
 	}
 
 	public function buscarRecinto($eventoTipo = null,  $id = null){
-
+		$this->layout = 'ajax';
 		$this->Evento->recursive = -1;
 		if ($this->Evento->exists($id)) {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
@@ -163,7 +162,7 @@ class EventosController extends AppController {
 		$this->set(compact('recintos'));
 	}
 	public function buscarActividades($eventoTipo = null,  $id = null){
-
+		$this->layout = 'ajax';
 		$this->Evento->recursive = -1;
 		if ($this->Evento->exists($id)) {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));
@@ -184,6 +183,7 @@ class EventosController extends AppController {
 		$this->set(compact('actividades'));
 	}
 	public function buscarRecursos($eventoTipo = null,  $id = null){
+		$this->layout = 'ajax';
 		$this->Evento->recursive = -1;
 		if ($this->Evento->exists($id)) {
 			$options = array('conditions' => array('Evento.' . $this->Evento->primaryKey => $id));

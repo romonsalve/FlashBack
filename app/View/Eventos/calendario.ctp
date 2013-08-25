@@ -10,8 +10,8 @@
 				center: 'title',
 				right: 'month,basicWeek,basicDay'
 			},
-			selectable: false,
-			selectHelper: false,
+			selectable: true,
+			selectHelper: true,
 			select: function(start, end, allDay) {
 				var title = prompt('Event Title:');
 				if (title) {
@@ -32,36 +32,38 @@
 			<?php foreach ($posts as $evento): ?>
 				{
 					id : '<?php echo h($evento["Evento"]["id"]); ?>',
-					title: '<?php echo h($evento["Evento"]["nombre_evento"]); ?>',
-					start: new Date('<?php echo h($evento["Evento"]["fecha_de_inicio"]); ?>'),
-					end: new Date('<?php echo h($evento["Evento"]["fecha_de_termino"]); ?>'),
+					title: '<?php echo h($evento["Evento"]["nombre"]); ?>',
+					start: new Date('<?php echo h($evento["Evento"]["fecha_inicio"]); ?>'),
+					end: new Date('<?php echo h($evento["Evento"]["fecha_termino"]); ?>'),
 					url: 'view/<?php echo h($evento["Evento"]["id"]);?>',
 					
 				},
 			<?php endforeach; ?>
 			],
 			eventDrop: function(event, delta) {
-				     if(event.end!=null){
-					$fecha_ter = (event.end.getDate() + '-' + (event.end.getMonth()+1) +'-' + event.end.getFullYear());
-					}else{
-					$fecha_ter=null;
-				     }
+				    if(event.end!=null){
+						$fecha_ter = ( (event.end.getDate()+1) + '-' + (event.end.getMonth()+1) +'-' + event.end.getFullYear());
+					}
+					else{
+						$fecha_ter= ( (event.start.getDate()+1) + '-' + (event.start.getMonth()+1) +'-' + event.start.getFullYear());
+				    }
 				    $.ajax(
 				    {
-				    type: 'POST',
-					url: 'calendario', //file where like unlike status change in database
-					data:{ 
-						id: event.id , 
-						fecha: (event.start.getDate() + '-' + (event.start.getMonth()+1) +'-' + event.start.getFullYear()),
-						fecha_t : $fecha_ter
-					},				
-					success: function(data)
-					{
-					   alert("Evento "+ event.title + " actualizado");
-				    	},
-						
-	 				});
-			}		});
+					    type: 'POST',
+						url: 'calendario', //file where like unlike status change in database
+						data:{ 
+							id: event.id , 
+							fecha: ( (event.start.getDate()+1) + '-' + (event.start.getMonth()+1) +'-' + event.start.getFullYear()),
+							fecha_t : $fecha_ter
+						},				
+						success: function(data)
+						{
+						   alert("Evento "+ event.title + " actualizado");
+					    },
+							
+		 			});
+		 	}		
+		 });
 	});
 </script>
 

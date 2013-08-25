@@ -54,7 +54,7 @@ class AppController extends Controller {
 	        'empleadoseventos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'estados' => array('index','view','add','edit','delete','noAutorizado'),
 	        'eventotipos' => array('index','view','add','edit','delete','noAutorizado'), 
-	        'eventos' => array('index','view','add','edit','delete','calendario','noAutorizado'),
+	        'eventos' => array('calendario','index','view','add','edit','delete','calendario','noAutorizado'),
 	        'eventosrecursos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'itinerarioparticipantes' => array('index','view','add','edit','delete','noAutorizado'),
 	        'medidas' => array('index','view','add','edit','delete','noAutorizado'),
@@ -87,7 +87,7 @@ class AppController extends Controller {
 	        'empleados_eventos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'estados' => array('index','view','noAutorizado'),
 	        'evento_tipos' => array('index','view','noAutorizado'),
-	        'eventos' => array('index','view','edit','calendario','noAutorizado'),
+	        'eventos' => array('calendario','index','view','edit','calendario','noAutorizado'),
 	        'eventos_recursos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'itinerario_participantes' => array('index','view','add','edit','delete','noAutorizado'),
 	        'medidas' => array('index','view','noAutorizado'),
@@ -120,7 +120,7 @@ class AppController extends Controller {
 	        'empleadoseventos' => array('index','view','noAutorizado'),
 	        'estados' => array('noAutorizado'),
 	        'eventotipos' => array('noAutorizado'),
-	        'eventos' => array('index','view','noAutorizado'),
+	        'eventos' => array('calendario','index','view','noAutorizado'),
 	        'eventosrecursos' => array('noAutorizado'),
 	        'itinerarioparticipantes' => array('noAutorizado'),
 	        'medidas' => array('noAutorizado'),
@@ -181,9 +181,9 @@ class AppController extends Controller {
 
         $action = strtolower($action);
         $action = str_replace('_','', $action);
-
-        if($rol == 'gerente' && isset($gerenteAutorizado[$controller]) && in_array($action, $gerenteAutorizado[$controller]) ||
-        	strpos($action, 'busca')!==false ){
+        if($rol == 'gerente'){
+//        if($rol == 'gerente' && isset($gerenteAutorizado[$controller]) && in_array($action, $gerenteAutorizado[$controller]) ||
+  //      	strpos($action, 'busca')!==false ){
  	    	$this->layout = 'gerente';
             return true;
         }else if($rol == 'organizador' && isset($organizadorAutorizado[$controller]) && in_array($action, $organizadorAutorizado[$controller]) ||

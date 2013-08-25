@@ -13,6 +13,7 @@
 .fc table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	color:black;
 	}
 	
 html .fc,
@@ -57,6 +58,7 @@ html .fc,
 .fc-header-title h2 {
 	margin-top: 0;
 	white-space: nowrap;
+	color: black;
 	}
 	
 .fc .fc-header-space {
