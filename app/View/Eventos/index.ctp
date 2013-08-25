@@ -11,9 +11,9 @@
                     <!-- Title -->
                     <h3>Eventos</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de eventos pendientes por realizar y recientemente realizados, para ver descripciones, listas de invitados y precio de los eventos, haga click en ver al lado del evento que desee analizar.</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Evento</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,17 +32,13 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recinto_id', 'recinto_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_tipo_id', 'evento_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('cliente_id', 'cliente_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('fecha_inicio', 'fecha_inicio'); ?></th>
-			<th><?php echo $this->Paginator->sort('fecha_termino', 'fecha_termino'); ?></th>
-			<th><?php echo $this->Paginator->sort('lista_invitados', 'lista_invitados'); ?></th>
+			<th><?php echo $this->Paginator->sort('recinto_id', 'Recinto'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_tipo_id', 'Tipo de Evento'); ?></th>
+			<th><?php echo $this->Paginator->sort('cliente_id', 'Cliente'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'Evento'); ?></th>
+			<th><?php echo $this->Paginator->sort('fecha_inicio', 'Fecha de inicio'); ?></th>
+			<th><?php echo $this->Paginator->sort('fecha_termino', 'Fecha de término'); ?></th>
 			<th><?php echo $this->Paginator->sort('estado', 'estado'); ?></th>
-			<th><?php echo $this->Paginator->sort('precio', 'precio'); ?></th>
-			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -51,12 +47,11 @@
              <tr>
 
 	<?php foreach ($eventos as $evento): ?>
-		<td><?php echo h($evento['Evento']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($evento['Recinto']['id'], array('controller' => 'recintos', 'action' => 'view', $evento['Recinto']['id'])); ?>
+			<?php echo $this->Html->link($evento['Recinto']['nombre'], array('controller' => 'recintos', 'action' => 'view', $evento['Recinto']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($evento['EventoTipo']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $evento['EventoTipo']['id'])); ?>
+			<?php echo $this->Html->link($evento['EventoTipo']['nombre'], array('controller' => 'evento_tipos', 'action' => 'view', $evento['EventoTipo']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($evento['Cliente']['id'], array('controller' => 'clientes', 'action' => 'view', $evento['Cliente']['id'])); ?>
@@ -64,10 +59,8 @@
 		<td><?php echo h($evento['Evento']['nombre']); ?>&nbsp;</td>
 		<td><?php echo h($evento['Evento']['fecha_inicio']); ?>&nbsp;</td>
 		<td><?php echo h($evento['Evento']['fecha_termino']); ?>&nbsp;</td>
-		<td><?php echo h($evento['Evento']['lista_invitados']); ?>&nbsp;</td>
 		<td><?php echo h($evento['Evento']['estado']); ?>&nbsp;</td>
-		<td><?php echo h($evento['Evento']['precio']); ?>&nbsp;</td>
-		<td><?php echo h($evento['Evento']['descripcion']); ?>&nbsp;</td>
+
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $evento['Evento']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $evento['Evento']['id'])); ?>
