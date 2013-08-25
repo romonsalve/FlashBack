@@ -11,7 +11,12 @@ class RecintoTipo extends AppModel {
 
 	public $displayField = 'nombre';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
+	public $validate = array(
+		'nombre' => array(
+			'rule' => 'unico',
+			'message' => 'Ya existe una tipo de recinto con ese nombre',
+		),
+	);
 /**
  * hasMany associations
  *
