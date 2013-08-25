@@ -56,7 +56,12 @@ function obtenerPropiedades(valor){
 			Felipe',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('estado', array('class' =>'span12','label' => 'Ingrese estado', 'placeholder' => '',
+		$estados = array(
+			'p' => 'Pendiente de Aprobación', 
+			'r' => 'Realizado', 
+			'a' => 'Aprobado',
+			);
+		echo $this->Form->input('estado', array('options' => $estados, 'class' =>'span12','label' => 'Ingrese estado', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('precio', array('type' => 'text', 'class' =>'span12','label' => 'Ingrese precio', 'placeholder' => '',
