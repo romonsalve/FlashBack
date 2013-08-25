@@ -20,8 +20,14 @@ class PropiedadesRecursoTiposController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($rTipo = null) {
 		$this->PropiedadesRecursoTipo->recursive = 0;
+		if($rTipo != null){
+			$this->paginate = array(
+				'conditions' => array('PropiedadesRecursoTipo.recurso_tipo_id' => $rTipo),
+				'limit' => 10
+			    );
+		}
 		$this->set('propiedadesRecursoTipos', $this->Paginator->paginate());
 	}
 

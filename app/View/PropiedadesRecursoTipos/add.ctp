@@ -7,7 +7,7 @@ function obtenerPropiedades(valor){
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Add Propiedades Recurso Tipo</h2>
+          <h2>Agregando Restricción</h2>
           <hr />
         </div>
         <!-- Title ends -->
@@ -28,21 +28,23 @@ function obtenerPropiedades(valor){
               <div class="well">
                 <hr />
   <?php
-				echo $this->Form->input('propiedade_id', array('class' =>'span12','label' => 'Ingrese propiedade_id', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)',
+    echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Para este recurso', 'placeholder' => '',
+    'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
+    echo $this->Form->input('propiedade_id', array('class' =>'span12','label' => 'La propiedad', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
+
 		echo '<hr /> ';
     echo "<div id = 'medida'>";
     echo '</div> ';
     
-				echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '',
+        echo $this->Form->input('minimo_medida', array('class' =>'span12','label' => 'Con un mínimo de...', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-				echo $this->Form->input('maximo__medida', array('class' =>'span12','label' => 'Ingrese maximo__medida', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-				echo $this->Form->input('minimo_medida', array('class' =>'span12','label' => 'Ingrese minimo_medida', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
+    echo '<hr /> ';
+        echo $this->Form->input('maximo_medida', array('class' =>'span12','label' => 'Y un máximo de...', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
+        
 		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 

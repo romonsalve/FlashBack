@@ -9,11 +9,11 @@
                 <div class="bor"></div>
                  <div class="ysheet1">
                     <!-- Title -->
-                    <h3>Propiedades Recurso Tipos</h3>
+                    <h3>Restricciones de medidas</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de Restricciones disponibles para configurar a cada tipo de recurso en el sistema, para crear una restricción, primero debe marcar la propiedad que desee restringir en el tipo de recurso, editando un tipo de recurso. También puede indicar que cierto tipo de recurso utiliza cierta propiedad haciendo click en "Agregar Restricción"</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Restricción</button>", array("action" => "add"), array("escape" => false));?>		     </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>

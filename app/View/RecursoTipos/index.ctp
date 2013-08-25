@@ -49,6 +49,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $recursoTipo['RecursoTipo']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $recursoTipo['RecursoTipo']['id'])); ?>
+			<?php echo $this->Html->link(__('Revisar Restricciones'), array('controller' => 'PropiedadesRecursoTipos', 'action' => 'index', $recursoTipo['RecursoTipo']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $recursoTipo['RecursoTipo']['id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $recursoTipo['RecursoTipo']['id'])); ?>
 		</td>
 	</tr>

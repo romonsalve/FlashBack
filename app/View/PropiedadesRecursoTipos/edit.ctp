@@ -9,7 +9,7 @@ function obtenerPropiedades(valor){
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Edit Propiedades Recurso Tipo</h2>
+          <h2>Editando Restricción</h2>
           <hr />
         </div>
         <!-- Title ends -->
@@ -33,23 +33,24 @@ function obtenerPropiedades(valor){
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
+    echo $this->Form->input('recurso_tipo_id', array('disabled' => true, 'class' =>'span12','label' => 'Para este recurso', 'placeholder' => '',
+    'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
+    echo $this->Form->input('propiedade_id', array('disabled' => true, 'class' =>'span12','label' => 'La propiedad', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
       echo "<div id='medida'>";
-				echo $this->Form->input('medida_id', array('class' =>'span12','label' => 'Ingrese medida_id', 'placeholder' => '',
+				echo $this->Form->input('medida_id', array('class' =>'span12','label' => 'Se medirá en...', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
       echo "</div>";
-				echo $this->Form->input('propiedade_id', array('class' =>'span12','label' => 'Ingrese propiedade_id', 'placeholder' => '', 'onchange' => 'obtenerPropiedades(this.value)',
+
+				echo $this->Form->input('minimo_medida', array('class' =>'span12','label' => 'Con un mínimo de...', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
+				echo $this->Form->input('maximo_medida', array('class' =>'span12','label' => 'Y un máximo de...', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('recurso_tipo_id', array('class' =>'span12','label' => 'Ingrese recurso_tipo_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-				echo $this->Form->input('maximo_medida', array('class' =>'span12','label' => 'Ingrese maximo_medida', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-				echo $this->Form->input('minimo_medida', array('class' =>'span12','label' => 'Ingrese minimo_medida', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
+				
 		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
             </div>
