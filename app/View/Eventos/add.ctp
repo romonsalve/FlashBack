@@ -31,32 +31,35 @@ function obtenerPropiedades(valor){
               <div class="well">
                 <hr />
 	<?php
-		echo '<div id="recinto">'; 
-		echo $this->Form->input('recinto_id', array('class' =>'span12','label' => 'Ingrese recinto_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '</div><hr /> ';
-				echo $this->Form->input('evento_tipo_id', array('class' =>'span12','label' => 'Ingrese evento_tipo_id', 'empty' => '(Seleccione una opción)', 'onchange' => 'obtenerPropiedades(this.value)',
+
+	echo $this->Form->input('evento_tipo_id', array('class' =>'span12','label' => 'Escoja un tipo de evento', 'empty' => '(Seleccione una opción)', 'onchange' => 'obtenerPropiedades(this.value)',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
+		echo '<div id="recinto">'; 
+		echo '</div><hr /> ';
+
 				echo $this->Form->input('cliente_id', array('class' =>'span12','label' => 'Ingrese cliente_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+				echo $this->Form->input('nombre', array('type' => 'text','class' =>'span12','label' => 'Ingrese un nombre distintivo para este evento:', 'placeholder' => 'Cumpleaños de Edgardito',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fecha_inicio', array('class' =>'span12','label' => 'Ingrese fecha_inicio', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('fecha_inicio', array('class' =>'span4','label' => 'Ingrese la fecha de inicio para este evento', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fecha_termino', array('class' =>'span12','label' => 'Ingrese fecha_termino', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('fecha_termino', array('class' =>'span4','label' => 'Ingrese la fecha de término de este evento', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('lista_invitados', array('class' =>'span12','label' => 'Ingrese lista_invitados', 'placeholder' => '',
+		echo $this->Form->input('lista_invitados', array('class' =>'span12','label' => 'Ingrese la lista de invitados si desea que seguridad controle el acceso.', 'placeholder' => 'Juan
+			Miguel
+			Cristóbal
+			Ricardo
+			Claudio
+			Felipe',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('estado', array('class' =>'span12','label' => 'Ingrese estado', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('precio', array('class' =>'span12','label' => 'Ingrese precio', 'placeholder' => '',
+				echo $this->Form->input('precio', array('type' => 'text', 'class' =>'span12','label' => 'Ingrese precio', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Ingrese descripcion', 'placeholder' => '',
