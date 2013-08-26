@@ -29,7 +29,7 @@ public $virtualFields = array(
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		)
+		),
 		'rut' => array(
 			'formato' => array(
 				'rule' => '^[1-9][0-9]{0,7}[-][0-9kK]{1}^',
@@ -66,7 +66,7 @@ public $virtualFields = array(
 			'rule' => 'email',
 			'message' => 'Ingrese un correo electrónico válido',
 			'allowEmpty' => true,
-		)*/
+		)
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
