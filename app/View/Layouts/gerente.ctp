@@ -135,6 +135,8 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
             <li>
             <?php echo $this->Html->link('Participantes', array('controller'=>'participantes','action' => 'index')); ?></li>
+              <li>
+            <?php echo $this->Html->link('Recintos', array('controller'=>'recintos','action' => 'index')); ?></li>
           </ul>
         </li>
 

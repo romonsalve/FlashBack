@@ -2279,3 +2279,150 @@ Request URL: /FlashBack/
 Stack Trace:
 #0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-08-26 07:25:59 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:28:23 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:32:08 Error: [MissingControllerException] Controller class EmpleadotiposController could not be found.
+Exception Attributes: array (
+  'class' => 'EmpleadotiposController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/empleadotipos
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:32:14 Error: [MissingControllerException] Controller class EmpleadotipoController could not be found.
+Exception Attributes: array (
+  'class' => 'EmpleadotipoController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/empleadotipo
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:32:37 Error: [MissingControllerException] Controller class EmpleadoController could not be found.
+Exception Attributes: array (
+  'class' => 'EmpleadoController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/empleado
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:33:54 Error: [MissingControllerException] Controller class EmpleadoController could not be found.
+Exception Attributes: array (
+  'class' => 'EmpleadoController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/empleado
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:33:58 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:34:09 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/Pages/home}.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/Pages/home}.ctp',
+)
+Request URL: /FlashBack/pages/home%7D
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName('home}')
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render('home}', NULL)
+#2 /var/www/FlashBack/app/Controller/PagesController.php(73): Controller->render('home}')
+#3 [internal function]: PagesController->display('home}')
+#4 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-08-26 07:37:39 Error: [MissingControllerException] Controller class EmpleadotiposController could not be found.
+Exception Attributes: array (
+  'class' => 'EmpleadotiposController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/empleadotipos
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:37:45 Error: [MissingControllerException] Controller class EmpleadostiposController could not be found.
+Exception Attributes: array (
+  'class' => 'EmpleadostiposController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/empleadostipos
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:41:21 Error: [PDOException] SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "1000 m2"
+LINE 1: ... (1, 'Parrilladas Amancay', 'No hay información', '1000 m2',...
+                                                             ^
+Request URL: /FlashBack/recintos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(Recinto), Array, Array)
+#4 /var/www/FlashBack/app/Controller/RecintosController.php(51): Model->save(Array)
+#5 [internal function]: RecintosController->add()
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecintosController), Array)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecintosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-26 07:46:27 Error: [PDOException] SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "1000 m2"
+LINE 1: ...n", "ubicacion") VALUES (3, 'Tokyo Dome', 'www.', '1000 m2',...
+                                                             ^
+Request URL: /FlashBack/recintos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(Recinto), Array, Array)
+#4 /var/www/FlashBack/app/Controller/RecintosController.php(51): Model->save(Array)
+#5 [internal function]: RecintosController->add()
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecintosController), Array)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecintosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-26 07:47:37 Error: [MissingControllerException] Controller class EventoController could not be found.
+Exception Attributes: array (
+  'class' => 'EventoController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/evento
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 07:52:09 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [/var/www/FlashBack/app/Model/Empleado.php, line 33]
+2013-08-26 07:52:09 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /FlashBack/pages/gerente
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

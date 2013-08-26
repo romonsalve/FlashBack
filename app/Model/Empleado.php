@@ -25,6 +25,11 @@ class Empleado extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'rut' => array(
+			'rule' => array('verificarRut', 'unico'),
+			'message' => 'verifique el RUT'
+			)
+		)
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
