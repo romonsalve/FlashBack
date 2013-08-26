@@ -1,0 +1,2281 @@
+2013-08-24 15:29:54 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-24 17:23:28 Error: Fatal Error (1): Call to undefined method Validation::isUnique() in [/var/www/FlashBack/app/Model/RecursoTipo.php, line 32]
+2013-08-24 17:23:28 Error: [FatalErrorException] Call to undefined method Validation::isUnique()
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/FlashB...', 32)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/FlashB...', 32, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/FlashB...', 32, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 17:33:07 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...rso_tipos" AS "RecursoTipo"   WHERE "RecursoTipo"."" IS NULL
+                                                             ^
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(RecursoTipo), Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(3048): Model->find('count', Array)
+#6 /var/www/FlashBack/app/Model/RecursoTipo.php(32): Model->isUnique('')
+#7 [internal function]: RecursoTipo->unico(Array, Array)
+#8 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationRule.php(277): call_user_func_array(Array, Array)
+#9 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationSet.php(137): CakeValidationRule->process('nombre', Array, Array)
+#10 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(261): CakeValidationSet->validate(Array, false)
+#11 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(101): ModelValidator->errors(Array)
+#12 /var/www/FlashBack/lib/Cake/Model/Model.php(3078): ModelValidator->validates(Array)
+#13 /var/www/FlashBack/lib/Cake/Model/Model.php(1659): Model->validates(Array)
+#14 /var/www/FlashBack/app/Controller/RecursoTiposController.php(51): Model->save(Array)
+#15 [internal function]: RecursoTiposController->add()
+#16 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursoTiposController), Array)
+#17 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#18 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#19 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2013-08-24 17:34:07 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...rso_tipos" AS "RecursoTipo"   WHERE "RecursoTipo"."" IS NULL
+                                                             ^
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(RecursoTipo), Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(3048): Model->find('count', Array)
+#6 /var/www/FlashBack/app/Model/RecursoTipo.php(32): Model->isUnique(NULL)
+#7 [internal function]: RecursoTipo->unico(Array, Array)
+#8 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationRule.php(277): call_user_func_array(Array, Array)
+#9 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationSet.php(137): CakeValidationRule->process('nombre', Array, Array)
+#10 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(261): CakeValidationSet->validate(Array, false)
+#11 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(101): ModelValidator->errors(Array)
+#12 /var/www/FlashBack/lib/Cake/Model/Model.php(3078): ModelValidator->validates(Array)
+#13 /var/www/FlashBack/lib/Cake/Model/Model.php(1659): Model->validates(Array)
+#14 /var/www/FlashBack/app/Controller/RecursoTiposController.php(51): Model->save(Array)
+#15 [internal function]: RecursoTiposController->add()
+#16 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursoTiposController), Array)
+#17 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#18 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#19 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2013-08-24 17:34:25 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column RecursoTipo.PARLANTES does not exist
+LINE 1: ..."public"."recurso_tipos" AS "RecursoTipo"   WHERE "RecursoTi...
+                                                             ^
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(RecursoTipo), Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(3048): Model->find('count', Array)
+#6 /var/www/FlashBack/app/Model/RecursoTipo.php(32): Model->isUnique('PARLANTES')
+#7 [internal function]: RecursoTipo->unico(Array, Array)
+#8 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationRule.php(277): call_user_func_array(Array, Array)
+#9 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationSet.php(137): CakeValidationRule->process('nombre', Array, Array)
+#10 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(261): CakeValidationSet->validate(Array, false)
+#11 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(101): ModelValidator->errors(Array)
+#12 /var/www/FlashBack/lib/Cake/Model/Model.php(3078): ModelValidator->validates(Array)
+#13 /var/www/FlashBack/lib/Cake/Model/Model.php(1659): Model->validates(Array)
+#14 /var/www/FlashBack/app/Controller/RecursoTiposController.php(51): Model->save(Array)
+#15 [internal function]: RecursoTiposController->add()
+#16 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursoTiposController), Array)
+#17 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#18 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#19 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2013-08-24 17:35:52 Error: Fatal Error (4): syntax error, unexpected '[' in [/var/www/FlashBack/app/Model/RecursoTipo.php, line 32]
+2013-08-24 17:35:52 Error: [FatalErrorException] syntax error, unexpected '['
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 32)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 32, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 32, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 17:36:31 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column RecursoTipo.PARLANTES does not exist
+LINE 1: ..."public"."recurso_tipos" AS "RecursoTipo"   WHERE "RecursoTi...
+                                                             ^
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(RecursoTipo), Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(3048): Model->find('count', Array)
+#6 /var/www/FlashBack/app/Model/RecursoTipo.php(33): Model->isUnique(Array)
+#7 [internal function]: RecursoTipo->unico(Array, Array)
+#8 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationRule.php(277): call_user_func_array(Array, Array)
+#9 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationSet.php(137): CakeValidationRule->process('nombre', Array, Array)
+#10 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(261): CakeValidationSet->validate(Array, false)
+#11 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(101): ModelValidator->errors(Array)
+#12 /var/www/FlashBack/lib/Cake/Model/Model.php(3078): ModelValidator->validates(Array)
+#13 /var/www/FlashBack/lib/Cake/Model/Model.php(1659): Model->validates(Array)
+#14 /var/www/FlashBack/app/Controller/RecursoTiposController.php(51): Model->save(Array)
+#15 [internal function]: RecursoTiposController->add()
+#16 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursoTiposController), Array)
+#17 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#18 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#19 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2013-08-24 17:38:25 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...soTipo"."nombre" = 'PARLANTES') OR ("RecursoTipo"."" IS NULL...
+                                                             ^
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(RecursoTipo), Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(3048): Model->find('count', Array)
+#6 /var/www/FlashBack/app/Model/RecursoTipo.php(33): Model->isUnique(Array)
+#7 [internal function]: RecursoTipo->unico(Array, Array)
+#8 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationRule.php(277): call_user_func_array(Array, Array)
+#9 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationSet.php(137): CakeValidationRule->process('nombre', Array, Array)
+#10 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(261): CakeValidationSet->validate(Array, false)
+#11 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(101): ModelValidator->errors(Array)
+#12 /var/www/FlashBack/lib/Cake/Model/Model.php(3078): ModelValidator->validates(Array)
+#13 /var/www/FlashBack/lib/Cake/Model/Model.php(1659): Model->validates(Array)
+#14 /var/www/FlashBack/app/Controller/RecursoTiposController.php(51): Model->save(Array)
+#15 [internal function]: RecursoTiposController->add()
+#16 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursoTiposController), Array)
+#17 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#18 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#19 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2013-08-24 17:38:45 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...soTipo"."nombre" = 'PARLANTES') OR ("RecursoTipo"."" IS NULL...
+                                                             ^
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(RecursoTipo), Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(3048): Model->find('count', Array)
+#6 /var/www/FlashBack/app/Model/RecursoTipo.php(34): Model->isUnique(Array)
+#7 [internal function]: RecursoTipo->unico(Array, Array)
+#8 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationRule.php(277): call_user_func_array(Array, Array)
+#9 /var/www/FlashBack/lib/Cake/Model/Validator/CakeValidationSet.php(137): CakeValidationRule->process('nombre', Array, Array)
+#10 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(261): CakeValidationSet->validate(Array, false)
+#11 /var/www/FlashBack/lib/Cake/Model/ModelValidator.php(101): ModelValidator->errors(Array)
+#12 /var/www/FlashBack/lib/Cake/Model/Model.php(3078): ModelValidator->validates(Array)
+#13 /var/www/FlashBack/lib/Cake/Model/Model.php(1659): Model->validates(Array)
+#14 /var/www/FlashBack/app/Controller/RecursoTiposController.php(51): Model->save(Array)
+#15 [internal function]: RecursoTiposController->add()
+#16 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursoTiposController), Array)
+#17 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#18 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#19 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2013-08-24 18:04:09 Error: Fatal Error (4): syntax error, unexpected 'find' (T_STRING) in [/var/www/FlashBack/lib/Cake/Model/Model.php, line 3048]
+2013-08-24 18:04:09 Error: [FatalErrorException] syntax error, unexpected 'find' (T_STRING)
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 3048)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 3048, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 3048, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 18:04:24 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/FlashBack/lib/Cake/Model/Model.php, line 3048]
+2013-08-24 18:04:24 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 3048)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 3048, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 3048, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 18:15:27 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/FlashBack/app/Model/RecursoTipo.php, line 33]
+2013-08-24 18:15:27 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /FlashBack/recursoTipos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 19:44:30 Error: [MissingControllerException] Controller class MedidsController could not be found.
+Exception Attributes: array (
+  'class' => 'MedidsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/medids
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-24 20:02:18 Error: Fatal Error (4): syntax error, unexpected 'las' (T_STRING), expecting ')' in [/var/www/FlashBack/app/View/Medidas/edit.ctp, line 39]
+2013-08-24 20:02:18 Error: [FatalErrorException] syntax error, unexpected 'las' (T_STRING), expecting ')'
+Request URL: /FlashBack/medidas/edit/4
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 39)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 39, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 39, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 20:03:59 Error: Fatal Error (4): syntax error, unexpected 'las' (T_STRING), expecting ')' in [/var/www/FlashBack/app/View/Medidas/edit.ctp, line 39]
+2013-08-24 20:03:59 Error: [FatalErrorException] syntax error, unexpected 'las' (T_STRING), expecting ')'
+Request URL: /FlashBack/medidas/edit/4
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 39)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 39, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 39, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 20:07:53 Error: [MissingControllerException] Controller class PropiedadesrecursotiposController could not be found.
+Exception Attributes: array (
+  'class' => 'PropiedadesrecursotiposController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/propiedadesrecursotipos
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-24 20:08:01 Error: [MissingControllerException] Controller class PropiedaderecursotiposController could not be found.
+Exception Attributes: array (
+  'class' => 'PropiedaderecursotiposController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/propiedaderecursotipos
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-24 22:09:55 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php, line 24]
+2013-08-24 22:09:55 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /FlashBack/propiedadesRecursoTipos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 24)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 24, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 24, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 22:12:48 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/1
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:12:56 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:13:00 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/3
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:13:20 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:21:52 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:22:33 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:22:36 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:22:37 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:22:41 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:22:44 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:23:37 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:23:44 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/4
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:24:18 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/4
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:24:20 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:24:25 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:26:25 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:26:33 Error: [MissingViewException] View file "/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/FlashBack/app/View/PropiedadesRecursoTipos/minimos_y_maximos.ctp',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-24 22:27:35 Error: [MissingActionException] Action PropiedadesRecursoTiposController::minimosYMaximos() could not be found.
+Exception Attributes: array (
+  'controller' => 'PropiedadesRecursoTiposController',
+  'action' => 'minimosYMaximos',
+)
+Request URL: /FlashBack/propiedadesRecursoTipos/minimosYMaximos/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-24 22:33:30 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php, line 25]
+2013-08-24 22:33:30 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 25)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 25, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 25, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 23:07:32 Error: Fatal Error (1): Call to a member function saveAll() on a non-object in [/var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php, line 20]
+2013-08-24 23:07:32 Error: [FatalErrorException] Call to a member function saveAll() on a non-object
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/FlashB...', 20)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/FlashB...', 20, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/FlashB...', 20, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 23:11:31 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "propiedade_id" violates not-null constraint
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(PropiedadesRecursoTipo), Array, Array)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2113): Model->save(Array, Array)
+#5 /var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php(20): Model->saveMany(Array)
+#6 [internal function]: PropiedadesRecursoTiposController->mym('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PropiedadesRecursoTiposController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-24 23:12:37 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "propiedade_id" violates not-null constraint
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(PropiedadesRecursoTipo), Array, Array)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2113): Model->save(Array, Array)
+#5 /var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php(20): Model->saveMany(Array)
+#6 [internal function]: PropiedadesRecursoTiposController->mym('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PropiedadesRecursoTiposController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-24 23:15:04 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "propiedade_id" violates not-null constraint
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(PropiedadesRecursoTipo), Array, Array)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2113): Model->save(Array, Array)
+#5 /var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php(20): Model->saveMany(Array, Array)
+#6 [internal function]: PropiedadesRecursoTiposController->mym('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PropiedadesRecursoTiposController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-24 23:16:10 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "propiedade_id" violates not-null constraint
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(PropiedadesRecursoTipo), Array, Array)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2113): Model->save(Array, Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(2050): Model->saveMany(Array, Array)
+#6 /var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php(20): Model->saveAll(Array, Array)
+#7 [internal function]: PropiedadesRecursoTiposController->mym('2')
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PropiedadesRecursoTiposController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-24 23:19:41 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "propiedade_id" violates not-null constraint
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(PropiedadesRecursoTipo), Array, Array)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2113): Model->save(Array, Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Model.php(2050): Model->saveMany(Array, Array)
+#6 /var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php(20): Model->saveAll(Array, Array)
+#7 [internal function]: PropiedadesRecursoTiposController->mym('2')
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PropiedadesRecursoTiposController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PropiedadesRecursoTiposController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-24 23:38:00 Error: Fatal Error (1): Call to a member function invalidFields() on a non-object in [/var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php, line 30]
+2013-08-24 23:38:00 Error: [FatalErrorException] Call to a member function invalidFields() on a non-object
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/1
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/FlashB...', 30)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/FlashB...', 30, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/FlashB...', 30, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 23:42:37 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR) in [/var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php, line 27]
+2013-08-24 23:42:37 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/1
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 27, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 27, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 23:42:46 Error: Fatal Error (1): Call to undefined method PropiedadesRecursoTiposController::data() in [/var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php, line 27]
+2013-08-24 23:42:46 Error: [FatalErrorException] Call to undefined method PropiedadesRecursoTiposController::data()
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/1
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/FlashB...', 27)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/FlashB...', 27, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/FlashB...', 27, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-24 23:43:40 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/FlashBack/app/Controller/PropiedadesRecursoTiposController.php, line 27]
+2013-08-24 23:43:40 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/1
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 27, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 27, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 00:06:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:06:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:10:15 Error: Fatal Error (4): syntax error, unexpected '' => true, '' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/FlashBack/app/View/PropiedadesRecursoTipos/mym.ctp, line 41]
+2013-08-25 00:10:15 Error: [FatalErrorException] syntax error, unexpected '' => true, '' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /FlashBack/propiedadesRecursoTipos/mym/1
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 41, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 41, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 00:10:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:10:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:11:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:13:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:13:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:13:45 Error: [MissingControllerException] Controller class PropiedadeController could not be found.
+Exception Attributes: array (
+  'class' => 'PropiedadeController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/Propiedade
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:50:43 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 00:50:50 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 01:13:10 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 01:16:12 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 01:16:14 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 01:16:14 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 01:16:15 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 01:36:39 Error: [MissingControllerException] Controller class PropiedadesRecursoTipoController could not be found.
+Exception Attributes: array (
+  'class' => 'PropiedadesRecursoTipoController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/PropiedadesRecursoTipo/index/1
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 01:37:17 Error: [MissingControllerException] Controller class PropiedadesRecursoTipoController could not be found.
+Exception Attributes: array (
+  'class' => 'PropiedadesRecursoTipoController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/PropiedadesRecursoTipo/index/2
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 02:02:42 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting ')' in [/var/www/FlashBack/app/Model/PropiedadesRecursoTipo.php, line 50]
+2013-08-25 02:02:42 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting ')'
+Request URL: /FlashBack/PropiedadesRecursoTipos/edit/1
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 50)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 50, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 50, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 03:08:09 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "cantidad" violates not-null constraint
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(2920): PDOStatement->execute()
+#1 /var/www/FlashBack/lib/Cake/Model/Model.php(1907): DboSource->insertMulti(Object(AppModel), Array, Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Model.php(1758): Model->_saveMulti(Array, '1', Object(Postgres))
+#3 /var/www/FlashBack/app/Controller/EventosController.php(62): Model->save(Array)
+#4 [internal function]: EventosController->add()
+#5 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#6 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-08-25 03:11:04 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "recinto_id" violates not-null constraint
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(Evento), Array, Array)
+#4 /var/www/FlashBack/app/Controller/EventosController.php(62): Model->save(Array)
+#5 [internal function]: EventosController->add()
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 12:22:51 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 12:31:57 Error: Fatal Error (4): syntax error, unexpected ''fecha_termino'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/FlashBack/app/Model/EventoTipo.php, line 32]
+2013-08-25 12:31:57 Error: [FatalErrorException] syntax error, unexpected ''fecha_termino'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /FlashBack/eventos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 32)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 32, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 32, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 12:32:59 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "recinto_id" violates not-null constraint
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO "pu...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(1745): DboSource->create(Object(Evento), Array, Array)
+#4 /var/www/FlashBack/app/Controller/EventosController.php(62): Model->save(Array)
+#5 [internal function]: EventosController->add()
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 13:52:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 13:53:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 13:53:33 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 14:48:08 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/FlashBack/app/View/Vehiculos/index.ctp, line 50]
+2013-08-25 14:48:08 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /FlashBack/vehiculos/index
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 50)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 50, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 50, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 14:48:21 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/FlashBack/app/View/Vehiculos/index.ctp, line 50]
+2013-08-25 14:48:21 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /FlashBack/vehiculos/index
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 50)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 50, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 50, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 18:13:11 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 18:13:16 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/login
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 18:23:20 Error: [PDOException] SQLSTATE[23503]: Foreign key violation: 7 ERROR:  update or delete on table "clientes" violates foreign key constraint "fk_eventos_relations_clientes" on table "eventos"
+DETAIL:  Key (id)=(2) is still referenced from table "eventos".
+Request URL: /FlashBack/clientes/delete/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('DELETE  FROM "p...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1907): DboSource->execute('DELETE  FROM "p...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(2431): DboSource->delete(Object(Cliente), Array)
+#4 /var/www/FlashBack/app/Controller/ClientesController.php(101): Model->delete()
+#5 [internal function]: ClientesController->delete('2')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ClientesController), Array)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ClientesController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 18:26:21 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || text
+LINE 1: ...o" AS "Cliente__correo", ("Cliente"."nombre" ||   || "Client...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/eventos/edit/4
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Evento"...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Evento"...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Evento"...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Evento), Array)
+#5 /var/www/FlashBack/app/Controller/EventosController.php(98): Model->find('first', Array)
+#6 [internal function]: EventosController->edit('4')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 20:07:22 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 20:41:05 Error: Fatal Error (4): syntax error, unexpected '.', expecting ')' in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:41:05 Error: [FatalErrorException] syntax error, unexpected '.', expecting ')'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:41:26 Error: Fatal Error (4): syntax error, unexpected '(' in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:41:26 Error: [FatalErrorException] syntax error, unexpected '('
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:41:56 Error: Fatal Error (4): syntax error, unexpected '.', expecting ')' in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:41:56 Error: [FatalErrorException] syntax error, unexpected '.', expecting ')'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:43:02 Error: Fatal Error (4): syntax error, unexpected '.', expecting ')' in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:43:02 Error: [FatalErrorException] syntax error, unexpected '.', expecting ')'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:43:17 Error: Fatal Error (4): syntax error, unexpected '.', expecting ')' in [/var/www/FlashBack/app/Model/Recurso.php, line 16]
+2013-08-25 20:43:17 Error: [FatalErrorException] syntax error, unexpected '.', expecting ')'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 16, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 16, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:43:37 Error: Fatal Error (4): syntax error, unexpected '.', expecting ')' in [/var/www/FlashBack/app/Model/Recurso.php, line 16]
+2013-08-25 20:43:37 Error: [FatalErrorException] syntax error, unexpected '.', expecting ')'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 16, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 16, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:44:14 Error: Fatal Error (4): syntax error, unexpected '.', expecting ',' or ';' in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:44:14 Error: [FatalErrorException] syntax error, unexpected '.', expecting ',' or ';'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:45:00 Error: Fatal Error (4): syntax error, unexpected '.', expecting ',' or ';' in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:45:00 Error: [FatalErrorException] syntax error, unexpected '.', expecting ',' or ';'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:45:31 Error: Fatal Error (4): syntax error, unexpected '.', expecting ',' or ';' in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:45:31 Error: [FatalErrorException] syntax error, unexpected '.', expecting ',' or ';'
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:46:25 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:46:25 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:50:50 Error: Fatal Error (1): Cannot use object of type RecursoTipo as array in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 20:50:50 Error: [FatalErrorException] Cannot use object of type RecursoTipo as array
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 20:57:59 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "recursotipo" does not exist
+LINE 1: ...__cantidad", ((SELECT "RecursoTipo"."nombre" FROM RecursoTip...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 20:58:41 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "recursotipos" does not exist
+LINE 1: ...__cantidad", ((SELECT "RecursoTipo"."nombre" FROM RecursoTip...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 20:58:56 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "recursotipos" does not exist
+LINE 1: ...__cantidad", ((SELECT "RecursoTipo"."nombre" FROM RecursoTip...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 20:59:19 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "recursotipos" does not exist
+LINE 1: ..._cantidad", ((SELECT "RecursoTipos"."nombre" FROM RecursoTip...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 20:59:54 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  missing FROM-clause entry for table "Recurso_Tipos"
+LINE 1: ...urso"."cantidad" AS "Recurso__cantidad", ((SELECT "Recurso_T...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 21:02:31 Error: [PDOException] SQLSTATE[21000]: Cardinality violation: 7 ERROR:  more than one row returned by a subquery used as an expression
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 21:04:18 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "="
+LINE 1: ...pos"."nombre" FROM recurso_tipos, recursos WHERE  = "recurso...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 21:06:52 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "="
+LINE 1: ...pos"."nombre" FROM recurso_tipos, recursos WHERE  = "recurso...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 21:07:19 Error: [NotFoundException] Invalid recurso
+Request URL: /FlashBack/recursos/view/1
+Stack Trace:
+#0 [internal function]: RecursosController->view('1')
+#1 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#2 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-08-25 21:07:22 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:07:55 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:08:24 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:08:48 Error: Fatal Error (4): syntax error, unexpected '.', expecting ')' in [/var/www/FlashBack/app/View/Recursos/view.ctp, line 35]
+2013-08-25 21:08:48 Error: [FatalErrorException] syntax error, unexpected '.', expecting ')'
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 35, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 35, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 21:09:11 Error: Fatal Error (4): syntax error, unexpected '[' in [/var/www/FlashBack/app/View/Recursos/view.ctp, line 35]
+2013-08-25 21:09:11 Error: [FatalErrorException] syntax error, unexpected '['
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 35, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 35, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 21:10:22 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "="
+LINE 1: ...pos"."nombre" FROM recurso_tipos, recursos WHERE  = "recurso...
+                                                             ^
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:13:25 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "="
+LINE 1: ...pos"."nombre" FROM recurso_tipos, recursos WHERE  = "recurso...
+                                                             ^
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:14:11 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || integer
+LINE 1: ...", "Recurso"."cantidad" AS "Recurso__cantidad", ( || "Recurs...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:26:17 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || text
+LINE 1: ...", "Recurso"."cantidad" AS "Recurso__cantidad", ( || CAST("R...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:26:52 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || text
+LINE 1: ...", "Recurso"."cantidad" AS "Recurso__cantidad", ( || CAST("R...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:26:59 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || text
+LINE 1: ...", "Recurso"."cantidad" AS "Recurso__cantidad", ( || CAST("R...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:27:46 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || text
+LINE 1: ...", "Recurso"."cantidad" AS "Recurso__cantidad", ( || CAST("R...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:27:58 Error: Fatal Error (1): Cannot use object of type RecursoTipo as array in [/var/www/FlashBack/app/Model/Recurso.php, line 15]
+2013-08-25 21:27:58 Error: [FatalErrorException] Cannot use object of type RecursoTipo as array
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/var/www/FlashB...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/var/www/FlashB...', 15, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/var/www/FlashB...', 15, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 21:28:17 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || text
+LINE 1: ...", "Recurso"."cantidad" AS "Recurso__cantidad", ( || CAST("R...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:28:40 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:28:48 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:39:28 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: integer = text
+LINE 1: ...ecurso_tipos, recursos WHERE "recurso_tipos"."id" = "Recurso...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:42:48 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: || text
+LINE 1: ... FROM recurso_tipos WHERE "recurso_tipos"."id" =  || CAST("R...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/RecursosController.php(44): Model->find('first', Array)
+#6 [internal function]: RecursosController->view('2')
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 21:44:07 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:47:37 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:51:32 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:52:14 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:52:27 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:52:51 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 21:53:11 Error: [MissingHelperException] Helper class RecursoHelper could not be found.
+Exception Attributes: array (
+  'class' => 'RecursoHelper',
+  'plugin' => false,
+)
+Request URL: /FlashBack/recursos/view/2
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Recurso')
+#1 /var/www/FlashBack/lib/Cake/View/View.php(833): HelperCollection->__isset('Recurso')
+#2 /var/www/FlashBack/app/View/Recursos/view.ctp(35): View->__get('Recurso')
+#3 /var/www/FlashBack/lib/Cake/View/View.php(945): include('/var/www/FlashB...')
+#4 /var/www/FlashBack/lib/Cake/View/View.php(907): View->_evaluate('/var/www/FlashB...', Array)
+#5 /var/www/FlashBack/lib/Cake/View/View.php(471): View->_render('/var/www/FlashB...')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-25 22:00:24 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  missing FROM-clause entry for table "RecursoTipo"
+LINE 1: SELECT "Recurso"."id" AS "Recurso__id", ("RecursoTipo"."nomb...
+                                                 ^
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/EventosController.php(71): Model->find('list')
+#6 [internal function]: EventosController->add()
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 22:02:44 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  missing FROM-clause entry for table "RecursoTipos"
+LINE 1: SELECT "Recurso"."id" AS "Recurso__id", ("RecursoTipos"."nom...
+                                                 ^
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/EventosController.php(71): Model->find('list')
+#6 [internal function]: EventosController->add()
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 22:02:46 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  missing FROM-clause entry for table "RecursoTipos"
+LINE 1: ...d", "Recurso"."cantidad" AS "Recurso__cantidad", ("RecursoTi...
+                                                             ^
+Request URL: /FlashBack/recursos
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/lib/Cake/Controller/Component/PaginatorComponent.php(198): Model->find('all', Array)
+#6 /var/www/FlashBack/app/Controller/RecursosController.php(29): PaginatorComponent->paginate()
+#7 [internal function]: RecursosController->index()
+#8 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RecursosController), Array)
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(RecursosController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-08-25 22:03:33 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  missing FROM-clause entry for table "RecursoTipo"
+LINE 1: SELECT "Recurso"."id" AS "Recurso__id", ("RecursoTipo"."nomb...
+                                                 ^
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/EventosController.php(71): Model->find('list')
+#6 [internal function]: EventosController->add()
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 22:04:08 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in [/var/www/FlashBack/app/Model/Recurso.php, line 18]
+2013-08-25 22:04:08 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 18)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 18, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 18, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 22:04:51 Error: Fatal Error (4): syntax error, unexpected 'virtualFields' (T_STRING), expecting variable (T_VARIABLE) in [/var/www/FlashBack/app/Model/Recurso.php, line 18]
+2013-08-25 22:04:51 Error: [FatalErrorException] syntax error, unexpected 'virtualFields' (T_STRING), expecting variable (T_VARIABLE)
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 18)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 18, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 18, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-25 22:05:03 Error: [PDOException] SQLSTATE[42P01]: Undefined table: 7 ERROR:  missing FROM-clause entry for table "RecursoTipo"
+LINE 1: SELECT "Recurso"."id" AS "Recurso__id", ("RecursoTipo"."nomb...
+                                                 ^
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Recurso...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Recurso...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Recurso...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Recurso), Array)
+#5 /var/www/FlashBack/app/Controller/EventosController.php(71): Model->find('list')
+#6 [internal function]: EventosController->add()
+#7 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-08-25 22:25:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:26:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:26:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:27:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:27:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:28:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:28:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:29:01 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-25 22:30:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 00:06:31 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 00:31:22 Error: Fatal Error (4): syntax error, unexpected ''Este correo electrónico ya h' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/FlashBack/app/Model/User.php, line 28]
+2013-08-26 00:31:22 Error: [FatalErrorException] syntax error, unexpected ''Este correo electrónico ya h' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 28)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 28, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 28, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 00:49:57 Error: [MissingActionException] Action UsersController::registros() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'registros',
+)
+Request URL: /FlashBack/users/registros
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-26 00:50:00 Error: [MissingActionException] Action UsersController::registro() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'registro',
+)
+Request URL: /FlashBack/users/registro
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-26 00:57:16 Error: [PDOException] SQLSTATE[23503]: Foreign key violation: 7 ERROR:  update or delete on table "vehiculo_tipos" violates foreign key constraint "fk_vehiculo_relations_vehiculo" on table "vehiculos"
+DETAIL:  Key (id)=(3) is still referenced from table "vehiculos".
+Request URL: /FlashBack/vehiculo_tipos/delete/3
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('DELETE  FROM "p...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1907): DboSource->execute('DELETE  FROM "p...')
+#3 /var/www/FlashBack/lib/Cake/Model/Model.php(2431): DboSource->delete(Object(VehiculoTipo), Array)
+#4 /var/www/FlashBack/app/Controller/VehiculoTiposController.php(97): Model->delete()
+#5 [internal function]: VehiculoTiposController->delete('3')
+#6 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(VehiculoTiposController), Array)
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(VehiculoTiposController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-26 00:58:55 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 01:08:09 Error: Fatal Error (1): Call to undefined function rol() in [/var/www/FlashBack/app/Controller/SolicitudCotizacionesController.php, line 58]
+2013-08-26 01:08:09 Error: [FatalErrorException] Call to undefined function rol()
+Request URL: /FlashBack/solicitudCotizaciones/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/FlashB...', 58)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/FlashB...', 58, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/FlashB...', 58, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 01:11:19 Error: Fatal Error (1): Call to undefined method View::rol() in [/var/www/FlashBack/app/View/Eventos/add.ctp, line 40]
+2013-08-26 01:11:19 Error: [FatalErrorException] Call to undefined method View::rol()
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/FlashB...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/FlashB...', 40, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/FlashB...', 40, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 01:12:14 Error: Fatal Error (1): Call to undefined method View::rol() in [/var/www/FlashBack/app/View/Eventos/add.ctp, line 40]
+2013-08-26 01:12:14 Error: [FatalErrorException] Call to undefined method View::rol()
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/FlashB...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/FlashB...', 40, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/FlashB...', 40, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 01:12:23 Error: Fatal Error (1): Call to undefined method View::rol() in [/var/www/FlashBack/app/View/Eventos/add.ctp, line 40]
+2013-08-26 01:12:23 Error: [FatalErrorException] Call to undefined method View::rol()
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/FlashB...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/FlashB...', 40, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/FlashB...', 40, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 02:04:57 Error: Fatal Error (1): Call to undefined function rol() in [/var/www/FlashBack/app/Controller/AppController.php, line 210]
+2013-08-26 02:04:57 Error: [FatalErrorException] Call to undefined function rol()
+Request URL: /FlashBack/solicitud_cotizaciones/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/FlashB...', 210)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/FlashB...', 210, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/FlashB...', 210, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 02:11:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 02:13:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 02:15:23 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 03:05:52 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-26 03:42:41 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/FlashBack/app/View/Users/edit.ctp, line 5]
+2013-08-26 03:42:41 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /FlashBack/users/edit/4
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 5, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 5, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 04:10:05 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "cantidad" violates not-null constraint
+Request URL: /FlashBack/eventos/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(2920): PDOStatement->execute()
+#1 /var/www/FlashBack/lib/Cake/Model/Model.php(1907): DboSource->insertMulti(Object(AppModel), Array, Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Model.php(1758): Model->_saveMulti(Array, '5', Object(Postgres))
+#3 /var/www/FlashBack/app/Controller/EventosController.php(61): Model->save(Array)
+#4 [internal function]: EventosController->add()
+#5 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(EventosController), Array)
+#6 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(EventosController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-08-26 04:28:21 Error: Fatal Error (4): syntax error, unexpected ''rut'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/FlashBack/app/Model/Cliente.php, line 33]
+2013-08-26 04:28:21 Error: [FatalErrorException] syntax error, unexpected ''rut'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /FlashBack/clientes/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 04:28:39 Error: Fatal Error (4): syntax error, unexpected ''rut'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/FlashBack/app/Model/Cliente.php, line 33]
+2013-08-26 04:28:39 Error: [FatalErrorException] syntax error, unexpected ''rut'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /FlashBack/clientes/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 04:33:20 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/pages/cliente
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'pages', 'display')
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 04:33:26 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'users', 'login')
+#7 /var/www/FlashBack/app/Controller/UsersController.php(25): AppController->beforeFilter()
+#8 [internal function]: UsersController->beforeFilter(Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#12 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-08-26 04:33:35 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/pages/noAutorizado
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'pages', 'display')
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 04:33:46 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/pages/noAutorizado
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'pages', 'display')
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 04:39:29 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/pages/noAutorizado
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'pages', 'display')
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 04:39:41 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/pages/noAutorizado
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'pages', 'display')
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 04:39:47 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/users/logout
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'users', 'logout')
+#7 /var/www/FlashBack/app/Controller/UsersController.php(25): AppController->beforeFilter()
+#8 [internal function]: UsersController->beforeFilter(Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#12 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-08-26 04:39:54 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/pages/noAutorizado
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'pages', 'display')
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 04:40:00 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/pages/noAutorizado
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'pages', 'display')
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 04:40:07 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'users', 'login')
+#7 /var/www/FlashBack/app/Controller/UsersController.php(25): AppController->beforeFilter()
+#8 [internal function]: UsersController->beforeFilter(Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#12 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-08-26 04:40:10 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Cliente.user_id does not exist
+LINE 1: ...Cliente" LEFT JOIN "public"."users" AS "User" ON ("Cliente"....
+                                                             ^
+Request URL: /FlashBack/users/login
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Cliente...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Cliente...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT "Cliente...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(Cliente), Array)
+#5 /var/www/FlashBack/app/Controller/AppController.php(206): Model->find('first', Array)
+#6 /var/www/FlashBack/app/Controller/AppController.php(220): AppController->estaAutorizado('cliente', 'users', 'login')
+#7 /var/www/FlashBack/app/Controller/UsersController.php(25): AppController->beforeFilter()
+#8 [internal function]: UsersController->beforeFilter(Object(CakeEvent))
+#9 /var/www/FlashBack/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 /var/www/FlashBack/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#12 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-08-26 04:42:54 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column Empleado.user_id does not exist
+LINE 1: ...", "Empleado"."contrato" AS "Empleado__contrato", "Empleado"...
+                                                             ^
+Request URL: /FlashBack/users/view/8
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT "Emplead...', Array)
+#2 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT "Emplead...', Array, Array)
+#3 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT "Emplead...', false)
+#4 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(User), 'SELECT "Emplead...', Array)
+#5 /var/www/FlashBack/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(User), Object(Empleado), 'hasMany', 'Empleado', Array, Array, true, Array, 0, Array)
+#6 /var/www/FlashBack/lib/Cake/Model/Model.php(2700): DboSource->read(Object(User), Array)
+#7 /var/www/FlashBack/app/Controller/UsersController.php(77): Model->find('first', Array)
+#8 [internal function]: UsersController->view('8')
+#9 /var/www/FlashBack/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/FlashBack/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-08-26 05:17:51 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/FlashBack/app/Controller/SolicitudCotizacionesController.php, line 76]
+2013-08-26 05:17:51 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /FlashBack/solicitud_cotizaciones/add
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 76)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 76, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 76, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-26 05:23:36 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /FlashBack/
+Stack Trace:
+#0 /var/www/FlashBack/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
