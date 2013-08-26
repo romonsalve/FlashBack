@@ -65,6 +65,6 @@ class AppModel extends Model {
         // have to extract the value to make the function generic
         $value = array_values($check);
         $value = $value[0];
-        return preg_match('|^[a-zA-Z ÁÉÍÓÚáéíóúü]{'.$minimo.',}$|', $value);
+        return preg_match('|^[a-zA-Z ÁÉÍÓÚáéíóúü]*$|', $value);
     }
 }
