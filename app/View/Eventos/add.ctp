@@ -77,7 +77,7 @@ function obtenerPropiedades(valor){
 	     <div class="span6 ">
                 <div class="well">
 		<?php 
-echo '<div class="recursos"><h6> <?php echo Recurso ?></h6> <hr />'; 		echo $this->Form->input('Recurso', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo '<div id="recursos"> <hr />';
 echo '</div>';
 echo '<h6> <?php echo Empleado ?></h6> <hr />'; 		echo $this->Form->input('Empleado', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
 echo '<div class= "actividad"><h6> <?php echo Actividade ?></h6> <hr />'; 		echo $this->Form->input('Actividade', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );

@@ -27,7 +27,7 @@
 				}
 				calendar.fullCalendar('unselect');
 			},
-			<? if($rol == 'empleado'){
+			<?php if($rol == 'empleado'){
 				echo 'editable: false,';
 			}else{
 				echo 'editable: true,';
