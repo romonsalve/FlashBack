@@ -2426,3 +2426,13 @@ Stack Trace:
 #3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-08-26 07:54:14 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [/var/www/FlashBack/app/Model/Empleado.php, line 33]
+2013-08-26 07:54:14 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /FlashBack/users/logout
+Stack Trace:
+#0 /var/www/FlashBack/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/FlashB...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#2 /var/www/FlashBack/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/FlashB...', 33, Array)
+#3 /var/www/FlashBack/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
