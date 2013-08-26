@@ -33,8 +33,9 @@
 	     </div>
 	     <div class="span6 ">
                 <div class="well">
-		<?php
+		<?php echo '<div style="display:none">';
 echo '<h6> <?php echo Recurso ?></h6> <hr />'; 		echo $this->Form->input('Recurso', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Seleccione los recursos que tienen esta propiedad:') );
+echo '</div>';
 echo '<h6> <?php echo Medida ?></h6> <hr />'; 		echo $this->Form->input('Medida', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Seleccione las unidades de medida que son capaces de medir esta propiedad:') );
 echo '<h6> <?php echo RecursoTipo ?></h6> <hr />'; 		echo $this->Form->input('RecursoTipo', array('type' => 'select', 'multiple'=>'checkbox', 'label' => 'Seleccione los recursos tipo que podrían usar esta propiedad:') );
 echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
