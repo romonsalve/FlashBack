@@ -52,13 +52,6 @@ class EventosRecursosController extends AppController {
 		}
 	}
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function delete($id = null,$id_redirec = null) {
 		$this->EventosRecurso->id = $id;
 		if (!$this->EventosRecurso->exists()) {

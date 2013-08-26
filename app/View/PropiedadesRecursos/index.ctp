@@ -9,12 +9,10 @@
                 <div class="bor"></div>
                  <div class="ysheet1">
                     <!-- Title -->
-                    <h3>Propiedades Recursos</h3>
+                    <h3>Listado de propiedades segun recursos </h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
-		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
-                 </div>
+                    <p>Defina las propiedades segun el recurso ingresado recientemente</p>
+                    </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
               </div>
@@ -31,11 +29,8 @@
         <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
-
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recurso_id', 'recurso_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('propiedade_id', 'propiedade_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('valor', 'valor'); ?></th>
+			<th><?php echo $this->Paginator->sort('propiedade_id', 'Propiedad'); ?></th>
+			<th><?php echo $this->Paginator->sort('valor', 'Valor'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -44,18 +39,13 @@
              <tr>
 
 	<?php foreach ($propiedadesRecursos as $propiedadesRecurso): ?>
-		<td><?php echo h($propiedadesRecurso['PropiedadesRecurso']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($propiedadesRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $propiedadesRecurso['Recurso']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($propiedadesRecurso['Propiedade']['id'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedade']['id'])); ?>
+			<?php echo $this->Html->link($propiedadesRecurso['Propiedade']['nombre'], array('controller' => 'propiedades', 'action' => 'view', $propiedadesRecurso['Propiedade']['id'])); ?>
 		</td>
 		<td><?php echo h($propiedadesRecurso['PropiedadesRecurso']['valor']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $propiedadesRecurso['PropiedadesRecurso']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $propiedadesRecurso['PropiedadesRecurso']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $propiedadesRecurso['PropiedadesRecurso']['id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $propiedadesRecurso['PropiedadesRecurso']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $propiedadesRecurso['PropiedadesRecurso']['id'],$propiedadesRecurso['PropiedadesRecurso']['propiedade_id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $propiedadesRecurso['PropiedadesRecurso']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

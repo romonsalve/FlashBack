@@ -54,7 +54,7 @@ class RecursosController extends AppController {
 			$this->Recurso->create();
 			if ($this->Recurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The recurso has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller'=>'propiedadesrecursos', 'action' => 'index/'.$this->Recurso->id));
 			} else {
 				$this->Session->setFlash(__('The recurso could not be saved. Please, try again.'));
 			}

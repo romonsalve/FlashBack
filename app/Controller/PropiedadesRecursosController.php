@@ -20,40 +20,19 @@ class PropiedadesRecursosController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($evento_id=null ) {
 		$this->PropiedadesRecurso->recursive = 0;
 		$this->set('propiedadesRecursos', $this->Paginator->paginate());
-	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->PropiedadesRecurso->exists($id)) {
-			throw new NotFoundException(__('Invalid propiedades recurso'));
+		if($evento_id != null){
+			$this->paginate = array(
+				'conditions' => array('PropiedadesRecurso.recurso_id' => $evento_id),
+				'limit' => 20
+			    );
+			$this->set('propiedadesRecursos', $this->Paginator->paginate());
 		}
-		$options = array('conditions' => array('PropiedadesRecurso.' . $this->PropiedadesRecurso->primaryKey => $id));
-		$this->set('propiedadesRecurso', $this->PropiedadesRecurso->find('first', $options));
-	}
-
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->PropiedadesRecurso->create();
-			if ($this->PropiedadesRecurso->save($this->request->data)) {
-				$this->Session->setFlash(__('The propiedades recurso has been saved'), 'fexito');
-				return $this->redirect(array('controller'=>'eventosRecursos', 'action' => 'index/'));
-			} else {
-				$this->Session->setFlash(__('The propiedades recurso could not be saved. Please, try again.'), 'ferror');
-			}
+		else{
+			return $this->redirect(array('controller'=>'recursos', 'action' => 'index'));
 		}
 	}
 
@@ -64,7 +43,8 @@ class PropiedadesRecursosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->PropiedadesRecurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedades recurso has been saved'), 'fexito');
-				return $this->redirect(array('action' => 'index'));
+				$temp = $this->PropiedadesRecurso->findById($this->PropiedadesRecurso->id);
+				return $this->redirect(array('action' => 'index/'.$temp['PropiedadesRecurso']['recurso_id'] ));
 			} else {
 				$this->Session->setFlash(__('The propiedades recurso could not be saved. Please, try again.'), 'ferror');
 			}
