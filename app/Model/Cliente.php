@@ -9,11 +9,11 @@ App::uses('AppModel', 'Model');
  */
 class Cliente extends AppModel {
 
-
 public $displayField = 'nombreCompleto';
 
 public $virtualFields = array(
 	'nombreCompleto' => 'Cliente.nombre || \' \' || Cliente.apellido_paterno || \' \' || Cliente.apellido_materno');
+
 /**
  * Validation rules
  *

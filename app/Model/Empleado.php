@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  */
 class Empleado extends AppModel {
 
+	public $displayField = 'nombre';
 /**
  * Validation rules
  *

@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  */
 class ActividadesEvento extends AppModel {
 
+	public $displayField = 'estado';
 /**
  * Validation rules
  *

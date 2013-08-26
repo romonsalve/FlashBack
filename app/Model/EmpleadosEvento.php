@@ -7,7 +7,7 @@ App::uses('AppModel', 'Model');
  * @property Evento $Evento
  */
 class EmpleadosEvento extends AppModel {
-
+	public $displayField = 'evento_id';
 /**
  * Validation rules
  *

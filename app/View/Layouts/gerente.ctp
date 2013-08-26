@@ -103,7 +103,7 @@ $cakeDescription = __d('cake_dev', 'Flashback');
       <ul id="nav">
         <li>
         <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Calendario de Eventos', array(
-            'controller' => 'eventos', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?></li>
+            'controller' => 'eventos', 'action' => 'calendario'), array('class'=>'open br-green','escape' => false) ); ?></li>
 
         <li class="has_sub">
           <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Cotizaciones<span class="pull-right"><i class="icon-chevron-right icon-white"></i></span></a>', array(), array('class'=>'open br-purple','escape' => false) ); ?>

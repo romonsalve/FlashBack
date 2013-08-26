@@ -7,8 +7,7 @@ App::uses('AppModel', 'Model');
  * @property RecursoTipo $RecursoTipo
  */
 class Proveedore extends AppModel {
-
-
+	public $displayField = 'nombre';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**

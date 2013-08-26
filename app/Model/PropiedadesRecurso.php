@@ -7,7 +7,7 @@ App::uses('AppModel', 'Model');
  * @property Propiedade $Propiedade
  */
 class PropiedadesRecurso extends AppModel {
-
+	public $displayField = 'recurso_id';
 /**
  * Validation rules
  *

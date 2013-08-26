@@ -9,6 +9,7 @@ App::uses('AppModel', 'Model');
  */
 class PropiedadesRecursoTipo extends AppModel {
 
+	public $displayField = 'medida_id';
 /**
  * Validation rules
  *

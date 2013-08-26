@@ -9,11 +9,11 @@
                 <div class="bor"></div>
                  <div class="ysheet1">
                     <!-- Title -->
-                    <h3>Solicitud Cotizaciones</h3>
+                    <h3>Solicitudes de Cotizaciones</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>Listado de cotizaciones según el filtro que haya escogido</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		       </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,13 +32,11 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('estado_id', 'estado_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_tipo_id', 'evento_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('cliente_id', 'cliente_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('recinto_tipo_id', 'recinto_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre', 'nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
+			<th><?php echo $this->Paginator->sort('estado_id', 'Estado'); ?></th>
+			<th><?php echo $this->Paginator->sort('evento_tipo_id', 'Tipo de Evento'); ?></th>
+			<th><?php echo $this->Paginator->sort('cliente_id', 'Solicitante'); ?></th>
+			<th><?php echo $this->Paginator->sort('recinto_tipo_id', 'Tipo de Recinto'); ?></th>
+			<th><?php echo $this->Paginator->sort('nombre', 'Nombre del Evento'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -47,21 +45,19 @@
              <tr>
 
 	<?php foreach ($solicitudCotizaciones as $solicitudCotizacione): ?>
-		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['Estado']['id'], array('controller' => 'estados', 'action' => 'view', $solicitudCotizacione['Estado']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['Estado']['nombre'], array('controller' => 'estados', 'action' => 'view', $solicitudCotizacione['Estado']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['EventoTipo']['id'], array('controller' => 'evento_tipos', 'action' => 'view', $solicitudCotizacione['EventoTipo']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['EventoTipo']['nombre'], array('controller' => 'evento_tipos', 'action' => 'view', $solicitudCotizacione['EventoTipo']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['Cliente']['id'], array('controller' => 'clientes', 'action' => 'view', $solicitudCotizacione['Cliente']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['Cliente']['nombreCompleto'], array('controller' => 'clientes', 'action' => 'view', $solicitudCotizacione['Cliente']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($solicitudCotizacione['RecintoTipo']['id'], array('controller' => 'recinto_tipos', 'action' => 'view', $solicitudCotizacione['RecintoTipo']['id'])); ?>
+			<?php echo $this->Html->link($solicitudCotizacione['RecintoTipo']['nombre'], array('controller' => 'recinto_tipos', 'action' => 'view', $solicitudCotizacione['RecintoTipo']['id'])); ?>
 		</td>
 		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['nombre']); ?>&nbsp;</td>
-		<td><?php echo h($solicitudCotizacione['SolicitudCotizacione']['descripcion']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $solicitudCotizacione['SolicitudCotizacione']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $solicitudCotizacione['SolicitudCotizacione']['id'])); ?>

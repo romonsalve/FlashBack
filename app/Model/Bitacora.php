@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  */
 class Bitacora extends AppModel {
 
+	public $displayField = 'evento_id';
 /**
  * Validation rules
  *

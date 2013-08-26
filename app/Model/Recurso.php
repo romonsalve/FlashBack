@@ -10,6 +10,12 @@ App::uses('AppModel', 'Model');
  */
 class Recurso extends AppModel {
 
+	public function __construct($id = false, $table = null, $ds = null) {
+	    parent::__construct($id, $table, $ds);
+	    $this->virtualFields['nombre'] =  "RecursoTipo.nombre || ' #' || CAST(Recurso.id AS text)";
+	}
+	public $displayField = 'nombre';
+
 /**
  * Validation rules
  *

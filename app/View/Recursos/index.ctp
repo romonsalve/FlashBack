@@ -32,7 +32,7 @@
         <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
-
+			<th><?php echo $this->Paginator->sort('nombre', 'Nombre del Recurso'); ?></th>
 			<th><?php echo $this->Paginator->sort('recurso_tipo_id', 'Tipo de Recurso'); ?></th>
 			<th><?php echo $this->Paginator->sort('proveedore_id', 'Proveedor'); ?></th>
 			<th><?php echo $this->Paginator->sort('cantidad', 'Cantidad'); ?></th>
@@ -45,6 +45,10 @@
 
 	<?php foreach ($recursos as $recurso): ?>
 		<td>
+			<?php
+			echo $this->Html->link($recurso['Recurso']['nombre'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipo']['id'])); ?>
+		</td>
+				<td>
 			<?php echo $this->Html->link($recurso['RecursoTipo']['nombre'], array('controller' => 'recurso_tipos', 'action' => 'view', $recurso['RecursoTipo']['id'])); ?>
 		</td>
 		<td>
