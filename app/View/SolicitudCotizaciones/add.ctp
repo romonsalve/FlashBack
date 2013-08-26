@@ -38,7 +38,11 @@ function obtenerPropiedades(valor){
 
 		echo $this->Form->input('evento_tipo_id', array('class' =>'span12','label' => 'Escoja un tipo de evento', 'onchange' => 'obtenerPropiedades(this.value)','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-		echo $this->Form->input('cliente_id', array('class' =>'span12','label' => 'Ingrese cliente_id', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+
+    if($rol == 'cliente') echo '<div style="display: none">';
+		echo $this->Form->input('cliente_id', array('default' => $c_id, 'class' =>'span12','label' => 'Ingrese cliente_id', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    if($rol == 'cliente') echo '</div>';
+
     echo ' <div id="propi2"> </div>';
     echo '<hr />';
 		echo $this->Form->input('nombre', array('type' => 'text', 'class' =>'span12','label' => 'Ingrese un nombre para este evento:', 'placeholder' => 'Cumpleaños de Juan','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));

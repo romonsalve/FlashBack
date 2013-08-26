@@ -67,13 +67,19 @@ class SolicitudCotizacionesController extends AppController {
 				$this->Session->setFlash(__('The solicitud cotizacione could not be saved. Please, try again.'), 'ferror');
 			}
 		}
+		$user_id = $this->Session->read('Auth.User')['id'];
+		$client = $this->Cliente->find('all', array(
+			'conditions' => array('Cliente.user_id' => $user_id))
+		);
+		$c_id = $client[0]['Cliente']['id'];
+
 		$estados = $this->SolicitudCotizacione->Estado->find('list');
 		$eventoTipos = $this->SolicitudCotizacione->EventoTipo->find('list');
 		$clientes = $this->SolicitudCotizacione->Cliente->find('list');
 		$recintoTipos = $this->SolicitudCotizacione->RecintoTipo->find('list');
 		$participanteTipos = $this->SolicitudCotizacione->ParticipanteTipo->find('list');
 		$actividades = $this->SolicitudCotizacione->Actividade->find('list');
-		$this->set(compact('estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos', 'actividades'));
+		$this->set(compact('c_id','estados', 'eventoTipos', 'clientes', 'recintoTipos', 'participanteTipos', 'actividades'));
 	}
 
 /**
