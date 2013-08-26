@@ -21,7 +21,7 @@ public $virtualFields = array(
  */
 	public $validate = array(
 		'cliente_tipo_id' => array(
-			'numeric' => array(
+			'Seleccione un cliente tipo por favor	' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
@@ -30,7 +30,7 @@ public $virtualFields = array(
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'rut_cli' => array(
+		'rut' => array(
 			'formato' => array(
 				'rule' => '^[1-9][0-9]{0,7}[-][0-9kK]{1}^',
 				'message' => 'Ingrese el rut sin puntos con guión.'
@@ -45,12 +45,24 @@ public $virtualFields = array(
 				'message' => 'este rut ya está registrado.'
 			)
 		),
-		'fono_cli'=> array(
+		'nombre' => array(
+			'rule' => 'texto',
+			'message' => 'Este campo debe tener mínimo tres carácteres y sólo letras'
+			),
+		'apellido_materno' => array(
+			'rule' => 'texto',
+			'message' => 'Este campo debe tener mínimo tres carácteres y sólo letras'
+			),
+		'apellido_paterno' => array(
+			'rule' => 'texto',
+			'message' => 'Este campo debe tener mínimo tres carácteres y sólo letras'
+			),
+		'fono'=> array(
 			'rule' => array('range', 99999, 57000000000),
 			'message' => 'Ingrese un número de teléfono válido.',
 			'required' => true,
 		),
-		'correo_cli' => array(
+		'correo' => array(
 			'rule' => 'email',
 			'message' => 'Ingrese un correo electrónico válido',
 			'allowEmpty' => true,

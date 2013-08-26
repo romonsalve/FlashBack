@@ -97,6 +97,7 @@ class UsersController extends AppController {
 		}
 	}
 
+
 /**
  * edit method
  *
