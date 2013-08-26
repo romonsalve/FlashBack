@@ -50,4 +50,21 @@ class AppModel extends Model {
         }
         return !$this->find('count', array('conditions' => $fields, 'recursive' => -1));
     }
+
+    public function verificarRut($check){
+        $rut = explode('-', array_values($check)[0]);
+        $r = $rut[0];
+        $s=1;
+        for($m=0;$r!=0;$r/=10)
+            $s=($s+$r%10*(9-$m++%6))%11;
+        $dv = chr($s?$s+47:75);
+        return (strcasecmp($dv, $rut[1]) == 0 );
+    }
+    public function texto($check, $minimo = 3) {
+        // $data array is passed using the form field name as the key
+        // have to extract the value to make the function generic
+        $value = array_values($check);
+        $value = $value[0];
+        return preg_match('|^[a-zA-Z ÁÉÍÓÚáéíóúü]{'.$minimo.',}$|', $value);
+    }
 }

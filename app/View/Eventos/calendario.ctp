@@ -10,8 +10,8 @@
 				center: 'title',
 				right: 'month,basicWeek,basicDay'
 			},
-			selectable: true,
-			selectHelper: true,
+			selectable: false,
+			selectHelper: false,
 			select: function(start, end, allDay) {
 				var title = prompt('Event Title:');
 				if (title) {
@@ -27,7 +27,12 @@
 				}
 				calendar.fullCalendar('unselect');
 			},
-			editable: true,
+			<? if($rol == 'empleado'){
+				echo 'editable: false,';
+			}else{
+				echo 'editable: true,';
+			} ?>
+						
 			events: [
 			<?php foreach ($posts as $evento): ?>
 				{
@@ -74,6 +79,8 @@
                       <!-- Title -->
                       <h3>Calendario</h3>
                       <!-- Para -->
+                      <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar Evento</button>", array("action" => "add"), array("escape" => false));?>
+                      <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Vista de Lista</button>", array("action" => "index"), array("escape" => false));?>
 		      <div id="calendar"></div>
                    </div>
                    <div class="ysheet2"></div>

@@ -23,7 +23,10 @@ class User extends AppModel {
 		'email'=>array(
 			'Valid email'=>array(
 				'rule'=>array('email'),
-				'message'=>'Por favor ingrese un mail válido'
+				'message'=>'Por favor ingrese un correo válido'
+			),
+			'Este correo electrónico ya ha sido registrado' => array(
+				'rule' => 'unico',
 			)
 		),
 		'password'=>array(

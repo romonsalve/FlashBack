@@ -55,6 +55,9 @@ class SolicitudCotizacionesController extends AppController {
  * @return void
  */
 	public function add() {
+		if ($this->rol() == 'gerente'){
+			return $this->redirect(array('action' => 'index'));
+		}
 		if ($this->request->is('post')) {
 			$this->SolicitudCotizacione->create();
 			if ($this->SolicitudCotizacione->save($this->request->data)) {

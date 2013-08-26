@@ -10,7 +10,7 @@ App::uses('AppModel', 'Model');
  */
 class Recurso extends AppModel {
 
-	public $displayField = 'recurso_tipo_id';
+
 /**
  * Validation rules
  *

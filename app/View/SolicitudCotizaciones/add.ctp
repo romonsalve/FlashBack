@@ -31,9 +31,11 @@ function obtenerPropiedades(valor){
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('estado_id', array('class' =>'span12','label' => 'Ingrese estado_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
+    if($rol == 'cliente') echo '<div style="display: none">';
+		echo $this->Form->input('estado_id', array('default' => 1, 'class' =>'span12','label' => 'Ingrese estado_id', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
+    if($rol == 'cliente') echo '</div>';
+
 		echo $this->Form->input('evento_tipo_id', array('class' =>'span12','label' => 'Escoja un tipo de evento', 'onchange' => 'obtenerPropiedades(this.value)','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 		echo $this->Form->input('cliente_id', array('class' =>'span12','label' => 'Ingrese cliente_id', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));

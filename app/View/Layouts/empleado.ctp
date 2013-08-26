@@ -119,44 +119,26 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span8">
+ 
+         <div class="span12">
           <div class="fwidget">
-            <div class="col-l">
-              <h6>Ir a</h6>
-
-              <ul>
-                <li><a href="#">asdf</a></li>
-              </ul>
-            </div>
-
-            <div class="col-r">
-              <h6>Ir a</h6>
-
-              <ul>
-                <li><a href="#">hi</a></li>
-              </ul>
-            </div>
-
-            <div class="clearfix"></div>
-          </div>
-        </div>
-
-        <div class="span4">
-          <div class="fwidget">
+            <span class=" text-center"style="margin-left: 0px;">
             <h6>Creadores</h6>
+            </span>
+            <ul style="margin-left: 0px;">
+              <div class="row">
+              <li class="span4 text-center"><a href="#">Sebastian Araya</a></li>
 
-            <ul>
-              <li><a href="#">Sebastian Araya</a></li>
+              <li class="span4 text-center"><a href="#">Manuel Rubio</a></li>
 
-              <li><a href="#">Manuel Rubio</a></li>
+              <li class="span4 text-center"><a href="#">Camila Castillo</a></li>
+            </div><div class="row">
+              <li class="span4 text-center"><a href="#">Rodrigo Monsalve</a></li>
 
-              <li><a href="#">Camila Castillo</a></li>
+              <li class="span4 text-center"><a href="#">Yanina Ovando</a></li>
 
-              <li><a href="#">Rodrigo Monsalve</a></li>
-
-              <li><a href="#">Yanina Ovando</a></li>
-
-              <li><a href="#">Luis Felipe</a></li>
+              <li class="span4 text-center"><a href="#">Luis Felipe</a></li>
+            </div>
             </ul>
           </div>
         </div>

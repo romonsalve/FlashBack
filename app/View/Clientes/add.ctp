@@ -24,7 +24,7 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('cliente_tipo_id', array('class' =>'span12','label' => '¿Es usted un particular o una empresa?', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('cliente_tipo_id', array('default' => 2,'class' =>'span12','label' => '¿Es usted un particular o una empresa?', 'placeholder' => '','error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 		echo $this->Form->input('rut', array('type'=>'text', 'class' =>'span12','label' => 'Ingrese su RUT', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';

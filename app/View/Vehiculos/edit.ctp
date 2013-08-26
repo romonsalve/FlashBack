@@ -27,16 +27,16 @@
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('vehiculo_tipo_id', array('class' =>'span12','label' => 'Ingrese vehiculo_tipo_id', 'placeholder' => '',
+				echo $this->Form->input('vehiculo_tipo_id', array('disabled' => true ,'class' =>'span12','label' => 'Ingrese vehiculo_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('patente', array('class' =>'span12','label' => 'Ingrese patente', 'placeholder' => '',
+				echo $this->Form->input('patente', array('type' => 'text','disabled' => true ,'class' =>'span12','label' => 'Ingrese patente', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('modelo', array('class' =>'span12','label' => 'Ingrese modelo', 'placeholder' => '',
+				echo $this->Form->input('modelo', array('type' => 'text','disabled' => true ,'class' =>'span12','label' => 'Ingrese modelo', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('marca', array('class' =>'span12','label' => 'Ingrese marca', 'placeholder' => '',
+				echo $this->Form->input('marca', array('type' => 'text','disabled' => true ,'class' =>'span12','label' => 'Ingrese marca', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('descripcion', array('class' =>'span12','label' => 'Ingrese descripcion', 'placeholder' => '',

@@ -9,7 +9,11 @@ App::uses('AppModel', 'Model');
  */
 class Cliente extends AppModel {
 
-	public $displayField = 'nombre';
+public $displayField = 'nombreCompleto';
+
+public $virtualFields = array(
+	'nombreCompleto' => 'Cliente.nombre || \' \' || Cliente.apellido_paterno || \' \' || Cliente.apellido_materno');
+
 /**
  * Validation rules
  *
@@ -17,7 +21,7 @@ class Cliente extends AppModel {
  */
 	public $validate = array(
 		'cliente_tipo_id' => array(
-			'numeric' => array(
+			'Seleccione un cliente tipo por favor	' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
@@ -26,6 +30,43 @@ class Cliente extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'rut' => array(
+			'formato' => array(
+				'rule' => '^[1-9][0-9]{0,7}[-][0-9kK]{1}^',
+				'message' => 'Ingrese el rut sin puntos con guión.'
+			),
+			'digitoVerificador' => array(
+				'rule' => 'verificarRut',
+				'message' => 'Rut no válido.',
+			),
+			'sinRepetir' => array(
+				'rule' => 'unico',
+				'on' => 'create',
+				'message' => 'este rut ya está registrado.'
+			)
+		),
+		'nombre' => array(
+			'rule' => 'texto',
+			'message' => 'Este campo debe tener mínimo tres carácteres y sólo letras'
+			),
+		'apellido_materno' => array(
+			'rule' => 'texto',
+			'message' => 'Este campo debe tener mínimo tres carácteres y sólo letras'
+			),
+		'apellido_paterno' => array(
+			'rule' => 'texto',
+			'message' => 'Este campo debe tener mínimo tres carácteres y sólo letras'
+			),
+		'fono'=> array(
+			'rule' => array('range', 99999, 57000000000),
+			'message' => 'Ingrese un número de teléfono válido.',
+			'required' => true,
+		),
+		'correo' => array(
+			'rule' => 'email',
+			'message' => 'Ingrese un correo electrónico válido',
+			'allowEmpty' => true,
+		)
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

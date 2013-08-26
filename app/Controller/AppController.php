@@ -40,7 +40,10 @@ class AppController extends Controller {
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login')
         	)
         );
-
+     public function rol(){
+     	$user = $this->Session->read('Auth.User');
+     	return $user['role'];	 
+     }
      public function estaAutorizado($rol, $controller, $action){
         $gerenteAutorizado = array(
        	/*controladores*/
@@ -204,6 +207,7 @@ class AppController extends Controller {
         }
     }
     public function beforeFilter() {
+    	$this->set('rol', $this->rol());
     	$rol = $this->Auth->User('role');
     	$this->Auth->allow('login');
         if(!$this->estaAutorizado($rol, $this->request['controller'], $this->request['action'])){

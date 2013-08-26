@@ -32,11 +32,21 @@
         <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
+<<<<<<< HEAD
 			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'vehiculo_tipo_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('patente', 'patente'); ?></th>
 			<th><?php echo $this->Paginator->sort('modelo', 'modelo'); ?></th>
 			<th><?php echo $this->Paginator->sort('marca', 'marca'); ?></th>
 			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
+=======
+
+
+			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'Tipo'); ?></th>
+			<th><?php echo $this->Paginator->sort('patente', 'Patente'); ?></th>
+			<th><?php echo $this->Paginator->sort('modelo', 'Modelo'); ?></th>
+			<th><?php echo $this->Paginator->sort('marca', 'Marca'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'Descripción'); ?></th>
+>>>>>>> 4542d35fd5f14ef61d0e7459c8b5e00ce20d6401
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -45,8 +55,12 @@
              <tr>
 
 	<?php foreach ($vehiculos as $vehiculo): ?>
+<<<<<<< HEAD
 		<td>
 		</td>
+=======
+		<td><?php  echo $this->Html->link($vehiculo['VehiculoTipo']['nombre'], array('controller' => 'VehiculoTipos', 'action' => 'view', $vehiculo['VehiculoTipo']['id']));  ?>&nbsp;</td>
+>>>>>>> 4542d35fd5f14ef61d0e7459c8b5e00ce20d6401
 		<td><?php echo h($vehiculo['Vehiculo']['patente']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['modelo']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['marca']); ?>&nbsp;</td>

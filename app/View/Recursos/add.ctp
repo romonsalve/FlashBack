@@ -41,9 +41,10 @@ function obtenerPropiedades(valor){
 	</div>
 	     </div>
 	     <div class="span6 ">
-                <div class="well">
+                <div class="well"><div style="display:none;">
 		<?php
 echo '<h6> <?php echo Evento ?></h6> <hr />'; 		echo $this->Form->input('Evento', array('type' => 'select', 'multiple'=>'checkbox', 'label' => null) );
+echo '</div>';  
 echo ' <div id="propi"> </div>';
 echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
