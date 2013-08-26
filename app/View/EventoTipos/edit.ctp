@@ -24,11 +24,11 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('id', array('type' => 'text', 'class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<div style="display:none">';
+		echo $this->Form->input('id', array('hiddenField' => true, 'type' => 'text', 'class' =>'span12','label' => 'Ingrese id', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '</div>';
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+		echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>
 	

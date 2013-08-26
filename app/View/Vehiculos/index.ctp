@@ -34,11 +34,11 @@
           <tr>
 
 
-			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'vehiculo_tipo_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('patente', 'patente'); ?></th>
-			<th><?php echo $this->Paginator->sort('modelo', 'modelo'); ?></th>
-			<th><?php echo $this->Paginator->sort('marca', 'marca'); ?></th>
-			<th><?php echo $this->Paginator->sort('descripcion', 'descripcion'); ?></th>
+			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'Tipo'); ?></th>
+			<th><?php echo $this->Paginator->sort('patente', 'Patente'); ?></th>
+			<th><?php echo $this->Paginator->sort('modelo', 'Modelo'); ?></th>
+			<th><?php echo $this->Paginator->sort('marca', 'Marca'); ?></th>
+			<th><?php echo $this->Paginator->sort('descripcion', 'Descripción'); ?></th>
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -47,10 +47,7 @@
              <tr>
 
 	<?php foreach ($vehiculos as $vehiculo): ?>
-		<td><?php echo h($vehiculo['Vehiculo']['id']); ?>&nbsp;</td>
-		<td>
-
-		</td>
+		<td><?php  echo $this->Html->link($vehiculo['VehiculoTipo']['nombre'], array('controller' => 'VehiculoTipos', 'action' => 'view', $vehiculo['VehiculoTipo']['id']));  ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['patente']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['modelo']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['marca']); ?>&nbsp;</td>

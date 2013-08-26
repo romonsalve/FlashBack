@@ -10,7 +10,7 @@ function obtenerPropiedades(valor){
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Add Evento</h2>
+          <h2>Agregar Evento</h2>
           <hr />
         </div>
         <!-- Title ends -->
@@ -61,7 +61,7 @@ function obtenerPropiedades(valor){
 			'r' => 'Realizado', 
 			'a' => 'Aprobado',
 			);
-		echo $this->Form->input('estado', array('options' => $estados, 'class' =>'span12','label' => 'Ingrese estado', 'placeholder' => '',
+		echo $this->Form->input('estado', array('options' => $estados, 'default' => 'a', 'class' =>'span12','label' => 'Ingrese estado', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 				echo $this->Form->input('precio', array('type' => 'text', 'class' =>'span12','label' => 'Ingrese precio', 'placeholder' => '',
