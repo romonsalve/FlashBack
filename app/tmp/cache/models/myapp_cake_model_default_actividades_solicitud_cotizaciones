@@ -1,0 +1,2 @@
+1377511145
+a:2:{s:24:"solicitud_cotizacione_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";s:0:"";s:6:"length";N;}s:13:"actividade_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";s:0:"";s:6:"length";N;}}

@@ -22,15 +22,28 @@ class SolicitudCotizacionesController extends AppController {
  */
 	public function index($estado = null) {
 		$this->SolicitudCotizacione->recursive = 0;
-		if($estado != null){
-			$this->paginate = array(
-				'conditions' => array('SolicitudCotizacione.estado_id' => $estado),
-				'limit' => 10
-			    );
-			$this->set('solicitudCotizaciones', $this->Paginator->paginate());
-
+		if($this->rol == 'cliente'){
+		$user_id = $this->Session->read('Auth.User')['id'];
+		$client = $this->Cliente->find('all', array(
+			'conditions' => array('Cliente.user_id' => $user_id))
+		);
+		$c_id = $client[0]['Cliente']['id'];
+				$this->paginate = array(
+					'conditions' => array('SolicitudCotizacione.cliente_id' => $c_id),
+					'limit' => 10
+				    );
+				$this->set('solicitudCotizaciones', $this->Paginator->paginate());		
 		}else{
-			$this->set('solicitudCotizaciones', $this->Paginator->paginate());
+			if($estado != null){
+				$this->paginate = array(
+					'conditions' => array('SolicitudCotizacione.estado_id' => $estado),
+					'limit' => 10
+				    );
+				$this->set('solicitudCotizaciones', $this->Paginator->paginate());
+
+			}else{
+				$this->set('solicitudCotizaciones', $this->Paginator->paginate());
+			}
 		}	
 	}
 

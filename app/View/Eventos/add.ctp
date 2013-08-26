@@ -41,7 +41,7 @@ function obtenerPropiedades(valor){
 				echo $this->Form->input('cliente_id', array('class' =>'span12','label' => 'Ingrese cliente_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('type' => 'text','class' =>'span12','label' => 'Ingrese un nombre distintivo para este evento:', 'placeholder' => 'Cumpleaños de Edgardito',
+				echo $this->Form->input('nombre', array('type' => 'text','class' =>'span12','label' => 'Ingrese un nombre distintivo para este evento:', 'placeholder' => 'Cumpleaños de Juan',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 		echo $this->Form->input('fecha_inicio', array('class' =>'span4','label' => 'Ingrese la fecha de inicio para este evento', 'placeholder' => '', 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
