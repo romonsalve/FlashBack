@@ -44,10 +44,14 @@ window.location="../";
                                  <!-- List -->
 				<ul>
 
-		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['id'])." &nbsp</div>";  ?></li>	<li><?php echo '<div class="col-l" style = "text-align: right;"> Username </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['username'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Password </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['password'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Role </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['role'])." &nbsp</div>";  ?></li></ul>
-      		<li><?php echo '<div class="col-l" style = "text-align: right;"> Username: </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['username'])." &nbsp</div>";  ?></li>
-          				<li><?php echo '<div class="col-l" style = "text-align: right;"> Tipo de usuario: </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['role'])." &nbsp</div>";  ?></li>
-                  		<li><?php echo '<div class="col-l" style = "text-align: right;"> Correo Electrónico </div> '; ?>		<?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['email'])." &nbsp</div>";  ?></li></ul>
+		<li><?php echo '<div class="col-l" style = "text-align: right;"> Id </div> '; ?>		
+      <?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['id'])." &nbsp</div>";  ?></li>	<li><?php echo '<div class="col-l" style = "text-align: right;"> Username </div> '; ?>		
+      <?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['username'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Password </div> '; ?>		
+      <?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['password'])." &nbsp</div>";  ?></li>		<li><?php echo '<div class="col-l" style = "text-align: right;"> Role </div> '; ?>		
+      <?php echo ":<div class='col-r' style = 'text-align: left;'>".h($user['User']['role'])." &nbsp</div>";  ?></li></ul>
+
+
+      
                               </div>
 
                               <div class="pbutton">  
