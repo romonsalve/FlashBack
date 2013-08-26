@@ -3,7 +3,7 @@
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
-          <h2>!!!Edit Eventos Recurso</h2>
+          <h2>Editar Eventos Recurso</h2>
           <hr />
         </div>
         <!-- Title ends -->
@@ -26,13 +26,7 @@
 	<?php
 		echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-				echo $this->Form->input('evento_id', array('class' =>'span12','label' => 'Ingrese evento_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-				echo $this->Form->input('recurso_id', array('class' =>'span12','label' => 'Ingrese recurso_id', 'placeholder' => '',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
+		
 				echo $this->Form->input('cantidad', array('class' =>'span12','label' => 'Ingrese cantidad', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';

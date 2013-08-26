@@ -32,8 +32,6 @@
         <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
-
-
 			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'vehiculo_tipo_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('patente', 'patente'); ?></th>
 			<th><?php echo $this->Paginator->sort('modelo', 'modelo'); ?></th>
@@ -47,9 +45,7 @@
              <tr>
 
 	<?php foreach ($vehiculos as $vehiculo): ?>
-		<td><?php echo h($vehiculo['Vehiculo']['id']); ?>&nbsp;</td>
 		<td>
-
 		</td>
 		<td><?php echo h($vehiculo['Vehiculo']['patente']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['modelo']); ?>&nbsp;</td>

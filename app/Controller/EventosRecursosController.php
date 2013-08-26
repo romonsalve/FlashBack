@@ -20,50 +20,19 @@ class EventosRecursosController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($evento_id=null, $recurso_id=null) {
 		$this->EventosRecurso->recursive = 0;
-		$this->set('eventosRecursos', $this->Paginator->paginate());
-	}
-
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->EventosRecurso->exists($id)) {
-			throw new NotFoundException(__('Invalid eventos recurso'));
+		if($evento_id != null){
+			$this->paginate = array(
+				'conditions' => array('EventosRecurso.evento_id' => $evento_id),
+				'limit' => 20
+			    );
+			$this->set('eventosRecursos', $this->Paginator->paginate() );
 		}
-		$options = array('conditions' => array('EventosRecurso.' . $this->EventosRecurso->primaryKey => $id));
-		$this->set('eventosRecurso', $this->EventosRecurso->find('first', $options));
-	}
-
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->EventosRecurso->create();
-			if ($this->EventosRecurso->save($this->request->data)) {
-				$this->Session->setFlash(__('The eventos recurso has been saved'), 'fexito');
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The eventos recurso could not be saved. Please, try again.'), 'ferror');
-			}
+		else{
+			return $this->redirect(array('controller'=>'eventos/', 'action' => 'index'));
 		}
 	}
-
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function edit($id = null) {
 		if (!$this->EventosRecurso->exists($id)) {
 			throw new NotFoundException(__('Invalid eventos recurso'));
@@ -71,7 +40,9 @@ class EventosRecursosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->EventosRecurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The eventos recurso has been saved'), 'fexito');
-				return $this->redirect(array('action' => 'index'));
+				$this->EventosRecurso->recursive = -1;
+				$temp = $this->EventosRecurso->findById($this->EventosRecurso->id);
+				return $this->redirect(array('action' => 'index/'.$temp['EventosRecurso']['evento_id'] ));
 			} else {
 				$this->Session->setFlash(__('The eventos recurso could not be saved. Please, try again.'), 'ferror');
 			}
@@ -88,7 +59,7 @@ class EventosRecursosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$id_redirec = null) {
 		$this->EventosRecurso->id = $id;
 		if (!$this->EventosRecurso->exists()) {
 			throw new NotFoundException(__('Invalid eventos recurso'));
@@ -96,7 +67,7 @@ class EventosRecursosController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->EventosRecurso->delete()) {
 			$this->Session->setFlash(__('Eventos recurso deleted'), 'fexito');
-			return $this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index/'.$id_redirec));
 		}
 		$this->Session->setFlash(__('Eventos recurso was not deleted'), 'ferror');
 		return $this->redirect(array('action' => 'index'));
