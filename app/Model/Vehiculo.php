@@ -27,7 +27,7 @@ class Vehiculo extends AppModel {
 		),
 		'patente' => array(
 			'patenteValida' => array(
-				'rule' => '/(([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){4}[0-9]{2})|([A-Z]){2}[0-9]{4}) /',
+				'rule' => '/(([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){4}[0-9]{2})|([A-Z]{2}[0-9]{4})/',
 				'message' => 'Ingrese una patente válida, en mayúsculas, sin espacios ni guiones.	',
 			),
 		),

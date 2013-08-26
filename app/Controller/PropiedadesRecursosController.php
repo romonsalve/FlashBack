@@ -50,20 +50,13 @@ class PropiedadesRecursosController extends AppController {
 			$this->PropiedadesRecurso->create();
 			if ($this->PropiedadesRecurso->save($this->request->data)) {
 				$this->Session->setFlash(__('The propiedades recurso has been saved'), 'fexito');
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller'=>'eventosRecursos', 'action' => 'index/'));
 			} else {
 				$this->Session->setFlash(__('The propiedades recurso could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function edit($id = null) {
 		if (!$this->PropiedadesRecurso->exists($id)) {
 			throw new NotFoundException(__('Invalid propiedades recurso'));

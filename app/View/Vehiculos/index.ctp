@@ -34,11 +34,14 @@
           <tr>
 
 
+
+
 			<th><?php echo $this->Paginator->sort('vehiculo_tipo_id', 'Tipo'); ?></th>
 			<th><?php echo $this->Paginator->sort('patente', 'Patente'); ?></th>
 			<th><?php echo $this->Paginator->sort('modelo', 'Modelo'); ?></th>
 			<th><?php echo $this->Paginator->sort('marca', 'Marca'); ?></th>
 			<th><?php echo $this->Paginator->sort('descripcion', 'Descripción'); ?></th>
+
 	
 	<th class="actions"><?php echo __('Acciones'); ?></th>
 
@@ -48,6 +51,7 @@
 
 	<?php foreach ($vehiculos as $vehiculo): ?>
 		<td><?php  echo $this->Html->link($vehiculo['VehiculoTipo']['nombre'], array('controller' => 'VehiculoTipos', 'action' => 'view', $vehiculo['VehiculoTipo']['id']));  ?>&nbsp;</td>
+
 		<td><?php echo h($vehiculo['Vehiculo']['patente']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['modelo']); ?>&nbsp;</td>
 		<td><?php echo h($vehiculo['Vehiculo']['marca']); ?>&nbsp;</td>

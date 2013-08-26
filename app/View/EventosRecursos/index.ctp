@@ -2,18 +2,18 @@
         <div class="row-fluid">
           <div class="span12">
 		<hr />
-	<?php echo $this->TwitterBootstrap->add_crumb("Eventos Recursos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
+	<?php echo $this->TwitterBootstrap->add_crumb("Asignacion de Recursos", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>		<hr />
           <!-- Sheet starts -->
             <div class="box-body">
               <div class="ysheet">
                 <div class="bor"></div>
                  <div class="ysheet1">
                     <!-- Title -->
-                    <h3>Eventos Recursos</h3>
+                    <h3>Asignación de Recursos</h3>
                     <!-- Para -->
-                    <p>Listado de ...</p>
+                    <p>En esta sección se podra observar y editar todos los recursos que se han sido seleccionados para un evento determinado. Para poder agregar nuevos recursos a un evento dirijase a editar evento.</p>
 		    <div style= "text-align: right; padding-right: 10%">
-		    <?php echo $this->Html->link( "<button class='btn btn-primary btn-lg'>Agregar</button>", array("action" => "add"), array("escape" => false));?>		     </div>
+		       </div>
                  </div>
                  <div class="ysheet2"></div>
                  <div class="ysheet3"></div>
@@ -32,8 +32,6 @@
         <thead>
           <tr>
 
-			<th><?php echo $this->Paginator->sort('id', 'id'); ?></th>
-			<th><?php echo $this->Paginator->sort('evento_id', 'evento_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('recurso_id', 'recurso_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('cantidad', 'cantidad'); ?></th>
 	
@@ -44,18 +42,13 @@
              <tr>
 
 	<?php foreach ($eventosRecursos as $eventosRecurso): ?>
-		<td><?php echo h($eventosRecurso['EventosRecurso']['id']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($eventosRecurso['Evento']['id'], array('controller' => 'eventos', 'action' => 'view', $eventosRecurso['Evento']['id'])); ?>
-		</td>
 		<td>
 			<?php echo $this->Html->link($eventosRecurso['Recurso']['id'], array('controller' => 'recursos', 'action' => 'view', $eventosRecurso['Recurso']['id'])); ?>
 		</td>
 		<td><?php echo h($eventosRecurso['EventosRecurso']['cantidad']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $eventosRecurso['EventosRecurso']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $eventosRecurso['EventosRecurso']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $eventosRecurso['EventosRecurso']['id']), null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $eventosRecurso['EventosRecurso']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $eventosRecurso['EventosRecurso']['id'], $eventosRecurso['EventosRecurso']['evento_id']) , null, __('¿Estás seguro de que quieres eliminar el elemento #%s?', $eventosRecurso['EventosRecurso']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -84,7 +77,7 @@
 	</div>
 	 <?php } ?>		
 	 <?php } 
-		 else {  echo "<hr /> <h1 style='text-align: center'> Aún no se han ingresado Eventos Recursos</h1> <hr />"; } ?>	</div>
+		 else {  echo "<hr /> <h1 style='text-align: center'> Este evento no posee recursos</h1> <hr />"; } ?>	</div>
 	</div>
 
 

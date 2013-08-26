@@ -60,7 +60,7 @@ class EventosController extends AppController {
 			$this->Evento->create();
 			if ($this->Evento->save($this->request->data)) {
 				$this->Session->setFlash(__('The evento has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller'=>'eventosRecursos','action' => 'index/'. $this->Evento->id));
 			} else {
 				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'));
 			}
