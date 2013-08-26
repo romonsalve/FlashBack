@@ -48,7 +48,7 @@ $cakeDescription = __d('cake_dev', 'Flashback');
         </a>
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
-           <li><?php echo $this->Html->link('Registrar',array('controller' => 'users', 'action' => 'add'));?> </li>
+           <li><?php echo $this->Html->link('Registrar',array('controller' => 'clientes', 'action' => 'add'));?> </li>
           </ul>
         </div>
       </div>

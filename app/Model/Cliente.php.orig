@@ -21,7 +21,7 @@ public $virtualFields = array(
  */
 	public $validate = array(
 		'cliente_tipo_id' => array(
-			'Seleccione un cliente tipo por favor'=> array(
+			'Seleccione un cliente tipo por favor	' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
@@ -29,8 +29,13 @@ public $virtualFields = array(
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		)
+<<<<<<< HEAD
+		),
 		'rut' => array(
+=======
+		)
+		/*'rut_cli' => array(
+>>>>>>> origin/sdfc
 			'formato' => array(
 				'rule' => '^[1-9][0-9]{0,7}[-][0-9kK]{1}^',
 				'message' => 'Ingrese el rut sin puntos con guión.'

@@ -14,7 +14,18 @@ class User extends AppModel {
 				'message'=>'El nombre de usuario ya existe.'
 			)
 		),
-
+<<<<<<< HEAD
+		'email'=>array(
+			'Valid email'=>array(
+				'rule'=>array('email'),
+				'message'=>'Por favor ingrese un correo válido'
+			),
+			'Este correo electrónico ya ha sido registrado' => array(
+				'rule' => 'unico',
+			)
+		),
+=======
+>>>>>>> origin/sdfc
 		'password'=>array(
 		    'Not empty'=>array(
 		        'rule'=>'notEmpty',

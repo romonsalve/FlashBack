@@ -1,15 +1,3 @@
-
-<?php echo $this->Form->create('User'); 
-$currentUser = $this->Session->read('Auth.User');
-if($user['User']['id']!= $currentUser['id']){
-  if($currentUser['role']!='gerente'){
-    echo '<script type="text/javascript">
-
-window.location="../";
-
-</script>';
-  }
-}?>
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
@@ -20,7 +8,7 @@ window.location="../";
 
         <!-- Breadcrumb starts -->
 
-	<?php echo $this->TwitterBootstrap->add_crumb("users", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
+  <?php echo $this->TwitterBootstrap->add_crumb("users", 'index');echo $this->TwitterBootstrap->add_crumb("Edit", null);echo $this->TwitterBootstrap->breadcrumbs(array("divider" => "/")); ?>
         <!-- Breadcrumb ends -->
 
         <hr />
@@ -34,34 +22,39 @@ window.location="../";
               <div class="well">
                 <hr />
   <?php
- $usuario = $this->Session->read('Auth.User');
-    echo $this->Form->input('id', array('class' =>'span12','placeholder' => 'Ingrese id'));
-        //echo $this->Form->input('id', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese id'));
+
+echo $this->Form->create('User'); 
+$usuario = $this->Session->read('Auth.User');
+if($user['User']['id']!= $usuario['id']){
+  if($usuario['role']!='gerente'){
+
+    echo '<script type="text/javascript">
+
+window.location="../";
+
+</script>';
+  }
+}
+  
+       echo $this->Form->input('id', array('class' =>'span12','label' => 'Ingrese id', 'placeholder' => '',
+      'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+
+        echo $this->Form->input('User.username', array('readonly'=>'true','type'=>'text','class' =>'span12','label' => 'Ingrese nombre de usuario', 'placeholder' => 'Nombre de usuario',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
     echo '<hr /> ';
-        echo $this->Form->input('name', array('type'=>'text','class' =>'span12','placeholder' => 'Ingrese name'));
-        //echo $this->Form->input('name', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese name'));
-    echo '<hr /> ';
-        echo $this->Form->input('username', array('type'=>'text','class' =>'span12','placeholder' => 'Ingrese username'));
-        //echo $this->Form->input('username', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese username'));
+        echo $this->Form->input('User.password', array('type'=>'password','class' =>'span12','label' => 'Ingrese contraseña', 'placeholder' => 'Contraseña',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
         echo '<hr /> ';
-        echo $this->Form->input('password', array('class' =>'span12','placeholder' => 'Ingrese password'));
-    
+        //echo $this->Form->input('password', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese password'));
+        echo $this->Form->input('User.password_confirmation', array('label' => 'Confirme contraseña','class' =>'span12','placeholder' => 'Confirme contraseña','type' => 'password'));
     echo '<hr /> ';
-        echo $this->Form->input('password_confirmation', array('class' =>'span12','placeholder' => 'Confirme password','type' => 'password'));
-      
+        if($usuario['role']=='gerente'){
+        echo $this->Form->input('User.role', array('class' =>'span12','label' => 'Rol', 'options' => array('gerente' => 'Gerente', 'organizador' => 'Organizador','empleado' => 'Empleado', 'cliente' => 'Cliente'),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+        }else{
+          echo $this->Form->input('User.role', array('readonly'=>'true','class' =>'span12','label' => 'Rol', 'options' => array("cliente" => "Cliente"),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+        }
     echo '<hr /> ';
-     if($usuario['role']=='gerente'){
-        echo $this->Form->input('role', array('class' =>'span12','label' => 'Rol', 'options' => array('gerente' => 'Gerente', 'organizador' => 'Organizador','empleado' => 'Empleado', 'cliente' => 'Cliente')
-        ));//echo $this->Form->input('role', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese role'));
-    }else{
-        echo $this->Form->input('role', array('class' =>'span12','label' => 'Rol', 'options' => array($usuario['role'] => $usuario['role'])));
-    }
-    echo '<hr /> ';
-        echo $this->Form->input('email', array('class' =>'span12','placeholder' => 'Ingrese email'));
-        //echo $this->Form->input('email', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese email'));
-    echo '<hr /> ';
-    $this->Form->button("Submit Form", array("type" => "submit","class" => "btn btn-primary")); ?> 
-    <button class='btn btn-primary'>Guardar</button>
+        echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));  ?> 
               </div>
 
             </div>

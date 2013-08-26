@@ -24,7 +24,7 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 	    parent::beforeFilter();
 		/*antes de filtrar los usuarios está permitido agregar*/
-		$this->Auth->allow('add');
+		//$this->Auth->allow('add');
 	}
 	/**********************************************************/
 	public function isAuthorized($user) {
@@ -88,14 +88,16 @@ class UsersController extends AppController {
 		}
 		if ($this->request->is('post')) {
 			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'), 'fexito');
+
+			if ($this->User->saveAll($this->data)) {
+				$this->Session->setFlash(__('The User has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'ferror');
+				$this->Session->setFlash(__('The cliente could not be saved. Please, try again.'), 'ferror');
 			}
 		}
 	}
+	
 
 
 /**
@@ -110,16 +112,12 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'));
-				$rol = $this->Auth->User('role');
-				if($rol=='gerente'){
-					return $this->redirect(array('action' => 'index'));
-				}else{
-					return $this->redirect("view/".$id);
-				}
+				$this->Session->setFlash(__('The user has been saved'), 'fexito');
+				return $this->redirect("view/".$id);
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'ferror');
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));

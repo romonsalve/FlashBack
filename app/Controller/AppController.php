@@ -72,7 +72,7 @@ class AppController extends Controller {
 	        'recintos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'recursotipos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'recursos' => array('index','view','add','edit','delete','noAutorizado'),
-	        'solicitudcotizaciones' => array('index','view','add','edit','delete','noAutorizado'),
+	        'solicitudcotizaciones' => array('index','view','edit','delete','noAutorizado'),
 	        'vehiculotipos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'vehiculos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'users' => array('index','view','add','edit','delete','login','logout','noAutorizado'),
@@ -199,6 +199,13 @@ class AppController extends Controller {
             return true;
         }else if($rol == 'cliente' && isset($clienteAutorizado[$controller]) && in_array($action, $clienteAutorizado[$controller]) ||
         	strpos($action, 'busca')!==false ){
+        	$this->loadModel('Cliente');
+        	/*****************************/
+        	$user = $this->Session->read('Auth.User');
+        	$options = array('conditions' => array('Cliente.user_id'=>$user['id']));
+        	$this->set('cl', $this->Cliente->find('first', $options));
+        	//debug($this->request->data);
+        	/******************************/
         	$this->layout = 'cliente';
             return true;
         }
