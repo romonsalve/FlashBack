@@ -26,7 +26,7 @@
                            <div class="pricel center">
                                  <div class="phead-top b-orange">
                                     <!-- Title -->
-                                    <h4>Información del <?php echo __('Solicitud Cotizacione').' '; ?> <?php echo $solicitudCotizacione['SolicitudCotizacione']['id']; ?></h4>
+                                    <h4>Información de la Solicitud de Cotización <?php echo $solicitudCotizacione['SolicitudCotizacione']['id']; ?></h4>
                                  </div>
                                  <div class="arrow-down"></div>
                               <div class="plist">

@@ -100,14 +100,21 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
       <ul id="nav">
         <li>
-        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Cotizar un evento', array(
+        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Cotizar un evento.', array(
+            'controller' => 'solicitud_cotizaciones', 'action' => 'add'), array('class'=>'open br-green','escape' => false) ); ?>
+        </li>
+        <li>
+        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Revisar mis Cotizaciones.', array(
             'controller' => 'solicitud_cotizaciones', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?>
+        </li>
+        <li>
+        <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Administrar listas de invitados.', array(
+            'controller' => 'eventos', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?>
         </li>
         <li>
         <?php echo $this->Html->link('<i class="icon-home icon-white"></i>Eventos Predeterminados', array(
             'controller' => 'solicitud_cotizaciones', 'action' => 'index'), array('class'=>'open br-green','escape' => false) ); ?>
         </li>
-      
       </ul>
     </div>
   </div><!-- Mainbar starts -->
