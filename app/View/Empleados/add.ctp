@@ -1,4 +1,4 @@
-
+<?php $user = $this->Session->read('Auth.User'); ?>
 <?php echo $this->Form->create('Empleado'); ?>
 <div class="container-fluid">
         <!-- Title starts -->
@@ -24,31 +24,50 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('empleado_tipo_id', array('class' =>'span12','label' => 'Ingrese empleado_tipo_id', 'placeholder' => '',
+	 /***********************USUARIO************************/
+    echo $this->Form->input('User.username', array('type'=>'text','class' =>'span12','label' => 'Ingrese nombre de usuario', 'placeholder' => 'Nombre de usuario',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+    echo '<hr /> ';
+        echo $this->Form->input('User.password', array('type'=>'password','class' =>'span12','label' => 'Ingrese contraseña', 'placeholder' => 'Contraseña',
+'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+        echo '<hr /> ';
+        //echo $this->Form->input('password', array('type'=>'text','class' =>'span9','placeholder' => 'Ingrese password'));
+        echo $this->Form->input('User.password_confirmation', array('label' => 'Confirme contraseña','class' =>'span12','placeholder' => 'Confirme contraseña','type' => 'password'));
+        if($user['role']=='gerente'){
+          echo '<hr /> ';
+        echo $this->Form->input('User.role', array('class' =>'span12','label' => 'Rol', 'options' => array('gerente' => 'Gerente', 'organizador' => 'Organizador','empleado' => 'Empleado', 'cliente' => 'Cliente'),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+         echo '<hr /> ';
+        }else{
+
+          echo $this->Form->input('User.role', array('class' =>'span12', 'options' => array("empleado" => "Empleado"),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+         echo '<hr /> ';
+        }
+        /*******************************************/
+		echo $this->Form->input('Empleado.empleado_tipo_id', array('class' =>'span12','label' => 'Ingrese empleado_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('rut', array('class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',
+				echo $this->Form->input('Empleado.rut', array('type'=>'text','class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+				echo $this->Form->input('Empleado.nombre', array('type'=>'text','class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellido_paterno', array('class' =>'span12','label' => 'Ingrese apellido_paterno', 'placeholder' => '',
+				echo $this->Form->input('Empleado.apellido_paterno', array('type'=>'text','class' =>'span12','label' => 'Ingrese apellido_paterno', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellido_materno', array('class' =>'span12','label' => 'Ingrese apellido_materno', 'placeholder' => '',
+				echo $this->Form->input('Empleado.apellido_materno', array('type'=>'text','class' =>'span12','label' => 'Ingrese apellido_materno', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('direccion', array('class' =>'span12','label' => 'Ingrese direccion', 'placeholder' => '',
+				echo $this->Form->input('Empleado.direccion', array('type'=>'text','class' =>'span12','label' => 'Ingrese direccion', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fono', array('class' =>'span12','label' => 'Ingrese fono', 'placeholder' => '',
+				echo $this->Form->input('Empleado.fono', array('type'=>'text','class' =>'span12','label' => 'Ingrese fono', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('correo', array('class' =>'span12','label' => 'Ingrese correo', 'placeholder' => '',
+				echo $this->Form->input('Empleado.correo', array('type'=>'text','class' =>'span12','label' => 'Ingrese correo', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('contrato', array('class' =>'span12','label' => 'Ingrese contrato', 'placeholder' => '',
+				echo $this->Form->input('Empleado.contrato', array('type'=>'text','class' =>'span12','label' => 'Ingrese contrato', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>

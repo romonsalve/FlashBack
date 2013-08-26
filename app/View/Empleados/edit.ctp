@@ -30,28 +30,28 @@
 				echo $this->Form->input('empleado_tipo_id', array('class' =>'span12','label' => 'Ingrese empleado_tipo_id', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('rut', array('class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',
+				echo $this->Form->input('rut', array('type'=>'text','class' =>'span12','label' => 'Ingrese rut', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('nombre', array('class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
+				echo $this->Form->input('nombre', array('type'=>'text','class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellido_paterno', array('class' =>'span12','label' => 'Ingrese apellido_paterno', 'placeholder' => '',
+				echo $this->Form->input('apellido_paterno', array('type'=>'text','class' =>'span12','label' => 'Ingrese apellido_paterno', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('apellido_materno', array('class' =>'span12','label' => 'Ingrese apellido_materno', 'placeholder' => '',
+				echo $this->Form->input('apellido_materno', array('type'=>'text','class' =>'span12','label' => 'Ingrese apellido_materno', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('direccion', array('class' =>'span12','label' => 'Ingrese direccion', 'placeholder' => '',
+				echo $this->Form->input('direccion', array('type'=>'text','class' =>'span12','label' => 'Ingrese direccion', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('fono', array('class' =>'span12','label' => 'Ingrese fono', 'placeholder' => '',
+				echo $this->Form->input('fono', array('type'=>'text','class' =>'span12','label' => 'Ingrese fono', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('correo', array('class' =>'span12','label' => 'Ingrese correo', 'placeholder' => '',
+				echo $this->Form->input('correo', array('type'=>'text','class' =>'span12','label' => 'Ingrese correo', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
-				echo $this->Form->input('contrato', array('class' =>'span12','label' => 'Ingrese contrato', 'placeholder' => '',
+				echo $this->Form->input('contrato', array('type'=>'text','class' =>'span12','label' => 'Ingrese contrato', 'placeholder' => '',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
 			?>

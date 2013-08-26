@@ -51,7 +51,7 @@ window.location="../";
         if($usuario['role']=='gerente'){
         echo $this->Form->input('User.role', array('class' =>'span12','label' => 'Rol', 'options' => array('gerente' => 'Gerente', 'organizador' => 'Organizador','empleado' => 'Empleado', 'cliente' => 'Cliente'),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
         }else{
-          echo $this->Form->input('User.role', array('readonly'=>'true','class' =>'span12','label' => 'Rol', 'options' => array("cliente" => "Cliente"),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
+          echo $this->Form->input('User.role', array('readonly'=>'true','class' =>'span12','label' => 'Rol', 'options' => array($usuario['role'] => $usuario['role']),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
         }
     echo '<hr /> ';
         echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));  ?> 

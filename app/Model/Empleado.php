@@ -35,6 +35,13 @@ class Empleado extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 		'EmpleadoTipo' => array(
 			'className' => 'EmpleadoTipo',
 			'foreignKey' => 'empleado_tipo_id',

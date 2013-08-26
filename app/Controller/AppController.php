@@ -86,7 +86,7 @@ class AppController extends Controller {
 	        'cliente_tipos' => array('noAutorizado'),
 	        'clientes' => array('index','view','noAutorizado'),
 	        'empleado_tipos' => array('index','view','noAutorizado'),
-	        'empleados' => array('index','view','noAutorizado'),
+	        'empleados' => array('index','edit','view','noAutorizado'),
 	        'empleados_eventos' => array('index','view','add','edit','delete','noAutorizado'),
 	        'estados' => array('index','view','noAutorizado'),
 	        'evento_tipos' => array('index','view','noAutorizado'),
@@ -185,20 +185,36 @@ class AppController extends Controller {
         $action = strtolower($action);
         $action = str_replace('_','', $action);
         if($rol == 'gerente'){
-//        if($rol == 'gerente' && isset($gerenteAutorizado[$controller]) && in_array($action, $gerenteAutorizado[$controller]) ||
-  //      	strpos($action, 'busca')!==false ){
+        	$this->loadModel('Empleado');
+        	/*****************************/
+        	$empl = $this->Session->read('Auth.User');
+        	$options = array('conditions' => array('Empleado.user_id'=>$empl['id']));
+        	$this->set('emp', $this->Empleado->find('first', $options));
+        	//debug($this->request->data);
+        	/******************************/
  	    	$this->layout = 'gerente';
             return true;
-        }else if($rol == 'organizador' && isset($organizadorAutorizado[$controller]) && in_array($action, $organizadorAutorizado[$controller]) ||
-        	strpos($action, 'busca')!==false ){
+        }else if($rol == 'organizador' && isset($organizadorAutorizado[$controller]) && in_array($action, $organizadorAutorizado[$controller]) || strpos($action, 'busca')!==false ){
+ 			$this->loadModel('Empleado');
+        	/*****************************/
+        	$empl = $this->Session->read('Auth.User');
+        	$options = array('conditions' => array('Empleado.user_id'=>$empl['id']));
+        	$this->set('emp', $this->Empleado->find('first', $options));
+        	//debug($this->request->data);
+        	/******************************/
  			$this->layout = 'organizador';
  			return true;
-        }else if($rol == 'empleado' && isset($empleadoAutorizado[$controller]) && in_array($action, $empleadoAutorizado[$controller]) ||
-        	strpos($action, 'busca')!==false ){
+        }else if($rol == 'empleado' && isset($empleadoAutorizado[$controller]) && in_array($action, $empleadoAutorizado[$controller]) || strpos($action, 'busca')!==false ){
+            $this->loadModel('Empleado');
+        	/*****************************/
+        	$empl = $this->Session->read('Auth.User');
+        	$options = array('conditions' => array('Empleado.user_id'=>$empl['id']));
+        	$this->set('emp', $this->Empleado->find('first', $options));
+        	//debug($this->request->data);
+        	/******************************/
             $this->layout = 'empleado';
             return true;
-        }else if($rol == 'cliente' && isset($clienteAutorizado[$controller]) && in_array($action, $clienteAutorizado[$controller]) ||
-        	strpos($action, 'busca')!==false ){
+        }else if($rol == 'cliente' && isset($clienteAutorizado[$controller]) && in_array($action, $clienteAutorizado[$controller]) || strpos($action, 'busca')!==false ){
         	$this->loadModel('Cliente');
         	/*****************************/
         	$user = $this->Session->read('Auth.User');

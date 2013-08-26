@@ -48,7 +48,7 @@ class EmpleadosController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Empleado->create();
-			if ($this->Empleado->save($this->request->data)) {
+			if ($this->Empleado->saveAll($this->data)) {
 				$this->Session->setFlash(__('The empleado has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
@@ -74,7 +74,7 @@ class EmpleadosController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Empleado->save($this->request->data)) {
 				$this->Session->setFlash(__('The empleado has been saved'), 'fexito');
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect("view/".$id);
 			} else {
 				$this->Session->setFlash(__('The empleado could not be saved. Please, try again.'), 'ferror');
 			}
