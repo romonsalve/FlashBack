@@ -12,6 +12,7 @@ App::uses('AppModel', 'Model');
  */
 class SolicitudCotizacione extends AppModel {
 
+	public $displayField = 'nombre';
 /**
  * Validation rules
  *

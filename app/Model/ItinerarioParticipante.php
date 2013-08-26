@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  */
 class ItinerarioParticipante extends AppModel {
 
+	public $displayField = 'evento_id';
 /**
  * Validation rules
  *

@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  */
 class ProveedoresRecursoTipo extends AppModel {
 
+	
 /**
  * Validation rules
  *

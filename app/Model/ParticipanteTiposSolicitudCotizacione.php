@@ -13,6 +13,7 @@ class ParticipanteTiposSolicitudCotizacione extends AppModel {
  *
  * @var array
  */
+	public $displayField = 'solicitud_cotizacione_id';
 	public $validate = array(
 		'solicitud_cotizacione_id' => array(
 			'numeric' => array(

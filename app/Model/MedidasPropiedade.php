@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  */
 class MedidasPropiedade extends AppModel {
 
+	
 /**
  * Validation rules
  *

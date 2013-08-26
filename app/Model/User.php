@@ -1,7 +1,7 @@
 <?php
 class User extends AppModel {
 	public $name = 'User';
-	public $displayField = 'name';
+	public $displayField = 'username';
 	
 	public $validate = array(
 		'name'=>array(
