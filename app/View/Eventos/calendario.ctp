@@ -27,7 +27,12 @@
 				}
 				calendar.fullCalendar('unselect');
 			},
-			editable: true,
+			<? if($rol == 'empleado'){
+				echo 'editable: false,';
+			}else{
+				echo 'editable: true,';
+			} ?>
+						
 			events: [
 			<?php foreach ($posts as $evento): ?>
 				{

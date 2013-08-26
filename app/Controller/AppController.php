@@ -207,6 +207,7 @@ class AppController extends Controller {
         }
     }
     public function beforeFilter() {
+    	$this->set('rol', $this->rol());
     	$rol = $this->Auth->User('role');
     	$this->Auth->allow('login');
         if(!$this->estaAutorizado($rol, $this->request['controller'], $this->request['action'])){
