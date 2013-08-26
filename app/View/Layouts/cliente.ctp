@@ -64,13 +64,15 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
-            <li><a class="dropdown-toggle"><?php echo "Bienvenido ".$user['name'];?></a></li>
+            <li><a class="dropdown-toggle"><?php echo "Bienvenido ".$cl['Cliente']['nombre']." ".$cl['Cliente']['apellido_paterno']." ".$cl['Cliente']['apellido_materno']." ";?></a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle=
               "dropdown">Mi Cuenta</a>
 
               <ul class="dropdown-menu">
-                <li><?php echo $this->Html->link('Ver cuenta',array('controller' => 'users', 'action' => 'view/'.$user['id']));?> </li>
+
+                <li><?php echo $this->Html->link('Editar contraseña',array('controller' => 'users', 'action' => 'view/'.$user['id']));?> </li>
+                <li><?php echo $this->Html->link('Ver perfil',array('controller' => 'clientes', 'action' => 'view/'.$cl['Cliente']['id']));?> </li>
                 <li><?php echo $this->Html->link('Salir (logout)',array('controller' => 'users', 'action' => 'logout'));?> </li>
               </ul>
             </li>

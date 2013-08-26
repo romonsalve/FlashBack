@@ -1,15 +1,9 @@
 <?php
 class User extends AppModel {
 	public $name = 'User';
-	public $displayField = 'username';
+	public $displayField = 'name';
 	
 	public $validate = array(
-		'name'=>array(
-			'Please enter your name.'=>array(
-				'rule'=>'notEmpty',
-				'message'=>'Por favor ingrese su nombre.'
-			)
-		),
 		'username'=>array(
 			'The username must be between 5 and 15 characters.'=>array(
 				'rule'=>array('between', 5, 15),
@@ -18,12 +12,6 @@ class User extends AppModel {
 			'That username has already been taken'=>array(
 				'rule'=>'isUnique',
 				'message'=>'El nombre de usuario ya existe.'
-			)
-		),
-		'email'=>array(
-			'Valid email'=>array(
-				'rule'=>array('email'),
-				'message'=>'Por favor ingrese un mail válido'
 			)
 		),
 		'password'=>array(
@@ -65,5 +53,33 @@ class User extends AppModel {
 	    }
 	    return true;
 	}
+	public $hasMany = array(
+		'Cliente' => array(
+			'className' => 'Cliente',
+			'foreignKey' => 'user_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Empleado' => array(
+			'className' => 'Empleado',
+			'foreignKey' => 'user_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
 }
 ?>

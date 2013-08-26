@@ -20,6 +20,11 @@ class ClientesController extends AppController {
  *
  * @return void
  */
+public function beforeFilter() {
+	    parent::beforeFilter();
+		/*antes de filtrar los usuarios está permitido agregar*/
+		$this->Auth->allow('add');
+	}
 	public function index() {
 		$this->Cliente->recursive = 0;
 		$this->set('clientes', $this->Paginator->paginate());
@@ -48,7 +53,9 @@ class ClientesController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Cliente->create();
-			if ($this->Cliente->save($this->request->data)) {
+				//debug($this->data);
+				//return true;
+			if ($this->Cliente->saveAll($this->data)) {
 				$this->Session->setFlash(__('The cliente has been saved'), 'fexito');
 				return $this->redirect(array('action' => 'index'));
 			} else {
@@ -71,9 +78,10 @@ class ClientesController extends AppController {
 			throw new NotFoundException(__('Invalid cliente'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+
 			if ($this->Cliente->save($this->request->data)) {
 				$this->Session->setFlash(__('The cliente has been saved'), 'fexito');
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect("view/".$id);
 			} else {
 				$this->Session->setFlash(__('The cliente could not be saved. Please, try again.'), 'ferror');
 			}

@@ -1,5 +1,6 @@
-<?php $user = $this->Session->read('Auth.User'); ?>
+
 <?php echo $this->Form->create('User'); ?>
+<?php $user = $this->Session->read('Auth.User'); ?>
 <div class="container-fluid">
         <!-- Title starts -->
         <div class="page-title">
@@ -32,9 +33,6 @@
               <div class="well">
                 <hr />
 	<?php
-		echo $this->Form->input('name', array('type'=>'text','class' =>'span12','label' => 'Ingrese nombre', 'placeholder' => 'Nombre',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
 				echo $this->Form->input('username', array('type'=>'text','class' =>'span12','label' => 'Ingrese nombre de usuario', 'placeholder' => 'Nombre de usuario',
 'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
 		echo '<hr /> ';
@@ -50,10 +48,7 @@
           echo $this->Form->input('role', array('class' =>'span12','label' => 'Rol', 'options' => array("cliente" => "Cliente"),'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
         }
 		echo '<hr /> ';
-				echo $this->Form->input('email', array('type'=>'text','class' =>'span12','label' => 'Ingrese email', 'placeholder' => 'email',
-'error' => array('attributes' => array('wrap' => 'div', 'class' => 'alert alert-error'))));
-		echo '<hr /> ';
-		echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
+				echo $this->Form->button("Guardar", array("type" => "submit","class" => "btn btn-primary"));	?> 
               </div>
 
             </div>

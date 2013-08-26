@@ -29,8 +29,8 @@ public $virtualFields = array(
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-		'rut_cli' => array(
+		)
+		/*'rut_cli' => array(
 			'formato' => array(
 				'rule' => '^[1-9][0-9]{0,7}[-][0-9kK]{1}^',
 				'message' => 'Ingrese el rut sin puntos con guión.'
@@ -54,7 +54,7 @@ public $virtualFields = array(
 			'rule' => 'email',
 			'message' => 'Ingrese un correo electrónico válido',
 			'allowEmpty' => true,
-		)
+		)*/
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -65,6 +65,13 @@ public $virtualFields = array(
  * @var array
  */
 	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 		'ClienteTipo' => array(
 			'className' => 'ClienteTipo',
 			'foreignKey' => 'cliente_tipo_id',
