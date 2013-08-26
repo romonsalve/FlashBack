@@ -147,7 +147,7 @@ $cakeDescription = __d('cake_dev', 'Flashback');
 
           <ul>
             <li>
-            <?php echo $this->Html->link('Listaod recursos', array('controller'=>'recursos','action' => 'index')); ?></li>
+            <?php echo $this->Html->link('Listado recursos', array('controller'=>'recursos','action' => 'index')); ?></li>
 
             <li>
             <?php echo $this->Html->link('Definir recursos', array('controller'=>'recursoTipos','action' => 'index')); ?></li>

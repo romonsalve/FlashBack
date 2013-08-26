@@ -40,7 +40,10 @@ class AppController extends Controller {
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login')
         	)
         );
-
+     public function rol(){
+     	$user = $this->Session->read('Auth.User');
+     	return $user['role'];	 
+     }
      public function estaAutorizado($rol, $controller, $action){
         $gerenteAutorizado = array(
        	/*controladores*/
